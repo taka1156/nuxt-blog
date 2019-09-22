@@ -1,0 +1,197 @@
+---
+id: 3
+title: "よく使うmarkdownコード"
+created_at: "2019-9-22"
+updated_at: --/--/--
+summary: "markdown関連のコードをまとめました"
+draft: false
+subpath: "markdown"
+categories: [markdown, プログラミング, 備忘録]
+img: ""
+---
+
+## 文字修飾
+****
+
+## 見出しタグ
+
+## これはH2タグです
+
+### これはH3タグです
+
+#### これはH4タグです
+
+##### これはH5タグです
+
+```markdown
+
+## これはH2タグです
+
+### これはH3タグです
+
+#### これはH4タグです
+
+##### これはH5タグです
+
+```
+
+## 強調(bold,　italic)
+****
+
+*hoge*
+
+_hoge_
+
+**hoge**
+
+__hoge__
+
+```markdown
+*hoge*
+
+_hoge_
+
+**hoge**
+
+__hoge__
+```
+
+## 打ち消し
+****
+
+~~hoge~~
+
+```~~ hoge ~~```
+
+## Disc型
+****
+
+文頭に「*」「+」「-」をいれるとDisc型になる
+
+* hoge
+
+    * hoge
+
+* hoge
+
++ hoge
+
+    + hoge
+
++ hoge
+
+- hoge
+
+    - hoge
+
+- hoge
+
+```markdown
+* hoge
+
+    * hoge
+
+* hoge
+
+
++ hoge
+
+    + hoge
+
++ hoge
+
+- hoge
+
+    - hoge
+
+- hoge
+```
+
+## Decimal型
+****
+
+1. hoge
+    2. hoge
+    2. hoge
+1. hoge
+    2. hoge
+    2. hoge
+1. hoge
+    2. hoge
+    2. hoge
+
+```markdown
+1. hoge
+    2. hoge
+1. hoge
+    2. hoge
+1. hoge
+    2. hoge
+```
+## Definition型
+****
+
+<dl>
+  <dt>リンゴ</dt>
+    <dd>とても<strong>赤い</strong>フルーツ</dd>
+</dl>
+
+## チェックボックス
+****
+
+- [ ] タスク1
+- [x] タスク2
+
+```markdown
+[ ] タスク1
+[x] タスク2
+```
+
+## 引用
+****
+
+> hogehogehoge
+> ネストされた引用です。
+> hogehogehoge
+
+```markdown
+> hogehogehoge
+> ネストされた引用です。
+> hogehogehoge
+```
+
+## 水平線
+****
+
+----
+****
+
+```markdown
+****
+****
+```
+
+## リンク
+****
+
+[ポートフォリオサイト](https://taka1156.github.io/PortfolioSite-dev)
+
+```markdown
+[ポートフォリオサイト](https://taka1156.github.io/PortfolioSite-dev)
+```
+
+## 画像
+****
+
+![markdown](./static/markdown.svg "markdown")
+
+## テーブル記法
+****
+
+| コンパイル言語 | スクリプト言語  | 
+|:-------------:|:-------------:|
+| C/C++         | Ruby          |
+| Java          | PHP           |
+| scala         | Python        |
+| C#            | JavaScript    |
+| Swift         | TypeScript    |

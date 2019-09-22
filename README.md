@@ -1,22 +1,12 @@
 # takablog
 
-> My wondrous Nuxt.js project
+----
+## blogの作り方
+1. post/markdown/以下にmdファイルを作る
+2. ```yarn md```を実行してmdからjson作成
+3. yarn devで確認
 
-## Build Setup
+----
 
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 機能追加
+- 機能追加したら書きます

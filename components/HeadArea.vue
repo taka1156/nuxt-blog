@@ -1,12 +1,9 @@
 <template>
   <div class="HeadArea">
-    <h1>
-      TakaのBlog
-    </h1>
-    <h2>
+    <h2 class="mt-6 h1">
       I am studying
       <vue-typer
-        :text='["Vue", "JavaScript(ES6)", "Python", "PHP", "P5.js", "and more?"]'
+        :text='["Vue", "JavaScript", "Python", "PHP", "P5.js", "and more?"]'
         :repeat='Infinity'
         initial-action='typing'
         :pre-type-delay='70'
@@ -26,3 +23,4 @@ export default {
   name: 'HeadArea',
 }
 </script>
+q

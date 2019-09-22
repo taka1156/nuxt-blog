@@ -8,10 +8,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "md": "processmd \"post\\markdown\\*.md\" --highlightCode --stdout --outputDir \"post\\json\" --summaryOutput post\\summary.json"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "1.2.6",
+    "markdown-it-highlightjs": "3.0.0",
+    "markdown-it-toc": "1.1.0",
     "nuxt": "^2.0.0",
+    "processmd": "4.4.2",
     "vue-typer": "1.2.0"
   },
   "devDependencies": {}
