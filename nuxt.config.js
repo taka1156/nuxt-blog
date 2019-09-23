@@ -1,7 +1,7 @@
 const { sourceFileArray } = require('./post/summary.json');
 
 function sourceFileNameToUrl(filePath){
-  const deleteExt = filePath.replace('.md', 'index');
+  const deleteExt = filePath.replace('.md', '').filePathre.replace('markdown','');;
   const fileName = deleteExt.split('/')[deleteExt.split('/').length - 1];
   const splitArray = fileName.split('-');
   return `/post/${splitArray.slice(0, 3).join('-')}/${splitArray.slice(3).join('-')}`;
