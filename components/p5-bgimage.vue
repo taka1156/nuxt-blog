@@ -56,7 +56,7 @@ export default {
             sketch.rotateY(this.LogoRotationAngle);
             sketch.rotateZ(this.LogoRotationAngle);
             sketch.beginShape();
-            sketch.plane(300,300);
+            sketch.plane(350,350);
             sketch.endShape(sketch.CLOSE);
         }
     }
