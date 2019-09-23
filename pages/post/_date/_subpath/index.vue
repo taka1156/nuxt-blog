@@ -1,6 +1,6 @@
 <template>
     <div class="Article">
-        <div class="container mt-6">
+        <div class="container bg-color mt-6">
             <!--記事のheader-->
             <div class="header border bg-info">
                 <h1 class="text-muted" v-html="title" />
