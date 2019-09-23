@@ -1,5 +1,6 @@
 <template>
  <div class="ArticleList">
+   <NaviBar />
     <Header />
     <div class="container bg-opacity">
       <h2>
