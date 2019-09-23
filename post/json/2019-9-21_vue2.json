@@ -15,8 +15,8 @@
   "bodyContent": "## ライフサイクルフック\r\n\r\n----\r\n\r\n1. mounted\r\n1. created\r\n1. updated\r\n\r\n## データの変更を監視\r\n\r\n----\r\n\r\n1. watch:{変数名:funciton(){}}\r\n 変数を監視して、変更時に処理を行う\r\n 配列やオブジジェクトの中身まで捕捉してほしい時は、以下のように\r\n deep:trueをつける。\r\n\r\n```javascript\r\nexport default {\r\n    watch:{\r\n        data:{\r\n            handler:function(val) {\r\n                this.renderChart(this.data, this.options);\r\n            },\r\n            deep:true\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n## 計算で得られる値\r\n\r\n----\r\n\r\n1. computed:{変数名:funciton(){}}\r\n   入力値のや変数の処理で求められるのはこっち",
   "bodyHtml": "<h2>ライフサイクルフック</h2>\n<hr>\n<ol>\n<li>mounted</li>\n<li>created</li>\n<li>updated</li>\n</ol>\n<h2>データの変更を監視</h2>\n<hr>\n<ol>\n<li>watch:{変数名:funciton(){}}\n変数を監視して、変更時に処理を行う\n配列やオブジジェクトの中身まで捕捉してほしい時は、以下のように\ndeep:trueをつける。</li>\n</ol>\n<pre><code class=\"hljs\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n    <span class=\"hljs-attr\">watch</span>:{\n        <span class=\"hljs-attr\">data</span>:{\n            <span class=\"hljs-attr\">handler</span>:<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">val</span>) </span>{\n                <span class=\"hljs-keyword\">this</span>.renderChart(<span class=\"hljs-keyword\">this</span>.data, <span class=\"hljs-keyword\">this</span>.options);\n            },\n            <span class=\"hljs-attr\">deep</span>:<span class=\"hljs-literal\">true</span>\n        }\n    }\n}</code></pre><h2>計算で得られる値</h2>\n<hr>\n<ol>\n<li>computed:{変数名:funciton(){}}\n入力値のや変数の処理で求められるのはこっち</li>\n</ol>\n",
   "dir": "post/json",
-  "base": "2019-9-21-vue2.json",
+  "base": "2019-9-21_vue2.json",
   "ext": ".json",
-  "sourceBase": "2019-9-21-vue2.md",
+  "sourceBase": "2019-9-21_vue2.md",
   "sourceExt": ".md"
 }

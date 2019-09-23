@@ -1,7 +1,7 @@
 const { sourceFileArray } = require('./post/summary.json');
 
 function sourceFileNameToUrl(filePath){
-  return filePath.replace('post/markdown','/post').replace('.md', '');
+  return filePath.replace('post/markdown/','/post/').replace('_', '/').replace('.md', '');
 }
 
 const generateDynamicRoutes = callback => {

@@ -22,13 +22,13 @@ import {sourceFileArray} from "~/post/summary.json";
 export default {
     name:'Artcle',
     validate({ params }) {
-        return sourceFileArray.includes(`post/markdown/${params.date}-${params.subpath}.md`);
+        return sourceFileArray.includes(`post/markdown/${params.date}_${params.subpath}.md`);
     },
     asyncData({ params }) {
-      return Object.assign({}, require(`~/post/json/${params.date}-${params.subpath}.json`), { params });
+      return Object.assign({}, require(`~/post/json/${params.date}_${params.subpath}.json`), { params });
     },
     head() {
-        const url = `${this.url}/post/${this.params.date}-${this.params.subpath}/`;
+        const url = `${this.url}/post/${this.params.date}/${this.params.subpath}`;
     }
 }
 </script>
