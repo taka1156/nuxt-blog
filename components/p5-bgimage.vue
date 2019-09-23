@@ -40,6 +40,7 @@ export default {
   methods: {
         preload(sketch) {
             let rnd = Math.floor(Math.random() * 5);
+            console.log(rnd);
             this.RotateImage = sketch.loadImage(require("static/" + this.logolist[rnd]));
         },
 
