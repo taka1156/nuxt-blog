@@ -1,7 +1,8 @@
 <template>
   <div class="app">
     <NaviBar />
-    <nuxt />
+    <nuxt class="bg-color"/>
+    <p5bg />
   </div>
 </template>
 

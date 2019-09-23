@@ -1,7 +1,7 @@
 <template>
  <div class="ArticleList">
     <HeadArea />
-    <div class="container">
+    <div class="container bg-color">
       <h2>
         記事一覧
       </h2>
@@ -50,7 +50,6 @@ export default {
 <style scoped>
 .card{
     width: 22.8rem;
-    color: rgba(0, 0, 0, 0.5)
 }
 
 .container{
