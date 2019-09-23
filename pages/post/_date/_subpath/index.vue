@@ -1,5 +1,6 @@
 <template>
     <div class="Article">
+        <NaviBar />
         <div class="container bg-color mt-6">
             <!--記事のheader-->
             <div class="header border bg-info">

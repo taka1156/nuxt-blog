@@ -1,5 +1,6 @@
 <template>
     <div class="SortPage">
+        <NaviBar />
         <div class="container mt-6">
             <ul class="list-group">
                 <div v-for="(items, index) in SortData" :key="index">
