@@ -1,6 +1,6 @@
 <template>
  <div class="ArticleList">
-    <HeadArea />
+    <Header />
     <div class="container bg-opacity">
       <h2>
         記事一覧
