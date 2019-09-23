@@ -27,7 +27,7 @@
       "updated_at": "--/--/--",
       "summary": "活動したことをまとめてみました",
       "draft": false,
-      "subpath": "activity",
+      "subpath": "activity1",
       "categories": [
         "活動紹介"
       ],
@@ -36,26 +36,6 @@
       "base": "2019-9-22-activity1.json",
       "ext": ".json",
       "sourceBase": "2019-9-22-activity1.md",
-      "sourceExt": ".md"
-    },
-    "post/json/2019-9-22-markdown1.json": {
-      "id": 3,
-      "title": "よく使うmarkdownコード",
-      "created_at": "2019-9-22",
-      "updated_at": "--/--/--",
-      "summary": "markdown関連のコードをまとめました",
-      "draft": false,
-      "subpath": "markdown",
-      "categories": [
-        "markdown",
-        "プログラミング",
-        "備忘録"
-      ],
-      "img": "",
-      "dir": "post/json",
-      "base": "2019-9-22-markdown1.json",
-      "ext": ".json",
-      "sourceBase": "2019-9-22-markdown1.md",
       "sourceExt": ".md"
     },
     "post/json/2019-9-20-vue1.json": {
@@ -76,6 +56,26 @@
       "base": "2019-9-20-vue1.json",
       "ext": ".json",
       "sourceBase": "2019-9-20-vue1.md",
+      "sourceExt": ".md"
+    },
+    "post/json/2019-9-22-markdown1.json": {
+      "id": 3,
+      "title": "よく使うmarkdownコード",
+      "created_at": "2019-9-22",
+      "updated_at": "--/--/--",
+      "summary": "markdown関連のコードをまとめました",
+      "draft": false,
+      "subpath": "markdown1",
+      "categories": [
+        "markdown",
+        "プログラミング",
+        "備忘録"
+      ],
+      "img": "",
+      "dir": "post/json",
+      "base": "2019-9-22-markdown1.json",
+      "ext": ".json",
+      "sourceBase": "2019-9-22-markdown1.md",
       "sourceExt": ".md"
     }
   },
