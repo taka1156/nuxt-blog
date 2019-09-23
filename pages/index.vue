@@ -10,7 +10,7 @@
         <div v-for="(Article, index) in ArticleList" :key="index">
           <article v-if="!Article.draft">
             <div class="bg-color card card-body m-1 shadow-lg" @click="jump(Article.created_at, Article.subpath)">
-              <h3>
+              <h3 class="h4">
                 {{Article.title}}
               </h3>
               <img src="https://placehold.jp/130x80.png" width="100%" height="100%" class="mx-auto">
