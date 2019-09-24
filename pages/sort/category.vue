@@ -8,7 +8,7 @@
             <div class="border" />
             <ul class="list-group">
                 <div v-for="(tag, index) in tagList" :key="index">
-                    <div class="m-2 bg-color list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
+                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h3">{{tag}}</h2>
                             <img :src="require(`static/${imgList[index]}`)" height="12%" width="12%">

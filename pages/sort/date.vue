@@ -8,7 +8,7 @@
             <div class="border" />
             <ul class="list-group">
                 <div v-for="(date, index) in dateList" :key="index">
-                    <div class="m-2 bg-color list-group-item list-group-item-action flex-column align-items-start" @click="jump(date)">
+                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(date)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h3">{{date}}</h2>
                         </div>

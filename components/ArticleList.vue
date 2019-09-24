@@ -3,7 +3,7 @@
         <div class="list-group">
             <div v-for="(Article, index) in Articledata" :key="index">
                 <article v-if="!Article.draft">
-                    <div class="m-2 bg-color text-left list-group-item list-group-item-action flex-column align-items-start" @click="jump(Article.created_at, Article.subpath)">
+                    <div class="m-2 bg-color mx-auto text-left list-group-item list-group-item-action flex-column align-items-start" @click="jump(Article.created_at, Article.subpath)">
                          <small>
                                 <i class="material-icons ">event_note</i>
                                 作成日:{{Article.created_at}}~更新日:{{Article.updated_at}}
