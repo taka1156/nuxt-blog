@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <nuxt class="bg-color"/>
+    <nuxt />
     <p5bg />
   </div>
 </template>

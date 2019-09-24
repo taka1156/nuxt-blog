@@ -1,13 +1,19 @@
 <template>
-    <div class="SortPage">
+    <div class="Category">
         <NaviBar />
-        <div class="container mt-6">
+        <div class="container bg-color mt-6">
+            <h2>
+                カテゴリー
+            </h2>
+            <div class="border" />
             <ul class="list-group">
-                <div v-for="(items, index) in SortData" :key="index">
-                    <li class="list-group-item flex-column">
-                        <h2 class="h3">{{items.title}}</h2>
-                        <small class="text-muted">{{items.date}}</small>
-                    </li>
+                <div v-for="(tag, index) in tagList" :key="index">
+                    <div class="m-2 list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h2 class="h3">{{tag}}</h2>
+                            <img :src="require(`static/${imgList[index]}`)" height="10%" width="10%">
+                        </div>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -15,33 +21,22 @@
 </template>
 
 <script>
-import {fileMap} from "~/post/summary.json";
+import keydata from "~/post/KeyAndPath.json";
 
 export default {
-    name: 'SortPage',
+    name: 'Category',
     data(){
         return {
-            SortData: [],
-            
+            tagList: keydata.tag,
+            imgList: keydata.imgpath
         }
     },
-    validate({ query }) {
-        return query.sortindex === "tag" || query.sortindex === "date";
-    },
-    computed(){
-        Articlelist:{
-            if( context.query.sortindex === "tag" ){
-                fileMap.filter(function( value ) {
-
-                })
-            }
-            if( context.query.sortindex === "data" ){
-                fileMap.filter(function( item ) {
-                    SortData.push(item.created_at);
-                })
-            }
+    methods:{
+        jump(tag){
+            console.log(tag);
+            console.log()
+            this.$router.push(`result/${tag}`);
         }
     }
-
 }
 </script>

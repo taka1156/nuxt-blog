@@ -1,25 +1,5 @@
 {
   "fileMap": {
-    "post/json/2019-9-21_vue2.json": {
-      "id": 2,
-      "title": "Vue.jsについて2",
-      "created_at": "2019-9-21",
-      "updated_at": "--/--/--",
-      "summary": "vueのライフサイクルフックについてまとめました",
-      "draft": false,
-      "subpath": "vue2",
-      "categories": [
-        "vue",
-        "プログラミング",
-        "備忘録"
-      ],
-      "img": "",
-      "dir": "post/json",
-      "base": "2019-9-21_vue2.json",
-      "ext": ".json",
-      "sourceBase": "2019-9-21_vue2.md",
-      "sourceExt": ".md"
-    },
     "post/json/2019-9-20_vue1.json": {
       "id": 1,
       "title": "Vue.jsについて1",
@@ -29,15 +9,37 @@
       "draft": false,
       "subpath": "vue1",
       "categories": [
-        "vue",
+        "vue"
+      ],
+      "tag": [
         "プログラミング",
         "備忘録"
       ],
-      "img": "",
       "dir": "post/json",
       "base": "2019-9-20_vue1.json",
       "ext": ".json",
       "sourceBase": "2019-9-20_vue1.md",
+      "sourceExt": ".md"
+    },
+    "post/json/2019-9-21_vue2.json": {
+      "id": 2,
+      "title": "Vue.jsについて2",
+      "created_at": "2019-9-21",
+      "updated_at": "--/--/--",
+      "summary": "vueのライフサイクルフックについてまとめました",
+      "draft": false,
+      "subpath": "vue2",
+      "categories": [
+        "vue"
+      ],
+      "tag": [
+        "プログラミング",
+        "備忘録"
+      ],
+      "dir": "post/json",
+      "base": "2019-9-21_vue2.json",
+      "ext": ".json",
+      "sourceBase": "2019-9-21_vue2.md",
       "sourceExt": ".md"
     },
     "post/json/2019-9-22_activity1.json": {
@@ -49,9 +51,11 @@
       "draft": false,
       "subpath": "activity1",
       "categories": [
+        "none"
+      ],
+      "tag": [
         "活動紹介"
       ],
-      "img": "",
       "dir": "post/json",
       "base": "2019-9-22_activity1.json",
       "ext": ".json",
@@ -67,11 +71,12 @@
       "draft": false,
       "subpath": "markdown1",
       "categories": [
-        "markdown",
+        "markdown"
+      ],
+      "tag": [
         "プログラミング",
         "備忘録"
       ],
-      "img": "",
       "dir": "post/json",
       "base": "2019-9-22_markdown1.json",
       "ext": ".json",
