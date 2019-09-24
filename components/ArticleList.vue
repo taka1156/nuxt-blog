@@ -4,12 +4,13 @@
             <div v-for="(Article, index) in Articledata" :key="index">
                 <article v-if="!Article.draft">
                     <div class="m-2 bg-color text-left list-group-item list-group-item-action flex-column align-items-start" @click="jump(Article.created_at, Article.subpath)">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h3 class="h4 mb-1">{{Article.title}}</h3>
-                            <small>
+                         <small>
                                 <i class="material-icons ">event_note</i>
                                 作成日:{{Article.created_at}}~更新日:{{Article.updated_at}}
-                            </small>
+                        </small>
+                        <div class="border" />
+                        <div class="d-flex justify-content-between">
+                            <h3 class="h4 mb-1">{{Article.title}}</h3>
                         </div>
                         <p class="mb-1">
                             {{Article.summary}}

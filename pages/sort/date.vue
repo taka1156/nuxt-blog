@@ -1,14 +1,14 @@
 <template>
     <div class="DateSort">
         <NaviBar />
-        <div class="container bg-color mt-6">
+        <div class="container-fluid bg-color mt-6">
             <h2>
                 日付順
             </h2>
             <div class="border" />
             <ul class="list-group">
                 <div v-for="(date, index) in dateList" :key="index">
-                    <div class="m-2 list-group-item list-group-item-action flex-column align-items-start" @click="jump(date)">
+                    <div class="m-2 bg-color list-group-item list-group-item-action flex-column align-items-start" @click="jump(date)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h3">{{date}}</h2>
                         </div>
