@@ -1,29 +1,13 @@
 <template>
- <div class="ArticleList">
+ <div class="top">
+   <Header />
    <NaviBar />
-    <Header />
-    <div class="container bg-opacity">
+    <div class="container-fluid bg-color mt-4">
       <h2>
         記事一覧
       </h2>
-      <div class="row d-flex justify-content-around">
-        <div v-for="(Article, index) in ArticleList" :key="index">
-          <article v-if="!Article.draft">
-            <div class="bg-color card card-body m-1 shadow-lg" @click="jump(Article.created_at, Article.subpath)">
-              <h3 class="h4">
-                {{Article.title}}
-              </h3>
-              <img src="https://placehold.jp/130x80.png" width="100%" height="100%" class="mx-auto">
-              <p class="card-text mx-auto mb-0 border w-100 h-25">
-                {{Article.summary}}
-              </p>
-              <p class="card-text mx-auto mb-0 border w-75">
-                作成日:{{Article.created_at}}~更新日:{{Article.updated_at}}
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
+      <div class="border" />
+      <ArticleList v-bind:Articledata="ArticleList" />
     </div>
   </div>
 </template>
@@ -32,29 +16,12 @@
 import {fileMap} from "~/post/summary.json";
 
 export default {
-  name: 'ArticleList',
-  computed:{
-    ArticleList() {
-      let Articledata = fileMap;
-      Array.prototype.reverse.call(Articledata);
-      return Articledata;
-    }
-  },
-  methods:{
-    jump(date, subpath){
-      this.$router.push(`post/${date}/${subpath}`);
+  name: 'top',
+  data() {
+    return {
+      ArticleList: fileMap
     }
   }
 }
 </script>
 
-<style scoped>
-.card{
-    width: 22.8rem;
-    height: 23rem;
-}
-
-.container{
-  width: 67%
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="Article">
         <NaviBar />
-        <div class="container bg-color mt-6">
+        <div class="container-fluid bg-color mt-6">
             <!--記事のheader-->
             <div class="header border bg-info">
                 <h1 class="text-muted" v-html="title" />
@@ -32,9 +32,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.container{
-    width: 100%;
-}
-</style>

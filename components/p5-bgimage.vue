@@ -23,8 +23,8 @@ export default {
   },
   data(){
      return {
-        RotateImage: null,
-        logolist: ['vue.svg', 'javascript.svg', 'php.svg', 'python.svg', 'markdown.svg'],
+        rotateImage: null,
+        logoList: ['vue.svg', 'javascript.svg', 'php.svg', 'python.svg', 'markdown.svg'],
         startTime: Date.now(),
         currentTime: Date.now(),
     }
@@ -33,7 +33,7 @@ export default {
     msSinceStart() {
       return this.currentTime - this.startTime;
     },
-    LogoRotationAngle() {
+    logoRotationAngle() {
       return (this.msSinceStart * 0.0001 % Math.PI * 2)*4;
     }
   },
@@ -41,7 +41,7 @@ export default {
         preload(sketch) {
             let rnd = Math.floor(Math.random() * 5);
             console.log(rnd);
-            this.RotateImage = sketch.loadImage(require("static/" + this.logolist[rnd]));
+            this.rotateImage = sketch.loadImage(require("static/" + this.logoList[rnd]));
         },
 
         setup(sketch) {
@@ -51,10 +51,10 @@ export default {
         draw(sketch) {
             this.currentTime = Date.now();
             sketch.background(255, 255, 255);
-            sketch.texture(this.RotateImage);
-            sketch.rotateX(this.LogoRotationAngle);
-            sketch.rotateY(this.LogoRotationAngle);
-            sketch.rotateZ(this.LogoRotationAngle);
+            sketch.texture(this.rotateImage);
+            sketch.rotateX(this.logoRotationAngle);
+            sketch.rotateY(this.logoRotationAngle);
+            sketch.rotateZ(this.logoRotationAngle);
             sketch.beginShape();
             sketch.plane(350,350);
             sketch.endShape(sketch.CLOSE);

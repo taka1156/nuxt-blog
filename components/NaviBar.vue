@@ -17,7 +17,7 @@
                         </nuxt-link>
                     </li>
                     <li class="nav-item">
-                    <nuxt-link to="/sort?sortindex=tag" class="navi-items mx-2" exact>
+                    <nuxt-link to="/sort/category" class="navi-items mx-2" exact>
                             <div class="d-flex flex-row">
                                 <i class="material-icons">category</i>
                                 カテゴリ
@@ -25,7 +25,7 @@
                     </nuxt-link>
                     </li>
                     <li class="nav-item">
-                        <nuxt-link to="/sort?sortindex=date" class="navi-items mx-2" exact>
+                        <nuxt-link to="/sort/date" class="navi-items mx-2" exact>
                             <div class="d-flex flex-row">
                                 <i class="material-icons">date_range</i>
                                 日付順
