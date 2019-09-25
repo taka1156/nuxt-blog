@@ -2,26 +2,23 @@
     <div class="ArticleList">
         <div class="list-group">
             <div v-for="(Article, index) in Articledata" :key="index">
-                <article v-if="!Article.draft">
-                    <div class="m-2 bg-color mx-auto text-left list-group-item list-group-item-action flex-column align-items-start" @click="jump(Article.created_at, Article.subpath)">
-                         <small>
-                                <i class="material-icons ">event_note</i>
-                                作成日:{{Article.created_at}}~更新日:{{Article.updated_at}}
-                        </small>
-                        <div class="border" />
-                        <div class="d-flex justify-content-between">
-                            <h3 class="h4 mb-1">{{Article.title}}</h3>
-                        </div>
-                        <p class="mb-1">
-                            {{Article.summary}}
-                        </p>
-                        <div class="border" />
-                        <div class="d-flex flex-row">
-                            タグ:&nbsp;
-                            <p v-for="(tagdata, index) in Article.tag" :key="index">
-                                {{tagdata}},&nbsp;
-                            </p>
-                        </div>
+                <article class="m-2 bg-color mx-auto text-left list-group-item list-group-item-action flex-column align-items-start" 
+                @click="jump(Article.fields.subpath)">
+                    <small>
+                        <i class="material-icons ">event_note</i>
+                        作成日:{{dateFormat(Article.fields.createdAt)}}~更新日:{{dateFormat(Article.fields.updatedAt)}}
+                    </small>
+                    <div class="border" />
+                    <div class="d-flex justify-content-between">
+                        <h3 class="h4 mb-1">{{Article.fields.title}}</h3>
+                    </div>
+                    <p>{{Article.fields.summary}}</p>
+                    <div class="border" />
+                    <div class="d-flex flex-row">
+                        タグ:&nbsp;[
+                        <p v-for="(item, index) in Article.fields.tags" :key="index">
+                            {{item.fields.tag}},&nbsp;
+                        </p>]
                     </div>
                 </article>
             </div>
@@ -35,9 +32,14 @@ export default {
         Articledata:null
     },
     methods:{
-        jump(date, subpath){
-            this.$router.push(`post/${date}/${subpath}`);
-        }
+        jump(subpath){
+            console.log(subpath);
+            this.$router.push(`post/${subpath}`);
+        },
+        dateFormat(date){
+            if(date === undefined)return "--/--/--";
+            return (new Date(date)).toLocaleDateString();
+        },
     }
 }
 </script>

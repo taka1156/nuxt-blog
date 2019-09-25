@@ -33,8 +33,6 @@ export default {
     },
     methods:{
         jump(tag){
-            console.log(tag);
-            console.log()
             this.$router.push(`result/${tag}`);
         }
     }
