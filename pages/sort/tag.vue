@@ -1,16 +1,16 @@
 <template>
-    <div class="DateSort">
+    <div class="TagList">
         <NaviBar />
         <div class="container-fluid bg-color mt-6">
             <h2>
-                日付順
+                タグ
             </h2>
             <div class="border" />
             <ul class="list-group">
-                <div v-for="(date, index) in dateList" :key="index">
-                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(date)">
+                <div v-for="(tag, index) in tagList" :key="index">
+                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
                         <div class="d-flex w-100 justify-content-between">
-                            <h2 class="h3">{{date}}</h2>
+                            <h2 class="h4">{{tag}}</h2>
                         </div>
                     </div>
                 </div>
@@ -20,18 +20,18 @@
 </template>
 
 <script>
-import {date} from '~/post/KeyAndPath.json';
+import { tag } from '~/post/KeyAndPath.json';
 
 export default {
-    name:'DateSort',
+    name:'TagList',
     data(){
         return {
-            dateList:date
+            tagList:tag
         }
     },
      methods:{
-        jump(date){
-            this.$router.push(`result/${date}`);
+        jump(tag){
+            this.$router.push(`result/${tag}`);
         }
     }
 }

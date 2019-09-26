@@ -7,10 +7,10 @@
             </h2>
             <div class="border" />
             <ul class="list-group">
-                <div v-for="(tag, index) in tagList" :key="index">
-                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
+                <div v-for="(category, index) in categories" :key="index">
+                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(category)">
                         <div class="d-flex w-100 justify-content-between">
-                            <h2 class="h3">{{tag}}</h2>
+                            <h2 class="h3">{{category}}</h2>
                             <img :src="require(`static/${imgList[index]}`)" height="12%" width="12%">
                         </div>
                     </div>
@@ -27,14 +27,12 @@ export default {
     name: 'Category',
     data(){
         return {
-            tagList: keydata.tag,
+            categories: keydata.category,
             imgList: keydata.imgpath
         }
     },
     methods:{
         jump(tag){
-            console.log(tag);
-            console.log()
             this.$router.push(`result/${tag}`);
         }
     }

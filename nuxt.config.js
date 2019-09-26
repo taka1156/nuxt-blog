@@ -1,20 +1,33 @@
-const { sourceFileArray } = require('./post/summary.json');
+const {getConfigForKeys} = require('./lib/config.js');
 
-function sourceFileNameToUrl(filePath){
-  return filePath.replace('post/markdown/','/post/').replace('_', '/').replace('.md', '');
-}
+const ctfConfig = getConfigForKeys([
+  'CF_BLOG_POST_TYPE_ID',
+  'CF_BLOG_TAG_TYPE_ID',
+  'CF_SPACE_ID',
+  'CF_CDA_ACCESS_TOKEN'
+]);
 
-const generateDynamicRoutes = callback => {
-  const routes = sourceFileArray.map(sourceFileName => {
-    return sourceFileNameToUrl(sourceFileName);
-  });
-  callback(null, routes);
-};
+const {createClient} = require('./plugins/contentful.js');
+const cdaClient = createClient(ctfConfig);
 
 export default {
   mode: 'spa',
   generate: {
-    routes: generateDynamicRoutes
+    routes () {
+      return Promise.all([
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_POST_TYPE_ID,
+      }),
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_TAG_TYPE_ID
+      })
+    ]).then(([blogPost, tag]) => {
+        return [
+          ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
+          ...tag.items.map(tag => `/sort/result/${tag.fields.slug}`)
+        ];
+      });
+    }
   },
   /*
   ** Headers of the page
@@ -50,7 +63,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/components.js'
+    '~plugins/components.js',
+    { src: '~plugins/contentful.js' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -74,6 +88,12 @@ export default {
       'markdown-it-highlightjs',
       'markdown-it-toc'
     ],
+  },
+
+  env: {
+    CF_SPACE_ID: ctfConfig.CF_SPACE_ID,
+    CF_CDA_ACCESS_TOKEN: ctfConfig.CF_CDA_ACCESS_TOKEN,
+    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID
   },
   /*
   ** Build configuration

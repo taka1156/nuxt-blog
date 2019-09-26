@@ -1,39 +1,34 @@
 <template>
- <div class="top">
+ <div class="result">
    <NaviBar />
     <div class="container-fluid bg-color mt-6">
       <h2>
         {{$route.params.key}}
       </h2>
       <div class="border" />
-      <ArticleList v-bind:Articledata="ArticleList" />
+      <ArticleList v-bind:Articledata="posts" />
     </div>
   </div>
 </template>
 
 <script>
-import keydata from "~/post/KeyAndPath.json";
+import { createClient } from '~/plugins/contentful.js';
+import { hashkeylist } from "~/post/KeyAndPath.json";
+
+const client = createClient();
 
 export default {
-    data(){
-        return{
-            dateList: keydata.date,
-            tagList: keydata.tag,
-        }
-    },
-    validate({ params }) {
-      const taglist = ['vue', 'javascript', 'php', 'python', 'markdown', ];
-
-      let checkflag
-      for(let i = 0; i < taglist.length; i++){
-        if(params.key === taglist[i]){
-          checkflag = true;
-          break;
-        }
+  name: 'result',
+  async asyncData ({ env, params }) {
+    return await client.getEntries({
+      'content_type': env.CF_BLOG_POST_TYPE_ID,
+      'fields.tags.sys.id': hashkeylist[params.key],
+       order: '-fields.createdAt',
+    }).then(entries => {
+      return {
+        posts: entries.items
       }
-
-      return checkflag;
-      
-    }
+    }).catch(console.error);
+  }
 }
 </script>
