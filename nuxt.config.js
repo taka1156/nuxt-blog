@@ -2,6 +2,7 @@ const {getConfigForKeys} = require('./lib/config.js');
 
 const ctfConfig = getConfigForKeys([
   'CF_BLOG_POST_TYPE_ID',
+  'CF_BLOG_TAG_TYPE_ID',
   'CF_SPACE_ID',
   'CF_CDA_ACCESS_TOKEN'
 ]);
@@ -13,11 +14,17 @@ export default {
   mode: 'spa',
   generate: {
     routes () {
-      return cdaClient.getEntries({
-        'content_type': ctfConfig.CF_BLOG_POST_TYPE_ID
-      }).then(entries => {
+      return Promise.all([
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_POST_TYPE_ID,
+      }),
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_TAG_TYPE_ID
+      })
+    ]).then(([blogPost, tag]) => {
         return [
-          ...entries.items.map(entry => `/post/${entry.fields.subpath}`)
+          ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
+          ...tag.items.map(tag => `/sort/result/${tag.fields.slug}`)
         ];
       });
     }
