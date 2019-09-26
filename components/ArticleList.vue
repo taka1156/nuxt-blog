@@ -27,14 +27,20 @@
 </template>
 
 <script>
+import { match } from 'minimatch';
 export default {
     props:{
         Articledata:null
     },
     methods:{
         jump(subpath){
-            console.log(subpath);
-            this.$router.push(`post/${subpath}`);
+            let path;
+            if(this.$route.path.match('sort/result/*')){
+                path = `../../post/${subpath}`;
+            }else {
+                path = `post/${subpath}`;
+            }
+            this.$router.push(path);
         },
         dateFormat(date){
             if(date === undefined)return "--/--/--";
