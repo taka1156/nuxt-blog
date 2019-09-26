@@ -25,6 +25,7 @@ export default {
       'fields.subpath': params.subpath,
        order: '-fields.createdAt',
     }).then(entries => {
+      console.log(entries.items)
       return {
         posts: entries.items
       }
