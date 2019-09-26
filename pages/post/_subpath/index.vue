@@ -6,7 +6,7 @@
             <div class="header border bg-info">
                 <h1>{{post.fields.title}}</h1>
                 <p>
-                    作成日{{dateFormat(post.fields.createdAt)}}~更新日:{{dateFormat(post.fields.createdAt)}}
+                    作成日{{dateFormat(post.fields.createdAt)}}~更新日:{{dateFormat(post.fields.updatedAt)}}
                 </p>
                 <div class="mx-auto d-flex justify-content-center">
                     タグ:&nbsp;[
