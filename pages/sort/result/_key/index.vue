@@ -12,27 +12,19 @@
 </template>
 
 <script>
-import {createClient} from '~/plugins/contentful.js';
+import { createClient } from '~/plugins/contentful.js';
+import { hashkeylist } from "~/post/KeyAndPath.json";
 
 const client = createClient();
-
-const HASHKEYLIST = {
-  vue:'60AkZh5rePQ409WQJKouqX',
-  javascript:'YkKnihPrqDaw7If7PuChy',
-  php:'5zFQK3gLVjgTB3t3Otm9S2',
-  python:'54oLiOl8GNiTmDAecAHFxt',
-  markdown:'sKmnt6L7LXT8cCEUXpQbq',
-}
 
 export default {
   name: 'result',
   async asyncData ({ env, params }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.category.sys.id': HASHKEYLIST[params.key],
+      'fields.tags.sys.id': hashkeylist[params.key],
        order: '-fields.createdAt',
     }).then(entries => {
-      console.log(entries.items)
       return {
         posts: entries.items
       }

@@ -1,15 +1,27 @@
 {
-    "tag":[
+    "category":[
         "vue",
         "javascript",
         "php",
         "python",
         "markdown"
     ],
-    "date":[
-        "2019-9-20",
-        "2019-9-21",
-        "2019-9-22"
+    "hashkeylist":{
+        "vue" : "60AkZh5rePQ409WQJKouqX",
+        "javascript" : "YkKnihPrqDaw7If7PuChy",
+        "php" : "5zFQK3gLVjgTB3t3Otm9S2",
+        "python" : "54oLiOl8GNiTmDAecAHFxt",
+        "markdown" : "sKmnt6L7LXT8cCEUXpQbq",
+        "備忘録" : "4b7Rcg9cy0S1ylvCalYpSc",
+        "活動" : "ijTRhE1yurrRHqv521DIa",
+        "フレームワーク・サービス" : "247AKMPvXXFJELXYFAzvB8",
+        "other" : "4CLBg7O24hh3ZmgK67yUnq"
+    },
+    "tag":[
+        "備忘録",
+        "活動",
+        "フレームワーク・サービス",
+        "other"
     ],
     "imgpath":[
         "vue.svg",
