@@ -1,10 +1,9 @@
 <template>
- <div class="top">
-   <Header />
+ <div class="result">
    <NaviBar />
-    <div class="container-fluid bg-color mt-4">
+    <div class="container-fluid bg-color mt-6">
       <h2>
-        記事一覧
+        {{$route.params.key}}
       </h2>
       <div class="border" />
       <ArticleList v-bind:Articledata="posts" />
@@ -13,19 +12,19 @@
 </template>
 
 <script>
-import {createClient} from '~/plugins/contentful.js';
+import { createClient } from '~/plugins/contentful.js';
+import { hashkeylist } from "~/post/KeyAndPath.json";
 
 const client = createClient();
 
 export default {
-  name: 'top',
+  name: 'result',
   async asyncData ({ env, params }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.subpath': params.subpath,
+      'fields.tags.sys.id': hashkeylist[params.key],
        order: '-fields.createdAt',
     }).then(entries => {
-      console.log(entries.items)
       return {
         posts: entries.items
       }
@@ -33,4 +32,3 @@ export default {
   }
 }
 </script>
-

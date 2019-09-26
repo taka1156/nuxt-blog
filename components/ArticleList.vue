@@ -1,41 +1,51 @@
 <template>
-  <div class="ArticleList">
-    <div class="container border">
-      <h2>
-        記事一覧
-      </h2>
-      <div class="row d-flex justify-content-around">
-        <div v-for="n in 6" :key="n">
-          <div class="card card-body m-2 shadow-lg">
-            <h3>
-              title
-            </h3>
-            <img src="https://placehold.jp/130x80.png" width="100%" height="100%" class="mx-auto">
-            <p class="card-text mx-auto mb-0 border">
-              記事の内容。あああああああああああああああああああああああああああああああああああああああ
-            </p>
-            <p class="card-text mx-auto mb-0 border">
-              作成日:2019/9/20~更新日:2019/9/20
-            </p>
-          </div>
+    <div class="ArticleList">
+        <div class="list-group">
+            <div v-for="(Article, index) in Articledata" :key="index">
+                <article class="m-2 bg-color mx-auto text-left list-group-item list-group-item-action flex-column align-items-start" 
+                @click="jump(Article.fields.subpath)">
+                    <small>
+                        <i class="material-icons ">event_note</i>
+                        作成日:{{dateFormat(Article.fields.createdAt)}}~更新日:{{dateFormat(Article.fields.updatedAt)}}
+                    </small>
+                    <div class="border" />
+                    <div class="d-flex justify-content-between">
+                        <h3 class="h4 mb-1">{{Article.fields.title}}</h3>
+                    </div>
+                    <p>{{Article.fields.summary}}</p>
+                    <div class="border" />
+                    <div class="d-flex flex-row">
+                        タグ:&nbsp;[
+                        <p v-for="(item, index) in Article.fields.tags" :key="index">
+                            {{item.fields.tag}},&nbsp;
+                        </p>]
+                    </div>
+                </article>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
+import { match } from 'minimatch';
 export default {
-  name: 'ArticleList'
+    props:{
+        Articledata:null
+    },
+    methods:{
+        jump(subpath){
+            let path;
+            if(this.$route.path.match('sort/result/*')){
+                path = `../../post/${subpath}`;
+            }else {
+                path = `post/${subpath}`;
+            }
+            this.$router.push(path);
+        },
+        dateFormat(date){
+            if(date === undefined)return "--/--/--";
+            return (new Date(date)).toLocaleDateString();
+        },
+    }
 }
 </script>
-
-<style scoped>
-.card{
-    width: 30rem;
-    height: 20rem;
-}
-.container{
-  width: 86%
-}
-</style>

@@ -89,3 +89,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# 環境変数(contentful)
+.env

@@ -1,6 +1,34 @@
+const {getConfigForKeys} = require('./lib/config.js');
+
+const ctfConfig = getConfigForKeys([
+  'CF_BLOG_POST_TYPE_ID',
+  'CF_BLOG_TAG_TYPE_ID',
+  'CF_SPACE_ID',
+  'CF_CDA_ACCESS_TOKEN'
+]);
+
+const {createClient} = require('./plugins/contentful.js');
+const cdaClient = createClient(ctfConfig);
 
 export default {
   mode: 'spa',
+  generate: {
+    routes () {
+      return Promise.all([
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_POST_TYPE_ID,
+      }),
+      cdaClient.getEntries({
+        'content_type': ctfConfig.CF_BLOG_TAG_TYPE_ID
+      })
+    ]).then(([blogPost, tag]) => {
+        return [
+          ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
+          ...tag.items.map(tag => `/sort/result/${tag.fields.slug}`)
+        ];
+      });
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -18,7 +46,7 @@ export default {
     script: [
       { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity: 'sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin: 'anonymous' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity: 'sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin: 'anonymous' },
-      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity: 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin: 'anonymous' }
+      { src:'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity:'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin:'anonymous'}
     ]
   },
   /*
@@ -29,12 +57,14 @@ export default {
   ** Global CSS
   */
   css: [
+    { src: '~/node_modules/highlight.js/styles/tomorrow-night.css', lang: 'css' }
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/components.js'
+    '~plugins/components.js',
+    { src: '~plugins/contentful.js' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,7 +75,26 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/markdownit'
   ],
+
+  markdownit: {
+    preset: 'default',
+    injected: true, 
+    breaks: true,
+    html: true,
+    linkify:true,
+    use: [
+      'markdown-it-highlightjs',
+      'markdown-it-toc'
+    ],
+  },
+
+  env: {
+    CF_SPACE_ID: ctfConfig.CF_SPACE_ID,
+    CF_CDA_ACCESS_TOKEN: ctfConfig.CF_CDA_ACCESS_TOKEN,
+    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID
+  },
   /*
   ** Build configuration
   */

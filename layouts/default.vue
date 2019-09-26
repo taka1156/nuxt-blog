@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <nuxt />
+    <p5bg />
   </div>
 </template>
 
