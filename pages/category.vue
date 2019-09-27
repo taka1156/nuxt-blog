@@ -33,7 +33,7 @@ export default {
     },
     methods:{
         jump(category){
-            this.$router.push(`result?key=${category}`);
+            this.$router.push(`result/${category}`);
         }
     }
 }

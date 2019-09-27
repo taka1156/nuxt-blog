@@ -3,7 +3,7 @@
    <NaviBar />
     <div class="container-fluid bg-color mt-6">
       <h2>
-        {{$route.query.key}}
+        {{$route.params.key}}
       </h2>
       <div class="border" />
       <ArticleList v-bind:Articledata="posts" />
@@ -19,10 +19,10 @@ const client = createClient();
 
 export default {
   name: 'result',
-  async asyncData ({ env, query }) {
+  async asyncData ({ env, params }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.tags.sys.id': hashkeylist[query.key],
+      'fields.tags.sys.id': hashkeylist[params.key],
        order: '-fields.createdAt',
     }).then(entries => {
       return {
