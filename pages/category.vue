@@ -32,8 +32,8 @@ export default {
         }
     },
     methods:{
-        jump(tag){
-            this.$router.push(`result/${tag}`);
+        jump(category){
+            this.$router.push(`result?key=${category}`);
         }
     }
 }

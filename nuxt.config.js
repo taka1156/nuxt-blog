@@ -24,7 +24,7 @@ export default {
     ]).then(([blogPost, tag]) => {
         return [
           ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
-          ...tag.items.map(tag => `/sort/result/${tag.fields.slug}`)
+          ...tag.items.map(tag => `/result?key=${tag.fields.slug}`)
         ];
       });
     }
