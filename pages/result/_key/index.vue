@@ -22,7 +22,7 @@ export default {
   async asyncData ({ env, params }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.tags.sys.slug': hashkeylist[params.key],
+      'fields.tags.sys.id': hashkeylist[params.key],
        order: '-fields.createdAt',
     }).then(entries => {
       return {
