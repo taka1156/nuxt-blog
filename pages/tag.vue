@@ -7,7 +7,7 @@
             </h2>
             <div class="border" />
             <ul class="list-group">
-                <div v-for="(tag, index) in tagList" :key="index">
+                <div v-for="(tag, index) in tags" :key="index">
                     <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h4">{{tag}}</h2>
@@ -20,18 +20,18 @@
 </template>
 
 <script>
-import { tag } from '~/post/KeyAndPath.json';
+import { tags, tagslug } from '~/KeyAndPath.json';
 
 export default {
     name:'TagList',
     data(){
         return {
-            tagList:tag
+            tags:tags
         }
     },
      methods:{
         jump(tag){
-            this.$router.push(`result/${tag}`);
+            this.$router.push(`result/${tagslug[tag]}`);
         }
     }
 }
