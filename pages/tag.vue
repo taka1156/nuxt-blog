@@ -31,7 +31,7 @@ export default {
     },
      methods:{
         jump(tag){
-            this.$router.push(`result/${tagslug[tag]}`);
+            this.$router.push(`../result/${tagslug[tag]}`);
         }
     }
 }
