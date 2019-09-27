@@ -35,7 +35,7 @@ export default {
     methods:{
         jump(subpath){
             let path;
-            if(this.$route.path.match('sort/result/*')){
+            if(this.$route.path.match('(result/*)')){
                 path = `../../post/${subpath}`;
             }else {
                 path = `post/${subpath}`;

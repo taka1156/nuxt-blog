@@ -21,19 +21,19 @@
 </template>
 
 <script>
-import keydata from "~/post/KeyAndPath.json";
+import keydata from "~/KeyAndPath.json";
 
 export default {
     name: 'Category',
     data(){
         return {
             categories: keydata.category,
-            imgList: keydata.imgpath
+            imgList: [ "vue.svg", "javascript.svg", "php.svg", "python.svg", "markdown.svg" ]
         }
     },
     methods:{
-        jump(tag){
-            this.$router.push(`result/${tag}`);
+        jump(category){
+            this.$router.push(`../result/${category}`);
         }
     }
 }

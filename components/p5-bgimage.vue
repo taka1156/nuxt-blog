@@ -10,10 +10,7 @@
   </div>
 </template>
 
-
-
 <script>
-
 import VueP5 from "vue-p5";
 
 export default {

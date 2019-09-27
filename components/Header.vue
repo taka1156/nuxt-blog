@@ -23,4 +23,3 @@ export default {
   name: 'HeadArea',
 }
 </script>
-q
