@@ -13,16 +13,16 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js';
-import { hashkeylist } from "~/KeyList.json";
+import id from '~/plugins/key.js';
 
 const client = createClient();
 
 export default {
   name: 'result',
-  async asyncData ({ env, params }) {
+  async asyncData ({ env }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.tags.sys.id': hashkeylist[params.key],
+      'fields.tags.sys.id': id.TagID,
        order: '-fields.createdAt',
     }).then(entries => {
       return {

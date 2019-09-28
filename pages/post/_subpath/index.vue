@@ -34,7 +34,6 @@ export default {
             'fields.subpath':params.subpath,
             order: '-sys.createdAt',
         }).then(entries => {
-            console.log(entries.items[0])
             return {
                 post: entries.items[0],
             };
