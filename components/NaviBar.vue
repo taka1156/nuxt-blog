@@ -17,7 +17,7 @@
                         </nuxt-link>
                     </li>
                     <li class="nav-item">
-                    <nuxt-link to="/sort/category" class="navi-items mx-2" exact>
+                    <nuxt-link to="/category" class="navi-items mx-2" exact>
                             <div class="d-flex flex-row">
                                 <i class="material-icons">category</i>
                                 カテゴリ
@@ -25,7 +25,7 @@
                     </nuxt-link>
                     </li>
                     <li class="nav-item">
-                        <nuxt-link to="/sort/tag" class="navi-items mx-2" exact>
+                        <nuxt-link to="/tag" class="navi-items mx-2" exact>
                             <div class="d-flex flex-row">
                                 <i class="material-icons">turned_in_not</i>
                                 タグ
