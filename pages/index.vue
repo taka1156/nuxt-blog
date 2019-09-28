@@ -19,10 +19,9 @@ const client = createClient();
 
 export default {
   name: 'top',
-  async asyncData ({ env, params }) {
+  async asyncData ({ env }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.subpath': params.subpath,
        order: '-fields.createdAt',
     }).then(entries => {
       return {
