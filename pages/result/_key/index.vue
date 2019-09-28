@@ -13,7 +13,7 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js';
-import { hashkeylist } from "~/KeyAndPath.json";
+import { hashkeylist } from "~/KeyList.json";
 
 const client = createClient();
 
