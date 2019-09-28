@@ -90,10 +90,12 @@ export default {
     ],
   },
 
+  //環境変数の登録
   env: {
     CF_SPACE_ID: ctfConfig.CF_SPACE_ID,
     CF_CDA_ACCESS_TOKEN: ctfConfig.CF_CDA_ACCESS_TOKEN,
-    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID
+    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID,
+    CF_BLOG_TAG_TYPE_ID:  ctfConfig.CF_BLOG_TAG_TYPE_ID
   },
   /*
   ** Build configuration
