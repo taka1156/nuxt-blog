@@ -21,7 +21,6 @@
 
 <script>
 import {createClient} from '~/plugins/contentful.js';
-import id from '~/plugins/key.js';
 
 const client = createClient();
 
@@ -40,9 +39,8 @@ export default {
     },
      methods:{
         jump(tag){
-            id.TagID = tag.sys.id;
-            this.$router.push(`../result/${tag.fields.slug}`);
+            this.$router.push(`../result/${tag.fields.tag}`);
         }
     }
 }
-</script>>
+</script>
