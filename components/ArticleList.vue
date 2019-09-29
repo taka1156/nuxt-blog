@@ -16,8 +16,8 @@
                     <div class="border" />
                     <div class="d-flex flex-row">
                         タグ:&nbsp;[
-                        <p v-for="(item, index) in Article.fields.tags" :key="index">
-                            {{item.fields.tag}},&nbsp;
+                        <p v-for="(tag, index) in Article.fields.tags" :key="index">
+                            {{tag}},&nbsp;
                         </p>]
                     </div>
                 </article>

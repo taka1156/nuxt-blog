@@ -13,22 +13,21 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js';
-import id from '~/plugins/key.js';
 
 const client = createClient();
 
 export default {
   name: 'result',
-  async asyncData ({ env }) {
+  async asyncData ({ env, params }) {
     return await client.getEntries({
       'content_type': env.CF_BLOG_POST_TYPE_ID,
-      'fields.tags.sys.id': id.TagID,
+      'fields.tags[match]': params.key,
        order: '-fields.createdAt',
     }).then(entries => {
       return {
         posts: entries.items
       }
     }).catch(console.error);
-  }
+  },
 }
 </script>

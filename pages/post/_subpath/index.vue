@@ -10,8 +10,8 @@
                 </p>
                 <div class="mx-auto d-flex justify-content-center">
                     タグ:&nbsp;[
-                    <p v-for="(item, index) in post.fields.tags" :key="index">
-                        {{item.fields.tag}},&nbsp;
+                    <p v-for="(tag, index) in post.fields.tags" :key="index">
+                        {{tag}},&nbsp;
                     </p>]
                 </div>
             </div>

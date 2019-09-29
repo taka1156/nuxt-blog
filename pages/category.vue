@@ -22,7 +22,6 @@
 
 <script>
 import {createClient} from '~/plugins/contentful.js';
-import id from '~/plugins/key.js';
 
 const client = createClient();
 
@@ -41,8 +40,7 @@ export default {
     },
     methods:{
         jump(category){
-            id.TagID = category.sys.id;
-            this.$router.push(`../result/${category.fields.slug}`);
+            this.$router.push(`../result/${category.fields.tag}`);
         }
     }
 }
