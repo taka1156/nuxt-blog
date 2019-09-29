@@ -11,7 +11,7 @@
                     <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(category)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h3">{{category.fields.tag}}</h2>
-                            <img :src="require(`static/${category.fields.tag}.svg`)" height="12%" width="12%">
+                            <img :src="require(`static/${category.fields.tag}.svg`)" height="50px" width="50px">
                         </div>
                     </div>
                 </div>
