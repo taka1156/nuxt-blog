@@ -1,18 +1,18 @@
 <template>
     <div class="Article">
         <NaviBar />
-        <div class="container-fluid bg-color mt-6">
+        <div class="container-fluid mt-6">
             <!--記事のheader-->
-            <div class="header border bg-info">
+            <div class="border bg-info">
                 <h1>{{post.fields.title}}</h1>
                 <p>
                     作成日{{dateFormat(post.fields.createdAt)}}~更新日:{{dateFormat(post.fields.updatedAt)}}
                 </p>
                 <div class="mx-auto d-flex justify-content-center">
-                    タグ:&nbsp;[
-                    <p v-for="(tag, index) in post.fields.tags" :key="index">
-                        {{tag}},&nbsp;
-                    </p>]
+                    タグ:&nbsp;
+                    <div v-for="(tag, index) in post.fields.tags" :key="index">
+                        <p class="badge badge-pill badge-secondary">{{tag}}</p>&nbsp;
+                    </div>
                 </div>
             </div>
 
