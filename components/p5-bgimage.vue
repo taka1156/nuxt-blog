@@ -7,6 +7,7 @@
         class="bgimg"
     >
     </vue-p5>
+    <div class="bg-color" />
   </div>
 </template>
 
@@ -60,10 +61,20 @@ export default {
 </script>
 
 <style scoped>
-    .bgimg{
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
+  .bgimg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+  }
+  
+  .bg-color {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgba(255, 255, 255, 0.935);
+  }
 </style>

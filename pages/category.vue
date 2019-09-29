@@ -1,17 +1,17 @@
 <template>
     <div class="Category">
         <NaviBar />
-        <div class="container-fluid bg-color mt-6">
+        <div class="container-fluid mt-6">
             <h2>
                 カテゴリー
             </h2>
             <div class="border" />
             <ul class="list-group">
                 <div v-for="(category, index) in categories" :key="index">
-                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(category)">
+                    <div class="article-color m-2 mx-auto list-group-item flex-column align-items-start" @click="jump(category)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h3">{{category.fields.tag}}</h2>
-                            <img :src="require(`static/${category.fields.tag}.svg`)" height="12%" width="12%">
+                            <img :src="require(`static/${category.fields.tag}.svg`)" height="50px" width="50px">
                         </div>
                     </div>
                 </div>

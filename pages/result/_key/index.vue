@@ -1,7 +1,7 @@
 <template>
  <div class="result">
    <NaviBar />
-    <div class="container-fluid bg-color mt-6">
+    <div class="container-fluid mt-6">
       <h2>
         {{$route.params.key}}
       </h2>

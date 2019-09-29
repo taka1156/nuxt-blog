@@ -1,14 +1,14 @@
 <template>
     <div class="TagList">
         <NaviBar />
-        <div class="container-fluid bg-color mt-6">
+        <div class="container-fluid mt-6">
             <h2>
                 タグ
             </h2>
             <div class="border" />
             <ul class="list-group">
                 <div v-for="(tag, index) in tags" :key="index">
-                    <div class="m-2 bg-color mx-auto list-group-item list-group-item-action flex-column align-items-start" @click="jump(tag)">
+                    <div class="article-color m-2 mx-auto list-group-item flex-column align-items-start" @click="jump(tag)">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="h4">{{tag.fields.tag}}</h2>
                         </div>
