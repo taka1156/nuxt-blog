@@ -2,7 +2,7 @@
  <div class="top">
    <Header />
    <NaviBar />
-    <div class="container-fluid bg-color mt-4">
+    <div class="container-fluid mt-4">
       <h2>
         記事一覧
       </h2>

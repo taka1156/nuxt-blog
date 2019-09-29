@@ -1,7 +1,7 @@
 <template>
     <div class="Other">
         <NaviBar />
-        <div class="container-fluid bg-color mt-6">
+        <div class="container-fluid mt-6">
             <h2>
                 Other
             </h2>

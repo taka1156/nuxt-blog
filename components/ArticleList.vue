@@ -2,7 +2,7 @@
     <div class="ArticleList">
         <div class="list-group">
             <div v-for="(Article, index) in Articledata" :key="index">
-                <article class="m-2 bg-color mx-auto text-left list-group-item list-group-item-action flex-column align-items-start" 
+                <article class="article-color mt-2 mx-auto text-left list-group-item flex-column align-items-start" 
                 @click="jump(Article.fields.subpath)">
                     <small>
                         <i class="material-icons ">event_note</i>
@@ -14,11 +14,11 @@
                     </div>
                     <p>{{Article.fields.summary}}</p>
                     <div class="border" />
-                    <div class="d-flex flex-row">
-                        タグ:&nbsp;[
-                        <p v-for="(tag, index) in Article.fields.tags" :key="index">
-                            {{tag}},&nbsp;
-                        </p>]
+                    <div class="d-flex justify-content-start">
+                        タグ:&nbsp;
+                        <div v-for="(tag, index) in Article.fields.tags" :key="index">
+                            <p class="badge badge-pill badge-secondary">{{tag}}</p>&nbsp;
+                        </div>
                     </div>
                 </article>
             </div>
