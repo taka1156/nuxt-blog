@@ -4,22 +4,26 @@
       I am studying
       <vue-typer
         :text='["Vue", "JavaScript", "Python", "PHP", "P5.js", "and more?"]'
-        :repeat='Infinity'
-        initial-action='typing'
-        :pre-type-delay='70'
-        :type-delay='70'
-        :pre-erase-delay='2000'
-        :erase-delay='250'
-         erase-style='select-all'
-         caret-animation='blink'
+        :repeat="Infinity"
+        initial-action="typing"
+        :pre-type-delay="70"
+        :type-delay="70"
+        :pre-erase-delay="2000"
+        :erase-delay="250"
+        erase-style="select-all"
+        caret-animation="blink"
       ></vue-typer>
     </h2>
   </div>
 </template>
 
 <script>
+import { VueTyper } from "vue-typer";
 
 export default {
-  name: 'HeadArea',
-}
+  name: "HeadArea",
+  components: {
+    VueTyper
+  }
+};
 </script>
