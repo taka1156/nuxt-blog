@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import { match } from "minimatch";
 export default {
   props: {
     Articledata: null
