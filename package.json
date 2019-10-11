@@ -19,6 +19,7 @@
     "markdown-it-toc": "1.1.0",
     "nuxt": "^2.0.0",
     "processmd": "4.4.2",
+    "vue-infinite-loading": "2.4.4",
     "vue-p5": "0.7.1",
     "vue-typer": "1.2.0"
   },
