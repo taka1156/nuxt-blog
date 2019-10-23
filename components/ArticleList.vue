@@ -1,7 +1,7 @@
 <template>
   <div class="ArticleList">
     <div class="list-group">
-      <div v-for="(Article, index) in Articledata" :key="index">
+      <div v-for="(Article, index) in articledata" :key="index">
         <article
           class="article-color mt-2 mx-auto text-left list-group-item flex-column align-items-start"
           @click="jump(Article.fields.subpath)"
@@ -20,7 +20,7 @@
           <div class="border" />
           <div class="d-flex justify-content-start">
             タグ:&nbsp;
-            <div v-for="(tag, index) in Article.fields.tags" :key="index">
+            <div v-for="(tag, Index) in Article.fields.tags" :key="Index">
               <p class="badge badge-pill badge-secondary">{{ tag }}</p>
               &nbsp;
             </div>
@@ -34,12 +34,12 @@
 <script>
 export default {
   props: {
-    Articledata: null
+    articledata: null
   },
   methods: {
     jump(subpath) {
       let path;
-      if (this.$route.path.match("(result/*)")) {
+      if (this.$route.path.match('(result/*)')) {
         path = `../../post/${subpath}`;
       } else {
         path = `post/${subpath}`;
@@ -47,7 +47,7 @@ export default {
       this.$router.push(path);
     },
     dateFormat(date) {
-      if (date === undefined) return "--/--/--";
+      if (date === undefined) return '--/--/--';
       return new Date(date).toLocaleDateString();
     }
   }

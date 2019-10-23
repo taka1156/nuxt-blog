@@ -1,27 +1,27 @@
 <template>
   <div class="p5-bgimage">
     <vue-p5
+      class="bgimg"
       @preload="preload"
       @setup="setup"
       @draw="draw"
-      class="bgimg"
     ></vue-p5>
     <div class="bg-color" />
   </div>
 </template>
 
 <script>
-import VueP5 from "vue-p5";
+import VueP5 from 'vue-p5';
 
 export default {
-  name: "p5-bgimage",
+  name: 'P5Bgimage',
   components: {
-    "vue-p5": VueP5
+    'vue-p5': VueP5
   },
   data() {
     return {
       rotateImage: null,
-      logoList: ["vue", "javascript", "php", "python", "markdown"],
+      logoList: ['vue', 'javascript', 'php', 'python', 'markdown'],
       startTime: Date.now(),
       currentTime: Date.now()
     };
