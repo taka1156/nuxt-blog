@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended",
+    "prettier/vue"
+  ],
+  "plugins": ["vue"],
+  "parserOptions": {},
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {},
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "endOfLine": "crlf"
+      }
+    ],
+    "camelcase": [2, { "properties": "always" }],
+    //例外設定
+    "vue/require-valid-default-prop": 0,
+    "vue/require-prop-types": 0,
+    "vue/no-v-html":0, //markdownを読み込むため
+    "vue/require-default-prop":0,
+    "no-undef": 0
+  }
+}

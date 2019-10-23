@@ -28,18 +28,18 @@
 </template>
 
 <script>
-import { createClient } from "~/plugins/contentful.js";
+import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
 
 export default {
-  name: "Category",
+  name: 'Category',
   async asyncData({ env }) {
     return await client
       .getEntries({
         content_type: env.CF_BLOG_TAG_TYPE_ID,
-        "fields.categoryflag": true,
-        order: "fields.id"
+        'fields.categoryflag': true,
+        order: 'fields.id'
       })
       .then(entries => {
         return {
