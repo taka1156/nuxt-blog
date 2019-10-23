@@ -2,7 +2,7 @@
   <div class="result">
     <NaviBar />
     <div class="container-fluid mt-6">
-      <h2>{{$route.params.key}}</h2>
+      <h2>{{ $route.params.key }}</h2>
       <div class="border" />
       <ArticleList v-bind:Articledata="posts" />
       <infinite-loading @infinite="infiniteHandler" />
@@ -14,7 +14,6 @@
 import { createClient } from "~/plugins/contentful.js";
 
 const client = createClient();
-
 const POSTS_PER_PAGE = 5;
 
 export default {
@@ -39,9 +38,6 @@ export default {
           if (entries.items.length) {
             this.page++;
             this.posts.push(...entries.items);
-            console.log(
-              "this.posts=" + this.posts + "(" + this.posts.length + ")"
-            );
             $state.loaded();
           } else {
             $state.complete();

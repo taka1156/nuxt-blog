@@ -6,7 +6,7 @@ const defaultConfig = {
 };
 
 module.exports = {
-  createClient (config = defaultConfig) {
+  createClient(config = defaultConfig) {
     return contentful.createClient({
       space: config.CF_SPACE_ID,
       accessToken: config.CF_CDA_ACCESS_TOKEN

@@ -1,6 +1,11 @@
 <template>
   <div class="p5-bgimage">
-    <vue-p5 @preload="preload" @setup="setup" @draw="draw" class="bgimg"></vue-p5>
+    <vue-p5
+      @preload="preload"
+      @setup="setup"
+      @draw="draw"
+      class="bgimg"
+    ></vue-p5>
     <div class="bg-color" />
   </div>
 </template>
@@ -16,13 +21,7 @@ export default {
   data() {
     return {
       rotateImage: null,
-      logoList: [
-        "vue.svg",
-        "javascript.svg",
-        "php.svg",
-        "python.svg",
-        "markdown.svg"
-      ],
+      logoList: ["vue", "javascript", "php", "python", "markdown"],
       startTime: Date.now(),
       currentTime: Date.now()
     };
@@ -32,17 +31,16 @@ export default {
       return this.currentTime - this.startTime;
     },
     logoRotationAngle() {
-      return ((this.msSinceStart * 0.0001) % Math.PI) * 2 * 4;
+      return ((this.msSinceStart * 0.0001) % Math.PI) * 8;
     }
   },
   methods: {
     preload(sketch) {
       let rnd = Math.floor(Math.random() * 5);
       this.rotateImage = sketch.loadImage(
-        require("static/" + this.logoList[rnd])
+        require(`@/assets/${this.logoList[rnd]}.svg`)
       );
     },
-
     setup(sketch) {
       sketch.createCanvas(
         sketch.windowWidth,
@@ -50,7 +48,6 @@ export default {
         sketch.WEBGL
       );
     },
-
     draw(sketch) {
       this.currentTime = Date.now();
       sketch.background(255, 255, 255);
