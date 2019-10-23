@@ -8,18 +8,21 @@
         >
           <small>
             <i class="material-icons">event_note</i>
-            作成日:{{dateFormat(Article.fields.createdAt)}}~更新日:{{dateFormat(Article.fields.updatedAt)}}
+            作成日:{{ dateFormat(Article.fields.createdAt) }} ~ 更新日:{{
+              dateFormat(Article.fields.updatedAt)
+            }}
           </small>
           <div class="border" />
           <div class="d-flex justify-content-between">
-            <h3 class="h4 mb-1">{{Article.fields.title}}</h3>
+            <h3 class="h4 mb-1">{{ Article.fields.title }}</h3>
           </div>
-          <p>{{Article.fields.summary}}</p>
+          <p>{{ Article.fields.summary }}</p>
           <div class="border" />
           <div class="d-flex justify-content-start">
             タグ:&nbsp;
             <div v-for="(tag, index) in Article.fields.tags" :key="index">
-              <p class="badge badge-pill badge-secondary">{{tag}}</p>&nbsp;
+              <p class="badge badge-pill badge-secondary">{{ tag }}</p>
+              &nbsp;
             </div>
           </div>
         </article>

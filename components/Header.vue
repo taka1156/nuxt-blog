@@ -3,7 +3,7 @@
     <h2 class="mt-6">
       I am studying
       <vue-typer
-        :text='["Vue", "JavaScript", "Python", "PHP", "P5.js", "and more?"]'
+        :text="['Vue', 'JavaScript', 'Python', 'PHP', 'P5.js', 'and more?']"
         :repeat="Infinity"
         initial-action="typing"
         :pre-type-delay="70"

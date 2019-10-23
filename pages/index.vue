@@ -15,7 +15,6 @@
 import { createClient } from "~/plugins/contentful.js";
 
 const client = createClient();
-
 const POSTS_PER_PAGE = 5;
 
 export default {
@@ -39,9 +38,6 @@ export default {
           if (entries.items.length) {
             this.page++;
             this.posts.push(...entries.items);
-            console.log(
-              "this.posts=" + this.posts + "(" + this.posts.length + ")"
-            );
             $state.loaded();
           } else {
             $state.complete();
