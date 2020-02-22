@@ -16,13 +16,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <nuxt-link to="/" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">edit</i>
-                TOP
+                トップ
               </div>
             </nuxt-link>
           </li>
@@ -46,21 +46,11 @@
             <nuxt-link to="/other" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">person</i>
-                Other
+                その他
               </div>
             </nuxt-link>
           </li>
         </ul>
-        <form class="form-inline">
-          <input
-            class="form-control mr-sm-2"
-            type="text"
-            placeholder="Search"
-          />
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   </div>
