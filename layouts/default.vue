@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import p5bg from "@/components/p5-bgimage";
+import p5bg from '@/components/p5-bgimage';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     p5bg
   }
