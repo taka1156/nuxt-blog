@@ -1,7 +1,7 @@
 <template>
   <div class="Article">
     <NaviBar />
-    <div class="mx-auto w-75 mt-6">
+    <div class="mx-auto container-fluid mt-6">
       <!--記事のheader-->
       <div class="bg-light w-100 border">
         <p class="d-flex flex-row w-100">
@@ -9,7 +9,7 @@
             dateFormat(article.updatedAt)
           }}
         </p>
-        <h1 class="d-flex flex-row w-100">{{ article.title }}</h1>
+        <h1 class="w-100 text-break text-left h2">{{ article.title }}</h1>
         <div class="d-flex flex-row w-100">
           カテゴリー:
           <p class="badge badge-pill badge-success mx-2">
