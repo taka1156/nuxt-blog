@@ -27,9 +27,17 @@
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/tag" class="navi-items mx-2" exact>
+            <nuxt-link to="/category" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">category</i>
+                カテゴリー
+              </div>
+            </nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="/tag" class="navi-items mx-2" exact>
+              <div class="d-flex flex-row">
+                <i class="material-icons">tag</i>
                 タグ
               </div>
             </nuxt-link>

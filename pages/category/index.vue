@@ -1,11 +1,24 @@
 <template>
-  <div class="top">
-    <Header />
+  <div class="TagList">
     <NaviBar />
-    <div class="container-fluid mt-4">
-      <h2>記事一覧</h2>
+    <div class="container-fluid mt-6">
+      <h2>
+        カテゴリー
+      </h2>
       <div class="border" />
-      <ArticleList :articles="posts" />
+      <ul class="list-group">
+        <div v-for="(category, index) in categories" :key="index">
+          <div
+            class="article-color m-2 mx-auto list-group-item flex-column align-items-start"
+            @click="jump(category)"
+          >
+            <div class="clickable d-flex w-100 justify-content-between">
+              <h2 class="h4">{{ category.name }}</h2>
+              <img :src="category.img.url" height="50px" width="50px" />
+            </div>
+          </div>
+        </div>
+      </ul>
       <infinite-loading @infinite="infiniteHandler" />
     </div>
   </div>
@@ -15,11 +28,11 @@
 const POSTS_PER_PAGE = 10;
 
 export default {
-  name: 'Top',
+  name: 'TagList',
   data() {
     return {
       page: 0,
-      posts: [],
+      categories: [],
       isLoad: true
     };
   },
@@ -31,28 +44,30 @@ export default {
   methods: {
     async infiniteHandler($state) {
       if (this.isLoad) {
-        // クエリ
         const OPTIONS = {
-          fields: 'id,title,summary,tags,category,createdAt,updatedAt',
+          fields: 'id,name,img',
           limit: POSTS_PER_PAGE,
           offset: this.pageIndex
         };
         // コンテンツの取得
         const contents = await this.$getContents(
           process.env.MICRO_CMS_KEY,
-          process.env.ARTICLE_URL,
+          process.env.CATEGORY_URL,
           OPTIONS
         );
         // ページング
         if (contents.length > 0) {
           this.page++;
-          this.posts.push(...contents);
+          this.categories.push(...contents);
           $state.loaded();
         } else {
           $state.complete();
           this.isLoad = false;
         }
       }
+    },
+    jump(category) {
+      this.$router.push(`../category/${category.name}?id=${category.id}`);
     }
   }
 };

@@ -35,7 +35,7 @@ export default {
         const FILTER_TAG = `tags[contains]${this.$route.query.id}`;
         // クエリ
         const OPTIONS = {
-          fields: 'id,title,summary,tags,createdAt,updatedAt',
+          fields: 'id,title,summary,tags,category,createdAt,updatedAt',
           filters: FILTER_TAG,
           limit: POSTS_PER_PAGE,
           offset: this.pageIndex

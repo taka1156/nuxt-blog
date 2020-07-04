@@ -1,9 +1,8 @@
 <template>
-  <div class="top">
-    <Header />
+  <div class="result">
     <NaviBar />
-    <div class="container-fluid mt-4">
-      <h2>記事一覧</h2>
+    <div class="container-fluid mt-6">
+      <h2>{{ $route.params.key }}</h2>
       <div class="border" />
       <ArticleList :articles="posts" />
       <infinite-loading @infinite="infiniteHandler" />
@@ -12,10 +11,11 @@
 </template>
 
 <script>
+// FIX:後でresult->tagに変更(pagesのresult/_keyも修正)
 const POSTS_PER_PAGE = 10;
 
 export default {
-  name: 'Top',
+  name: 'Result',
   data() {
     return {
       page: 0,
@@ -31,9 +31,12 @@ export default {
   methods: {
     async infiniteHandler($state) {
       if (this.isLoad) {
+        // 指定のタグIDを含む記事を探す
+        const FILTER_CATEGORY = `category[equals]${this.$route.query.id}`;
         // クエリ
         const OPTIONS = {
-          fields: 'id,title,summary,tags,category,createdAt,updatedAt',
+          fields: 'id,title,summary,tags,categry,createdAt,updatedAt',
+          filters: FILTER_CATEGORY,
           limit: POSTS_PER_PAGE,
           offset: this.pageIndex
         };

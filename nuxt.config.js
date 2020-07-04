@@ -1,6 +1,6 @@
 import axios from 'axios';
 require('dotenv').config();
-const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL } = process.env;
+const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 
 export default {
   telemetry: false,
@@ -18,6 +18,17 @@ export default {
             return { route: `/tag/${tag.name}` };
           });
         });
+      // カテゴリーのルーティング
+      const Categories = axios
+        .get(CATEGORY_URL, {
+          params: { fields: 'name' },
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(category => {
+            return { route: `/tag/${category.name}` };
+          });
+        });
       // 記事のルーティング
       const artciles = axios
         .get(ARTICLE_URL, {
@@ -30,8 +41,8 @@ export default {
           });
         });
       // 全てをまとめる
-      return Promise.all([tags, artciles]).then(values => {
-        return [...values[0], values[1]];
+      return Promise.all([tags, artciles, Categories]).then(values => {
+        return [...values[0], ...values[1], ...values[2]];
       });
     }
   },
@@ -121,7 +132,8 @@ export default {
   env: {
     MICRO_CMS_KEY,
     ARTICLE_URL,
-    TAG_URL
+    TAG_URL,
+    CATEGORY_URL
   },
   /*
    ** Build configuration
