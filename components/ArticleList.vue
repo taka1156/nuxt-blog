@@ -3,12 +3,12 @@
     <div class="list-group">
       <div v-for="(article, article_index) in articles" :key="article_index">
         <article
-          class="clickable article-color mt-2 mx-auto text-left list-group-item flex-column"
+          class="clickable article-color m-2 mx-auto text-left list-group-item flex-column"
           @click="jump(article.id)"
         >
           <div class="d-flex justify-content-between">
             カテゴリー:
-            <p class="badge badge-pill badge-primary">
+            <p class="badge badge-pill badge-success">
               {{ article.category.name }}
               <img :src="article.category.img.url" height="20px" width="20px" />
             </p>
@@ -25,10 +25,10 @@
           </div>
           <p>{{ article.summary }}</p>
           <div class="border" />
-          <div class="d-flex justify-content-start">
+          <div class="d-flex justify-content-start m-1">
             タグ:&nbsp;
             <div v-for="(tag, tag_index) in article.tags" :key="tag_index">
-              <p class="badge badge-pill badge-light m-2 border">
+              <p class="badge badge-pill border border-success mx-2">
                 {{ tag.name }}
                 <img :src="tag.img.url" height="15px" width="15px" />
               </p>

@@ -1,7 +1,7 @@
 <template>
   <div class="NaviBar">
     <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow-lg"
+      class="navbar fixed-top navbar-expand-lg navbar-dark bg-success shadow-lg"
     >
       <a class="navbar-brand" href="#">Taka'sBlog</a>
       <button

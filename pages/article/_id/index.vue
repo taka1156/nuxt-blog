@@ -1,20 +1,29 @@
 <template>
   <div class="Article">
     <NaviBar />
-    <div class="container-fluid mt-6">
+    <div class="mx-auto w-75 mt-6">
       <!--記事のheader-->
-      <div class="border bg-info">
-        <h1>{{ article.title }}</h1>
-        <p>
+      <div class="bg-light w-100 border">
+        <p class="d-flex flex-row w-100">
           作成日:{{ dateFormat(article.createdAt) }} ~ 更新日:{{
             dateFormat(article.updatedAt)
           }}
         </p>
-        <div class="mx-auto d-flex justify-content-center">
-          タグ:&nbsp;
+        <h1 class="d-flex flex-row w-100">{{ article.title }}</h1>
+        <div class="d-flex flex-row w-100">
+          カテゴリー:
+          <p class="badge badge-pill badge-success mx-2">
+            {{ article.category.name }}
+            <img :src="article.category.img.url" height="20px" width="20px" />
+          </p>
+        </div>
+        <div class="d-flex flex-row w-100">
+          タグ:
           <div v-for="(tag, index) in article.tags" :key="index">
-            <p class="badge badge-pill badge-secondary">{{ tag.name }}</p>
-            &nbsp;
+            <p class="badge badge-pill border border-success mx-2">
+              {{ tag.name }}
+              <img :src="tag.img.url" height="15px" width="15px" />
+            </p>
           </div>
         </div>
       </div>
@@ -31,7 +40,7 @@ export default {
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
     const OPTIONS = {
-      fields: 'title,body,tags,createdAt,updatedAt'
+      fields: 'title,body,tags,category,createdAt,updatedAt'
     };
     const article = await $axios.$get(ARTICLE_URL, {
       params: { ...OPTIONS },
