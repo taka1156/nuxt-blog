@@ -1,31 +1,41 @@
-const { getConfigForKeys } = require('./lib/config.js');
-
-const ctfConfig = getConfigForKeys([
-  'CF_BLOG_POST_TYPE_ID',
-  'CF_BLOG_TAG_TYPE_ID',
-  'CF_SPACE_ID',
-  'CF_CDA_ACCESS_TOKEN'
-]);
-
-const { createClient } = require('./plugins/contentful.js');
-const cdaClient = createClient(ctfConfig);
+require('dotenv').config();
+const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL } = process.env;
 
 export default {
+  telemetry: false,
   mode: 'spa',
   generate: {
-    routes() {
-      return Promise.all([
-        cdaClient.getEntries({
-          content_type: ctfConfig.CF_BLOG_POST_TYPE_ID
-        }),
-        cdaClient.getEntries({
-          content_type: ctfConfig.CF_BLOG_TAG_TYPE_ID
+    async routes() {
+      const OPTION_TAG = {
+        fields: 'name'
+      };
+      const OPTION_ARTICLE = {
+        fields: 'id'
+      };
+      // タグのルーティング
+      const tags = await this.$axios
+        .$get(TAG_URL + OPTION_TAG, {
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
-      ]).then(([blogPost, tag]) => {
-        return [
-          ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
-          ...tag.items.map(tag => `/result/${tag.fields.tag}`)
-        ];
+        .then(({ contents }) => {
+          return contents.map(tag => {
+            // FIX:後でresult->tagに変更(pagesのresult/_keyも修正)
+            return `/result/${tag.name}`;
+          });
+        });
+      // 記事のルーティング
+      const artciles = await this.$axios
+        .$get(ARTICLE_URL + OPTION_ARTICLE, {
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
+        })
+        .then(({ contents }) => {
+          return contents.map(article => {
+            return `/post/${article.id}`;
+          });
+        });
+      // 全てをまとめる
+      return Promise.all([tags, artciles]).then(values => {
+        return [...values[0], values[1]];
       });
     }
   },
@@ -90,7 +100,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/components.js', '~plugins/contentful.js'],
+  plugins: ['~plugins/components.js', '~plugins/MicrocmsTools.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -98,7 +108,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/axios', '@nuxtjs/dotenv'],
 
   markdownit: {
     preset: 'default',
@@ -109,12 +119,13 @@ export default {
     use: ['markdown-it-highlightjs', 'markdown-it-toc']
   },
 
+  axios: {},
+
   //環境変数の登録
   env: {
-    CF_SPACE_ID: ctfConfig.CF_SPACE_ID,
-    CF_CDA_ACCESS_TOKEN: ctfConfig.CF_CDA_ACCESS_TOKEN,
-    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID,
-    CF_BLOG_TAG_TYPE_ID: ctfConfig.CF_BLOG_TAG_TYPE_ID
+    MICRO_CMS_KEY,
+    ARTICLE_URL,
+    TAG_URL
   },
   /*
    ** Build configuration

@@ -1,4 +1,4 @@
-const contentful = require('contentful');
+/* const contentful = require('contentful');
 
 const defaultConfig = {
   CF_SPACE_ID: process.env.CF_SPACE_ID,
@@ -13,3 +13,4 @@ module.exports = {
     });
   }
 };
+*/

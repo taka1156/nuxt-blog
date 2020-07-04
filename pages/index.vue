@@ -5,45 +5,54 @@
     <div class="container-fluid mt-4">
       <h2>記事一覧</h2>
       <div class="border" />
-      <ArticleList :articledata="posts" />
+      <ArticleList :articles="posts" />
       <infinite-loading @infinite="infiniteHandler" />
     </div>
   </div>
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js';
-
-const client = createClient();
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 10;
 
 export default {
   name: 'Top',
   data() {
     return {
-      page: 1,
-      posts: []
+      page: 0,
+      posts: [],
+      isLoad: true
     };
   },
+  computed: {
+    pageIndex() {
+      return this.page * POSTS_PER_PAGE;
+    }
+  },
   methods: {
-    infiniteHandler($state) {
-      return client
-        .getEntries({
-          content_type: process.env.CF_BLOG_POST_TYPE_ID,
-          skip: (this.page - 1) * POSTS_PER_PAGE,
+    async infiniteHandler($state) {
+      if (this.isLoad) {
+        // クエリ
+        const OPTIONS = {
+          fields: 'id,title,summary,tags,createdAt,updatedAt',
           limit: POSTS_PER_PAGE,
-          order: '-fields.createdAt'
-        })
-        .then(entries => {
-          if (entries.items.length) {
-            this.page++;
-            this.posts.push(...entries.items);
-            $state.loaded();
-          } else {
-            $state.complete();
-          }
-        })
-        .catch(console.error);
+          offset: this.pageIndex
+        };
+        // コンテンツの取得
+        const contents = await this.$getContents(
+          process.env.MICRO_CMS_KEY,
+          process.env.ARTICLE_URL,
+          OPTIONS
+        );
+        // ページング
+        if (contents.length > 0) {
+          this.page++;
+          this.posts.push(...contents);
+          $state.loaded();
+        } else {
+          $state.complete();
+          this.isLoad = false;
+        }
+      }
     }
   }
 };

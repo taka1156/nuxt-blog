@@ -1,6 +1,7 @@
 <template>
   <div class="Category">
-    <NaviBar />
+    <!--廃止予定-->
+    <!--<NaviBar />
     <div class="container-fluid mt-6">
       <h2>
         カテゴリー
@@ -23,11 +24,12 @@
           </div>
         </div>
       </ul>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
+/*
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
@@ -54,4 +56,5 @@ export default {
     }
   }
 };
+*/
 </script>

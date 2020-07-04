@@ -4,49 +4,46 @@
     <div class="container-fluid mt-6">
       <!--記事のheader-->
       <div class="border bg-info">
-        <h1>{{ post.fields.title }}</h1>
+        <h1>{{ article.title }}</h1>
         <p>
-          作成日:{{ dateFormat(post.fields.createdAt) }} ~ 更新日:{{
-            dateFormat(post.fields.updatedAt)
+          作成日:{{ dateFormat(article.createdAt) }} ~ 更新日:{{
+            dateFormat(article.updatedAt)
           }}
         </p>
         <div class="mx-auto d-flex justify-content-center">
           タグ:&nbsp;
-          <div v-for="(tag, index) in post.fields.tags" :key="index">
-            <p class="badge badge-pill badge-secondary">{{ tag }}</p>
+          <div v-for="(tag, index) in article.tags" :key="index">
+            <p class="badge badge-pill badge-secondary">{{ tag.name }}</p>
             &nbsp;
           </div>
         </div>
       </div>
       <!--markdown埋め込み-->
-      <div class="text-left text-break" v-html="$md.render(post.fields.body)" />
+      <div class="text-left text-break" v-html="$md.render(article.body)" />
     </div>
   </div>
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js';
-
-const client = createClient();
-
 export default {
   name: 'Artcle',
-  async asyncData({ env, params }) {
-    return await client
-      .getEntries({
-        content_type: env.CF_BLOG_POST_TYPE_ID,
-        'fields.subpath': params.subpath,
-        order: '-sys.createdAt'
-      })
-      .then(entries => {
-        return {
-          post: entries.items[0]
-        };
-      })
-      .catch(console.error);
+  async asyncData({ $axios, params }) {
+    // 記事のURL
+    const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.subpath}`;
+    const OPTIONS = {
+      fields: 'title,body,tags,createdAt,updatedAt'
+    };
+    const article = await $axios.$get(ARTICLE_URL, {
+      params: { ...OPTIONS },
+      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+    });
+    console.log(article)
+    return { article: article };
   },
-  head() {
-    const url = `${this.url}/post/${this.post.fields.subpath}`;
+  data() {
+    return {
+      article: {}
+    };
   },
   methods: {
     dateFormat(date) {
