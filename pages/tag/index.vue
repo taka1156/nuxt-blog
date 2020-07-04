@@ -67,8 +67,7 @@ export default {
       }
     },
     jump(tag) {
-      // FIX:後でresult->tagに変更(pagesのresult/_keyも修正)
-      this.$router.push(`../result/${tag.name}?id=${tag.id}`);
+      this.$router.push(`../tag/${tag.name}?id=${tag.id}`);
     }
   }
 };

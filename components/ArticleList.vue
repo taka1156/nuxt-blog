@@ -40,18 +40,9 @@ export default {
       require: true
     }
   },
-  mounted() {
-    console.log(this.articles);
-  },
   methods: {
     jump(id) {
-      let path;
-      if (this.$route.path.match('(result/*)')) {
-        path = `../../post/${id}`;
-      } else {
-        path = `post/${id}`;
-      }
-      this.$router.push(path);
+      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
     },
     dateFormat(date) {
       if (date === undefined) return '--/--/--';

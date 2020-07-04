@@ -19,8 +19,7 @@ export default {
         })
         .then(({ contents }) => {
           return contents.map(tag => {
-            // FIX:後でresult->tagに変更(pagesのresult/_keyも修正)
-            return `/result/${tag.name}`;
+            return `/tag/${tag.name}`;
           });
         });
       // 記事のルーティング
@@ -30,7 +29,7 @@ export default {
         })
         .then(({ contents }) => {
           return contents.map(article => {
-            return `/post/${article.id}`;
+            return `/artcile/${article.id}`;
           });
         });
       // 全てをまとめる

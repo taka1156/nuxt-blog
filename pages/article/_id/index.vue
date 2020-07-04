@@ -29,7 +29,7 @@ export default {
   name: 'Artcle',
   async asyncData({ $axios, params }) {
     // 記事のURL
-    const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.subpath}`;
+    const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
     const OPTIONS = {
       fields: 'title,body,tags,createdAt,updatedAt'
     };
@@ -37,7 +37,6 @@ export default {
       params: { ...OPTIONS },
       headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
     });
-    console.log(article)
     return { article: article };
   },
   data() {
