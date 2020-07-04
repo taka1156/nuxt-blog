@@ -1,5 +1,5 @@
 <template>
-  <div class="result">
+  <div class="Category">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>{{ $route.params.key }}</h2>
@@ -15,7 +15,7 @@
 const POSTS_PER_PAGE = 10;
 
 export default {
-  name: 'Result',
+  name: 'Category',
   data() {
     return {
       page: 0,
@@ -35,7 +35,7 @@ export default {
         const FILTER_CATEGORY = `category[equals]${this.$route.query.id}`;
         // クエリ
         const OPTIONS = {
-          fields: 'id,title,summary,tags,categry,createdAt,updatedAt',
+          fields: 'id,title,summary,tags,category,createdAt,updatedAt',
           filters: FILTER_CATEGORY,
           limit: POSTS_PER_PAGE,
           offset: this.pageIndex

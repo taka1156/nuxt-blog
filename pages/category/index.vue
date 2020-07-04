@@ -1,5 +1,5 @@
 <template>
-  <div class="TagList">
+  <div class="CategoryList">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>
@@ -28,7 +28,7 @@
 const POSTS_PER_PAGE = 10;
 
 export default {
-  name: 'TagList',
+  name: 'CategoryList',
   data() {
     return {
       page: 0,

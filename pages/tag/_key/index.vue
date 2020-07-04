@@ -1,5 +1,5 @@
 <template>
-  <div class="result">
+  <div class="Tag">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>{{ $route.params.key }}</h2>
@@ -15,7 +15,7 @@
 const POSTS_PER_PAGE = 10;
 
 export default {
-  name: 'Result',
+  name: 'Tag',
   data() {
     return {
       page: 0,
