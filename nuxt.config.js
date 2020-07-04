@@ -1,3 +1,4 @@
+import axios from 'axios';
 require('dotenv').config();
 const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL } = process.env;
 
@@ -5,31 +6,27 @@ export default {
   telemetry: false,
   mode: 'spa',
   generate: {
-    async routes() {
-      const OPTION_TAG = {
-        fields: 'name'
-      };
-      const OPTION_ARTICLE = {
-        fields: 'id'
-      };
+    routes() {
       // タグのルーティング
-      const tags = await this.$axios
-        .$get(TAG_URL + OPTION_TAG, {
+      const tags = axios
+        .get(TAG_URL, {
+          params: { fields: 'name' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
-        .then(({ contents }) => {
-          return contents.map(tag => {
-            return `/tag/${tag.name}`;
+        .then(res => {
+          return res.data.contents.map(tag => {
+            return { route: `/tag/${tag.name}` };
           });
         });
       // 記事のルーティング
-      const artciles = await this.$axios
-        .$get(ARTICLE_URL + OPTION_ARTICLE, {
+      const artciles = axios
+        .get(ARTICLE_URL, {
+          params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
-        .then(({ contents }) => {
-          return contents.map(article => {
-            return `/artcile/${article.id}`;
+        .then(res => {
+          return res.data.contents.map(article => {
+            return { route: `/artcile/${article.id}` };
           });
         });
       // 全てをまとめる
