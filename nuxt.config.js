@@ -5,29 +5,29 @@ const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 
 export default {
   telemetry: false,
-  mode: 'spa', // 'universal',
+  mode: 'universal',
   generate: {
     routes() {
       // タグのルーティング
       const tags = axios
         .get(TAG_URL, {
-          params: { fields: 'name' },
+          params: { fields: 'id,name' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(tag => {
-            return { route: `/tag/${tag.name}` };
+            return { route: `/tag/${tag.name}/${tag.id}` };
           });
         });
       // カテゴリーのルーティング
       const Categories = axios
         .get(CATEGORY_URL, {
-          params: { fields: 'name' },
+          params: { fields: 'id,name' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(category => {
-            return { route: `/tag/${category.name}` };
+            return { route: `/category/${category.name}/${category.id}` };
           });
         });
       // 記事のルーティング
@@ -38,7 +38,7 @@ export default {
         })
         .then(res => {
           return res.data.contents.map(article => {
-            return { route: `/artcile/${article.id}` };
+            return { route: `/article/${article.id}` };
           });
         });
       // 全てをまとめる
@@ -63,9 +63,9 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: 'TakaTechBlog' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://https://takablog-renewal.netlify.app' },
-      { hid: 'og:title', property: 'og:title', content: 'サイト名' },
-      { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electronなどについて更新中' },
-      { hid: 'og:image', property: 'og:image', content: '~assets/ogp/logo.png' },
+      { hid: 'og:title', property: 'og:title', content: 'TakaTechBlog' },
+      { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electron、dockerなどについて更新中' },
+      { hid: 'og:image', property: 'og:image', content: 'https://photos.app.goo.gl/mrto5L1hKwnvdaT77' },
       // Twitter Card
       {name: 'twitter:card', content: 'summary_large_image'},
       {name: 'twitter:site', content:'@taka_Program'}

@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div class="Top">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>記事一覧</h2>

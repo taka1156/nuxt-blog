@@ -56,6 +56,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'NaviBar'
+};
+</script>
+
 <style scoped>
 /*リンクのデフォルトデザイン無効化*/
 

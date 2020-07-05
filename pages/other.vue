@@ -43,6 +43,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Oteher'
+};
+</script>
+
 <style scoped>
 .icon {
   width: 60px;

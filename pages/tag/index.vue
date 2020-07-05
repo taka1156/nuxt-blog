@@ -1,5 +1,5 @@
 <template>
-  <div class="TagList">
+  <div class="Taglist">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>
@@ -28,7 +28,7 @@
 import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
-  name: 'TagList',
+  name: 'Taglist',
   mixins: [cms],
   data() {
     return {
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     jump(tag) {
-      this.$router.push(`./tag/${tag.name}?id=${tag.id}`);
+      this.$router.push(`/tag/${tag.name}/${tag.id}`);
     }
   }
 };

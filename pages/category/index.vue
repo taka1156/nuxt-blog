@@ -1,5 +1,5 @@
 <template>
-  <div class="CategoryList">
+  <div class="Categorylist">
     <NaviBar />
     <div class="container-fluid mt-6">
       <h2>
@@ -28,7 +28,7 @@
 import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
-  name: 'CategoryList',
+  name: 'Categorylist',
   mixins: [cms],
   data() {
     return {
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     jump(category) {
-      this.$router.push(`./category/${category.name}?id=${category.id}`);
+      this.$router.push(`./category/${category.name}/${category.id}`);
     }
   }
 };
