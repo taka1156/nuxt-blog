@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import meta from '~/assets/js/mixin/meta.mixin.js';
+// import meta from '~/assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Artcle',
-  mixins: [meta],
+  //mixins: [meta],
   async asyncData({ $axios, params }) {
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
@@ -53,15 +53,15 @@ export default {
   },
   data() {
     return {
-      article: {},
+      article: {}
       // メタタグ
-      meta: {
+      /* meta: {
         title: this.article.title,
         description: this.article.summary,
         type: 'article',
         url: this.$route.fullPath,
-        image: '' || this.article.img
-      }
+        image: this.article.img || ''
+      } */
     };
   },
   methods: {

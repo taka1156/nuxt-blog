@@ -7,7 +7,7 @@
       </h2>
       <div class="border" />
       <ul class="list-group">
-        <div v-for="(tag, index) in tags" :key="index">
+        <div v-for="(tag, index) in posts" :key="index">
           <div
             class="article-color m-2 mx-auto list-group-item flex-column align-items-start"
             @click="jump(tag)"
@@ -25,49 +25,21 @@
 </template>
 
 <script>
-const POSTS_PER_PAGE = 10;
+import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
   name: 'TagList',
+  mixins: [cms],
   data() {
     return {
-      page: 0,
-      tags: [],
-      isLoad: true
+      fields: 'id,name,img',
+      url: process.env.TAG_URL,
+      posts: []
     };
   },
-  computed: {
-    pageIndex() {
-      return this.page * POSTS_PER_PAGE;
-    }
-  },
   methods: {
-    async infiniteHandler($state) {
-      if (this.isLoad) {
-        const OPTIONS = {
-          fields: 'id,name,img',
-          limit: POSTS_PER_PAGE,
-          offset: this.pageIndex
-        };
-        // コンテンツの取得
-        const contents = await this.$getContents(
-          process.env.MICRO_CMS_KEY,
-          process.env.TAG_URL,
-          OPTIONS
-        );
-        // ページング
-        if (contents.length > 0) {
-          this.page++;
-          this.tags.push(...contents);
-          $state.loaded();
-        } else {
-          $state.complete();
-          this.isLoad = false;
-        }
-      }
-    },
     jump(tag) {
-      this.$router.push(`../tag/${tag.name}?id=${tag.id}`);
+      this.$router.push(`./tag/${tag.name}?id=${tag.id}`);
     }
   }
 };

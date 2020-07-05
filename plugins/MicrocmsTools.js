@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 /**
  *
  * @param {String} key - APIキー

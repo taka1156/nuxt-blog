@@ -7,7 +7,7 @@
       </h2>
       <div class="border" />
       <ul class="list-group">
-        <div v-for="(category, index) in categories" :key="index">
+        <div v-for="(category, index) in posts" :key="index">
           <div
             class="article-color m-2 mx-auto list-group-item flex-column align-items-start"
             @click="jump(category)"
@@ -25,49 +25,21 @@
 </template>
 
 <script>
-const POSTS_PER_PAGE = 10;
+import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
   name: 'CategoryList',
+  mixins: [cms],
   data() {
     return {
-      page: 0,
-      categories: [],
-      isLoad: true
+      fields: 'id,name,img',
+      url: process.env.CATEGORY_URL,
+      posts: []
     };
   },
-  computed: {
-    pageIndex() {
-      return this.page * POSTS_PER_PAGE;
-    }
-  },
   methods: {
-    async infiniteHandler($state) {
-      if (this.isLoad) {
-        const OPTIONS = {
-          fields: 'id,name,img',
-          limit: POSTS_PER_PAGE,
-          offset: this.pageIndex
-        };
-        // コンテンツの取得
-        const contents = await this.$getContents(
-          process.env.MICRO_CMS_KEY,
-          process.env.CATEGORY_URL,
-          OPTIONS
-        );
-        // ページング
-        if (contents.length > 0) {
-          this.page++;
-          this.categories.push(...contents);
-          $state.loaded();
-        } else {
-          $state.complete();
-          this.isLoad = false;
-        }
-      }
-    },
     jump(category) {
-      this.$router.push(`../category/${category.name}?id=${category.id}`);
+      this.$router.push(`./category/${category.name}?id=${category.id}`);
     }
   }
 };
