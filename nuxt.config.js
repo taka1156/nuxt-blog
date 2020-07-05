@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import axios from 'axios';
 require('dotenv').config();
 const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
@@ -50,10 +51,24 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'takaのブログ',
+    title: 'TakaTechBlog',
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#'
+    },
+    titleTemplate: '%s - TakaTechBlog',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // OGP
+      { hid: 'og:site_name', property: 'og:site_name', content: 'TakaTechBlog' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://https://takablog-renewal.netlify.app' },
+      { hid: 'og:title', property: 'og:title', content: 'サイト名' },
+      { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electronなどについて更新中' },
+      { hid: 'og:image', property: 'og:image', content: '~assets/ogp/logo.png' },
+      // Twitter Card
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:site', content:'@taka_Program'}
     ],
     link: [
       {

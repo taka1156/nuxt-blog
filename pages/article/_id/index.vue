@@ -34,13 +34,16 @@
 </template>
 
 <script>
+import meta from '~/assets/js/mixin/meta.mixin.js';
+
 export default {
   name: 'Artcle',
+  mixins: [meta],
   async asyncData({ $axios, params }) {
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
     const OPTIONS = {
-      fields: 'title,body,tags,category,createdAt,updatedAt'
+      fields: 'title,summary,body,tags,category,createdAt,updatedAt'
     };
     const article = await $axios.$get(ARTICLE_URL, {
       params: { ...OPTIONS },
@@ -50,7 +53,15 @@ export default {
   },
   data() {
     return {
-      article: {}
+      article: {},
+      // メタタグ
+      meta: {
+        title: this.article.title,
+        description: this.article.summary,
+        type: 'article',
+        url: this.$route.fullPath,
+        image: '' || this.article.img
+      }
     };
   },
   methods: {

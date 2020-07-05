@@ -3,7 +3,7 @@
     <nav
       class="navbar fixed-top navbar-expand-lg navbar-dark bg-success shadow-lg"
     >
-      <a class="navbar-brand" href="#">Taka'sBlog</a>
+      <a class="navbar-brand" href="#">TakaTechBlog</a>
       <button
         class="navbar-toggler"
         type="button"
