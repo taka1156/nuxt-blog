@@ -1,6 +1,6 @@
 <template>
   <div class="Categorylist">
-    <NaviBar />
+    <nav-bar />
     <div class="container-fluid mt-6">
       <h2>
         カテゴリー

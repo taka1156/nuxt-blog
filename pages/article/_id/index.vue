@@ -1,6 +1,6 @@
 <template>
   <div class="Article">
-    <NaviBar />
+    <nav-bar />
     <div class="mx-auto container-fluid mt-6">
       <!--記事のheader-->
       <div class="bg-light w-100 border">

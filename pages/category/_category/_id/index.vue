@@ -1,10 +1,10 @@
 <template>
   <div class="Category">
-    <NaviBar />
+    <nav-bar />
     <div class="container-fluid mt-6">
       <h2>{{ $route.params.category }}</h2>
       <div class="border" />
-      <ArticleList :articles="posts" />
+      <article-list :articles="posts" />
       <infinite-loading @infinite="infiniteHandler" />
     </div>
   </div>

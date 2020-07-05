@@ -43,10 +43,10 @@
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/other" class="navi-items mx-2" exact>
+            <nuxt-link to="/profile" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">person</i>
-                その他
+                プロフィール
               </div>
             </nuxt-link>
           </li>
