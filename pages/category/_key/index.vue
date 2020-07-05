@@ -20,7 +20,7 @@ export default {
     return {
       fields: 'id,title,summary,tags,category,createdAt,updatedAt',
       filter: `category[equals]${this.$route.query.id}`,
-      url: process.env.CATEGORY_URL,
+      url: process.env.ARTICLE_URL,
       posts: []
     };
   }
