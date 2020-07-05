@@ -55,7 +55,7 @@ export default {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s - TakaTechBlog',
+    titleTemplate: '%s - Taka',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -65,9 +65,9 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://https://takablog-renewal.netlify.app' },
       { hid: 'og:title', property: 'og:title', content: 'TakaTechBlog' },
       { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electron、dockerなどについて更新中' },
-      { hid: 'og:image', property: 'og:image', content: 'https://photos.app.goo.gl/mrto5L1hKwnvdaT77' },
+      { hid: 'og:image', property: 'og:image', content: 'http://urx.space/wXyt' },
       // Twitter Card
-      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:card', content: 'summary'},
       {name: 'twitter:site', content:'@taka_Program'}
     ],
     link: [
