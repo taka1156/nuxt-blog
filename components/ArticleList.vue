@@ -3,7 +3,7 @@
     <div class="list-group">
       <div v-for="(article, article_index) in articles" :key="article_index">
         <article
-          class="clickable article-color m-2 mx-auto text-left list-group-item flex-column"
+          class="clickable m-2 mx-auto text-left list-group-item flex-column"
           @click="jump(article.id)"
         >
           <div class="d-flex justify-content-between">

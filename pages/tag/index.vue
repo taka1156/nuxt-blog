@@ -9,7 +9,7 @@
       <ul class="list-group">
         <div v-for="(tag, index) in posts" :key="index">
           <div
-            class="article-color m-2 mx-auto list-group-item flex-column align-items-start"
+            class="m-2 mx-auto list-group-item flex-column align-items-start"
             @click="jump(tag)"
           >
             <div class="clickable d-flex w-100 justify-content-between">
