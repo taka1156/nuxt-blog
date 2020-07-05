@@ -19,8 +19,7 @@
     "markdown-it-toc": "1.1.0",
     "nuxt": "^2.0.0",
     "vue-infinite-loading": "2.4.4",
-    "vue-p5": "0.7.1",
-    "vue-typer": "1.2.0"
+    "vue-p5": "0.7.1"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^5.11.0",

@@ -1,5 +1,5 @@
 <template>
-  <div class="p5-bgimage">
+  <div class="p5Bg">
     <vue-p5
       class="bgimg"
       @preload="preload"
@@ -14,7 +14,7 @@
 import VueP5 from 'vue-p5';
 
 export default {
-  name: 'P5Bgimage',
+  name: 'P5Bg',
   components: {
     'vue-p5': VueP5
   },
