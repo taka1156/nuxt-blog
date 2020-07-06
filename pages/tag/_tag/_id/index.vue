@@ -2,7 +2,7 @@
   <div class="Tag">
     <nav-bar />
     <div class="container-fluid mt-6">
-      <h2>{{ $route.params.tag }}</h2>
+      <h1 class="h4">タグ:{{ $route.params.tag }}</h1>
       <div class="border" />
       <article-list :articles="posts" />
       <infinite-loading @infinite="infiniteHandler" />

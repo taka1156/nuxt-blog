@@ -2,7 +2,7 @@
   <div class="Category">
     <nav-bar />
     <div class="container-fluid mt-6">
-      <h2>{{ $route.params.category }}</h2>
+      <h1 class="h4">カテゴリー:{{ $route.params.category }}</h1>
       <div class="border" />
       <article-list :articles="posts" />
       <infinite-loading @infinite="infiniteHandler" />

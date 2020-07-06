@@ -1,48 +1,33 @@
 <template>
   <div class="ArticleList">
     <div class="list-group">
-      <div v-for="(article, article_index) in articles" :key="article_index">
-        <article
-          class="clickable m-2 mx-auto text-left list-group-item flex-column"
-          @click="jump(article.id)"
-        >
-          <div class="d-flex justify-content-between">
-            カテゴリー:
-            <p class="badge badge-pill badge-success">
-              {{ article.category.name }}
-              <img :src="article.category.img.url" height="20px" width="20px" />
-            </p>
-          </div>
-          <small>
-            <i class="material-icons">event_note</i>
-            作成日:{{ dateFormat(article.createdAt) }} ~ 更新日:{{
-              dateFormat(article.updatedAt)
-            }}
-          </small>
-          <div class="border" />
-          <div class="d-flex justify-content-between">
-            <h3 class="h4 mb-1">{{ article.title }}</h3>
-          </div>
-          <p>{{ article.summary }}</p>
-          <div class="border" />
-          <div class="d-flex justify-content-start m-1">
-            タグ:&nbsp;
-            <div v-for="(tag, tag_index) in article.tags" :key="tag_index">
-              <p class="badge badge-pill border border-success mx-2">
-                {{ tag.name }}
-                <img :src="tag.img.url" height="15px" width="15px" />
-              </p>
-              &nbsp;
-            </div>
-          </div>
-        </article>
+      <div v-if="articles.length !== 0">
+        <div v-for="(article, article_index) in articles" :key="article_index">
+          <article class="my-2 border rounded">
+            <article-header :article="article">
+              <template v-slot:title>
+                <h3
+                  class="clickable text-break text-left my-1 text-success"
+                  @click="jump(article)"
+                >
+                  {{ article.title }}
+                </h3>
+              </template>
+            </article-header>
+          </article>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ArticleHeader from './ArticleParts/ArticleHeader';
+
 export default {
+  components: {
+    'article-header': ArticleHeader
+  },
   props: {
     articles: {
       type: Array,
@@ -51,12 +36,8 @@ export default {
     }
   },
   methods: {
-    jump(id) {
+    jump({ id }) {
       this.$router.push({ name: 'article-id', params: { id: `${id}` } });
-    },
-    dateFormat(date) {
-      if (date === undefined) return '--/--/--';
-      return new Date(date).toLocaleDateString();
     }
   }
 };
