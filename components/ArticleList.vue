@@ -1,27 +1,37 @@
 <template>
   <div class="ArticleList">
     <div class="list-group">
-      <div v-for="(Article, index) in articledata" :key="index">
+      <div v-for="(article, article_index) in articles" :key="article_index">
         <article
-          class="article-color mt-2 mx-auto text-left list-group-item flex-column align-items-start"
-          @click="jump(Article.fields.subpath)"
+          class="clickable m-2 mx-auto text-left list-group-item flex-column"
+          @click="jump(article.id)"
         >
+          <div class="d-flex justify-content-between">
+            カテゴリー:
+            <p class="badge badge-pill badge-success">
+              {{ article.category.name }}
+              <img :src="article.category.img.url" height="20px" width="20px" />
+            </p>
+          </div>
           <small>
             <i class="material-icons">event_note</i>
-            作成日:{{ dateFormat(Article.fields.createdAt) }} ~ 更新日:{{
-              dateFormat(Article.fields.updatedAt)
+            作成日:{{ dateFormat(article.createdAt) }} ~ 更新日:{{
+              dateFormat(article.updatedAt)
             }}
           </small>
           <div class="border" />
           <div class="d-flex justify-content-between">
-            <h3 class="h4 mb-1">{{ Article.fields.title }}</h3>
+            <h3 class="h4 mb-1">{{ article.title }}</h3>
           </div>
-          <p>{{ Article.fields.summary }}</p>
+          <p>{{ article.summary }}</p>
           <div class="border" />
-          <div class="d-flex justify-content-start">
+          <div class="d-flex justify-content-start m-1">
             タグ:&nbsp;
-            <div v-for="(tag, Index) in Article.fields.tags" :key="Index">
-              <p class="badge badge-pill badge-secondary">{{ tag }}</p>
+            <div v-for="(tag, tag_index) in article.tags" :key="tag_index">
+              <p class="badge badge-pill border border-success mx-2">
+                {{ tag.name }}
+                <img :src="tag.img.url" height="15px" width="15px" />
+              </p>
               &nbsp;
             </div>
           </div>
@@ -34,17 +44,15 @@
 <script>
 export default {
   props: {
-    articledata: null
+    articles: {
+      type: Array,
+      default: () => [],
+      require: true
+    }
   },
   methods: {
-    jump(subpath) {
-      let path;
-      if (this.$route.path.match('(result/*)')) {
-        path = `../../post/${subpath}`;
-      } else {
-        path = `post/${subpath}`;
-      }
-      this.$router.push(path);
+    jump(id) {
+      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
     },
     dateFormat(date) {
       if (date === undefined) return '--/--/--';

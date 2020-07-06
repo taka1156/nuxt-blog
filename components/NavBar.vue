@@ -1,9 +1,9 @@
 <template>
   <div class="NaviBar">
     <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow-lg"
+      class="navbar fixed-top navbar-expand-lg navbar-dark bg-success shadow-lg"
     >
-      <a class="navbar-brand" href="#">Taka'sBlog</a>
+      <a class="navbar-brand" href="#">TakaTechBlog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -30,23 +30,23 @@
             <nuxt-link to="/category" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">category</i>
-                カテゴリ
+                カテゴリー
               </div>
             </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link to="/tag" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
-                <i class="material-icons">turned_in_not</i>
+                <i class="material-icons">tag</i>
                 タグ
               </div>
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/other" class="navi-items mx-2" exact>
+            <nuxt-link to="/profile" class="navi-items mx-2" exact>
               <div class="d-flex flex-row">
                 <i class="material-icons">person</i>
-                その他
+                プロフィール
               </div>
             </nuxt-link>
           </li>
@@ -55,6 +55,12 @@
     </nav>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'NaviBar'
+};
+</script>
 
 <style scoped>
 /*リンクのデフォルトデザイン無効化*/
