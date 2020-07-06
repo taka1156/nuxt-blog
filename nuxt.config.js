@@ -1,31 +1,49 @@
-const { getConfigForKeys } = require('./lib/config.js');
-
-const ctfConfig = getConfigForKeys([
-  'CF_BLOG_POST_TYPE_ID',
-  'CF_BLOG_TAG_TYPE_ID',
-  'CF_SPACE_ID',
-  'CF_CDA_ACCESS_TOKEN'
-]);
-
-const { createClient } = require('./plugins/contentful.js');
-const cdaClient = createClient(ctfConfig);
+/* eslint-disable prettier/prettier */
+import axios from 'axios';
+require('dotenv').config();
+const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 
 export default {
-  mode: 'spa',
+  telemetry: false,
+  mode: 'universal',
   generate: {
     routes() {
-      return Promise.all([
-        cdaClient.getEntries({
-          content_type: ctfConfig.CF_BLOG_POST_TYPE_ID
-        }),
-        cdaClient.getEntries({
-          content_type: ctfConfig.CF_BLOG_TAG_TYPE_ID
+      // タグのルーティング
+      const tags = axios
+        .get(TAG_URL, {
+          params: { fields: 'id,name' },
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
-      ]).then(([blogPost, tag]) => {
-        return [
-          ...blogPost.items.map(blogPost => `/post/${blogPost.fields.subpath}`),
-          ...tag.items.map(tag => `/result/${tag.fields.tag}`)
-        ];
+        .then(res => {
+          return res.data.contents.map(tag => {
+            return { route: `/tag/${tag.name}/${tag.id}` };
+          });
+        });
+      // カテゴリーのルーティング
+      const Categories = axios
+        .get(CATEGORY_URL, {
+          params: { fields: 'id,name' },
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(category => {
+            return { route: `/category/${category.name}/${category.id}` };
+          });
+        });
+      // 記事のルーティング
+      const artciles = axios
+        .get(ARTICLE_URL, {
+          params: { fields: 'id' },
+          headers: { 'X-API-KEY': MICRO_CMS_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(article => {
+            return { route: `/article/${article.id}` };
+          });
+        });
+      // 全てをまとめる
+      return Promise.all([tags, artciles, Categories]).then(values => {
+        return [...values[0], ...values[1], ...values[2]];
       });
     }
   },
@@ -33,10 +51,24 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'takaのブログ',
+    title: 'TakaTechBlog',
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#'
+    },
+    titleTemplate: '%s - Taka',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // OGP
+      { hid: 'og:site_name', property: 'og:site_name', content: 'TakaTechBlog' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://https://takablog-renewal.netlify.app' },
+      { hid: 'og:title', property: 'og:title', content: 'TakaTechBlog' },
+      { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electron、dockerなどについて更新中' },
+      { hid: 'og:image', property: 'og:image', content: 'http://urx.space/wXyt' },
+      // Twitter Card
+      {name: 'twitter:card', content: 'summary'},
+      {name: 'twitter:site', content:'@taka_Program'}
     ],
     link: [
       {
@@ -90,7 +122,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/components.js', '~plugins/contentful.js'],
+  plugins: ['~plugins/components.js', '~plugins/MicrocmsTools.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -98,7 +130,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/axios', '@nuxtjs/dotenv'],
 
   markdownit: {
     preset: 'default',
@@ -109,12 +141,14 @@ export default {
     use: ['markdown-it-highlightjs', 'markdown-it-toc']
   },
 
+  axios: {},
+
   //環境変数の登録
   env: {
-    CF_SPACE_ID: ctfConfig.CF_SPACE_ID,
-    CF_CDA_ACCESS_TOKEN: ctfConfig.CF_CDA_ACCESS_TOKEN,
-    CF_BLOG_POST_TYPE_ID: ctfConfig.CF_BLOG_POST_TYPE_ID,
-    CF_BLOG_TAG_TYPE_ID: ctfConfig.CF_BLOG_TAG_TYPE_ID
+    MICRO_CMS_KEY,
+    ARTICLE_URL,
+    TAG_URL,
+    CATEGORY_URL
   },
   /*
    ** Build configuration

@@ -1,23 +1,17 @@
 <template>
-  <div class="app">
+  <div class="App">
     <nuxt />
-    <p5bg />
   </div>
 </template>
 
 <script>
-import p5bg from '@/components/p5-bgimage';
-
 export default {
-  name: 'app',
-  components: {
-    p5bg
-  }
+  name: 'App'
 };
 </script>
 
 <style scoped>
-.app {
+.App {
   text-align: center;
 }
 </style>
