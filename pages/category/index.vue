@@ -2,9 +2,7 @@
   <div class="Categorylist">
     <nav-bar />
     <div class="container-fluid mt-6">
-      <h2>
-        カテゴリー
-      </h2>
+      <h1>カテゴリー</h1>
       <div class="border" />
       <ul class="list-group">
         <div v-for="(category, index) in posts" :key="index">

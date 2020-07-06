@@ -2,9 +2,7 @@
   <div class="Taglist">
     <nav-bar />
     <div class="container-fluid mt-6">
-      <h2>
-        タグ
-      </h2>
+      <h1>タグ</h1>
       <div class="border" />
       <ul class="list-group">
         <div v-for="(tag, index) in posts" :key="index">
