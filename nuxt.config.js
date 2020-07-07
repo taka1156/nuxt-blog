@@ -60,15 +60,31 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // OGP
-      { hid: 'og:site_name', property: 'og:site_name', content: 'TakaTechBlog' },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'TakaTechBlog'
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://https://takablog-renewal.netlify.app' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://https://takablog-renewal.netlify.app'
+      },
       { hid: 'og:title', property: 'og:title', content: 'TakaTechBlog' },
-      { hid: 'og:description', property: 'og:description', content: 'VueやLaravel、electron、dockerなどについて更新中' },
-      { hid: 'og:image', property: 'og:image', content: 'http://urx.space/wXyt' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'VueやLaravel、electron、dockerなどについて更新中'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'http://urx.space/wXyt'
+      },
       // Twitter Card
-      {name: 'twitter:card', content: 'summary'},
-      {name: 'twitter:site', content:'@taka_Program'}
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@taka_Program' }
     ],
     link: [
       {
@@ -122,7 +138,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/components.js', '~plugins/MicrocmsTools.js'],
+  plugins: [
+    '~plugins/components.js',
+    { src: '~plugins/InfiniteLoading.js', ssr: false },
+    '~plugins/MicrocmsTools.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
