@@ -51,15 +51,16 @@ export default {
     this.meta.url = URL;
     this.meta.image = IMAGE;
 
+    // 画像サイズの調節
+    if (this.meta.image !== '') {
+      this.meta.image = `${this.meta.image}?fit=fillmax&fill-color=white&w=200&h=200`;
+    }
+
     return {
       title: this.meta.title,
       meta: [
         // eslint-disable-next-line prettier/prettier
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.meta.description
-        },
+        { hid: 'og:description', property: 'og:description', content: this.meta.description },
         { hid: 'og:title', property: 'og:title', content: this.meta.title },
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
         { hid: 'og:url', property: 'og:url', content: this.meta.url },
