@@ -3,7 +3,7 @@
     <nav-bar />
     <div class="container-fluid mt-6">
       <div class="m-1 d-flex justify-content-center">
-        <h1 class="h4 m-1">カテゴリー:{{ category.name }}</h1>
+        <h1 class="h5 mx-1 my-auto">カテゴリー:{{ category.name }}</h1>
         <img :src="category.img.url" class="m-1 icon" />
       </div>
       <div class="border" />
@@ -43,12 +43,14 @@ export default {
     };
   },
   head() {
+    const URL = `${this.baseURL}/category/${this.category.id}`;
+    const IMAGE = this.category.img.url != null ? this.category.img.url : '';
     // メタタグ
     this.meta.title = `${this.category.name}カテゴリの記事一覧`;
     this.meta.description = `${this.category.name}関連の記事`;
     this.meta.type = 'article';
-    this.meta.url = `${this.baseURL}/category/${this.category.name}/${this.category.id}`;
-    this.meta.image = this.category.img.url || '';
+    this.meta.url = URL;
+    this.meta.image = IMAGE;
 
     return {
       title: this.meta.title,
@@ -71,7 +73,7 @@ export default {
 
 <style scoped>
 .icon {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 </style>

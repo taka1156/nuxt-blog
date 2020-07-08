@@ -3,7 +3,7 @@
     <nav-bar />
     <div class="container-fluid mt-6">
       <div class="m-1 d-flex justify-content-center">
-        <h1 class="h4 m-1">タグ:{{ tag.name }}</h1>
+        <h1 class="h5 mx-1 my-auto">タグ:{{ tag.name }}</h1>
         <img :src="tag.img.url" class="m-1 icon" />
       </div>
       <div class="border" />
@@ -42,12 +42,14 @@ export default {
     };
   },
   head() {
+    const URL = `${this.baseURL}/tag/${this.tag.id}`;
+    const IMAGE = this.tag.img.url != null ? this.tag.img.url : '';
     // メタタグ
     this.meta.title = `${this.tag.name}タグの記事一覧`;
     this.meta.description = `${this.tag.name}関連の記事`;
     this.meta.type = 'article';
-    this.meta.url = `${this.baseURL}/tag/${this.tag.name}/${this.tag.id}`;
-    this.meta.image = this.tag.img.url || '';
+    this.meta.url = URL;
+    this.meta.image = IMAGE;
 
     return {
       title: this.meta.title,
@@ -70,7 +72,7 @@ export default {
 
 <style scoped>
 .icon {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 </style>

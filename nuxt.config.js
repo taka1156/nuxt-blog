@@ -12,23 +12,23 @@ export default {
       // タグのルーティング
       const tags = axios
         .get(TAG_URL, {
-          params: { fields: 'id,name' },
+          params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(tag => {
-            return { route: `/tag/${tag.name}/${tag.id}`, payload: tag };
+            return { route: `/tag/${tag.id}`, payload: tag };
           });
         });
       // カテゴリーのルーティング
       const categories = axios
         .get(CATEGORY_URL, {
-          params: { fields: 'id,name' },
+          params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(category => {
-            return { route: `/category/${category.name}/${category.id}`, payload: category };
+            return { route: `/category/${category.id}`, payload: category };
           });
         });
       // 記事のルーティング
