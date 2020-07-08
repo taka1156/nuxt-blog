@@ -11,10 +11,14 @@
 </template>
 
 <script>
+import AricleList from '@/components/ArticleList';
 import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
   name: 'Category',
+  components: {
+    'article-list': AricleList
+  },
   mixins: [cms],
   data() {
     return {

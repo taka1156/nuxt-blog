@@ -7,6 +7,7 @@ export default {
   telemetry: false,
   mode: 'universal',
   generate: {
+    fallback: true,
     routes() {
       // タグのルーティング
       const tags = axios
@@ -20,7 +21,7 @@ export default {
           });
         });
       // カテゴリーのルーティング
-      const Categories = axios
+      const categories = axios
         .get(CATEGORY_URL, {
           params: { fields: 'id,name' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
@@ -42,7 +43,7 @@ export default {
           });
         });
       // 全てをまとめる
-      return Promise.all([tags, artciles, Categories]).then(values => {
+      return Promise.all([tags, categories, artciles]).then(values => {
         return [...values[0], ...values[1], ...values[2]];
       });
     }
@@ -140,7 +141,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    { src: '~plugins/InfiniteLoading.js', ssr: false },
+    '~plugins/InfiniteLoading.js',
     '~plugins/MicrocmsTools.js'
   ],
   /*
