@@ -4,28 +4,28 @@
     <div class="container-fluid mt-6">
       <h1>タグ</h1>
       <div class="border" />
-      <item-list :path="'tag'" :items="posts" />
-      <infinite-loading @infinite="infiniteHandler" />
+      <item-list :path="'tag'" :items="tags" />
     </div>
   </div>
 </template>
 
 <script>
 import ItemList from '@/components/ItemList';
-import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
   name: 'Taglist',
   components: {
     'item-list': ItemList
   },
-  mixins: [cms],
+  async asyncData({ $axios }) {
+    const { contents } = await $axios.$get(process.env.TAG_URL, {
+      params: { fields: 'id,name,img', limit: 20 },
+      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+    });
+    return { tags: contents };
+  },
   data() {
-    return {
-      fields: 'id,name,img',
-      url: process.env.TAG_URL,
-      posts: []
-    };
+    return { tags: [] };
   }
 };
 </script>

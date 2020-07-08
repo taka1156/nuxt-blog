@@ -51,6 +51,10 @@ export default {
     this.meta.type = 'article';
     this.meta.url = URL;
     this.meta.image = IMAGE;
+    // 画像サイズの調節
+    if (this.meta.image !== '') {
+      this.meta.image = `${this.meta.image}?fit=fillmax&fill-color=white&w=200&h=200`;
+    }
 
     return {
       title: this.meta.title,

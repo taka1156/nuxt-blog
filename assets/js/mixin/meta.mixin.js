@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      baseURL: 'https://takablog-renewal.netlify.app/',
+      baseURL: process.env.BASE_URL,
       meta: {
         title: '',
         description: '',

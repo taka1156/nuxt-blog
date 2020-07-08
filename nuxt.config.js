@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
 require('dotenv').config();
-const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
+const { BASE_URL, MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
+const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 
 export default {
   telemetry: false,
@@ -12,7 +13,7 @@ export default {
       // タグのルーティング
       const tags = axios
         .get(TAG_URL, {
-          params: { fields: 'id' },
+          params: { fields: 'id', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
@@ -23,7 +24,7 @@ export default {
       // カテゴリーのルーティング
       const categories = axios
         .get(CATEGORY_URL, {
-          params: { fields: 'id' },
+          params: { fields: 'id', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
@@ -34,7 +35,6 @@ export default {
       // 記事のルーティング
       const articles = axios
         .get(ARTICLE_URL, {
-          params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
@@ -165,6 +165,7 @@ export default {
 
   //環境変数の登録
   env: {
+    BASE_URL,
     MICRO_CMS_KEY,
     ARTICLE_URL,
     TAG_URL,
