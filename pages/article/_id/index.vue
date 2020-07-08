@@ -20,17 +20,19 @@
 
 <script>
 import ArticleHeader from '@/components/ArticleParts/ArticleHeader';
+import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Artcle',
   components: {
     'article-header': ArticleHeader
   },
+  mixins: [meta],
   async asyncData({ $axios, params }) {
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
     const OPTIONS = {
-      fields: 'title,body,tags,category,createdAt,updatedAt'
+      fields: 'id,title,summary,body,tags,category,createdAt,updatedAt'
     };
     const article = await $axios.$get(ARTICLE_URL, {
       params: { ...OPTIONS },
@@ -40,15 +42,7 @@ export default {
   },
   data() {
     return {
-      article: {},
-      baseURL: 'https://takablog-renewal.netlify.app/',
-      meta: {
-        title: '',
-        description: '',
-        type: '',
-        url: '',
-        image: ''
-      }
+      article: {}
     };
   },
   head() {
@@ -56,8 +50,8 @@ export default {
     this.meta.title = this.article.title;
     this.meta.description = this.article.summary;
     this.meta.type = 'article';
-    this.meta.url = `${this.baseURL}/${this.$route.path}`;
-    this.meta.image = this.article.img || '';
+    this.meta.url = `${this.baseURL}/${this.article.id}`;
+    this.meta.image = this.article.img.url || '';
 
     return {
       title: this.meta.title,

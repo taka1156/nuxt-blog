@@ -17,7 +17,7 @@ export default {
         })
         .then(res => {
           return res.data.contents.map(tag => {
-            return { route: `/tag/${tag.name}/${tag.id}` };
+            return { route: `/tag/${tag.name}/${tag.id}`, payload: tag };
           });
         });
       // カテゴリーのルーティング
@@ -28,22 +28,22 @@ export default {
         })
         .then(res => {
           return res.data.contents.map(category => {
-            return { route: `/category/${category.name}/${category.id}` };
+            return { route: `/category/${category.name}/${category.id}`, payload: category };
           });
         });
       // 記事のルーティング
-      const artciles = axios
+      const articles = axios
         .get(ARTICLE_URL, {
           params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(article => {
-            return { route: `/article/${article.id}` };
+            return { route: `/article/${article.id}`, payload: article };
           });
         });
       // 全てをまとめる
-      return Promise.all([tags, categories, artciles]).then(values => {
+      return Promise.all([tags, categories, articles]).then(values => {
         return [...values[0], ...values[1], ...values[2]];
       });
     }
