@@ -141,7 +141,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    { src: '~plugins/InfiniteLoading.js', ssr: false },
+    '~plugins/InfiniteLoading.js',
     '~plugins/MicrocmsTools.js'
   ],
   /*
