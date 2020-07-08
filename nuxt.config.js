@@ -141,8 +141,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    '~plugins/InfiniteLoading.js',
-    '~plugins/MicrocmsTools.js'
+    '~plugins/InfiniteLoading.js'
   ],
   /*
    ** Nuxt.js dev-modules
