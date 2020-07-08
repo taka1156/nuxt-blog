@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
 require('dotenv').config();
-const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
+const { BASE_URL, MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
+const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 
 export default {
   telemetry: false,
@@ -12,38 +13,37 @@ export default {
       // タグのルーティング
       const tags = axios
         .get(TAG_URL, {
-          params: { fields: 'id,name' },
+          params: { fields: 'id', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(tag => {
-            return { route: `/tag/${tag.name}/${tag.id}` };
+            return { route: `/tag/${tag.id}`, payload: tag };
           });
         });
       // カテゴリーのルーティング
       const categories = axios
         .get(CATEGORY_URL, {
-          params: { fields: 'id,name' },
+          params: { fields: 'id', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(category => {
-            return { route: `/category/${category.name}/${category.id}` };
+            return { route: `/category/${category.id}`, payload: category };
           });
         });
       // 記事のルーティング
-      const artciles = axios
+      const articles = axios
         .get(ARTICLE_URL, {
-          params: { fields: 'id' },
           headers: { 'X-API-KEY': MICRO_CMS_KEY }
         })
         .then(res => {
           return res.data.contents.map(article => {
-            return { route: `/article/${article.id}` };
+            return { route: `/article/${article.id}`, payload: article };
           });
         });
       // 全てをまとめる
-      return Promise.all([tags, categories, artciles]).then(values => {
+      return Promise.all([tags, categories, articles]).then(values => {
         return [...values[0], ...values[1], ...values[2]];
       });
     }
@@ -165,6 +165,7 @@ export default {
 
   //環境変数の登録
   env: {
+    BASE_URL,
     MICRO_CMS_KEY,
     ARTICLE_URL,
     TAG_URL,
