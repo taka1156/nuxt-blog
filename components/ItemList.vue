@@ -32,8 +32,8 @@ export default {
     }
   },
   methods: {
-    jump(category) {
-      this.$router.push(`./${this.path}/${category.name}/${category.id}`);
+    jump(item) {
+      this.$router.push(`./${this.path}/${item.id}`);
     }
   }
 };

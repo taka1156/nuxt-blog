@@ -27,10 +27,10 @@ export default {
     }
   },
   methods: {
-    jump({ name, id }) {
+    jump({ id }) {
       this.$router.push({
-        name: 'tag-tag-id',
-        params: { tag: `${name}`, id: `${id}` }
+        name: 'tag-id',
+        params: { id: `${id}` }
       });
     }
   }
