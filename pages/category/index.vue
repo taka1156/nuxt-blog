@@ -4,29 +4,21 @@
     <div class="container-fluid mt-6">
       <h1>カテゴリー</h1>
       <div class="border" />
-      <ul class="list-group">
-        <div v-for="(category, index) in posts" :key="index">
-          <div
-            class="m-2 mx-auto list-group-item flex-column align-items-start"
-            @click="jump(category)"
-          >
-            <div class="clickable d-flex w-100 justify-content-between">
-              <h2 class="h4">{{ category.name }}</h2>
-              <img :src="category.img.url" height="50px" width="50px" />
-            </div>
-          </div>
-        </div>
-      </ul>
+      <item-list :path="'category'" :items="posts" />
       <infinite-loading @infinite="infiniteHandler" />
     </div>
   </div>
 </template>
 
 <script>
+import ItemList from '@/components/ItemList';
 import cms from 'assets/js/mixin/cms.mixin.js';
 
 export default {
   name: 'Categorylist',
+  components: {
+    'item-list': ItemList
+  },
   mixins: [cms],
   data() {
     return {
@@ -34,11 +26,6 @@ export default {
       url: process.env.CATEGORY_URL,
       posts: []
     };
-  },
-  methods: {
-    jump(category) {
-      this.$router.push(`./category/${category.name}/${category.id}`);
-    }
   }
 };
 </script>
