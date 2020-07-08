@@ -6,6 +6,7 @@ const { MICRO_CMS_KEY, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 export default {
   telemetry: false,
   mode: 'universal',
+  target: 'static',
   generate: {
     fallback: true,
     routes() {
