@@ -131,7 +131,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#28a745' },
   /*
    ** Global CSS
    */
@@ -141,8 +141,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    '~plugins/InfiniteLoading.js',
-    '~plugins/MicrocmsTools.js'
+    '~plugins/InfiniteLoading.js'
   ],
   /*
    ** Nuxt.js dev-modules

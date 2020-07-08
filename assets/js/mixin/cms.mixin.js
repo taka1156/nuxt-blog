@@ -22,11 +22,10 @@ export default {
           offset: this.pageIndex
         };
         // コンテンツの取得
-        const contents = await this.$getContents(
-          process.env.MICRO_CMS_KEY,
-          this.url,
-          OPTIONS
-        );
+        const { contents } = await this.$axios.$get(this.url, {
+          params: { ...OPTIONS },
+          headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+        });
         // ページング
         if (contents.length > 0) {
           this.page++;
