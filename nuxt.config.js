@@ -7,6 +7,7 @@ const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 export default {
   telemetry: false,
   mode: 'universal',
+  target: 'static',
   generate: {
     fallback: true,
     routes() {
