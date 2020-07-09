@@ -4,11 +4,13 @@
     <div class="container-fluid mt-6">
       <div class="m-1 d-flex justify-content-center">
         <h1 class="h5 mx-1 my-auto">カテゴリー:{{ category.name }}</h1>
-        <img :src="category.img.url" class="m-1 icon" />
+        <img :src="format(category.img.url)" class="m-1 icon" />
       </div>
       <div class="border" />
       <article-list :articles="posts" />
-      <infinite-loading @infinite="infiniteHandler" />
+      <client-only>
+        <infinite-loading @infinite="infiniteHandler" />
+      </client-only>
     </div>
   </div>
 </template>
@@ -16,14 +18,14 @@
 <script>
 import AricleList from '@/components/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import cms from 'assets/js/mixin/cms.mixin.js';
+import query from 'assets/js/mixin/query.mixin.js';
 
 export default {
   name: 'Category',
   components: {
     'article-list': AricleList
   },
-  mixins: [meta, cms],
+  mixins: [meta, query],
   async asyncData({ $axios, params }) {
     const CATEGORY_URL = `${process.env.CATEGORY_URL}/${params.id}`;
     const OPTIONS = { fields: 'id,name,img' };
@@ -35,31 +37,64 @@ export default {
   },
   data() {
     return {
-      fields: 'id,title,summary,tags,category,createdAt,updatedAt',
-      filter: `category[equals]${this.$route.params.id}`,
-      url: process.env.ARTICLE_URL,
+      category: {},
       posts: [],
-      category: {}
+      page: 0,
+      isLoaded: false
     };
+  },
+  computed: {
+    pageIndex() {
+      return this.page * this.POSTS_PER_PAGE;
+    }
+  },
+  methods: {
+    async infiniteHandler($state) {
+      if (!this.isLoaded) {
+        // クエリ設定
+        this.query.fields =
+          'id,title,summary,tags,category,createdAt,updatedAt';
+        this.query.filters = `category[equals]${this.$route.params.id}`;
+        this.query.limit = this.POSTS_PER_PAGE;
+        this.query.offset = this.pageIndex;
+
+        // コンテンツの取得
+        const { contents } = await this.$axios.$get(process.env.ARTICLE_URL, {
+          params: { ...this.query },
+          headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+        });
+
+        // ページング
+        if (contents.length > 0) {
+          this.page++;
+          this.posts.push(...contents);
+          $state.loaded();
+        } else {
+          $state.complete();
+          this.isLoaded = true;
+        }
+      }
+    },
+    format(imgUrl) {
+      if (imgUrl == null) {
+        return '';
+      }
+      return `${imgUrl}?fit=fillmax&fill-color=white&w=200&h=200`;
+    }
   },
   head() {
     const URL = `${this.baseURL}/category/${this.category.id}`;
-    const IMAGE = this.category.img.url != null ? this.category.img.url : '';
+    const IMAGE = this.format(this.category.img.url);
     // メタタグ
     this.meta.title = `${this.category.name}カテゴリの記事一覧`;
     this.meta.description = `${this.category.name}関連の記事`;
     this.meta.type = 'article';
     this.meta.url = URL;
     this.meta.image = IMAGE;
-    // 画像サイズの調節
-    if (this.meta.image !== '') {
-      this.meta.image = `${this.meta.image}?fit=fillmax&fill-color=white&w=200&h=200`;
-    }
 
     return {
       title: this.meta.title,
       meta: [
-        // eslint-disable-next-line prettier/prettier
         {
           hid: 'og:description',
           property: 'og:description',
