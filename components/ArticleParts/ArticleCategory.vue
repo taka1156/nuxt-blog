@@ -24,10 +24,10 @@ export default {
     }
   },
   methods: {
-    jump({ name, id }) {
+    jump({ id }) {
       this.$router.push({
-        name: 'category-category-id',
-        params: { category: `${name}`, id: `${id}` }
+        name: 'category-id',
+        params: { id: `${id}` }
       });
     }
   }
