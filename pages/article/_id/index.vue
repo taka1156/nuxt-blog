@@ -13,13 +13,16 @@
         </article-header>
       </div>
       <!--markdown埋め込み-->
-      <div class="text-left text-break" v-html="$md.render(article.body)" />
+      <div class="text-left text-break" v-html="parseMarked" />
     </div>
   </div>
 </template>
 
 <script>
 import ArticleHeader from '@/components/ArticleParts/ArticleHeader';
+import marked from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atelier-savanna-dark.css';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
@@ -44,6 +47,22 @@ export default {
     return {
       article: {}
     };
+  },
+  computed: {
+    parseMarked() {
+      // コード背景
+      const BG = '<style>pre{color:silver;background-color:black;}</style>';
+      return marked(BG + this.article.body, {
+        gfm: true
+      });
+    }
+  },
+  created() {
+    marked.setOptions({
+      highlight(code, lang) {
+        return hljs.highlightAuto(code, [lang]).value;
+      }
+    });
   },
   head() {
     // メタタグ
