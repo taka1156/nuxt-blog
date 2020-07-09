@@ -136,7 +136,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/node_modules/highlight.js/styles/tomorrow-night.css'],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    */
@@ -151,16 +151,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', '@nuxtjs/axios', '@nuxtjs/dotenv'],
-
-  markdownit: {
-    preset: 'default',
-    injected: true,
-    breaks: true,
-    html: true,
-    linkify: true,
-    use: ['markdown-it-highlightjs', 'markdown-it-toc']
-  },
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv'],
 
   axios: {},
 
