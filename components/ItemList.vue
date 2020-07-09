@@ -8,7 +8,7 @@
         >
           <div class="clickable d-flex w-100 justify-content-between">
             <h2 class="h4">{{ item.name }}</h2>
-            <img :src="item.img.url" class="icon" />
+            <img :src="format(item.img.url)" class="icon" />
           </div>
         </div>
       </div>
@@ -32,6 +32,9 @@ export default {
     }
   },
   methods: {
+    format(imgUrl) {
+      return `${imgUrl}?fill-color=white&w=200&h=200`;
+    },
     jump(item) {
       this.$router.push(`./${this.path}/${item.id}`);
     }
