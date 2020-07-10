@@ -7,10 +7,7 @@
         <img :src="format(category.img.url)" class="m-1 icon" />
       </div>
       <div class="border" />
-      <article-list :articles="posts" />
-      <client-only>
-        <infinite-loading @infinite="infiniteHandler" />
-      </client-only>
+      <article-list :filters="filters" />
     </div>
   </div>
 </template>
@@ -18,63 +15,29 @@
 <script>
 import AricleList from '@/components/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import query from 'assets/js/mixin/query.mixin.js';
 
 export default {
   name: 'Category',
   components: {
     'article-list': AricleList
   },
-  mixins: [meta, query],
+  mixins: [meta],
   async asyncData({ $axios, params }) {
     const CATEGORY_URL = `${process.env.CATEGORY_URL}/${params.id}`;
-    const OPTIONS = { fields: 'id,name,img' };
-    const CATEGORY_INFO = await $axios.$get(CATEGORY_URL, {
-      params: { ...OPTIONS },
+    const CATEGORY = await $axios.$get(CATEGORY_URL, {
+      params: { fields: 'id,name,img' },
       headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
     });
-    return { category: CATEGORY_INFO };
+    return { category: CATEGORY };
   },
   data() {
     return {
       category: {},
-      posts: [],
-      page: 0,
-      isLoaded: false
+      // 記事取得クエリ
+      filters: `category[equals]${this.$route.params.id}`
     };
   },
-  computed: {
-    pageIndex() {
-      return this.page * this.POSTS_PER_PAGE;
-    }
-  },
   methods: {
-    async infiniteHandler($state) {
-      if (!this.isLoaded) {
-        // クエリ設定
-        this.query.fields =
-          'id,title,summary,tags,category,createdAt,updatedAt';
-        this.query.filters = `category[equals]${this.$route.params.id}`;
-        this.query.limit = this.POSTS_PER_PAGE;
-        this.query.offset = this.pageIndex;
-
-        // コンテンツの取得
-        const { contents } = await this.$axios.$get(process.env.ARTICLE_URL, {
-          params: { ...this.query },
-          headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
-        });
-
-        // ページング
-        if (contents.length > 0) {
-          this.page++;
-          this.posts.push(...contents);
-          $state.loaded();
-        } else {
-          $state.complete();
-          this.isLoaded = true;
-        }
-      }
-    },
     format(imgUrl) {
       if (imgUrl == null) {
         return '';
