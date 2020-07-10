@@ -142,7 +142,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    '~plugins/InfiniteLoading.js'
+    { src:'~plugins/InfiniteLoading.js', mode:'client'}
   ],
   /*
    ** Nuxt.js dev-modules
