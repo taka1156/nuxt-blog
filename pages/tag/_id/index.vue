@@ -7,10 +7,7 @@
         <img :src="format(tag.img.url)" class="m-1 icon" />
       </div>
       <div class="border" />
-      <article-list :articles="posts" />
-      <client-only>
-        <infinite-loading @infinite="infiniteHandler" />
-      </client-only>
+      <article-list :filters="filters" />
     </div>
   </div>
 </template>
@@ -18,14 +15,13 @@
 <script>
 import AricleList from '@/components/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import query from 'assets/js/mixin/query.mixin.js';
 
 export default {
   name: 'Tag',
   components: {
     'article-list': AricleList
   },
-  mixins: [meta, query],
+  mixins: [meta],
   async asyncData({ $axios, params }) {
     const TAG_URL = `${process.env.TAG_URL}/${params.id}`;
     const TAG = await $axios.$get(TAG_URL, {
@@ -37,43 +33,11 @@ export default {
   data() {
     return {
       tag: {},
-      posts: [],
-      page: 0,
-      isLoaded: false
+      // 記事取得クエリ
+      filters: `tags[contains]${this.$route.params.id}`
     };
   },
-  computed: {
-    pageIndex() {
-      return this.page * this.POSTS_PER_PAGE;
-    }
-  },
   methods: {
-    async infiniteHandler($state) {
-      if (!this.isLoaded) {
-        // クエリ設定
-        this.query.fields =
-          'id,title,summary,tags,category,createdAt,updatedAt';
-        this.query.filters = `tags[contains]${this.$route.params.id}`;
-        this.query.limit = this.POSTS_PER_PAGE;
-        this.query.offset = this.pageIndex;
-
-        // コンテンツの取得
-        const { contents } = await this.$axios.$get(process.env.ARTICLE_URL, {
-          params: { ...this.query },
-          headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
-        });
-
-        // ページング
-        if (contents.length > 0) {
-          this.page++;
-          this.posts.push(...contents);
-          $state.loaded();
-        } else {
-          $state.complete();
-          this.isLoaded = true;
-        }
-      }
-    },
     format(imgUrl) {
       if (imgUrl == null) {
         return '';
