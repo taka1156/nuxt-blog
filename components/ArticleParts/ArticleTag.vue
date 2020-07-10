@@ -2,7 +2,7 @@
   <div class="ArticleTag">
     <div class="my-2 d-flex flex-row">
       タグ:&nbsp;
-      <div v-for="(tag, tag_index) in tags" :key="tag_index">
+      <div v-for="(tag, index) in tags" :key="index">
         <p
           class="clickable mx-2 my-0 badge badge-pill border border-success"
           @click="jump(tag)"
