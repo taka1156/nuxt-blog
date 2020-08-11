@@ -13,7 +13,9 @@
     "generate": "nuxt generate",
     "generate:static": "yarn build && yarn export",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "highlight.js": "^10.1.1",
@@ -22,14 +24,26 @@
     "vue-infinite-loading": "2.4.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.1",
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-backgrounds": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/cli": "^5.3.19",
+    "@storybook/vue": "^5.3.19",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.2.1",
     "prettier": "^1.19.1",
+    "storybook-addon-vue-info": "^1.4.2",
     "vue-eslint-parser": "^7.0.0"
   }
 }
