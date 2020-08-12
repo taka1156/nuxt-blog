@@ -1,5 +1,5 @@
 {
   "projects": {
-    "site": "taka1156-nuxt-blog",
+    "default": "taka1156-nuxt-blogsite"
   }
 }
