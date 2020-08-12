@@ -92,3 +92,6 @@ sw.*
 
 # storybookのサンプル
 stories
+
+# firebase
+.firebase
