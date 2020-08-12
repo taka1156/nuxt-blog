@@ -20,7 +20,7 @@ export default {
   async asyncData({ $axios }) {
     const { contents } = await $axios.$get(process.env.TAG_URL, {
       params: { fields: 'id,name,img', limit: 20 },
-      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
     return { tags: contents };
   },

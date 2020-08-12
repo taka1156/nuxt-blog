@@ -26,7 +26,7 @@ export default {
     const CATEGORY_URL = `${process.env.CATEGORY_URL}/${params.id}`;
     const CATEGORY = await $axios.$get(CATEGORY_URL, {
       params: { fields: 'id,name,img' },
-      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
     return { category: CATEGORY };
   },
