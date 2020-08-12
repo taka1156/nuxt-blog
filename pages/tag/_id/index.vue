@@ -26,7 +26,7 @@ export default {
     const TAG_URL = `${process.env.TAG_URL}/${params.id}`;
     const TAG = await $axios.$get(TAG_URL, {
       params: { fields: 'id,name,img' },
-      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
     return { tag: TAG };
   },

@@ -66,7 +66,7 @@ export default {
         // コンテンツの取得
         const { contents } = await this.$axios.$get(process.env.ARTICLE_URL, {
           params: { ...QUERY },
-          headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+          headers: { 'X-API-KEY': process.env.MICRO_CMS }
         });
 
         // ページング
