@@ -20,7 +20,7 @@ export default {
   async asyncData({ $axios }) {
     const { contents } = await $axios.$get(process.env.CATEGORY_URL, {
       params: { fields: 'id,name,img' },
-      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
     return { categories: contents };
   },

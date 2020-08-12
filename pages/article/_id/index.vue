@@ -39,7 +39,7 @@ export default {
     };
     const article = await $axios.$get(ARTICLE_URL, {
       params: { ...OPTIONS },
-      headers: { 'X-API-KEY': process.env.MICRO_CMS_KEY }
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
     return { article: article };
   },
