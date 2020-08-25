@@ -3,7 +3,8 @@ name: test
 on:
   pull_request:
     branches:
-      - 'develop'
+      - master
+      - develop
 
 jobs:
   build-test:
@@ -19,16 +20,17 @@ jobs:
     - name: Cache dependencies
       uses: actions/cache@v1
       with:
-        path: ~/.yarn
+        path: ~/.cache/yarn
         key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-node-
 
     - name: install
+      if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
 
     # - name: lint
-    #  run: yarn lint
+    #  run: yarn lint:check
 
     # - name: test
     #  run: yarn test
