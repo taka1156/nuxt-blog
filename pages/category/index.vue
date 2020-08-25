@@ -17,7 +17,10 @@ export default {
   components: {
     'item-list': ItemList
   },
-  async asyncData({ $axios }) {
+  async asyncData({ $axios, payload }) {
+    if (payload != null) {
+      return { categories: payload };
+    }
     const { contents } = await $axios.$get(process.env.CATEGORY_URL, {
       params: { fields: 'id,name,img' },
       headers: { 'X-API-KEY': process.env.MICRO_CMS }

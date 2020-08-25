@@ -35,8 +35,9 @@ export default {
     format(imgUrl) {
       return `${imgUrl}?fill-color=white&w=200&h=200`;
     },
-    jump(item) {
-      this.$router.push(`./${this.path}/${item.id}`);
+    jump({ id }) {
+      const PATH = this.$route.path.replace(/\//g, '');
+      this.$router.push({ name: `${PATH}-id`, params: { id: id } });
     }
   }
 };
