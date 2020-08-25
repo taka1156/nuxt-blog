@@ -27,7 +27,7 @@ export default {
     jump({ id }) {
       this.$router.push({
         name: 'category-id',
-        params: { id: `${id}` }
+        params: { id: id }
       });
     }
   }

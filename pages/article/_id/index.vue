@@ -31,7 +31,10 @@ export default {
     'article-header': ArticleHeader
   },
   mixins: [meta],
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params, payload }) {
+    if (payload != null) {
+      return { article: payload };
+    }
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
     const OPTIONS = {
