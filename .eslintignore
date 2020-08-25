@@ -1,2 +1,9 @@
-build
-config
+# ビルドファイル
+dist
+storybook-static
+coverage
+
+# 設定、モジュール
+.nuxt
+.storybook
+node_modules

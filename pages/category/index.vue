@@ -1,19 +1,18 @@
 <template>
-  <div class="Categorylist">
-    <nav-bar />
-    <div class="container-fluid mt-6">
-      <h1>カテゴリー</h1>
-      <div class="border" />
+  <div class="CategoryList">
+    <div class="container-fluid">
+      <h1>Category</h1>
+      <hr />
       <item-list :path="'category'" :items="categories" />
     </div>
   </div>
 </template>
 
 <script>
-import ItemList from '@/components/ItemList';
+import ItemList from '@/components/organisms/ClassficateList';
 
 export default {
-  name: 'Categorylist',
+  name: 'CategoryList',
   components: {
     'item-list': ItemList
   },

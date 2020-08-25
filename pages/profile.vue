@@ -1,11 +1,8 @@
 <template>
-  <div class="Other">
-    <nav-bar />
-    <div class="container-fluid mt-6 mb-5">
-      <h2>
-        プロフィール
-      </h2>
-      <div class="border" />
+  <div class="Profile">
+    <div class="container-fluid">
+      <h1>Profile</h1>
+      <hr />
       <div class="container mt-3">
         <img
           class="mx-auto mb-4 rounded-lg"
@@ -71,7 +68,7 @@
 
 <script>
 export default {
-  name: 'Other',
+  name: 'Profile',
   methods: {
     jump(url) {
       location.href = url;
