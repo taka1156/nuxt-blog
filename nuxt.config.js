@@ -12,24 +12,46 @@ export default {
     fallback: true,
     routes() {
       // タグのルーティング
-      const tags = axios
+      const tag = axios
         .get(TAG_URL, {
-          params: { fields: 'id', limit: CONTENT_MAX },
+          params: { fields: 'id,name,img', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS }
         })
-        .then(res => {
-          return res.data.contents.map(tag => {
-            return { route: `/tag/${tag.id}`, payload: tag };
+        .then(({ data }) => {
+          return data.contents.map(tag => {
+            return tag;
           });
         });
       // カテゴリーのルーティング
-      const categories = axios
+      const category = axios
         .get(CATEGORY_URL, {
-          params: { fields: 'id', limit: CONTENT_MAX },
+          params: { fields: 'id,name,img', limit: CONTENT_MAX },
           headers: { 'X-API-KEY': MICRO_CMS }
         })
-        .then(res => {
-          return res.data.contents.map(category => {
+        .then(({ data }) => {
+          return data.contents.map(category => {
+            return category;
+          });
+        });
+      // タグの個別ページのルーティング
+      const tags = axios
+        .get(TAG_URL, {
+          params: { fields: 'id,name,img', limit: CONTENT_MAX },
+          headers: { 'X-API-KEY': MICRO_CMS }
+        })
+        .then(({ data }) => {
+          return data.contents.map(tag => {
+            return { route: `/tag/${tag.id}`, payload: tag };
+          });
+        });
+      // カテゴリーの個別ページのルーティング
+      const categories = axios
+        .get(CATEGORY_URL, {
+          params: { fields: 'id,name,img', limit: CONTENT_MAX },
+          headers: { 'X-API-KEY': MICRO_CMS }
+        })
+        .then(({ data }) => {
+          return data.contents.map(category => {
             return { route: `/category/${category.id}`, payload: category };
           });
         });
@@ -38,15 +60,23 @@ export default {
         .get(ARTICLE_URL, {
           headers: { 'X-API-KEY': MICRO_CMS }
         })
-        .then(res => {
-          return res.data.contents.map(article => {
+        .then(({ data }) => {
+          return data.contents.map(article => {
             return { route: `/article/${article.id}`, payload: article };
           });
         });
       // 全てをまとめる
-      return Promise.all([tags, categories, articles]).then(values => {
-        return [...values[0], ...values[1], ...values[2]];
-      });
+      return Promise.all([tag, category, tags, categories, articles]).then(
+        values => {
+          return [
+            { route: '/tag', payload: values[0] },
+            { route: '/category', payload: values[1] },
+            ...values[2],
+            ...values[3],
+            ...values[4]
+          ];
+        }
+      );
     }
   },
   /*
@@ -142,7 +172,7 @@ export default {
    */
   plugins: [
     '~plugins/components.js',
-    { src:'~plugins/InfiniteLoading.js', mode:'client'}
+    { src: '~plugins/InfiniteLoading.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules

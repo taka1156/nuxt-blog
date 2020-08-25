@@ -22,7 +22,10 @@ export default {
     'article-list': AricleList
   },
   mixins: [meta],
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params, payload }) {
+    if (payload != null) {
+      return { category: payload };
+    }
     const CATEGORY_URL = `${process.env.CATEGORY_URL}/${params.id}`;
     const CATEGORY = await $axios.$get(CATEGORY_URL, {
       params: { fields: 'id,name,img' },

@@ -30,7 +30,7 @@ export default {
     jump({ id }) {
       this.$router.push({
         name: 'tag-id',
-        params: { id: `${id}` }
+        params: { id: id }
       });
     }
   }

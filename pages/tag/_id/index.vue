@@ -22,7 +22,10 @@ export default {
     'article-list': AricleList
   },
   mixins: [meta],
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params, payload }) {
+    if (payload != null) {
+      return { tag: payload };
+    }
     const TAG_URL = `${process.env.TAG_URL}/${params.id}`;
     const TAG = await $axios.$get(TAG_URL, {
       params: { fields: 'id,name,img' },
