@@ -1,25 +1,18 @@
 <template>
   <div class="Article">
-    <nav-bar />
-    <div class="mx-auto container-fluid mt-6">
-      <!--記事のheader-->
-      <div class="bg-light h-25 w-100 border">
-        <article-header :article="article">
-          <template v-slot:title>
-            <h1 class="text-break text-left h3">
-              {{ article.title }}
-            </h1>
-          </template>
-        </article-header>
+    <div class="container-fluid">
+      <div class="article-content">
+        <!--記事のheader-->
+        <article-header :article="article" />
+        <!--markdown埋め込み-->
+        <div class="article-content__text" v-html="parseMarked" />
       </div>
-      <!--markdown埋め込み-->
-      <div class="text-left text-break" v-html="parseMarked" />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleHeader from '@/components/ArticleParts/ArticleHeader';
+import ArticleHeader from '@/components/organisms/ArticleHeader';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atelier-savanna-dark.css';
@@ -54,7 +47,8 @@ export default {
   computed: {
     parseMarked() {
       // コード背景
-      const BG = '<style>pre{color:silver;background-color:black;}</style>';
+      const BG =
+        '<style>pre{color:silver;background-color:black;overflow: scroll}</style>\n';
       return marked(BG + this.article.body, {
         gfm: true
       });
@@ -73,7 +67,7 @@ export default {
     this.meta.description = this.article.summary;
     this.meta.type = 'article';
     this.meta.url = `${this.baseURL}/${this.article.id}`;
-    // this.meta.image = this.article.img.url != null ? this.article.img.url : '';
+    this.meta.image = this.article.img.url != null ? this.article.img.url : '';
 
     return {
       title: this.meta.title,
@@ -93,3 +87,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.article-content {
+  margin: 10px;
+}
+
+.article-content__text {
+  text-align: left;
+}
+</style>

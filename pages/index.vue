@@ -1,16 +1,15 @@
 <template>
   <div class="Top">
-    <nav-bar />
-    <div class="container-fluid mt-6">
-      <h2>記事一覧</h2>
-      <div class="border" />
+    <div class="container-fluid">
+      <h1>Top</h1>
+      <hr />
       <article-list :filters="filters" />
     </div>
   </div>
 </template>
 
 <script>
-import AricleList from '@/components/ArticleList';
+import AricleList from '@/components/organisms/ArticleList';
 
 export default {
   name: 'Top',

@@ -1,24 +1,24 @@
 <template>
   <div class="Category">
-    <nav-bar />
-    <div class="container-fluid mt-6">
-      <div class="m-1 d-flex justify-content-center">
-        <h1 class="h5 mx-1 my-auto">カテゴリー:{{ category.name }}</h1>
-        <img :src="format(category.img.url)" class="m-1 icon" />
-      </div>
-      <div class="border" />
+    <div class="container-fluid">
+      <classfication-title :img-url="category.img.url">
+        Category: {{ category.name }}
+      </classfication-title>
+      <hr />
       <article-list :filters="filters" />
     </div>
   </div>
 </template>
 
 <script>
-import AricleList from '@/components/ArticleList';
+import ClassficationTitle from '@/components/molecules/ClassficationTitle';
+import AricleList from '@/components/organisms/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Category',
   components: {
+    'classfication-title': ClassficationTitle,
     'article-list': AricleList
   },
   mixins: [meta],
