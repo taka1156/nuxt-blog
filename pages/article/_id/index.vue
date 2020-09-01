@@ -67,7 +67,7 @@ export default {
     this.meta.description = this.article.summary;
     this.meta.type = 'article';
     this.meta.url = `${this.baseURL}/${this.article.id}`;
-    // this.meta.image = this.article.img.url != null ? this.article.img.url : '';
+    this.meta.image = this.article.img.url != null ? this.article.img.url : '';
 
     return {
       title: this.meta.title,
