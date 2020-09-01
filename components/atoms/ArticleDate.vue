@@ -1,7 +1,7 @@
 <template>
   <div class="ArticleDate">
-    <p class="d-flex flex-row my-0">
-      <i class="material-icons mx-1">event_note</i>
+    <p class="article-date">
+      <img :src="require('@/assets/img/icon/date.svg')" />
       <small>
         作成日:{{ dateFormat(createdAt) }} ~ 更新日:{{ dateFormat(updatedAt) }}
       </small>
@@ -34,7 +34,8 @@ export default {
 </script>
 
 <style scoped>
-.material-icons {
-  font-size: 15px;
+.article-date {
+  display: flex;
+  margin: 0;
 }
 </style>
