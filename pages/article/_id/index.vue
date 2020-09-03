@@ -5,7 +5,7 @@
         <!--記事のheader-->
         <article-header :article="article" />
         <!--markdown埋め込み-->
-        <div class="article-content__text" v-html="parseMarked" />
+        <div class="article-content__text markdown-body" v-html="parseMarked" />
       </div>
     </div>
   </div>
@@ -13,10 +13,9 @@
 
 <script>
 import ArticleHeader from '@/components/organisms/ArticleHeader';
+import meta from 'assets/js/mixin/meta.mixin.js';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/atelier-savanna-dark.css';
-import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Artcle',
@@ -46,19 +45,16 @@ export default {
   },
   computed: {
     parseMarked() {
-      // コード背景
-      const BG =
-        '<style>pre{color:silver;background-color:black;overflow: scroll}</style>\n';
-      return marked(BG + this.article.body, {
-        gfm: true
-      });
+      return marked(this.article.body);
     }
   },
   created() {
     marked.setOptions({
       highlight(code, lang) {
         return hljs.highlightAuto(code, [lang]).value;
-      }
+      },
+      breaks: true,
+      gfm: true
     });
   },
   head() {
@@ -67,7 +63,7 @@ export default {
     this.meta.description = this.article.summary;
     this.meta.type = 'article';
     this.meta.url = `${this.baseURL}/${this.article.id}`;
-    this.meta.image = this.article.img.url != null ? this.article.img.url : '';
+    // this.meta.image = this.article.img.url != null ? this.article.img.url : '';
 
     return {
       title: this.meta.title,
