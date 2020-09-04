@@ -1,16 +1,16 @@
-name: test
+name: update article
+
+# payloadを生成するだけなので、テストやlintを行わない
 
 on:
-  pull_request:
-    branches:
-      - master
-      - develop
-
+  repository_dispatch:
+    types: [update_post]
+      
 env:
-  cache-version: v1    
+  cache-version: v1
 
 jobs:
-  build-test:
+   build-deploy:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
@@ -32,13 +32,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
 
-    # - name: lint
-    #  run: yarn lint:check
-
-    # - name: test
-    #  run: yarn test
-
-    - name: build
+      - name: build
       env:
         BASE_URL: ${{ secrets.BASE_URL }}
         MICRO_CMS: ${{ secrets.MICRO_CMS }}
@@ -46,3 +40,10 @@ jobs:
         TAG_URL: ${{ secrets.TAG_URL }}
         CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
       run: yarn generate:static
+
+    - name: deploy to Firebase Hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
