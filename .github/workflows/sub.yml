@@ -26,7 +26,7 @@ jobs:
         path: ~/.cache/yarn
         key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ env.cache-version }}-${{ runner.os }}-node-
 
     - name: install
       if: steps.cache.outputs.cache-hit != 'true'
