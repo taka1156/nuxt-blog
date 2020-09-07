@@ -115,8 +115,8 @@ export default {
         content: 'http://urx.space/wXyt'
       },
       // Twitter Card
-      { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:site', content: '@taka_Program' }
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@taka_Program' }
     ],
     link: []
   },
@@ -127,7 +127,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['normalize.css', 'github-markdown-css', 'highlight.js/styles/github.css','@/assets/css/layout.css'],
+  css: [
+    'normalize.css',
+    'github-markdown-css',
+    'highlight.js/styles/github.css',
+    '@/assets/css/layout.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
