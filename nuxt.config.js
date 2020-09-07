@@ -85,9 +85,10 @@ export default {
   head: {
     title: 'TakaTechBlog',
     htmlAttrs: {
+      lang: 'ja',
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s - Taka',
+    titleTemplate: '%s - TakaTechBlog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -112,7 +113,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'http://urx.space/wXyt'
+        content: `${BASE_URL}/img/ogp/logo.png`
       },
       // Twitter Card
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
