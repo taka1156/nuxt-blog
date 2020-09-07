@@ -7,7 +7,7 @@ on:
       - develop
 
 env:
-  cache-version: v1    
+  cache-version: v2 
 
 jobs:
   build-test:
@@ -32,8 +32,8 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
 
-    # - name: lint
-    #  run: yarn lint:check
+    - name: lint
+      run: yarn lint:check
 
     # - name: test
     #  run: yarn test
