@@ -24,6 +24,7 @@
     "quotes": [2,"single", { "avoidEscape": true } ],
     "eqeqeq": [2, "always", {"null": "ignore"}],
     "prefer-const": 2,
-    "vue/component-name-in-template-casing": "off"
+    "vue/component-name-in-template-casing": "off",
+    "vue/no-v-html": "off"
   }
 }

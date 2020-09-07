@@ -1,16 +1,8 @@
 <template>
   <div>
     <nav>
-      <nav-bar
-        :logo-text="logoText"
-        :is-open="isOpen"
-        @change-state="changeState"
-      />
-      <nav-list
-        :is-open="isOpen"
-        :routes="routes"
-        @change-state="changeState"
-      />
+      <nav-bar :logo-text="logoText" :is-open="isOpen" @change-state="changeState" />
+      <nav-list :is-open="isOpen" :routes="routes" @change-state="changeState" />
     </nav>
   </div>
 </template>
