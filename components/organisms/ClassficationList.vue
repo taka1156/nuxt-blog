@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ClassficationListItem from '../molecules/classficationListItem';
+import ClassficationListItem from '../molecules/ClassficationListItem';
 
 export default {
   name: 'ClassficatetionList',
