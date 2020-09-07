@@ -14,9 +14,9 @@
 import ClassficationListItem from '../molecules/classficationListItem';
 
 export default {
-  name: 'ClassficateList',
+  name: 'ClassficatetionList',
   components: {
-    'cclassfication-list-item': ClassficateListItem
+    'classfication-list-item': ClassficationListItem
   },
   props: {
     path: {
