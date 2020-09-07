@@ -71,7 +71,6 @@ export default {
     return {
       title: this.meta.title,
       meta: [
-        // eslint-disable-next-line prettier/prettier
         {
           hid: 'og:description',
           property: 'og:description',
@@ -80,7 +79,9 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.meta.title },
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
         { hid: 'og:url', property: 'og:url', content: this.meta.url },
-        { hid: 'og:image', property: 'og:image', content: this.meta.image }
+        { hid: 'og:image', property: 'og:image', content: this.meta.image },
+        // 記事用の大きなOGPカード
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
       ]
     };
   }
