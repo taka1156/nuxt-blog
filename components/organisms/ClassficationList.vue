@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import ClassficationListItem from '../molecules/classficationListItem';
+import ClassficationListItem from '../molecules/ClassficationListItem';
 
 export default {
-  name: 'ClassficateList',
+  name: 'ClassficatetionList',
   components: {
-    'cclassfication-list-item': ClassficateListItem
+    'classfication-list-item': ClassficationListItem
   },
   props: {
     path: {

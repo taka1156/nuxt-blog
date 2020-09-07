@@ -75,10 +75,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.icon {
-  height: 50px;
-  width: 50px;
-}
-</style>
