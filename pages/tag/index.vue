@@ -3,18 +3,18 @@
     <div class="container-fluid">
       <h1>Tag</h1>
       <hr />
-      <item-list :items="tags" />
+      <classfication-list :items="tags" />
     </div>
   </div>
 </template>
 
 <script>
-import ItemList from '@/components/organisms/ClassficationList';
+import ClassficationList from '@/components/organisms/ClassficationList';
 
 export default {
   name: 'TagList',
   components: {
-    'item-list': ItemList
+    'classfication-list': ClassficationList
   },
   async asyncData({ $axios, payload }) {
     if (payload != null) {
