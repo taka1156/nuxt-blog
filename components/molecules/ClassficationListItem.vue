@@ -4,7 +4,7 @@
       <h2 class="list-item__title">{{ classficationItem.name }}</h2>
       <base-img
         class="img--lg"
-        :img-url="format(classficationItem.img.url)"
+        :img-url="classficationItem.img.url"
         :img-alt="`${classficationItem.name}のロゴ`"
       />
     </li>
@@ -32,13 +32,10 @@ export default {
     }
   },
   methods: {
-    format(imgUrl) {
-      return `${imgUrl}?fill-color=white&w=200&h=200`;
-    },
     jump({ id }) {
       this.$router.push({
-        name: `${this.path}-id-pageid`,
-        params: { id: id, pageid: 1 }
+        name: `${this.path}-id`,
+        params: { id: id }
       });
     }
   }
