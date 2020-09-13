@@ -5,6 +5,7 @@
         v-for="(item, index) in items"
         :key="index"
         :classfication-item="item"
+        :path="path"
       />
     </ul>
   </div>
@@ -22,6 +23,11 @@ export default {
     items: {
       type: Array,
       default: () => [],
+      required: true
+    },
+    path: {
+      type: String,
+      default: '',
       required: true
     }
   }

@@ -23,12 +23,12 @@ export default {
         },
         {
           name: 'Category',
-          to: '/category',
+          to: '/categories',
           img: require('assets/img/ui/category.svg')
         },
         {
           name: 'Tag',
-          to: '/tag',
+          to: '/tags',
           img: require('assets/img/ui/tag.svg')
         },
         {

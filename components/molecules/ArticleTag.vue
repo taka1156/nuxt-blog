@@ -32,8 +32,8 @@ export default {
   methods: {
     jump(id) {
       this.$router.push({
-        name: 'tag-id',
-        params: { id: id }
+        name: 'tag-id-pageid',
+        params: { id: id, pageid: 1 }
       });
     }
   }

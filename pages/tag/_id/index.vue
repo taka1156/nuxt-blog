@@ -5,7 +5,11 @@
         Tag: {{ tag.name }}
       </classfication-title>
       <hr />
-      <article-list :filters="filters" />
+      <article-list
+        :articles="articles"
+        :max-page="maxPage"
+        :route-path="routePath"
+      />
     </div>
   </div>
 </template>
@@ -14,6 +18,7 @@
 import ClassficationTitle from '@/components/organisms/ClassficationTitle';
 import AricleList from '@/components/organisms/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
+const POSTS_PER_PAGE = 5;
 
 export default {
   name: 'Tag',
@@ -24,20 +29,39 @@ export default {
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
     if (payload != null) {
-      return { tag: payload };
+      return {
+        tag: payload.tag,
+        articles: payload.articles,
+        maxPage: payload.maxPage
+      };
     }
+
     const TAG_URL = `${process.env.TAG_URL}/${params.id}`;
     const TAG = await $axios.$get(TAG_URL, {
       params: { fields: 'id,name,img' },
       headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
-    return { tag: TAG };
+
+    const { contents, totalCount } = await $axios.$get(process.env.ARTICLE_URL, {
+      params: {
+        fields: 'id,title,summary,tags,category,createdAt,updatedAt',
+        limit: POSTS_PER_PAGE,
+        offset: (params.pageid - 1 || 0) * POSTS_PER_PAGE,
+        filters: `tags[contains]${params.id}`
+      },
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
+    });
+
+    const page = Math.ceil(totalCount / POSTS_PER_PAGE);
+
+    return { tag: TAG, articles: contents, maxPage: page };
   },
   data() {
     return {
       tag: {},
-      // 記事取得クエリ
-      filters: `tags[contains]${this.$route.params.id}`
+      articles: [],
+      maxPage: 0,
+      routePath: 'tag-id-pageid'
     };
   },
   methods: {
@@ -49,7 +73,7 @@ export default {
     }
   },
   head() {
-    const URL = `${this.baseURL}/tag/${this.tag.id}`;
+    const URL = `${this.baseURL}/tag/${this.tag.id}/1`;
     const IMAGE = this.format(this.tag.img.url);
     // メタタグ
     this.meta.title = `${this.tag.name}タグの記事一覧`;

@@ -24,6 +24,11 @@ export default {
       type: Object,
       default: () => {},
       required: true
+    },
+    path: {
+      type: String,
+      default: '',
+      required: true
     }
   },
   methods: {
@@ -31,8 +36,10 @@ export default {
       return `${imgUrl}?fill-color=white&w=200&h=200`;
     },
     jump({ id }) {
-      const PATH = this.$route.path.replace(/\//g, '');
-      this.$router.push({ name: `${PATH}-id`, params: { id: id } });
+      this.$router.push({
+        name: `${this.path}-id-pageid`,
+        params: { id: id, pageid: 1 }
+      });
     }
   }
 };
