@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="article-date">
+    <div class="article-date">
       <base-img
         class="img--sm"
         :img-url="require('@/assets/img/icon/date.svg')"
@@ -9,7 +9,7 @@
       <base-text class="text--green">
         作成日:{{ dateFormat(createdAt) }} ~ 更新日:{{ dateFormat(updatedAt) }}
       </base-text>
-    </p>
+    </div>
   </div>
 </template>
 
