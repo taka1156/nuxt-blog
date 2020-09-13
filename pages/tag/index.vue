@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h1>Tag</h1>
       <hr />
-      <item-list :path="'tag'" :items="tags" />
+      <item-list :items="tags" />
     </div>
   </div>
 </template>

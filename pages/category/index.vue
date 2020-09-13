@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <h1>Category</h1>
       <hr />
-      <item-list :path="'category'" :items="categories" />
+      <item-list :items="categories" />
     </div>
   </div>
 </template>
