@@ -1,10 +1,13 @@
 <template>
-  <div class="ArticleList">
+  <div>
     <div v-if="articles.length !== 0">
       <ul>
-        <article v-for="(article, index) in articles" :key="index">
-          <article-list-item :article="article" @jump="jump(article)" />
-        </article>
+        <article-list-item
+          v-for="(article, index) in articles"
+          :key="index"
+          :article="article"
+          @jump="jump(article)"
+        />
       </ul>
     </div>
     <client-only>

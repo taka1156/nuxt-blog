@@ -19,11 +19,6 @@ export default {
     'classfication-list-item': ClassficationListItem
   },
   props: {
-    path: {
-      type: String,
-      default: '',
-      required: true
-    },
     items: {
       type: Array,
       default: () => [],

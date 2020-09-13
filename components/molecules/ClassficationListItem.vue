@@ -1,17 +1,24 @@
 <template>
   <div>
     <li class="list-item" @click="jump(classficationItem)">
-      <div class="list-item__box">
-        <h2 class="list-item__title">{{ classficationItem.name }}</h2>
-        <img :src="format(classficationItem.img.url)" class="list-item__icon" />
-      </div>
+      <h2 class="list-item__title">{{ classficationItem.name }}</h2>
+      <base-img
+        class="img--lg"
+        :img-url="format(classficationItem.img.url)"
+        :img-alt="`${classficationItem.name}のロゴ`"
+      />
     </li>
   </div>
 </template>
 
 <script>
+import BaseImg from '../atoms/BaseImg';
+
 export default {
   name: 'ClassficationListItem',
+  components: {
+    'base-img': BaseImg
+  },
   props: {
     classficationItem: {
       type: Object,
@@ -33,16 +40,12 @@ export default {
 
 <style scoped>
 .list-item {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
-}
-
-.list-item__box {
-  display: flex;
-  justify-content: space-between;
 }
 
 .list-item__title {

@@ -1,16 +1,16 @@
 <template>
   <div class="App">
-    <nav-bar :logo-text="logoText" :routes="routes" />
+    <blog-navigation :logo-text="logoText" :routes="routes" />
     <nuxt />
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/organisms/BaseNav';
+import BlogNavigation from '@/components/organisms/BlogNavigation';
 
 export default {
   components: {
-    'nav-bar': NavBar
+    'blog-navigation': BlogNavigation
   },
   data() {
     return {
