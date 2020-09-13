@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ClassficationTitle from '@/components/molecules/ClassficationTitle';
+import ClassficationTitle from '@/components/organisms/ClassficationTitle';
 import AricleList from '@/components/organisms/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 

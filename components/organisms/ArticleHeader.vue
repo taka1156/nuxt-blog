@@ -18,7 +18,7 @@
 <script>
 import ArticleCategory from '../molecules/ArticleCategory';
 import ArticleTag from '../molecules/ArticleTag';
-import ArticleDate from '../atoms/ArticleDate';
+import ArticleDate from '../molecules/ArticleDate';
 
 export default {
   name: 'ArticleHeader',

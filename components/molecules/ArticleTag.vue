@@ -5,18 +5,17 @@
       <article-badge
         v-for="(tag, index) in tags"
         :key="index"
-        :badge-id="tag.id"
-        :name="tag.name"
-        :img-url="tag.img.url"
-        class="article-badge--outline"
-        @click="jump"
+        :badge-type="'tag'"
+        :badge="tag"
+        class="article-badge__outline"
+        @jump="jump"
       />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleBadge from '../atoms/ArticleBadge';
+import ArticleBadge from './ArticleBadge';
 
 export default {
   name: 'ArticleTag',
@@ -46,5 +45,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
+}
+
+.article-badge__outline {
+  width: 100px;
+  margin: 2px;
+  border: 1px solid rgba(40, 167, 69, 0.9);
+  color: rgba(40, 167, 69, 0.9);
 }
 </style>

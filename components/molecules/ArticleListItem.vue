@@ -20,7 +20,7 @@
 <script>
 import ArticleCategory from './ArticleCategory';
 import ArticleTag from './ArticleTag';
-import ArticleDate from '../atoms/ArticleDate';
+import ArticleDate from '../molecules/ArticleDate';
 
 export default {
   name: 'ArticleListItem',
