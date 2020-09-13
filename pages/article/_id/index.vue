@@ -66,7 +66,7 @@ export default {
     const encodeTitleUtf8 = encodeURI(this.article.title);
     const OGP_IMAGE =
       'https://images.microcms-assets.io/protected/ap-northeast-1:7cf4e012-34b8-42e4-9878-9730fb0adfdc/service/taka_blog/media/ogp.png';
-    const PARAMS = `?txt=${encodeTitleUtf8}&txt-size=55&txt-color=white&txt-align=middle,center`;
+    const PARAMS = `?txt=${encodeTitleUtf8}&txt-size=55&txt-fit=max&txt-color=white&txt-align=middle,center`;
     this.meta.image = OGP_IMAGE + PARAMS;
 
     return {
