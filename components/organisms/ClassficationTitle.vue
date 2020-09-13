@@ -4,14 +4,19 @@
       <h1 class="classfication-title__title">
         <slot />
       </h1>
-      <img :src="imgUrl" class="classfication-title__icon" />
+      <base-img class="img--lg" :img-url="imgUrl" :img-alt="'ロゴ'" />
     </div>
   </div>
 </template>
 
 <script>
+import BaseImg from '../atoms/BaseImg';
+
 export default {
   name: 'ClassficationTitle',
+  components: {
+    'base-img': BaseImg
+  },
   props: {
     imgUrl: {
       type: String,

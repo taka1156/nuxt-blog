@@ -3,18 +3,17 @@
     <div class="article-category">
       カテゴリー:
       <article-badge
-        :badge-id="category.id"
-        :name="category.name"
-        :img-url="category.img.url"
-        class="article-badge--fill"
-        @click="jump"
+        :badge-type="'category'"
+        :badge="category"
+        class="article-badge__fill"
+        @jump="jump"
       />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleBadge from '../atoms/ArticleBadge';
+import ArticleBadge from './ArticleBadge';
 
 export default {
   name: 'ArticleCategory',
@@ -44,5 +43,11 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 5px;
+}
+
+.article-badge__fill {
+  width: 130px;
+  background-color: rgba(40, 167, 69, 0.9);
+  color: white;
 }
 </style>
