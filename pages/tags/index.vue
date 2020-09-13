@@ -1,9 +1,9 @@
 <template>
-  <div class="CategoryList">
+  <div class="TagList">
     <div class="container-fluid">
-      <h1>Category</h1>
+      <h1>Tag</h1>
       <hr />
-      <classfication-list :items="categories" />
+      <classfication-list :path="'tag'" :items="tags" />
     </div>
   </div>
 </template>
@@ -12,22 +12,22 @@
 import ClassficationList from '@/components/organisms/ClassficationList';
 
 export default {
-  name: 'CategoryList',
+  name: 'TagList',
   components: {
     'classfication-list': ClassficationList
   },
   async asyncData({ $axios, payload }) {
     if (payload != null) {
-      return { categories: payload };
+      return { tags: payload };
     }
-    const { contents } = await $axios.$get(process.env.CATEGORY_URL, {
-      params: { fields: 'id,name,img' },
+    const { contents } = await $axios.$get(process.env.TAG_URL, {
+      params: { fields: 'id,name,img', limit: 20 },
       headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
-    return { categories: contents };
+    return { tags: contents };
   },
   data() {
-    return { categories: [] };
+    return { tags: [] };
   }
 };
 </script>

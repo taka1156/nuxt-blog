@@ -1,76 +1,79 @@
 <template>
   <div>
     <div v-if="articles.length !== 0">
+      <article-pagenation
+        :current-page="currentPage"
+        :max-page="maxPage"
+        :prev="prev"
+        :next="next"
+      />
       <ul>
-        <article-list-item
-          v-for="(article, index) in articles"
-          :key="index"
-          :article="article"
-          @jump="jump(article)"
-        />
+        <article v-for="(article, index) in articles" :key="index">
+          <article-list-item :article="article" />
+        </article>
       </ul>
+      <article-pagenation
+        :current-page="currentPage"
+        :max-page="maxPage"
+        :prev="prev"
+        :next="next"
+      />
     </div>
-    <client-only>
-      <infinite-loading @infinite="infiniteHandler" />
-    </client-only>
+    <p v-else>記事がありません。</p>
   </div>
 </template>
 
 <script>
 import ArticleListItem from '../molecules/ArticleListItem';
-
-const POSTS_PER_PAGE = 10;
+import ArticlePagenation from '@/components/atoms/ArticlePagenation';
 
 export default {
   components: {
-    'article-list-item': ArticleListItem
+    'article-list-item': ArticleListItem,
+    'article-pagenation': ArticlePagenation
   },
   props: {
-    filters: {
+    articles: {
+      type: Array,
+      default: () => [],
+      required: true
+    },
+    maxPage: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    routePath: {
       type: String,
       default: '',
       required: true
     }
   },
-  data() {
-    return {
-      articles: [],
-      page: 0,
-      isLoaded: false
-    };
-  },
   computed: {
-    pageIndex() {
-      return this.page * POSTS_PER_PAGE;
+    currentPage() {
+      return parseInt(this.$route.params.pageid || 1);
     }
   },
   methods: {
-    async infiniteHandler($state) {
-      if (!this.isLoaded) {
-        const QUERY = {
-          fields: 'id,title,summary,tags,category,createdAt,updatedAt',
-          limit: POSTS_PER_PAGE,
-          offset: this.pageIndex
-        };
-        if (this.filters !== '') {
-          QUERY['filters'] = this.filters;
-        }
-        // コンテンツの取得
-        const { contents } = await this.$axios.$get(process.env.ARTICLE_URL, {
-          params: { ...QUERY },
-          headers: { 'X-API-KEY': process.env.MICRO_CMS }
-        });
-
-        // ページング
-        if (contents.length > 0) {
-          this.page++;
-          this.articles.push(...contents);
-          $state.loaded();
-        } else {
-          $state.complete();
-          this.isLoaded = true;
-        }
+    prev() {
+      let pageid = Math.max(this.currentPage - 1, 0);
+      if (pageid < 1) {
+        pageid = this.maxPage;
       }
+      this.jump(pageid);
+    },
+    next() {
+      let pageid = Math.min(this.currentPage + 1, this.maxPage + 1);
+      if (pageid > this.maxPage) {
+        pageid = 1;
+      }
+      this.jump(pageid);
+    },
+    jump(pageid) {
+      this.$router.push({
+        name: this.routePath,
+        params: { pageid: pageid }
+      });
     }
   }
 };

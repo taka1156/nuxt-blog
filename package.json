@@ -26,8 +26,7 @@
     "highlight.js": "^10.1.1",
     "marked": "^1.1.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.13.3",
-    "vue-infinite-loading": "2.4.4"
+    "nuxt": "^2.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

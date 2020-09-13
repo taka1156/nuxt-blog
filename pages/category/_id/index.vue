@@ -5,7 +5,11 @@
         Category: {{ category.name }}
       </classfication-title>
       <hr />
-      <article-list :filters="filters" />
+      <article-list
+        :articles="articles"
+        :max-page="maxPage"
+        :route-path="routePath"
+      />
     </div>
   </div>
 </template>
@@ -14,6 +18,7 @@
 import ClassficationTitle from '@/components/organisms/ClassficationTitle';
 import AricleList from '@/components/organisms/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
+const POSTS_PER_PAGE = 5;
 
 export default {
   name: 'Category',
@@ -24,20 +29,38 @@ export default {
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
     if (payload != null) {
-      return { category: payload };
+      return {
+        category: payload.category,
+        articles: payload.articles,
+        maxPage: payload.maxPage
+      };
     }
     const CATEGORY_URL = `${process.env.CATEGORY_URL}/${params.id}`;
     const CATEGORY = await $axios.$get(CATEGORY_URL, {
       params: { fields: 'id,name,img' },
       headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
-    return { category: CATEGORY };
+
+    const { contents, totalCount } = await $axios.$get(process.env.ARTICLE_URL, {
+      params: {
+        fields: 'id,title,summary,tags,category,createdAt,updatedAt',
+        limit: POSTS_PER_PAGE,
+        offset: (params.pageid - 1 || 0) * POSTS_PER_PAGE,
+        filters: `category[equals]${params.id}`
+      },
+      headers: { 'X-API-KEY': process.env.MICRO_CMS }
+    });
+
+    const page = Math.ceil(totalCount / POSTS_PER_PAGE);
+
+    return { category: CATEGORY, articles: contents, maxPage: page };
   },
   data() {
     return {
       category: {},
-      // 記事取得クエリ
-      filters: `category[equals]${this.$route.params.id}`
+      articles: [],
+      maxPage: 0,
+      routePath: 'category-id-pageid'
     };
   },
   methods: {
@@ -49,7 +72,7 @@ export default {
     }
   },
   head() {
-    const URL = `${this.baseURL}/category/${this.category.id}`;
+    const URL = `${this.baseURL}/category/${this.category.id}/1`;
     const IMAGE = this.format(this.category.img.url);
     // メタタグ
     this.meta.title = `${this.category.name}カテゴリの記事一覧`;
