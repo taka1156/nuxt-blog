@@ -7,3 +7,15 @@
     width: 70vw;
   }
 }
+
+/* markdown */
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-left: 3px solid #28a745;
+  padding-left: 10px;
+}
+
+.markdown-body a {
+  text-decoration: underline;
+}
