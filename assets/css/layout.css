@@ -1,22 +1,9 @@
-.mt-6 {
-  margin-top: 63px;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
 .container {
-  margin: 0 auto;
-  width: 75%;
-}
-
-.container-fluid {
   margin: 70px auto;
 }
 
 @media screen and (min-width: 768px) {
-  .container-fluid {
+  .container {
     width: 70vw;
   }
 }

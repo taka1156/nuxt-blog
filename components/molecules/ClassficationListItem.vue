@@ -1,7 +1,7 @@
 <template>
   <div>
-    <li class="list-item" @click="jump(classficationItem)">
-      <h2 class="list-item__title">{{ classficationItem.name }}</h2>
+    <li class="classfication-list-item" @click="jump(classficationItem)">
+      <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
       <base-img
         class="img--lg"
         :img-url="classficationItem.img.url"
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.list-item {
+.classfication-list-item {
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -52,12 +52,7 @@ export default {
   border-radius: 5px;
 }
 
-.list-item__title {
+.classfication-list-item__title {
   text-align: left;
-}
-
-.list-item__icon {
-  height: 70px;
-  width: 70px;
 }
 </style>

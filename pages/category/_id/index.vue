@@ -1,6 +1,6 @@
 <template>
   <div class="Category">
-    <div class="container-fluid">
+    <div class="container">
       <classfication-title :img-url="category.img.url">
         Category: {{ category.name }}
       </classfication-title>
