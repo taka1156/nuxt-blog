@@ -1,16 +1,16 @@
 <template>
   <div>
-    <li class="list-item">
+    <li class="article-list-item">
       <article-category :category="article.category" />
       <article-date
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
       <hr />
-      <h2 class="list-item__title" @click="jump(article)">
+      <h2 class="article-list-item__title" @click="jump(article)">
         {{ article.title }}
       </h2>
-      <p class="list-item__summary">{{ article.summary }}</p>
+      <p class="article-list-item__summary">{{ article.summary }}</p>
       <hr />
       <article-tag :tags="article.tags" />
     </li>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-.list-item {
+.article-list-item {
   display: block;
   margin: 10px;
   padding: 10px;
@@ -53,7 +53,7 @@ export default {
   border-radius: 5px;
 }
 
-.list-item__title {
+.article-list-item__title {
   text-align: left;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -61,7 +61,7 @@ export default {
   cursor: pointer;
 }
 
-.list-item__summary {
+.article-list-item__summary {
   text-align: left;
 }
 </style>
