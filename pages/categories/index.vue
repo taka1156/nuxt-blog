@@ -1,6 +1,6 @@
 <template>
   <div class="CategoryList">
-    <div class="container-fluid">
+    <div class="container">
       <h1>Category</h1>
       <hr />
       <classfication-list :path="'category'" :items="categories" />

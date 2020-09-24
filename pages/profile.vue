@@ -1,6 +1,6 @@
 <template>
   <div class="Profile">
-    <div class="container-fluid">
+    <div class="container">
       <h1>Profile</h1>
       <hr />
 
@@ -79,8 +79,8 @@ li {
 .profile__box {
   display: flex;
   justify-content: center;
-  margin: 20px auto;
-  height: 140px;
+  margin: 10px auto;
+  height: 150px;
   width: 90%;
   border: 0.5px solid gray;
   border-radius: 5px;
@@ -88,16 +88,30 @@ li {
 
 .profile__img {
   display: block;
-  margin: 20px auto;
-  height: 70%;
-  width: 20%;
+  margin: auto 0 auto 0;
+  padding: 5px;
+  height: 130px;
+  width: 25%;
 }
 
 .contents__sentence {
-  margin: 15px auto;
-  padding: 10px;
-  width: 70%;
+  margin: auto 0 auto 0;
+  height: 90%;
+  width: 75%;
+  font-size: 14px;
   text-align: left;
+  line-height: normal;
+  border-left: 0.5px dotted gray;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__img {
+    width: 15%;
+  }
+
+  .contents__sentence {
+    font-size: 20px;
+  }
 }
 
 .sns {

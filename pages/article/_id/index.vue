@@ -1,6 +1,6 @@
 <template>
   <div class="Article">
-    <div class="container-fluid">
+    <div class="container">
       <div class="article-content">
         <!--記事のheader-->
         <article-header :article="article" />
@@ -96,5 +96,6 @@ export default {
 
 .article-content__text {
   text-align: left;
+  margin: 10px auto;
 }
 </style>

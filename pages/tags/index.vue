@@ -1,6 +1,6 @@
 <template>
   <div class="TagList">
-    <div class="container-fluid">
+    <div class="container">
       <h1>Tag</h1>
       <hr />
       <classfication-list :path="'tag'" :items="tags" />

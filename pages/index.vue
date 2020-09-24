@@ -1,6 +1,6 @@
 <template>
   <div class="Top">
-    <div class="container-fluid">
+    <div class="container">
       <h1>Top</h1>
       <hr />
       <article-list
