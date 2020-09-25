@@ -2,23 +2,23 @@
   <img
     :src="props.imgUrl"
     :alt="`${props.imgAlt}`"
-    class="img"
+    class="base-img"
     :class="data.staticClass || ''"
   />
 </template>
 
 <style scoped>
-.img {
+.base-img {
   display: block;
   padding: 3px;
 }
 
-.img--lg {
+.base-img--lg {
   height: 50px;
   width: 50px;
 }
 
-.img--sm {
+.base-img--sm {
   height: 20px;
   width: 20px;
 }

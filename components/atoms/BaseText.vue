@@ -1,5 +1,5 @@
 <template functional>
-  <p class="text" :class="data.staticClass || ''">
+  <p class="base-text" :class="data.staticClass || ''">
     <slot />
   </p>
 </template>
@@ -13,20 +13,25 @@ p {
 
 /* css reset */
 
-.text {
-  display: inline;
+.base-text {
+  display: block;
 }
 
-.text--white {
+.base-text--white {
   color: white;
 }
 
-.text--green {
+.base-text--green {
   color: rgba(40, 167, 69, 0.9);
 }
 
-.text--badge {
+.base-text--badge {
   font-size: 12px;
   line-height: 30px;
+}
+
+.base-text--pagenation {
+  padding: 10px;
+  font-size: 20px;
 }
 </style>

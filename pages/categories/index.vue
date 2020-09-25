@@ -2,7 +2,7 @@
   <div class="CategoryList">
     <div class="container">
       <h1>Category</h1>
-      <hr />
+      <div class="line" />
       <classfication-list :path="'category'" :items="categories" />
     </div>
   </div>

@@ -4,8 +4,8 @@
       <article-pagenation
         :current-page="currentPage"
         :max-page="maxPage"
-        :prev="prev"
-        :next="next"
+        @prev="prev"
+        @next="next"
       />
       <ul>
         <article v-for="(article, index) in articles" :key="index">
@@ -15,8 +15,8 @@
       <article-pagenation
         :current-page="currentPage"
         :max-page="maxPage"
-        :prev="prev"
-        :next="next"
+        @prev="prev"
+        @next="next"
       />
     </div>
     <p v-else>記事がありません。</p>
@@ -25,7 +25,7 @@
 
 <script>
 import ArticleListItem from '../molecules/ArticleListItem';
-import ArticlePagenation from '@/components/atoms/ArticlePagenation';
+import ArticlePagenation from '../molecules/ArticlePagenation';
 
 export default {
   components: {

@@ -3,7 +3,7 @@
     <li class="classfication-list-item" @click="jump(classficationItem)">
       <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
       <base-img
-        class="img--lg"
+        class="base-img--lg"
         :img-url="classficationItem.img.url"
         :img-alt="`${classficationItem.name}のロゴ`"
       />
@@ -50,6 +50,7 @@ export default {
   margin: 10px;
   border: 1px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .classfication-list-item__title {

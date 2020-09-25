@@ -4,7 +4,7 @@
       <classfication-title :img-url="category.img.url">
         Category: {{ category.name }}
       </classfication-title>
-      <hr />
+      <div class="line" />
       <article-list
         :articles="articles"
         :max-page="maxPage"

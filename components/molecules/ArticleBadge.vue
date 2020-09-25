@@ -1,12 +1,12 @@
 <template>
   <div class="article-badge" @click="$emit('jump', badge.id)">
     <base-text
-      class="text--badge"
-      :class="[badgeType === 'category' ? 'text--white' : 'text--green']"
+      class="base-text--badge"
+      :class="[badgeType === 'category' ? 'base-text--white' : 'base-text--green']"
       >{{ badge.name }}
     </base-text>
     <base-img
-      class="img--sm"
+      class="base-img--sm"
       :img-url="badge.img.url"
       :img-alt="`${badge.name}の画像`"
     />
