@@ -16,6 +16,17 @@
       </section>
 
       <section class="contents">
+        <h2 class="contents__title">githubの活動</h2>
+        <div class="gh-chart">
+          <img
+            class="gh-chart__img"
+            src="http://ghchart.rshah.org/taka1156"
+            alt="taka1156's Github chart"
+          />
+        </div>
+      </section>
+
+      <section class="contents">
         <h2 class="contents__title">SNSやGitHub等</h2>
         <ul class="sns">
           <li class="sns__box">
@@ -96,7 +107,7 @@ li {
 .profile__box {
   display: flex;
   justify-content: center;
-  margin: 10px auto;
+  margin: 0 auto;
   height: 150px;
   width: 90%;
   border: 0.5px solid gray;
@@ -129,6 +140,20 @@ li {
   .contents__sentence {
     font-size: 20px;
   }
+}
+
+/* gh-chart */
+.gh-chart {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+}
+
+.gh-chart__img {
+  object-fit: cover;
+  width: 900px;
 }
 
 .sns {
