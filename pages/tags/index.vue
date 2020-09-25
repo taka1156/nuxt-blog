@@ -2,7 +2,7 @@
   <div class="TagList">
     <div class="container">
       <h1>Tag</h1>
-      <hr />
+      <div class="line" />
       <classfication-list :path="'tag'" :items="tags" />
     </div>
   </div>

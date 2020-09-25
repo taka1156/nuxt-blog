@@ -2,7 +2,7 @@
   <div class="Top">
     <div class="container">
       <h1>Top</h1>
-      <hr />
+      <div class="line" />
       <article-list
         :articles="articles"
         :max-page="maxPage"

@@ -4,7 +4,7 @@
       <classfication-title :img-url="tag.img.url">
         Tag: {{ tag.name }}
       </classfication-title>
-      <hr />
+      <div class="line" />
       <article-list
         :articles="articles"
         :max-page="maxPage"

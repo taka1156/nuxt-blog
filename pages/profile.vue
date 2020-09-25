@@ -2,7 +2,7 @@
   <div class="Profile">
     <div class="container">
       <h1>Profile</h1>
-      <hr />
+      <div class="line" />
 
       <section class="contents">
         <h2 class="contents__title">自己紹介</h2>
