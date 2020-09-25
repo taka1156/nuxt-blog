@@ -6,12 +6,12 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <hr />
+      <div class="line" />
       <h2 class="article-list-item__title" @click="jump(article)">
         {{ article.title }}
       </h2>
       <p class="article-list-item__summary">{{ article.summary }}</p>
-      <hr />
+      <div class="line" />
       <article-tag :tags="article.tags" />
     </li>
   </div>

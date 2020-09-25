@@ -6,7 +6,7 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <hr />
+      <div class="line" />
       <h1 class="article-header__title">
         {{ article.title }}
       </h1>
