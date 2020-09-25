@@ -9,7 +9,7 @@
         <div class="profile__box">
           <img class="profile__img" src="@/assets/img/prof.png" />
           <p class="contents__sentence">
-            プログラミングは、大学1年から触り始めC、Java、Python2などを学びました。<br />
+            プログラミングは、大学1年から触り始めC、Java、Python2,3などを学びました。<br />
             現在は、大学4年生で、個人的にTypeScriptやPHP(+Laravel)について学習しています。<br />
           </p>
         </div>
