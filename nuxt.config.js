@@ -249,7 +249,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/GoogleAnalytics.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -280,7 +280,11 @@ export default {
       layouts: true,
       pages: true,
       commons: true
+    },
+    extend: function(config) {
+      config.node = {
+        fs: 'empty'
+      };
     }
-    //extend(config, ctx) {}
   }
 };
