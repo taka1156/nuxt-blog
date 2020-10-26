@@ -38,6 +38,9 @@ jobs:
     # - name: test
     #  run: yarn test
 
+    - name: create .env file
+      run: echo "${{ secrets.ENV_FIREBASE }}" > .env
+
     - name: build
       env:
         BASE_URL: ${{ secrets.BASE_URL }}
