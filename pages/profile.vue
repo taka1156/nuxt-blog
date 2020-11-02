@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="sns__box">
-            <a href="https://twitter.com/taka_Program" class="sns__link">
+            <a href="https://twitter.com/taka_1156" class="sns__link">
               <base-img
                 :img-url="require('@/assets/img/twitter-logo.png')"
                 class="base-img--lg"
