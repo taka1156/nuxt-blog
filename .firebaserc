@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "taka1156-nuxt-blogsite"
+  },
+  "targets": {
+    "taka1156-nuxt-blogsite": {
+      "hosting": {
+        "production": [
+          "taka1156-nuxt-blogsite"
+        ]
+      }
+    }
   }
 }

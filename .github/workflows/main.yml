@@ -53,6 +53,6 @@ jobs:
       run: yarn generate:static
 
     - name: deploy to Firebase Hosting
-      run: yarn firebase deploy --token $FIREBASE_TOKEN
+      run: yarn firebase deploy --only hosting:production --token $FIREBASE_TOKEN
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
