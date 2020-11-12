@@ -1,5 +1,5 @@
 import Vue from 'vue';
-// import 'normalize.css';
+import 'normalize.css';
 
 import { configure, addDecorator, addParameters } from '@storybook/vue';
 import { withKnobs } from '@storybook/addon-knobs/vue';
