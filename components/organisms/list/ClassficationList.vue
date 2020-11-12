@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ClassficationListItem from '../molecules/ClassficationListItem';
+import ClassficationListItem from '../../molecules/list/ClassficationListItem';
 
 export default {
   name: 'ClassficatetionList',

@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import ArticleCategory from './ArticleCategory';
-import ArticleTag from './ArticleTag';
-import ArticleDate from '../molecules/ArticleDate';
+import ArticleCategory from '../../molecules/article/ArticleCategory';
+import ArticleTag from '../../molecules/article/ArticleTag';
+import ArticleDate from '../../molecules/article/ArticleDate';
 
 export default {
   name: 'ArticleListItem',

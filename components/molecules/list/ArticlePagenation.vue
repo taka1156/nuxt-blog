@@ -1,25 +1,25 @@
 <template>
   <div class="pagination">
-    <pagination-btn @click="$emit('prev')">
+    <base-btn @click="$emit('prev')">
       &lt;
-    </pagination-btn>
+    </base-btn>
     <base-text class="base-text--pagenation">
       {{ currentPage }}/{{ maxPage }}
     </base-text>
-    <pagination-btn @click="$emit('next')">
+    <base-btn @click="$emit('next')">
       &gt;
-    </pagination-btn>
+    </base-btn>
   </div>
 </template>
 
 <script>
-import PaginationBtn from '../atoms/PaginationBtn';
-import BaseText from '../atoms/BaseText.vue';
+import BaseBtn from '../../atoms/base/BaseBtn';
+import BaseText from '../../atoms/base/BaseText';
 
 export default {
   name: 'ArticlePagenation',
   components: {
-    'pagination-btn': PaginationBtn,
+    'base-btn': BaseBtn,
     'base-text': BaseText
   },
   props: {

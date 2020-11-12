@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import NavIcon from '../atoms/NavIcon';
-import NavLogo from '../atoms/NavLogo';
+import NavLogo from '../../atoms/nav/NavLogo';
+import NavIcon from '../../atoms/nav/NavIcon';
 
 export default {
   name: 'NavBar',

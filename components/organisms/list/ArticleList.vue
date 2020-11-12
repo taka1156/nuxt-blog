@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import ArticleListItem from '../molecules/ArticleListItem';
-import ArticlePagenation from '../molecules/ArticlePagenation';
+import ArticleListItem from '../../molecules/list/ArticleListItem';
+import ArticlePagenation from '../../molecules/list/ArticlePagenation';
 
 export default {
   components: {

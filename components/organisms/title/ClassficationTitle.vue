@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import BaseImg from '../atoms/BaseImg';
+import BaseImg from '../../atoms/base/BaseImg';
 
 export default {
   name: 'ClassficationTitle',

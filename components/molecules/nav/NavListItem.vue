@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import BaseImg from '../atoms/BaseImg';
-import BaseText from '../atoms/BaseText';
+import BaseImg from '../../atoms/base/BaseImg';
+import BaseText from '../../atoms/base/BaseText';
 
 export default {
   name: 'NavListItem',
