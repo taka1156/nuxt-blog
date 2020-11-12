@@ -7,7 +7,6 @@
         :key="index"
         :badge-type="'tag'"
         :badge="tag"
-        class="article-badge__outline"
         @jump="jump"
       />
     </div>
@@ -45,12 +44,5 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
-}
-
-.article-badge__outline {
-  width: 100px;
-  margin: 2px;
-  border: 1px solid rgba(40, 167, 69, 0.9);
-  color: rgba(40, 167, 69, 0.9);
 }
 </style>

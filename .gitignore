@@ -95,3 +95,5 @@ stories
 
 # firebase
 .firebase
+storybook-static
+

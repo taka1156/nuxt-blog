@@ -2,12 +2,7 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <article-badge
-        :badge-type="'category'"
-        :badge="category"
-        class="article-badge__fill"
-        @jump="jump"
-      />
+      <article-badge :badge-type="'category'" :badge="category" @jump="jump" />
     </div>
   </div>
 </template>
@@ -43,11 +38,5 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 5px;
-}
-
-.article-badge__fill {
-  width: 130px;
-  background-color: rgba(40, 167, 69, 0.9);
-  color: white;
 }
 </style>
