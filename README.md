@@ -1,18 +1,20 @@
 # takablog
-***
 
-## 機能追加
-- 機能追加したら書きます
-- 2019/9/26: Contentfulとの連携及びprocessmdの廃止(今後記事はContentfulから作成)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/taka1156/nuxt-blog/firebase%20deploy)
+![test](https://github.com/taka1156/nuxt-blog/workflows/test/badge.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/taka1156/nuxt-blog)
 
-## プレフィックスルール
-fix:        ファイルのリネームやフォルダ構成の修正
+taka1156のブログサイトです(https://www.taka1156.site)
+Storybookはこちら(https://blog-storybook.netlify.app)
 
-refactor:   コードの見直し、誤字修正等
+## 使用しているもの
+- Nuxt.js
+- marked.js
+- highlight.js
+- Storybook
+- normalize.css
+- github-markdown-css
 
-add:        機能追加、ファイル追加、記事追加
-
-update: 既存の記事の更新やreadme等のソースコードに依存し
-ないものの変更及び更新
-
-huskyの導入を近いうちに試します。
+素材
+- [SVG PORN](https://svgporn.com/)
+- [Google Material Icon](https://material.io/resources/icons/?style=baseline)
