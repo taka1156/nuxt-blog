@@ -1,13 +1,17 @@
 <template>
   <div class="pagination">
     <base-btn @click="$emit('prev')">
-      &lt;
+      <base-text class="base-text--green">
+        &lt;
+      </base-text>
     </base-btn>
-    <base-text class="base-text--pagenation">
+    <base-text class="base-text--pagenation base-text--green">
       {{ currentPage }}/{{ maxPage }}
     </base-text>
     <base-btn @click="$emit('next')">
-      &gt;
+      <base-text class="base-text--green">
+        &gt;
+      </base-text>
     </base-btn>
   </div>
 </template>

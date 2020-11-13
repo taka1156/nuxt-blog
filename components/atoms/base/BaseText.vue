@@ -1,5 +1,5 @@
 <template functional>
-  <p class="base-text" :class="data.staticClass || ''">
+  <p class="base-text" :class="[data.staticClass, data.class]">
     <slot />
   </p>
 </template>

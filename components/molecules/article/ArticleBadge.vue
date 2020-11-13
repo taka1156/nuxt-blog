@@ -10,7 +10,8 @@
       <base-text
         class="base-text--badge"
         :class="[badgeType === 'category' ? 'base-text--white' : 'base-text--green']"
-        >{{ badge.name }}
+      >
+        {{ badge.name }}
       </base-text>
       <base-img
         class="base-img--sm"
@@ -72,6 +73,5 @@ p {
   width: 100px;
   margin: 2px;
   border: 1px solid rgba(40, 167, 69, 0.9);
-  color: rgba(40, 167, 69, 0.9);
 }
 </style>

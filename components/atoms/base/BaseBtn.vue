@@ -1,5 +1,5 @@
 <template functional>
-  <button class="pagination__btn" v-on="listeners">
+  <button class="btn" v-on="listeners">
     <slot />
   </button>
 </template>
@@ -9,14 +9,14 @@
 button {
   margin: 0;
   padding: 0;
-  background: none;
-  outline: none;
   border: none;
+  outline: none;
+  background: transparent;
 }
 
 /* css reset */
 
-.pagination__btn {
+.btn {
   padding: 10px;
   font-size: 20px;
   cursor: pointer;

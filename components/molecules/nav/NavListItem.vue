@@ -38,7 +38,6 @@ export default {
   display: block;
   font-size: 50px;
   text-align: left;
-  color: white;
 }
 
 .nav-item__link {
