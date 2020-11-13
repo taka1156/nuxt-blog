@@ -11,6 +11,7 @@
         <article v-for="(article, index) in articles" :key="index">
           <article-list-item
             :article="article"
+            @article-jump="articleJump"
             @classfication-jump="classficationJump"
           />
         </article>
@@ -82,6 +83,9 @@ export default {
         name: this.routePath,
         params: { pageid: pageid }
       });
+    },
+    articleJump({ id }) {
+      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
     },
     classficationJump({ path, id }) {
       this.$router.push({
