@@ -1,13 +1,16 @@
 <template>
   <div>
-    <ul>
-      <classfication-list-item
-        v-for="(item, index) in items"
-        :key="index"
-        :classfication-item="item"
-        :path="path"
-      />
-    </ul>
+    <div v-if="items.length !== 0">
+      <ul>
+        <article v-for="(item, index) in items" :key="index">
+          <classfication-list-item
+            :classfication-item="item"
+            @classfication-jump="classficationJump"
+          />
+        </article>
+      </ul>
+    </div>
+    <p v-else>{{ path }}がありません。</p>
   </div>
 </template>
 
@@ -29,6 +32,14 @@ export default {
       type: String,
       default: '',
       required: true
+    }
+  },
+  methods: {
+    classficationJump({ id }) {
+      this.$router.push({
+        name: `${this.path}-id`,
+        params: { id: id }
+      });
     }
   }
 };

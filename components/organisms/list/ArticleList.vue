@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="articles.length !== 0">
-      <article-pagenation
+      <article-pagination
         :current-page="currentPage"
         :max-page="maxPage"
         @prev="prev"
@@ -9,10 +9,13 @@
       />
       <ul>
         <article v-for="(article, index) in articles" :key="index">
-          <article-list-item :article="article" />
+          <article-list-item
+            :article="article"
+            @classfication-jump="classficationJump"
+          />
         </article>
       </ul>
-      <article-pagenation
+      <article-pagination
         :current-page="currentPage"
         :max-page="maxPage"
         @prev="prev"
@@ -25,12 +28,12 @@
 
 <script>
 import ArticleListItem from '../../molecules/list/ArticleListItem';
-import ArticlePagenation from '../../molecules/list/ArticlePagenation';
+import ArticlePagination from '../../molecules/list/ArticlePagination';
 
 export default {
   components: {
     'article-list-item': ArticleListItem,
-    'article-pagenation': ArticlePagenation
+    'article-pagination': ArticlePagination
   },
   props: {
     articles: {
@@ -51,7 +54,12 @@ export default {
   },
   computed: {
     currentPage() {
-      return parseInt(this.$route.params.pageid || 1);
+      // return parseInt(this.$route.params.pageid || 1);
+      if (this.$route != null && this.$route.params.pageid != null) {
+        return parseInt(this.$route.params.pageid);
+      } else {
+        return 1;
+      }
     }
   },
   methods: {
@@ -60,19 +68,25 @@ export default {
       if (pageid < 1) {
         pageid = this.maxPage;
       }
-      this.jump(pageid);
+      this.pageJump(pageid);
     },
     next() {
       let pageid = Math.min(this.currentPage + 1, this.maxPage + 1);
       if (pageid > this.maxPage) {
         pageid = 1;
       }
-      this.jump(pageid);
+      this.pageJump(pageid);
     },
-    jump(pageid) {
+    pageJump(pageid) {
       this.$router.push({
         name: this.routePath,
         params: { pageid: pageid }
+      });
+    },
+    classficationJump({ path, id }) {
+      this.$router.push({
+        name: `${path}-id`,
+        params: { id: id }
       });
     }
   }

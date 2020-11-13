@@ -1,7 +1,10 @@
 <template>
   <div>
     <li class="article-list-item">
-      <article-category :category="article.category" />
+      <article-category
+        :category="article.category"
+        @classfication-jump="classficationJump"
+      />
       <article-date
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
@@ -12,7 +15,7 @@
       </h2>
       <p class="article-list-item__summary">{{ article.summary }}</p>
       <div class="line" />
-      <article-tag :tags="article.tags" />
+      <article-tag :tags="article.tags" @classfication-jump="classficationJump" />
     </li>
   </div>
 </template>
@@ -37,8 +40,8 @@ export default {
     }
   },
   methods: {
-    jump({ id }) {
-      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
+    classficationJump(jumpInfo) {
+      this.$emit('classfication-jump', jumpInfo);
     }
   }
 };

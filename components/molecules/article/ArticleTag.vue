@@ -2,13 +2,11 @@
   <div>
     <div class="article-tag">
       タグ:&nbsp;
-      <article-badge
-        v-for="(tag, index) in tags"
-        :key="index"
-        :badge-type="'tag'"
-        :badge="tag"
-        @jump="jump"
-      />
+      <div v-for="(tag, index) in tags" :key="index">
+        <div @click="classficationJump(tag)">
+          <article-badge :badge-type="'tag'" :badge="tag" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -29,11 +27,8 @@ export default {
     }
   },
   methods: {
-    jump(id) {
-      this.$router.push({
-        name: 'tag-id',
-        params: { id: id }
-      });
+    classficationJump(tag) {
+      this.$emit('classfication-jump', { path: 'tag', id: tag.id });
     }
   }
 };

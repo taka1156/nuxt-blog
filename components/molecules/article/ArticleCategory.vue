@@ -2,7 +2,9 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <article-badge :badge-type="'category'" :badge="category" @jump="jump" />
+      <div @click="classficationJump">
+        <article-badge :badge-type="'category'" :badge="category" />
+      </div>
     </div>
   </div>
 </template>
@@ -23,11 +25,8 @@ export default {
     }
   },
   methods: {
-    jump(id) {
-      this.$router.push({
-        name: 'category-id',
-        params: { id: id }
-      });
+    classficationJump() {
+      this.$emit('classfication-jump', { path: 'category', id: this.category.id });
     }
   }
 };

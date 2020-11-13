@@ -1,12 +1,17 @@
 <template>
   <div>
-    <li class="classfication-list-item" @click="jump(classficationItem)">
-      <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
-      <base-img
-        class="base-img--lg"
-        :img-url="classficationItem.img.url"
-        :img-alt="`${classficationItem.name}のロゴ`"
-      />
+    <li
+      class="classfication-list-item"
+      @click="$emit('classfication-jump', classficationItem)"
+    >
+      <div class="classfication-list-item__box">
+        <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
+        <base-img
+          class="base-img--lg"
+          :img-url="classficationItem.img.url"
+          :img-alt="`${classficationItem.name}のロゴ`"
+        />
+      </div>
     </li>
   </div>
 </template>
@@ -24,19 +29,6 @@ export default {
       type: Object,
       default: () => {},
       required: true
-    },
-    path: {
-      type: String,
-      default: '',
-      required: true
-    }
-  },
-  methods: {
-    jump({ id }) {
-      this.$router.push({
-        name: `${this.path}-id`,
-        params: { id: id }
-      });
     }
   }
 };
@@ -44,13 +36,17 @@ export default {
 
 <style scoped>
 .classfication-list-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  display: block;
   margin: 10px;
+  padding: 10px;
   border: 1px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.classfication-list-item__box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .classfication-list-item__title {

@@ -46,9 +46,4 @@ export default {
   width: 100%;
   color: rgba(40, 167, 69, 0.9);
 }
-
-/*
-  padding: 10px;
-  font-size: 20px;
-*/
 </style>

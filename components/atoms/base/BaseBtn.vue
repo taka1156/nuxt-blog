@@ -10,6 +10,7 @@ button {
   margin: 0;
   padding: 0;
   background: none;
+  outline: none;
   border: none;
 }
 
