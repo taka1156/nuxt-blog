@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="article-header">
-      <article-category
-        :category="article.category"
-        @classfication-jump="classficationJump"
-      />
+      <article-category :category="article.category" />
       <article-date
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
@@ -13,14 +10,14 @@
       <h1 class="article-header__title">
         {{ article.title }}
       </h1>
-      <article-tag :tags="article.tags" @classfication-jump="classficationJump" />
+      <article-tag :tags="article.tags" />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleCategory from '../../molecules/article/ArticleCategory';
-import ArticleTag from '../../molecules/article/ArticleTag';
+import ArticleCategory from './ArticleCategory';
+import ArticleTag from './ArticleTag';
 import ArticleDate from '../../molecules/article/ArticleDate';
 
 export default {
@@ -35,14 +32,6 @@ export default {
       type: Object,
       default: () => {},
       required: true
-    }
-  },
-  methods: {
-    classficationJump({ path, id }) {
-      this.$router.push({
-        name: `${path}-id`,
-        params: { id: id }
-      });
     }
   }
 };

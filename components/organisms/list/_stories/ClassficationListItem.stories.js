@@ -2,7 +2,7 @@ import ClassficationListItem from '../ClassficationListItem.vue';
 import { dummyClassfication } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Molecules/List/ClassficationListItem',
+  title: 'Organisns/List/ClassficationListItem',
   component: ClassficationListItem,
   parameters: {
     notes: {

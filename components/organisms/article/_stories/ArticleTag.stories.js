@@ -2,7 +2,7 @@ import ArticleTag from '../ArticleTag.vue';
 import { dummyTagBadges } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Molecules/Article/ArticleTag',
+  title: 'Organisns/Article/ArticleTag',
   component: ArticleTag,
   parameters: {
     notes: {

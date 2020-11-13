@@ -2,7 +2,7 @@ import ArticleCategory from '../ArticleCategory.vue';
 import { dummyCategoryBadge } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Molecules/Article/ArticleCategory',
+  title: 'Organisns/Article/ArticleCategory',
   component: ArticleCategory,
   parameters: {
     notes: {
