@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import BaseImg from '@/components/atoms/BaseImg';
+import BaseImg from '@/components/atoms/base/BaseImg';
 
 export default {
   name: 'Profile',
