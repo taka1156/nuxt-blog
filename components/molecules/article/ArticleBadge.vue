@@ -5,7 +5,6 @@
       :class="[
         badgeType === 'category' ? 'article-badge__fill' : 'article-badge__outline'
       ]"
-      @click="$emit('jump', badge.id)"
     >
       <base-text
         class="base-text--badge"

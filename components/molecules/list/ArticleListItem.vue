@@ -10,7 +10,7 @@
         :updated-at="article.updatedAt"
       />
       <div class="line" />
-      <h2 class="article-list-item__title" @click="jump(article)">
+      <h2 class="article-list-item__title" @click="$emit('article-jump', article)">
         {{ article.title }}
       </h2>
       <p class="article-list-item__summary">{{ article.summary }}</p>
