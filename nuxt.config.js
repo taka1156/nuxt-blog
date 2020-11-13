@@ -9,6 +9,9 @@ export default {
   mode: 'universal',
   target: 'static',
   router: {
+    scrollBehavior: function() {
+      return { x: 0, y: 0 };
+    },
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'page-pageid',
