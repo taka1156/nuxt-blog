@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="article-header">
-      <article-category :category="article.category" />
+      <article-category
+        :category="article.category"
+        @classfication-jump="classficationJump"
+      />
       <article-date
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
@@ -10,7 +13,7 @@
       <h1 class="article-header__title">
         {{ article.title }}
       </h1>
-      <article-tag :tags="article.tags" />
+      <article-tag :tags="article.tags" @classfication-jump="classficationJump" />
     </div>
   </div>
 </template>
@@ -32,6 +35,14 @@ export default {
       type: Object,
       default: () => {},
       required: true
+    }
+  },
+  methods: {
+    classficationJump({ path, id }) {
+      this.$router.push({
+        name: `${path}-id`,
+        params: { id: id }
+      });
     }
   }
 };
