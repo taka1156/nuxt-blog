@@ -1,4 +1,4 @@
-# takablog
+# nuxt-blog
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/taka1156/nuxt-blog/firebase%20deploy)
 ![test](https://github.com/taka1156/nuxt-blog/workflows/test/badge.svg)
