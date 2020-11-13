@@ -2,7 +2,7 @@ import ArticleListItem from '../ArticleListItem.vue';
 import { dummyArticles } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Molecules/List/ArticleListItem',
+  title: 'Organisns/List/ArticleListItem',
   component: ArticleListItem,
   parameters: {
     notes: {

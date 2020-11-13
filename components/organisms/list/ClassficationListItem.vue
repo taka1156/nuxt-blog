@@ -1,8 +1,8 @@
 <template>
   <div>
-    <li
+    <article
       class="classfication-list-item"
-      @click="$emit('classfication-jump', classficationItem)"
+      @click="classficationJump(classficationItem)"
     >
       <div class="classfication-list-item__box">
         <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
@@ -12,7 +12,7 @@
           :img-alt="`${classficationItem.name}のロゴ`"
         />
       </div>
-    </li>
+    </article>
   </div>
 </template>
 
@@ -29,6 +29,19 @@ export default {
       type: Object,
       default: () => {},
       required: true
+    },
+    path: {
+      type: String,
+      default: '',
+      required: true
+    }
+  },
+  methods: {
+    classficationJump({ id }) {
+      this.$router.push({
+        name: `${this.path}-id`,
+        params: { id: id }
+      });
     }
   }
 };

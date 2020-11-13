@@ -1,28 +1,25 @@
 <template>
   <div>
-    <li class="article-list-item">
-      <article-category
-        :category="article.category"
-        @classfication-jump="classficationJump"
-      />
+    <article class="article-list-item">
+      <article-category :category="article.category" />
       <article-date
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
       <div class="line" />
-      <h2 class="article-list-item__title" @click="$emit('article-jump', article)">
+      <h2 class="article-list-item__title" @click="articleJump(article)">
         {{ article.title }}
       </h2>
       <p class="article-list-item__summary">{{ article.summary }}</p>
       <div class="line" />
-      <article-tag :tags="article.tags" @classfication-jump="classficationJump" />
-    </li>
+      <article-tag :tags="article.tags" />
+    </article>
   </div>
 </template>
 
 <script>
-import ArticleCategory from '../../molecules/article/ArticleCategory';
-import ArticleTag from '../../molecules/article/ArticleTag';
+import ArticleCategory from '../article/ArticleCategory';
+import ArticleTag from '../article/ArticleTag';
 import ArticleDate from '../../molecules/article/ArticleDate';
 
 export default {
@@ -40,8 +37,8 @@ export default {
     }
   },
   methods: {
-    classficationJump(jumpInfo) {
-      this.$emit('classfication-jump', jumpInfo);
+    articleJump({ id }) {
+      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
     }
   }
 };

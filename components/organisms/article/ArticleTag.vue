@@ -3,7 +3,7 @@
     <div class="article-tag">
       タグ:&nbsp;
       <div v-for="(tag, index) in tags" :key="index">
-        <div @click="classficationJump(tag)">
+        <div @click="tagJump(tag)">
           <article-badge :badge-type="'tag'" :badge="tag" />
         </div>
       </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ArticleBadge from './ArticleBadge';
+import ArticleBadge from '../../molecules/article/ArticleBadge';
 
 export default {
   name: 'ArticleTag',
@@ -27,8 +27,11 @@ export default {
     }
   },
   methods: {
-    classficationJump(tag) {
-      this.$emit('classfication-jump', { path: 'tag', id: tag.id });
+    tagJump({ id }) {
+      this.$router.push({
+        name: 'tag-id',
+        params: { id: id }
+      });
     }
   }
 };

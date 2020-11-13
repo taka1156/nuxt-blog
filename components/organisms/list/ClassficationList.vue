@@ -2,12 +2,9 @@
   <div>
     <div v-if="items.length !== 0">
       <ul>
-        <article v-for="(item, index) in items" :key="index">
-          <classfication-list-item
-            :classfication-item="item"
-            @classfication-jump="classficationJump"
-          />
-        </article>
+        <li v-for="(item, index) in items" :key="index">
+          <classfication-list-item :classfication-item="item" :path="path" />
+        </li>
       </ul>
     </div>
     <p v-else>{{ path }}がありません。</p>
@@ -15,7 +12,7 @@
 </template>
 
 <script>
-import ClassficationListItem from '../../molecules/list/ClassficationListItem';
+import ClassficationListItem from './ClassficationListItem';
 
 export default {
   name: 'ClassficatetionList',
@@ -33,14 +30,6 @@ export default {
       default: '',
       required: true
     }
-  },
-  methods: {
-    classficationJump({ id }) {
-      this.$router.push({
-        name: `${this.path}-id`,
-        params: { id: id }
-      });
-    }
   }
 };
 </script>
@@ -48,6 +37,7 @@ export default {
 <style scoped>
 /* css reset */
 ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
