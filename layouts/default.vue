@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BlogNavigation from '@/components/organisms/BlogNavigation';
+import BlogNavigation from '@/components/organisms/nav/BlogNavigation';
 
 export default {
   components: {
