@@ -2,7 +2,7 @@ import ClassficationTitle from '../ClassficationTitle.vue';
 import { dummyClassfication } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Organisns/Nav/ClassficationTitle',
+  title: 'Organisns/Title/ClassficationTitle',
   component: ClassficationTitle,
   parameters: {
     notes: {

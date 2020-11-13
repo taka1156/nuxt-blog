@@ -19,3 +19,46 @@ Storybookはこちら(https://blog-storybook.netlify.app)
 素材
 - [SVG PORN](https://svgporn.com/)
 - [Google Material Icon](https://material.io/resources/icons/?style=baseline)
+
+## アトミックデザイン
+
+アトミックデザインを試しに導入してみました。(以下一覧)
+
+
+**Atoms**
+- BaseBtn
+- BaseImg
+- BaseText
+- NavIcon
+- NavLogo
+
+**Molecules**
+- ArticleBadge
+- ArticleDate
+- ArticlePagination
+- NavBar
+- NavListItem
+- NavList
+
+**Organisms**
+- ArticleCategory <a href="#1">※1</a>
+- ArticleTag <a href="#1">※1</a>
+- ArticleHeader
+- ArticleListItem <a href="#2">※2</a>
+- ArticleList
+- ClassficationListItem <a href="#2">※2</a>
+- ClassficationList
+- BlogNavigation
+- ClassficationTitle
+
+
+<div id="1">※1</div>
+
+`ArticleCategory` 、`ArticleTag`は汎用性が高いのですが<br>
+`Molecules`の`ArticleBadge`を使っていること、ルーティング処理を内包していることより、`Organisms`にしています。
+
+
+<div id="2">※2</div> 
+
+`~ListItem `は汎用性が低い(=List系と強く結びついてる)ため<br>
+`Atoms`要素しかない`ClassficationList`も`Organisms`に設定しています。

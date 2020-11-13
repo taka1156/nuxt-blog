@@ -2,7 +2,7 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <div @click="classficationJump">
+      <div @click="categoryJump(category)">
         <article-badge :badge-type="'category'" :badge="category" />
       </div>
     </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ArticleBadge from './ArticleBadge';
+import ArticleBadge from '../../molecules/article/ArticleBadge';
 
 export default {
   name: 'ArticleCategory',
@@ -25,8 +25,11 @@ export default {
     }
   },
   methods: {
-    classficationJump() {
-      this.$emit('classfication-jump', { path: 'category', id: this.category.id });
+    categoryJump({ id }) {
+      this.$router.push({
+        name: 'category-id',
+        params: { id: id }
+      });
     }
   }
 };

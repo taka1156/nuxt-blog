@@ -8,13 +8,9 @@
         @next="next"
       />
       <ul>
-        <article v-for="(article, index) in articles" :key="index">
-          <article-list-item
-            :article="article"
-            @article-jump="articleJump"
-            @classfication-jump="classficationJump"
-          />
-        </article>
+        <li v-for="(article, index) in articles" :key="index">
+          <article-list-item :article="article" />
+        </li>
       </ul>
       <article-pagination
         :current-page="currentPage"
@@ -28,7 +24,7 @@
 </template>
 
 <script>
-import ArticleListItem from '../../molecules/list/ArticleListItem';
+import ArticleListItem from './ArticleListItem';
 import ArticlePagination from '../../molecules/list/ArticlePagination';
 
 export default {
@@ -83,15 +79,6 @@ export default {
         name: this.routePath,
         params: { pageid: pageid }
       });
-    },
-    articleJump({ id }) {
-      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
-    },
-    classficationJump({ path, id }) {
-      this.$router.push({
-        name: `${path}-id`,
-        params: { id: id }
-      });
     }
   }
 };
@@ -100,6 +87,7 @@ export default {
 <style scoped>
 /* css reset */
 ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }

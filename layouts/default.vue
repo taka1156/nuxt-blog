@@ -1,7 +1,9 @@
 <template>
   <div class="App">
     <blog-navigation :logo-text="logoText" :routes="routes" />
-    <nuxt />
+    <transition name="go-up" mode="out-in">
+      <nuxt />
+    </transition>
   </div>
 </template>
 
@@ -45,5 +47,32 @@ export default {
 <style scoped>
 .App {
   text-align: center;
+}
+
+.go-up-enter {
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+
+.go-up-enter-to {
+  opacity: 1;
+}
+
+.go-up-enter-active {
+  transition: all 1s 0s ease;
+}
+
+.go-up-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.go-up-leave-to {
+  transform: translate(0, -100px);
+  opacity: 0;
+}
+
+.go-up-leave-active {
+  transition: all 0.2s 0s ease;
 }
 </style>
