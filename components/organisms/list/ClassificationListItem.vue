@@ -1,15 +1,17 @@
 <template>
   <div>
     <article
-      class="classfication-list-item"
-      @click="classficationJump(classficationItem)"
+      class="classification-list-item"
+      @click="classificationJump(classificationItem)"
     >
-      <div class="classfication-list-item__box">
-        <h2 class="classfication-list-item__title">{{ classficationItem.name }}</h2>
+      <div class="classification-list-item__box">
+        <h2 class="classification-list-item__title">
+          {{ classificationItem.name }}
+        </h2>
         <base-img
           class="base-img--lg"
-          :img-url="classficationItem.img.url"
-          :img-alt="`${classficationItem.name}のロゴ`"
+          :img-url="classificationItem.img.url"
+          :img-alt="`${classificationItem.name}のロゴ`"
         />
       </div>
     </article>
@@ -20,12 +22,12 @@
 import BaseImg from '../../atoms/base/BaseImg';
 
 export default {
-  name: 'ClassficationListItem',
+  name: 'ClassificationListItem',
   components: {
     'base-img': BaseImg
   },
   props: {
-    classficationItem: {
+    classificationItem: {
       type: Object,
       default: () => {},
       required: true
@@ -37,7 +39,7 @@ export default {
     }
   },
   methods: {
-    classficationJump({ id }) {
+    classificationJump({ id }) {
       this.$router.push({
         name: `${this.path}-id`,
         params: { id: id }
@@ -48,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.classfication-list-item {
+.classification-list-item {
   display: block;
   margin: 10px;
   padding: 10px;
@@ -57,12 +59,12 @@ export default {
   cursor: pointer;
 }
 
-.classfication-list-item__box {
+.classification-list-item__box {
   display: flex;
   justify-content: space-between;
 }
 
-.classfication-list-item__title {
+.classification-list-item__title {
   text-align: left;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="classfication-title">
-      <h1 class="classfication-title__title">
+    <div class="classification-title">
+      <h1 class="classification-title__title">
         <slot />
       </h1>
       <base-img class="base-img--lg" :img-url="imgUrl" :img-alt="'ロゴ'" />
@@ -28,17 +28,17 @@ export default {
 </script>
 
 <style scoped>
-.classfication-title {
+.classification-title {
   display: flex;
   justify-content: center;
 }
 
-.classfication-title__title {
+.classification-title__title {
   padding: 5px;
   font-size: 1.25rem;
 }
 
-.classfication-title__icon {
+.classification-title__icon {
   padding: 5px;
   height: 50px;
   width: 50px;

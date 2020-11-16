@@ -1,9 +1,9 @@
 <template>
   <div class="Category">
     <div class="container">
-      <classfication-title :img-url="category.img.url">
+      <classification-title :img-url="category.img.url">
         Category: {{ category.name }}
-      </classfication-title>
+      </classification-title>
       <div class="line" />
       <article-list
         :articles="articles"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ClassficationTitle from '@/components/organisms/title/ClassficationTitle';
+import ClassificationTitle from '@/components/organisms/title/ClassificationTitle';
 import AricleList from '@/components/organisms/list/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
@@ -23,7 +23,7 @@ const POSTS_PER_PAGE = 5;
 export default {
   name: 'Category',
   components: {
-    'classfication-title': ClassficationTitle,
+    'classification-title': ClassificationTitle,
     'article-list': AricleList
   },
   mixins: [meta],
