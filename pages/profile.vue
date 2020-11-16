@@ -32,8 +32,9 @@
           <li class="sns__box">
             <a href="https://github.com/taka1156" class="sns__link">
               <base-img
+                :size="`lg`"
                 :img-url="require('@/assets/img/github-logo.png')"
-                class="base-img--lg"
+                :img-alt="`githubアイコン`"
               />
               GitHub
             </a>
@@ -41,8 +42,9 @@
           <li class="sns__box">
             <a href="https://qiita.com/taka_1156" class="sns__link">
               <base-img
+                :size="`lg`"
                 :img-url="require('@/assets/img/qiita-logo.png')"
-                class="base-img--lg"
+                :img-alt="`qiitaアイコン`"
               />
               Qiita
             </a>
@@ -50,8 +52,9 @@
           <li class="sns__box">
             <a href="https://twitter.com/taka_1156" class="sns__link">
               <base-img
+                :size="`lg`"
                 :img-url="require('@/assets/img/twitter-logo.png')"
-                class="base-img--lg"
+                :img-alt="`twiiterアイコン`"
               />
               Twitter
             </a>
@@ -59,10 +62,11 @@
           <li class="sns__box">
             <a href="https://www.taka1156.site" class="sns__link">
               <base-img
+                :size="`lg`"
                 :img-url="require('@/assets/img/prof.png')"
-                class="base-img--lg"
+                :img-alt="`portfolioアイコン`"
               />
-              PortfolioSite
+              Portfolio
             </a>
           </li>
         </ul>

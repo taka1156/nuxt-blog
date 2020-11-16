@@ -1,13 +1,13 @@
 <template>
   <div>
-    <li class="nav-item" @click="$emit('change-state')">
+    <li class="nav-item" @click="changeState">
       <nuxt-link :to="navItem.to" class="nav-item__link">
         <base-img
-          class="base-img--lg"
+          :size="`lg`"
           :img-url="navItem.img"
           :img-alt="`${navItem.name}の画像`"
         />
-        <base-text class="base-text--white">{{ navItem.name }}</base-text>
+        <base-text :color="`white`">{{ navItem.name }}</base-text>
       </nuxt-link>
     </li>
   </div>
@@ -24,10 +24,23 @@ export default {
     'base-text': BaseText
   },
   props: {
+    /**
+     * ナビゲーションの１項目分
+     */
     navItem: {
       type: Object,
       default: () => {},
       required: true
+    }
+  },
+  methods: {
+    changeState() {
+      /**
+       * ナビゲーション開閉の状態を変化させる
+       * (NavListにイベント伝搬)
+       * @event changeState
+       */
+      this.$emit('change-state');
     }
   }
 };

@@ -7,7 +7,7 @@
             v-for="(item, index) in routes"
             :key="index"
             :nav-item="item"
-            @change-state="$emit('change-state')"
+            @change-state="changeState"
           />
         </ul>
       </div>
@@ -24,15 +24,31 @@ export default {
     'nav-item': NavListItem
   },
   props: {
+    /**
+     * ナビゲーションの開閉状態
+     */
     isOpen: {
       type: Boolean,
       default: false,
       required: true
     },
+    /**
+     * ナビゲーションの項目が定義された配列
+     */
     routes: {
       type: Array,
       default: () => [],
       required: true
+    }
+  },
+  methods: {
+    changeState() {
+      /**
+       * ナビゲーション開閉の状態を変化させる
+       * (閉じる)
+       * @event changeState
+       */
+      this.$emit('change-state', false);
     }
   }
 };

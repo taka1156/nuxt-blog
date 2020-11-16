@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Category</h1>
       <div class="line" />
-      <classification-list :path="'category'" :items="categories" />
+      <classification-list :route-path="'category'" :items="categories" />
     </div>
   </div>
 </template>

@@ -1,8 +1,44 @@
-<template functional>
-  <p class="base-text" :class="[data.staticClass, data.class]">
-    <slot />
-  </p>
+<template>
+  <div>
+    <p class="base-text" :class="`base-text--${useType} base-text--${color}`">
+      <!-- @slot テキスト -->
+      <slot />
+    </p>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'BaseImg',
+  props: {
+    /**
+     * テキストの用途別のスタイル指定
+     * (noneは特に指定がない時)
+     * @values none, badge, pagenation
+     */
+    useType: {
+      type: String,
+      default: 'none',
+      validator: function(value) {
+        return ['none', 'badge', 'pagenation'].indexOf(value) !== -1;
+      }
+    },
+    /**
+     * テキストの色
+     * (noneは特に指定がない時)
+     * @values none, white, green
+     */
+    color: {
+      type: String,
+      default: 'none',
+      required: true,
+      validator: function(value) {
+        return ['none', 'white', 'green'].indexOf(value) !== -1;
+      }
+    }
+  }
+};
+</script>
 
 <style scoped>
 /* css reset */

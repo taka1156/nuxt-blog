@@ -7,13 +7,13 @@
       ]"
     >
       <base-text
-        class="base-text--badge"
-        :class="[badgeType === 'category' ? 'base-text--white' : 'base-text--green']"
+        :use-type="`badge`"
+        :color="`${badgeType === 'category' ? 'white' : 'green'}`"
       >
         {{ badge.name }}
       </base-text>
       <base-img
-        class="base-img--sm"
+        :size="`sm`"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
       />
@@ -32,14 +32,23 @@ export default {
     'base-text': BaseText
   },
   props: {
+    /**
+     * バッジの種類
+     * @values category, tag
+     */
     badgeType: {
       type: String,
-      default: '',
-      required: true
+      required: true,
+      validator: function(value) {
+        return ['category', 'tag'].indexOf(value) !== -1;
+      }
     },
+    /**
+     * バッジの情報
+     * (id、バッジ名、画像URL)
+     */
     badge: {
       type: Object,
-      default: () => {},
       required: true
     }
   }

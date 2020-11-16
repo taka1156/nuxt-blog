@@ -20,6 +20,9 @@ export default {
     'article-badge': ArticleBadge
   },
   props: {
+    /**
+     * タグ情報(複数属することができる)
+     */
     tags: {
       type: Array,
       default: () => [],
@@ -28,6 +31,10 @@ export default {
   },
   methods: {
     tagJump({ id }) {
+      /**
+       * タグ、一覧にジャンプする
+       * (vue-router使用)
+       */
       this.$router.push({
         name: 'tag-id',
         params: { id: id }

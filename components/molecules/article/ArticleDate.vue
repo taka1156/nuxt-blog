@@ -2,11 +2,11 @@
   <div>
     <div class="article-date">
       <base-img
-        class="base-img--sm"
+        :size="`sm`"
         :img-url="require('@/assets/img/icon/date.svg')"
         :img-alt="'日付'"
       />
-      <base-text class="base-text--green">
+      <base-text :color="`green`">
         作成日:{{ dateFormat(createdAt) }} ~ 更新日:{{ dateFormat(updatedAt) }}
       </base-text>
     </div>
@@ -24,11 +24,17 @@ export default {
     'base-text': BaseText
   },
   props: {
+    /**
+     * 記事の作成日
+     */
     createdAt: {
       type: String,
       defalut: '',
       required: true
     },
+    /**
+     * 記事の更新日
+     */
     updatedAt: {
       type: String,
       defalut: '',
@@ -37,7 +43,10 @@ export default {
   },
   methods: {
     dateFormat(date) {
-      if (date === undefined) return '--/--/--';
+      /**
+       * 日付の形式を変える
+       */
+      if (date == null) return '--/--/--';
       return new Date(date).toLocaleDateString();
     }
   }

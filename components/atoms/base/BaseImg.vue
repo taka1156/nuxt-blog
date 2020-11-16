@@ -1,11 +1,43 @@
-<template functional>
-  <img
-    :src="props.imgUrl"
-    :alt="`${props.imgAlt}`"
-    class="base-img"
-    :class="data.staticClass || ''"
-  />
+<template>
+  <div>
+    <img :src="imgUrl" :alt="imgAlt" class="base-img" :class="`base-img--${size}`" />
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'BaseImg',
+  props: {
+    /**
+     * 画像のURL
+     */
+    imgUrl: {
+      type: String,
+      required: true
+    },
+    /**
+     * 画像が表示できない時に使用する代替テキスト
+     * (alt)
+     */
+    imgAlt: {
+      type: String,
+      required: true
+    },
+    /**
+     * 画像サイズ
+     * @values sm, lg
+     */
+    size: {
+      type: String,
+      default: 'sm',
+      required: true,
+      validator: function(value) {
+        return ['sm', 'lg'].indexOf(value) !== -1;
+      }
+    }
+  }
+};
+</script>
 
 <style scoped>
 .base-img {

@@ -1,15 +1,15 @@
 <template>
   <div class="pagination">
-    <base-btn @click="$emit('prev')">
-      <base-text class="base-text--green">
+    <base-btn :use-type="`pagenation`" @btn-click="prevPage">
+      <base-text :color="`green`">
         &lt;
       </base-text>
     </base-btn>
-    <base-text class="base-text--pagenation base-text--green">
+    <base-text :use-type="`pagenation`" :color="`green`">
       {{ currentPage }}/{{ maxPage }}
     </base-text>
-    <base-btn @click="$emit('next')">
-      <base-text class="base-text--green">
+    <base-btn :use-type="`pagenation`" @btn-click="nextPage">
+      <base-text :color="`green`">
         &gt;
       </base-text>
     </base-btn>
@@ -27,15 +27,39 @@ export default {
     'base-text': BaseText
   },
   props: {
+    /**
+     * 現在閲覧しているページ番号
+     */
     currentPage: {
       type: Number,
       default: 0,
       requierd: true
     },
+    /**
+     * 最大ページ数
+     */
     maxPage: {
       type: Number,
       default: 0,
       requierd: true
+    }
+  },
+  methods: {
+    prevPage() {
+      /**
+       * 前のページに進む
+       * (イベント伝搬)
+       * @event prevPage
+       */
+      this.$emit('prev');
+    },
+    nextPage() {
+      /**
+       * 次のページに進む
+       * (イベント伝搬)
+       * @event nextPage
+       */
+      this.$emit('next');
     }
   }
 };
