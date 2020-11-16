@@ -1,9 +1,12 @@
-import ClassficationTitle from '../ClassficationTitle.vue';
-import { dummyClassfication } from '@/testdata/testdata.js';
+import ClassificationTitle from '../ClassificationTitle.vue';
+import {
+  dummyClassificationTag,
+  dummyClassificationCategory
+} from '@/testdata/testdata.js';
 
 export default {
-  title: 'Organisns/Title/ClassficationTitle',
-  component: ClassficationTitle,
+  title: 'Organisns/Title/ClassificationTitle',
+  component: ClassificationTitle,
   parameters: {
     notes: {
       summary: '分類リストページタイトル'
@@ -11,14 +14,26 @@ export default {
   }
 };
 
-const Template = (args, { argTypes }) => ({
+const Template1 = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { ClassficationTitle },
+  components: { ClassificationTitle },
   template:
-    '<classfication-title v-bind="$props">ダミー : ダミータグ</classfication-title>'
+    '<classification-title v-bind="$props">ダミー : ダミータグ</classification-title>'
 });
 
-export const Default = Template.bind({});
-Default.args = {
-  imgUrl: dummyClassfication[0].img.url
+const Template2 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ClassificationTitle },
+  template:
+    '<classification-title v-bind="$props">ダミー : ダミ-カテゴリー</classification-title>'
+});
+
+export const Tag = Template1.bind({});
+Tag.args = {
+  imgUrl: dummyClassificationTag[0].img.url
+};
+
+export const Category = Template2.bind({});
+Category.args = {
+  imgUrl: dummyClassificationCategory[0].img.url
 };
