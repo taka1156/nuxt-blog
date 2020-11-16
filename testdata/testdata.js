@@ -5,9 +5,7 @@ const MAX_BADGE_DATA = 5;
 
 // factory
 const dummyFactory = (num, fn) => {
-  const d = [...new Array(num)].map((_, i) => fn(i + 1));
-  console.log(d);
-  return d;
+  return [...new Array(num)].map((_, i) => fn(i + 1));
 };
 
 // template

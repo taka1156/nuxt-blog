@@ -7,13 +7,13 @@
       ]"
     >
       <base-text
-        class="base-text--badge"
-        :class="[badgeType === 'category' ? 'base-text--white' : 'base-text--green']"
+        :use-type="`badge`"
+        :color="`${badgeType === 'category' ? 'white' : 'green'}`"
       >
         {{ badge.name }}
       </base-text>
       <base-img
-        class="base-img--sm"
+        :size="`sm`"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
       />

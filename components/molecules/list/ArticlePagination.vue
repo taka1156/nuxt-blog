@@ -1,15 +1,15 @@
 <template>
   <div class="pagination">
-    <base-btn @click="$emit('prev')">
-      <base-text class="base-text--green">
+    <base-btn @btn-click="$emit('prev')">
+      <base-text :color="`green`">
         &lt;
       </base-text>
     </base-btn>
-    <base-text class="base-text--pagenation base-text--green">
+    <base-text :use-type="`pagenation`" :color="`green`">
       {{ currentPage }}/{{ maxPage }}
     </base-text>
-    <base-btn @click="$emit('next')">
-      <base-text class="base-text--green">
+    <base-btn @btn-click="$emit('next')">
+      <base-text :color="`green`">
         &gt;
       </base-text>
     </base-btn>

@@ -1,7 +1,9 @@
-<template functional>
-  <button class="btn" v-on="listeners">
-    <slot />
-  </button>
+<template>
+  <div>
+    <button class="btn" @click="$emit('btn-click')">
+      <slot />
+    </button>
+  </div>
 </template>
 
 <style scoped>

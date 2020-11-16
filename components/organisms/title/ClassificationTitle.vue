@@ -4,7 +4,7 @@
       <h1 class="classification-title__title">
         <slot />
       </h1>
-      <base-img class="base-img--lg" :img-url="imgUrl" :img-alt="'ロゴ'" />
+      <base-img :size="`lg`" :img-url="imgUrl" :img-alt="'ロゴ'" />
     </div>
   </div>
 </template>

@@ -1,8 +1,37 @@
-<template functional>
-  <p class="base-text" :class="[data.staticClass, data.class]">
-    <slot />
-  </p>
+<template>
+  <div>
+    <p class="base-text" :class="`base-text--${useType} base-text--${color}`">
+      <slot />
+    </p>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'BaseImg',
+  props: {
+    useType: {
+      type: String,
+      default: 'none',
+      validator: function(value) {
+        return ['none', 'badge', 'pagenation'].indexOf(value) !== -1;
+      }
+    },
+    color: {
+      type: String,
+      default: 'none',
+      required: true,
+      validator: function(value) {
+        return ['none', 'white', 'green'].indexOf(value) !== -1;
+      }
+    }
+  },
+  mounted() {
+    console.log(this.useType);
+    console.log(this.color);
+  }
+};
+</script>
 
 <style scoped>
 /* css reset */
