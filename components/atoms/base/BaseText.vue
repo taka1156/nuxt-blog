@@ -1,6 +1,7 @@
 <template>
   <div>
     <p class="base-text" :class="`base-text--${useType} base-text--${color}`">
+      <!-- @slot テキスト -->
       <slot />
     </p>
   </div>
@@ -10,6 +11,11 @@
 export default {
   name: 'BaseImg',
   props: {
+    /**
+     * テキストの用途別のスタイル指定
+     * (noneは特に指定がない時)
+     * @values none, badge, pagenation
+     */
     useType: {
       type: String,
       default: 'none',
@@ -17,6 +23,11 @@ export default {
         return ['none', 'badge', 'pagenation'].indexOf(value) !== -1;
       }
     },
+    /**
+     * テキストの色
+     * (noneは特に指定がない時)
+     * @values none, white, green
+     */
     color: {
       type: String,
       default: 'none',
@@ -25,10 +36,6 @@ export default {
         return ['none', 'white', 'green'].indexOf(value) !== -1;
       }
     }
-  },
-  mounted() {
-    console.log(this.useType);
-    console.log(this.color);
   }
 };
 </script>

@@ -18,6 +18,9 @@ export default {
     'article-badge': ArticleBadge
   },
   props: {
+    /**
+     * カテゴリー情報(1つのみに属する)
+     */
     category: {
       type: Object,
       default: () => {},
@@ -26,6 +29,10 @@ export default {
   },
   methods: {
     categoryJump({ id }) {
+      /**
+       * カテゴリー、一覧にジャンプする
+       * (vue-router使用)
+       */
       this.$router.push({
         name: 'category-id',
         params: { id: id }

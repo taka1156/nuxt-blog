@@ -21,6 +21,9 @@
 export default {
   name: 'NavIcon',
   props: {
+    /**
+     * ナビゲーションの開閉状態
+     */
     isOpen: {
       type: Boolean,
       default: false,
