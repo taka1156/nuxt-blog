@@ -2,6 +2,7 @@
   <div>
     <div class="classification-title">
       <h1 class="classification-title__title">
+        <!-- @slot タグもしくはカテゴリー名 -->
         <slot />
       </h1>
       <base-img :size="`lg`" :img-url="imgUrl" :img-alt="'ロゴ'" />
@@ -18,6 +19,9 @@ export default {
     'base-img': BaseImg
   },
   props: {
+    /**
+     * 画像のURL
+     */
     imgUrl: {
       type: String,
       default: '',

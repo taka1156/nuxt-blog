@@ -8,16 +8,25 @@
 export default {
   name: 'BaseImg',
   props: {
+    /**
+     * 画像のURL
+     */
     imgUrl: {
       type: String,
-      default: '',
       required: true
     },
+    /**
+     * 画像が表示できない時に使用する代替テキスト
+     * (alt)
+     */
     imgAlt: {
       type: String,
-      default: '',
       required: true
     },
+    /**
+     * 画像サイズ
+     * @values sm, lg
+     */
     size: {
       type: String,
       default: 'sm',

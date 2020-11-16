@@ -3,9 +3,9 @@
     <div class="nav-bar">
       <div class="nav-bar__box">
         <nav-logo>{{ logoText }}</nav-logo>
-        <div @click="$emit('change-state')">
+        <base-btn :use-type="`none`" @btn-click="changeState">
           <nav-icon :is-open="isOpen" />
-        </div>
+        </base-btn>
       </div>
     </div>
   </div>
@@ -14,23 +14,41 @@
 <script>
 import NavLogo from '../../atoms/nav/NavLogo';
 import NavIcon from '../../atoms/nav/NavIcon';
+import BaseBtn from '../../atoms/base/BaseBtn.vue';
 
 export default {
   name: 'NavBar',
   components: {
     'nav-icon': NavIcon,
-    'nav-logo': NavLogo
+    'nav-logo': NavLogo,
+    'base-btn': BaseBtn
   },
   props: {
+    /**
+     * ロゴテキスト
+     */
     logoText: {
       type: String,
       default: 'Please Setting Logo',
       required: true
     },
+    /**
+     * ナビゲーションの開閉状態
+     */
     isOpen: {
       type: Boolean,
       default: false,
       required: true
+    }
+  },
+  methods: {
+    changeState() {
+      /**
+       * ナビゲーション開閉の状態を変化させる
+       * (開く)
+       * @event changeState
+       */
+      this.$emit('change-state', !this.isOpen);
     }
   }
 };

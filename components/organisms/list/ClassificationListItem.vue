@@ -27,21 +27,32 @@ export default {
     'base-img': BaseImg
   },
   props: {
+    /**
+     * タグもしくは、カテゴリーのリストの1つ分の情報
+     */
     classificationItem: {
       type: Object,
       default: () => {},
       required: true
     },
-    path: {
+    /**
+     * 現在閲覧中のroute
+     * (閲覧しているパスによってclassificationJumpの行き先が変わる)
+     */
+    routePath: {
       type: String,
       default: '',
       required: true
     }
   },
   methods: {
+    /**
+     * 選択されたタグもしくは、カテゴリーが含まれた記事一覧に飛ぶ
+     * (vue-router)
+     */
     classificationJump({ id }) {
       this.$router.push({
-        name: `${this.path}-id`,
+        name: `${this.routePath}-id`,
         params: { id: id }
       });
     }

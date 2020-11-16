@@ -3,11 +3,14 @@
     <div v-if="items.length !== 0">
       <ul>
         <li v-for="(item, index) in items" :key="index">
-          <classification-list-item :classification-item="item" :path="path" />
+          <classification-list-item
+            :classification-item="item"
+            :route-path="routePath"
+          />
         </li>
       </ul>
     </div>
-    <p v-else>{{ path }}がありません。</p>
+    <p v-else>{{ routePath }}がありません。</p>
   </div>
 </template>
 
@@ -20,15 +23,26 @@ export default {
     'classification-list-item': ClassificationListItem
   },
   props: {
+    /**
+     * タグもしくは、カテゴリーの一覧が入る
+     */
     items: {
       type: Array,
       default: () => [],
       required: true
     },
-    path: {
+    /**
+     * 現在閲覧中のroute
+     * (閲覧しているパスによってpageJumpの行き先が変わる)
+     * @values tag, category
+     */
+    routePath: {
       type: String,
       default: '',
-      required: true
+      required: true,
+      validator: function(value) {
+        return ['tag', 'category'].indexOf(value) !== -1;
+      }
     }
   }
 };

@@ -33,23 +33,43 @@ export default {
     'article-pagination': ArticlePagination
   },
   props: {
+    /**
+     * 記事一覧
+     */
     articles: {
       type: Array,
       default: () => [],
       required: true
     },
+    /**
+     * 最大ページ数
+     */
     maxPage: {
       type: Number,
       default: 0,
       required: true
     },
+    /**
+     * 現在閲覧中のroute
+     * (閲覧しているパスによってpageJumpの行き先が変わる)
+     * @values page-pageid, tag-id-pageid, category-id-pageid
+     */
     routePath: {
       type: String,
       default: '',
-      required: true
+      required: true,
+      validator: function(value) {
+        return (
+          ['page-pageid', 'tag-id-pageid', 'category-id-pageid'].indexOf(value) !==
+          -1
+        );
+      }
     }
   },
   computed: {
+    /**
+     * 現在閲覧中のページ
+     */
     currentPage() {
       // return parseInt(this.$route.params.pageid || 1);
       if (this.$route != null && this.$route.params.pageid != null) {
@@ -61,6 +81,9 @@ export default {
   },
   methods: {
     prev() {
+      /**
+       * ひとつ前のページに戻る
+       */
       let pageid = Math.max(this.currentPage - 1, 0);
       if (pageid < 1) {
         pageid = this.maxPage;
@@ -68,6 +91,9 @@ export default {
       this.pageJump(pageid);
     },
     next() {
+      /**
+       * ひとつ後のページに進む
+       */
       let pageid = Math.min(this.currentPage + 1, this.maxPage + 1);
       if (pageid > this.maxPage) {
         pageid = 1;
@@ -75,6 +101,10 @@ export default {
       this.pageJump(pageid);
     },
     pageJump(pageid) {
+      /**
+       * 実際にページを進める
+       * (vue-router)
+       */
       this.$router.push({
         name: this.routePath,
         params: { pageid: pageid }

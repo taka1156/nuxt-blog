@@ -25,4 +25,4 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = { isOpen: true, routes: dummyRoutes };
+Default.args = { isOpen: false, routes: dummyRoutes };

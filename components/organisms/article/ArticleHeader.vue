@@ -28,6 +28,9 @@ export default {
     'article-date': ArticleDate
   },
   props: {
+    /**
+     * 記事の情報
+     */
     article: {
       type: Object,
       default: () => {},

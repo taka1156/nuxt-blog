@@ -30,6 +30,9 @@ export default {
     'article-date': ArticleDate
   },
   props: {
+    /**
+     * 記事一覧の1つ分の情報
+     */
     article: {
       type: Object,
       default: () => {},
@@ -38,6 +41,10 @@ export default {
   },
   methods: {
     articleJump({ id }) {
+      /**
+       * 記事閲覧ページにジャンプする
+       * (vue-router)
+       */
       this.$router.push({ name: 'article-id', params: { id: `${id}` } });
     }
   }
