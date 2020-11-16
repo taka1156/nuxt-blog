@@ -1,5 +1,8 @@
 import ClassificationList from '../ClassificationList.vue';
-import { dummyClassfication } from '@/testdata/testdata.js';
+import {
+  dummyClassificationTag,
+  dummyClassificationCategory
+} from '@/testdata/testdata.js';
 
 export default {
   title: 'Organisns/List/ClassificationList',
@@ -8,23 +11,23 @@ export default {
     notes: {
       summary: '分類リスト'
     }
-  },
-  argTypes: {
-    path: {
-      control: {
-        type: 'inline-radio',
-        options: ['category', 'tag']
-      }
-    }
   }
 };
 
-const Template = (args, { argTypes }) => ({
+const Template1 = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ClassificationList },
   template: '<classification-list v-bind="$props" />'
 });
 
-export const Default = Template.bind({});
+const Template2 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ClassificationList },
+  template: '<classification-list v-bind="$props" />'
+});
 
-Default.args = { items: dummyClassfication, path: 'category' };
+export const Categories = Template1.bind({});
+Categories.args = { items: dummyClassificationCategory, path: 'category' };
+
+export const Tags = Template2.bind({});
+Tags.args = { items: dummyClassificationTag, path: 'tag' };

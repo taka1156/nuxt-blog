@@ -1,53 +1,35 @@
-const dummyImg = {
-  imgUrl: 'http://placehold.jp/150x150.png',
-  imgAlt: 'ダミーの画像'
+const dummyImgUrl = 'http://placehold.jp/150x150.png';
+const MAX_NAV_DATA = 4;
+const MAX_ARTICLE_DATA = 10;
+const MAX_BADGE_DATA = 5;
+
+// factory
+const dummyFactory = (num, fn) => {
+  const d = [...new Array(num)].map((_, i) => fn(i + 1));
+  console.log(d);
+  return d;
 };
 
-const dummyCategoryBadge = {
-  badgeType: 'category',
-  badge: {
-    id: 1,
-    name: 'ダミーカテゴリー',
-    img: { url: 'http://placehold.jp/150x150.png' }
+// template
+const dummyNavTemplate = () => ({
+  name: 'ダミーナビゲーション',
+  to: '/test1',
+  img: 'http://placehold.jp/150x150.png'
+});
+
+const dummyBadgeTemplate = (i, name) => ({
+  id: i,
+  name: name,
+  img: { url: dummyImgUrl }
+});
+
+const dummyClassficationTemplate = (i, name) => ({
+  id: i,
+  name: name,
+  img: {
+    url: dummyImgUrl
   }
-};
-
-const dummyTagBadge = {
-  badgeType: 'tag',
-  badge: {
-    id: 1,
-    name: 'ダミータグ',
-    img: { url: 'http://placehold.jp/150x150.png' }
-  }
-};
-
-const dummyTagBadges = [
-  {
-    id: 1,
-    name: 'ダミータグ',
-    img: { url: 'http://placehold.jp/150x150.png' }
-  },
-  {
-    id: 2,
-    name: 'ダミータグ',
-    img: { url: 'http://placehold.jp/150x150.png' }
-  },
-  {
-    id: 3,
-    name: 'ダミータグ',
-    img: { url: 'http://placehold.jp/150x150.png' }
-  },
-  {
-    id: 4,
-    name: 'ダミータグ',
-    img: { url: 'http://placehold.jp/150x150.png' }
-  }
-];
-
-const dummyDate = {
-  createdAt: '2020-07-04T10:53:40.252Z',
-  updatedAt: '2020-07-08T15:15:07.668Z'
-};
+});
 
 const dummyMarkdown = `
 ## この文章はダミーです。
@@ -60,316 +42,63 @@ const dummyMarkdown = `
   **文字の大きさ、量、字間、行間等を確認するために入れています。**
 ## この文章はダミーです。
   **文字の大きさ、量、字間、行間等を確認するために入れています。**
-## この文章はダミーです。 
-  **文字の大きさ、量、字間、行間等を確認するために入れています。** 
-## この文章はダミーです。
-  **文字の大きさ、量、字間、行間等を確認するために入れています。**
-## この文章はダミーです。 
-  **文字の大きさ、量、字間、行間等を確認するために入れています。**
-## この文章はダミーです。
-  **文字の大きさ、量、字間、行間等を確認するために入れています。** 
-## この文章はダミーです。 
-  **文字の大きさ、量、字間、行間等を確認するために入れています。**
-## この文章はダミーです。
-  **文字の大きさ、量、字間、行間等を確認するために入れています。**
-## この文章はダミーです。
-  **文字の大きさ、量、字間、行間等を確認するために入れています。**
 `;
 
-const dummyArticles = [
-  {
-    id: '1pbb3xp8x',
-    createdAt: '2020-09-13T14:28:35.489Z',
-    updatedAt: '2020-09-13T16:01:29.403Z',
-    publishedAt: '2020-09-13T14:28:35.489Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: '7zcsnuihh',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'hcpeu85l7',
-    createdAt: '2020-09-13T12:38:43.014Z',
-    updatedAt: '2020-09-13T15:55:21.517Z',
-    publishedAt: '2020-09-13T12:38:43.014Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'piymdvgeb',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: '7zcsnuihh',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'hcpeu85l7',
-    createdAt: '2020-09-13T12:38:43.014Z',
-    updatedAt: '2020-09-13T15:55:21.517Z',
-    publishedAt: '2020-09-13T12:38:43.014Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'piymdvgeb',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: '7zcsnuihh',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'hcpeu85l7',
-    createdAt: '2020-09-13T12:38:43.014Z',
-    updatedAt: '2020-09-13T15:55:21.517Z',
-    publishedAt: '2020-09-13T12:38:43.014Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'piymdvgeb',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: '7zcsnuihh',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'hcpeu85l7',
-    createdAt: '2020-09-13T12:38:43.014Z',
-    updatedAt: '2020-09-13T15:55:21.517Z',
-    publishedAt: '2020-09-13T12:38:43.014Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'piymdvgeb',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: '7zcsnuihh',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'xizlxccff',
-    createdAt: '2020-09-07T04:35:28.817Z',
-    updatedAt: '2020-09-07T12:59:56.511Z',
-    publishedAt: '2020-09-07T04:35:28.817Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'piymdvgeb',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: 'aamcmuhtf',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      },
-      {
-        id: 'xghqpsmpp',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'pgxhtaaa9z',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  },
-  {
-    id: 'b-zlnpffc',
-    createdAt: '2020-07-04T12:24:08.429Z',
-    updatedAt: '2020-09-07T13:00:12.392Z',
-    publishedAt: '2020-07-04T12:24:08.429Z',
-    title:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
-    summary:
-      'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
-    body: dummyMarkdown,
-    tags: [
-      {
-        id: 'svdq1mmtc',
-        name: 'ダミー',
-        img: {
-          url: 'http://placehold.jp/150x150.png'
-        }
-      }
-    ],
-    category: {
-      id: 'eq7p_6jei',
-      name: 'ダミー',
-      img: {
-        url: 'http://placehold.jp/150x150.png'
-      }
-    }
-  }
-];
+const dummyArticleTemplate = i => ({
+  id: i,
+  ...dummyDate,
+  title:
+    'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています',
+  summary:
+    'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量',
+  body: dummyMarkdown,
+  tags: dummyTagBadges.slice(0, i),
+  category: dummyBadgeTemplate(1, 'ダミーカテゴリー')
+});
+
+// dummyData
+const dummyImg = {
+  imgUrl: dummyImgUrl,
+  imgAlt: 'ダミーの画像'
+};
+
+const dummyDate = {
+  createdAt: '2020-07-04T10:53:40.252Z',
+  updatedAt: '2020-07-08T15:15:07.668Z'
+};
+
+const dummyRoutes = dummyFactory(MAX_NAV_DATA, () => dummyNavTemplate());
+
+const dummyTagBadges = dummyFactory(MAX_BADGE_DATA, i =>
+  dummyBadgeTemplate(i, 'ダミータグ')
+);
+
+const dummyClassificationCategory = dummyFactory(MAX_BADGE_DATA, i =>
+  dummyClassficationTemplate(i, 'ダミーカテゴリー')
+);
+
+const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
+  dummyClassficationTemplate(i, 'ダミータグ')
+);
+
+const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
+
+const dummyCategoryBadge = {
+  badgeType: 'category',
+  badge: dummyBadgeTemplate(1, 'ダミーカテゴリー')
+};
+
+const dummyTagBadge = {
+  badgeType: 'tag',
+  badge: dummyBadgeTemplate(1, 'ダミータグ')
+};
 
 const dummyPagination = {
   currentPage: 1,
   maxPage: Math.ceil(dummyArticles.length / 5)
 };
 
-const dummyClassfication = [
-  {
-    id: 'xfrbr-upq',
-    name: 'ダミー',
-    img: {
-      url: 'http://placehold.jp/150x150.png'
-    }
-  },
-  {
-    id: 'tlx_v85px',
-    name: 'ダミー',
-    img: {
-      url: 'http://placehold.jp/150x150.png'
-    }
-  },
-  {
-    id: 'xghqpsmpp',
-    name: 'ダミー',
-    img: {
-      url: 'http://placehold.jp/150x150.png'
-    }
-  },
-  {
-    id: 'dhyw5n7iw',
-    name: 'ダミー',
-    img: {
-      url: 'http://placehold.jp/150x150.png'
-    }
-  }
-];
-
-const dummyLogo = 'ダミー';
-
-const dummyRoutes = [
-  {
-    name: 'ダミー',
-    to: '/test1',
-    img: 'http://placehold.jp/150x150.png'
-  },
-  {
-    name: 'ダミー',
-    to: '/test2',
-    img: 'http://placehold.jp/150x150.png'
-  },
-  {
-    name: 'ダミー',
-    to: '/test3',
-    img: 'http://placehold.jp/150x150.png'
-  },
-  {
-    name: 'ダミー',
-    to: '/test4',
-    img: 'http://placehold.jp/150x150.png'
-  }
-];
+const dummyLogo = 'ダミーロゴ';
 
 export {
   dummyImg,
@@ -379,7 +108,8 @@ export {
   dummyDate,
   dummyArticles,
   dummyPagination,
-  dummyClassfication,
+  dummyClassificationCategory,
+  dummyClassificationTag,
   dummyLogo,
   dummyRoutes
 };
