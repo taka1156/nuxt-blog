@@ -1,11 +1,34 @@
-<template functional>
-  <img
-    :src="props.imgUrl"
-    :alt="`${props.imgAlt}`"
-    class="base-img"
-    :class="data.staticClass || ''"
-  />
+<template>
+  <div>
+    <img :src="imgUrl" :alt="imgAlt" class="base-img" :class="`base-img--${size}`" />
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'BaseImg',
+  props: {
+    imgUrl: {
+      type: String,
+      default: '',
+      required: true
+    },
+    imgAlt: {
+      type: String,
+      default: '',
+      required: true
+    },
+    size: {
+      type: String,
+      default: 'sm',
+      required: true,
+      validator: function(value) {
+        return ['sm', 'lg'].indexOf(value) !== -1;
+      }
+    }
+  }
+};
+</script>
 
 <style scoped>
 .base-img {

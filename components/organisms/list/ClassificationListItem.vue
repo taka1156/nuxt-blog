@@ -9,7 +9,7 @@
           {{ classificationItem.name }}
         </h2>
         <base-img
-          class="base-img--lg"
+          :size="`lg`"
           :img-url="classificationItem.img.url"
           :img-alt="`${classificationItem.name}のロゴ`"
         />

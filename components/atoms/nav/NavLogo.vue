@@ -1,7 +1,9 @@
-<template functional>
-  <a class="nav-logo" href="/">
-    <slot />
-  </a>
+<template>
+  <div>
+    <a class="nav-logo" href="/">
+      <slot />
+    </a>
+  </div>
 </template>
 
 <style scoped>
