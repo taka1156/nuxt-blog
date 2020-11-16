@@ -1,5 +1,8 @@
 import ClassificationListItem from '../ClassificationListItem.vue';
-import { dummyClassfication } from '@/testdata/testdata.js';
+import {
+  dummyClassificationTag,
+  dummyClassificationCategory
+} from '@/testdata/testdata.js';
 
 export default {
   title: 'Organisns/List/ClassificationListItem',
@@ -11,11 +14,26 @@ export default {
   }
 };
 
-const Template = (args, { argTypes }) => ({
+const Template1 = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ClassificationListItem },
   template: '<classification-list-item v-bind="$props" />'
 });
 
-export const Default = Template.bind({});
-Default.args = { classificationItem: dummyClassfication[0], path: 'tag' };
+const Template2 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ClassificationListItem },
+  template: '<classification-list-item v-bind="$props" />'
+});
+
+export const Category = Template1.bind({});
+Category.args = {
+  classificationItem: dummyClassificationCategory[0],
+  path: 'Category'
+};
+
+export const Tag = Template2.bind({});
+Tag.args = {
+  classificationItem: dummyClassificationTag[0],
+  path: 'tag'
+};
