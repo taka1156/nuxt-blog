@@ -3,7 +3,7 @@
     <div v-if="items.length !== 0">
       <ul>
         <li v-for="(item, index) in items" :key="index">
-          <classfication-list-item :classfication-item="item" :path="path" />
+          <classification-list-item :classification-item="item" :path="path" />
         </li>
       </ul>
     </div>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ClassficationListItem from './ClassficationListItem';
+import ClassificationListItem from './ClassificationListItem';
 
 export default {
-  name: 'ClassficatetionList',
+  name: 'ClassificatetionList',
   components: {
-    'classfication-list-item': ClassficationListItem
+    'classification-list-item': ClassificationListItem
   },
   props: {
     items: {

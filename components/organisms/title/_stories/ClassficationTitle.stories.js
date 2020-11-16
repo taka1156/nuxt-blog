@@ -1,9 +1,9 @@
-import ClassficationTitle from '../ClassficationTitle.vue';
+import ClassificationTitle from '../ClassificationTitle.vue';
 import { dummyClassfication } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Organisns/Title/ClassficationTitle',
-  component: ClassficationTitle,
+  title: 'Organisns/Title/ClassificationTitle',
+  component: ClassificationTitle,
   parameters: {
     notes: {
       summary: '分類リストページタイトル'
@@ -13,9 +13,9 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { ClassficationTitle },
+  components: { ClassificationTitle },
   template:
-    '<classfication-title v-bind="$props">ダミー : ダミータグ</classfication-title>'
+    '<classification-title v-bind="$props">ダミー : ダミータグ</classification-title>'
 });
 
 export const Default = Template.bind({});

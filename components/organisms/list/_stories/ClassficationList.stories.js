@@ -1,9 +1,9 @@
-import ClassficationList from '../ClassficationList.vue';
+import ClassificationList from '../ClassificationList.vue';
 import { dummyClassfication } from '@/testdata/testdata.js';
 
 export default {
-  title: 'Organisns/List/ClassficationList',
-  component: ClassficationList,
+  title: 'Organisns/List/ClassificationList',
+  component: ClassificationList,
   parameters: {
     notes: {
       summary: '分類リスト'
@@ -21,8 +21,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { ClassficationList },
-  template: '<classfication-list v-bind="$props" />'
+  components: { ClassificationList },
+  template: '<classification-list v-bind="$props" />'
 });
 
 export const Default = Template.bind({});

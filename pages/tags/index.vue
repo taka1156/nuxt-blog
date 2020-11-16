@@ -3,18 +3,18 @@
     <div class="container">
       <h1>Tag</h1>
       <div class="line" />
-      <classfication-list :path="'tag'" :items="tags" />
+      <classification-list :path="'tag'" :items="tags" />
     </div>
   </div>
 </template>
 
 <script>
-import ClassficationList from '@/components/organisms/list/ClassficationList';
+import ClassificationList from '@/components/organisms/list/ClassificationList';
 
 export default {
   name: 'TagList',
   components: {
-    'classfication-list': ClassficationList
+    'classification-list': ClassificationList
   },
   async asyncData({ $axios, payload }) {
     if (payload != null) {
