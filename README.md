@@ -4,7 +4,7 @@
 ![test](https://github.com/taka1156/nuxt-blog/workflows/test/badge.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/taka1156/nuxt-blog)
 
-taka1156のブログサイトです(https://www.taka1156.site)
+taka1156のブログサイトです(https://blog.taka1156.site)
 
 Storybookはこちら(https://blog-storybook.netlify.app)
 
