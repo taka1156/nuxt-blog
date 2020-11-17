@@ -1,5 +1,5 @@
 import BlogNavigation from '../BlogNavigation.vue';
-import { dummyLogo, dummyRoutes } from '@/testdata/testdata.js';
+import { dummyLogo, dummyRoutes } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/Nav/BlogNavigation',

@@ -1,5 +1,5 @@
 import ArticlePagination from '../ArticlePagination.vue';
-import { dummyPagination } from '@/testdata/testdata.js';
+import { dummyPagination } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/List/ArticlePagination',

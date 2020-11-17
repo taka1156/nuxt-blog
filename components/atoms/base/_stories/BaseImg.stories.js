@@ -1,5 +1,5 @@
 import BaseImg from '../BaseImg.vue';
-import { dummyImg } from '@/testdata/testdata.js';
+import { dummyImg } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Atoms/Base/BaseImg',

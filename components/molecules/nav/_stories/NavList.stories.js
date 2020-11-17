@@ -1,5 +1,5 @@
 import NavList from '../NavList.vue';
-import { dummyRoutes } from '@/testdata/testdata.js';
+import { dummyRoutes } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/Nav/NavList',

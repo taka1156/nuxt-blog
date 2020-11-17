@@ -1,5 +1,5 @@
 import NavBar from '../NavBar.vue';
-import { dummyLogo } from '@/testdata/testdata.js';
+import { dummyLogo } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/Nav/NavBar',
