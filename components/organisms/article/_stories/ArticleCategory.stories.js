@@ -1,5 +1,5 @@
 import ArticleCategory from '../ArticleCategory.vue';
-import { dummyCategoryBadge } from '@/testdata/testdata.js';
+import { dummyCategoryBadge } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/Article/ArticleCategory',

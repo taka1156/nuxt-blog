@@ -1,5 +1,5 @@
 import ArticleListItem from '../ArticleListItem.vue';
-import { dummyArticles } from '@/testdata/testdata.js';
+import { dummyArticles } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/List/ArticleListItem',

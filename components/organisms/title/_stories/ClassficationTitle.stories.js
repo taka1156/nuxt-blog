@@ -2,7 +2,7 @@ import ClassificationTitle from '../ClassificationTitle.vue';
 import {
   dummyClassificationTag,
   dummyClassificationCategory
-} from '@/testdata/testdata.js';
+} from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/Title/ClassificationTitle',

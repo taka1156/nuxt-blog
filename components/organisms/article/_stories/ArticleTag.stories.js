@@ -1,5 +1,5 @@
 import ArticleTag from '../ArticleTag.vue';
-import { dummyTagBadges } from '@/testdata/testdata.js';
+import { dummyTagBadges } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/Article/ArticleTag',

@@ -1,6 +1,6 @@
 //import StoryRouter from 'storybook-vue-router';
 import ArticleList from '../ArticleList.vue';
-import { dummyArticles, dummyPagination } from '@/testdata/testdata.js';
+import { dummyArticles, dummyPagination } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/List/ArticleList',
