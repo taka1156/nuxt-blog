@@ -12,7 +12,7 @@ const dummyFactory = (num, fn) => {
 const dummyNavTemplate = () => ({
   name: 'ダミーナビゲーション',
   to: '/test1',
-  img: 'http://placehold.jp/150x150.png'
+  img: dummyImgUrl
 });
 
 const dummyBadgeTemplate = (i, name) => ({
