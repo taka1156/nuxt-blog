@@ -1,5 +1,5 @@
 import ArticleDate from '../ArticleDate.vue';
-import { dummyDate } from '@/testdata/testdata.js';
+import { dummyDate } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/Article/ArticleDate',

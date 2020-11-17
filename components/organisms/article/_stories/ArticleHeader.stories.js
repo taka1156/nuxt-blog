@@ -1,5 +1,5 @@
 import ArticleHeader from '../ArticleHeader.vue';
-import { dummyArticles } from '@/testdata/testdata.js';
+import { dummyArticles } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisns/Article/ArticleHeader',

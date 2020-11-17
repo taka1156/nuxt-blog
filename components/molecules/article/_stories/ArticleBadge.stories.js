@@ -1,5 +1,5 @@
 import ArticleBadge from '../ArticleBadge.vue';
-import { dummyCategoryBadge, dummyTagBadge } from '@/testdata/testdata.js';
+import { dummyCategoryBadge, dummyTagBadge } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/Article/ArticleBadge',
