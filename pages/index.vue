@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import AricleList from '@/components/organisms/list/ArticleList';
+import AricleList from '@/components/organisms//ArticleList/ArticleList';
 const POSTS_PER_PAGE = 5;
 
 export default {

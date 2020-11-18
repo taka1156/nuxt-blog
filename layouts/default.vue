@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <blog-navigation :logo-text="logoText" :routes="routes" />
+    <the-navigation :logo-text="logoText" :routes="routes" />
     <transition name="go-up" mode="out-in">
       <nuxt />
     </transition>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import BlogNavigation from '@/components/organisms/nav/BlogNavigation';
+import TheNavigation from '@/components/organisms/TheNavigation/TheNavigation';
 
 export default {
   components: {
-    'blog-navigation': BlogNavigation
+    'the-navigation': TheNavigation
   },
   data() {
     return {

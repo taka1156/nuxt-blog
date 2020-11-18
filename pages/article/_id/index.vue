@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ArticleHeader from '@/components/organisms/article/ArticleHeader';
+import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import meta from 'assets/js/mixin/meta.mixin.js';
 import marked from 'marked';
 import hljs from 'highlight.js';
