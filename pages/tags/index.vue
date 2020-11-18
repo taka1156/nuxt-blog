@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ClassificationList from '@/components/organisms/list/ClassificationList';
+import ClassificationList from '@/components/organisms/ClassificationList/ClassificationList';
 
 export default {
   name: 'TagList',
