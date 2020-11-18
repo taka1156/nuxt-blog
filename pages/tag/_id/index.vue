@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import ClassificationTitle from '@/components/organisms/title/ClassificationTitle';
-import AricleList from '@/components/organisms/list/ArticleList';
+import ClassificationTitle from '@/components/organisms/ClassificationTitle/ClassificationTitle';
+import AricleList from '@/components/organisms/ArticleList/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
