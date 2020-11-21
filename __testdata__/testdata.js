@@ -2,6 +2,7 @@ const dummyImgUrl = 'http://placehold.jp/150x150.png';
 const MAX_NAV_DATA = 4;
 const MAX_ARTICLE_DATA = 10;
 const MAX_BADGE_DATA = 5;
+const MAX_TOC_DATA = 5;
 
 // factory
 const dummyFactory = (num, fn) => {
@@ -27,6 +28,12 @@ const dummyClassficationTemplate = (i, name) => ({
   img: {
     url: dummyImgUrl
   }
+});
+
+const dummyTocTemplate = i => ({
+  index: i,
+  escapedText: 'この文章はダミーです。',
+  anchor: `anchor_${i}`
 });
 
 const dummyMarkdown = `
@@ -96,6 +103,8 @@ const dummyPagination = {
   maxPage: Math.ceil(dummyArticles.length / 5)
 };
 
+const dummyTocs = dummyFactory(MAX_TOC_DATA, i => dummyTocTemplate(i));
+
 const dummyLogo = 'ダミーロゴ';
 
 export {
@@ -109,5 +118,6 @@ export {
   dummyClassificationCategory,
   dummyClassificationTag,
   dummyLogo,
+  dummyTocs,
   dummyRoutes
 };

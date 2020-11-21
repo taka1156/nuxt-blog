@@ -8,7 +8,7 @@
         @next="next"
       />
       <ul>
-        <li v-for="(article, index) in articles" :key="index">
+        <li v-for="(article, index) in articles" :key="`article_${index}`">
           <article-list-item :article="article" />
         </li>
       </ul>
@@ -116,7 +116,8 @@ export default {
 
 <style scoped>
 /* css reset */
-ul {
+ul,
+li {
   list-style-type: none;
   margin: 0;
   padding: 0;

@@ -1,7 +1,7 @@
 <template>
   <div class="App">
     <the-navigation :logo-text="logoText" :routes="routes" />
-    <transition name="go-up" mode="out-in">
+    <transition name="slide-in-up" mode="out-in">
       <nuxt />
     </transition>
   </div>
@@ -49,30 +49,30 @@ export default {
   text-align: center;
 }
 
-.go-up-enter {
+.slide-in-up-enter {
   transform: translate(0, 100px);
   opacity: 0;
 }
 
-.go-up-enter-to {
+.slide-in-up-enter-to {
   opacity: 1;
 }
 
-.go-up-enter-active {
+.slide-in-up-enter-active {
   transition: all 1s 0s ease;
 }
 
-.go-up-leave {
+.slide-in-up-leave {
   transform: translate(0, 0);
   opacity: 1;
 }
 
-.go-up-leave-to {
+.slide-in-up-leave-to {
   transform: translate(0, -100px);
   opacity: 0;
 }
 
-.go-up-leave-active {
+.slide-in-up-leave-active {
   transition: all 0.2s 0s ease;
 }
 </style>

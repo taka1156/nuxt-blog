@@ -1,6 +1,6 @@
 <template>
   <div>
-    <li class="nav-item" @click="changeState">
+    <div class="nav-item">
       <nuxt-link :to="navItem.to" class="nav-item__link">
         <base-img
           :size="`lg`"
@@ -9,7 +9,7 @@
         />
         <base-text :color="`white`">{{ navItem.name }}</base-text>
       </nuxt-link>
-    </li>
+    </div>
   </div>
 </template>
 
@@ -31,16 +31,6 @@ export default {
       type: Object,
       default: () => {},
       required: true
-    }
-  },
-  methods: {
-    changeState() {
-      /**
-       * ナビゲーション開閉の状態を変化させる
-       * (NavListにイベント伝搬)
-       * @event changeState
-       */
-      this.$emit('change-state');
     }
   }
 };

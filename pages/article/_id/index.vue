@@ -6,6 +6,7 @@
         <article-header :article="article" />
         <!--markdown埋め込み-->
         <div class="article-content__text markdown-body" v-html="parseMarked" />
+        <index-navigation :toc="toc" />
       </div>
     </div>
   </div>
@@ -13,14 +14,15 @@
 
 <script>
 import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
+import IndexNavigation from '@/components/organisms/IndexNavigation/IndexNavigation';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import marked from 'marked';
-import hljs from 'highlight.js';
+import { markedWrap, toc } from '@/utils/marked/index.js';
 
 export default {
   name: 'Artcle',
   components: {
-    'article-header': ArticleHeader
+    'article-header': ArticleHeader,
+    'index-navigation': IndexNavigation
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
@@ -45,17 +47,9 @@ export default {
   },
   computed: {
     parseMarked() {
-      return marked(this.article.body);
-    }
-  },
-  created() {
-    marked.setOptions({
-      highlight(code, lang) {
-        return hljs.highlightAuto(code, [lang]).value;
-      },
-      breaks: true,
-      gfm: true
-    });
+      return markedWrap(this.article.body);
+    },
+    toc: () => toc
   },
   head() {
     // メタタグ
