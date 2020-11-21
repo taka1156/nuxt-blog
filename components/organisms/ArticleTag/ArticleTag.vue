@@ -2,7 +2,7 @@
   <div>
     <div class="article-tag">
       タグ:&nbsp;
-      <div v-for="(tag, index) in tags" :key="index">
+      <div v-for="(tag, index) in tags" :key="`tag_${index}`">
         <div @click="tagJump(tag)">
           <article-badge :badge-type="'tag'" :badge="tag" />
         </div>

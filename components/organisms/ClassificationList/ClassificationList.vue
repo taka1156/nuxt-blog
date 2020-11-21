@@ -2,7 +2,7 @@
   <div>
     <div v-if="items.length !== 0">
       <ul>
-        <li v-for="(item, index) in items" :key="index">
+        <li v-for="(item, index) in items" :key="`classification_${index}`">
           <classification-list-item
             :classification-item="item"
             :route-path="routePath"
@@ -50,7 +50,8 @@ export default {
 
 <style scoped>
 /* css reset */
-ul {
+ul,
+li {
   list-style-type: none;
   margin: 0;
   padding: 0;

@@ -1,17 +1,17 @@
 <template>
   <div class="pagination">
     <base-btn :use-type="`pagenation`" @btn-click="prevPage">
-      <base-text :color="`green`">
+      <span class="pagination__btn">
         &lt;
-      </base-text>
+      </span>
     </base-btn>
     <base-text :use-type="`pagenation`" :color="`green`">
       {{ currentPage }}/{{ maxPage }}
     </base-text>
     <base-btn :use-type="`pagenation`" @btn-click="nextPage">
-      <base-text :color="`green`">
+      <span class="pagination__btn">
         &gt;
-      </base-text>
+      </span>
     </base-btn>
   </div>
 </template>
@@ -70,8 +70,12 @@ export default {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 0;
   width: 100%;
+  color: rgba(40, 167, 69, 0.9);
+}
+
+.pagination__btn {
   color: rgba(40, 167, 69, 0.9);
 }
 </style>
