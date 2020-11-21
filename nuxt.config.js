@@ -249,7 +249,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/GoogleAnalytics.js', mode: 'client' }],
+  plugins: [
+    { src: '~plugins/GoogleAnalytics.js', mode: 'client' },
+    { src: '~plugins/ScrollTo.js', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
