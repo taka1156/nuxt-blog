@@ -3,9 +3,9 @@
     <div class="nav-bar">
       <div class="nav-bar__box">
         <base-logo>{{ logoText }}</base-logo>
-        <base-btn :use-type="`none`" @btn-click="changeState">
-          <base-nav-icon :is-open="isOpen" />
-        </base-btn>
+        <base-nav-icon :is-open="isOpen" @btn-click="changeState">
+          {{ isOpen === true ? 'CLOSE' : 'NAVI' }}
+        </base-nav-icon>
       </div>
     </div>
   </div>
@@ -14,14 +14,12 @@
 <script>
 import BaseLogo from '../../atoms/BaseLogo/BaseLogo';
 import BaseNavIcon from '../../atoms/BaseNavIcon/BaseNavIcon';
-import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
 
 export default {
   name: 'NavBar',
   components: {
     'base-nav-icon': BaseNavIcon,
-    'base-logo': BaseLogo,
-    'base-btn': BaseBtn
+    'base-logo': BaseLogo
   },
   props: {
     /**
