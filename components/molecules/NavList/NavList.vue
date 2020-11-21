@@ -72,7 +72,7 @@ li {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(40, 167, 69, 0.9);
 }
 
