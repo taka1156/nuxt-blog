@@ -1,6 +1,5 @@
 import routesUtils from './utils/routes/index.js';
 require('dotenv').config();
-import axios from 'axios';
 const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 const POSTS_PER_PAGE = 5; // １ページあたりの記事数
@@ -129,15 +128,21 @@ export default {
       );
 
       // 記事のルーティング
-      const articles = await axios
-        .get(ARTICLE_URL, {
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents.map(article => {
-            return { route: `/article/${article.id}`, payload: article };
-          });
-        });
+      let { contents, totalCount } = await routesUtils.contentsFetch(
+        ARTICLE_URL,
+        MICRO_CMS
+      );
+      while (contents.length < totalCount) {
+        // 2回目以降の取得
+        const data = await routesUtils.contentsFetch(
+          ARTICLE_URL,
+          MICRO_CMS,
+          contents.length
+        );
+        contents = contents.concat(data.contents);
+      }
+
+      const articles = contents;
 
       // 全てをまとめる
       const flattenTagsPages = [].concat.apply([], tags);

@@ -1,4 +1,5 @@
 import axios from 'axios';
+const POSTS_PER_PAGE = 5; // １ページあたりの記事数
 
 const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
@@ -68,10 +69,27 @@ const routesFetchRange = (url, token, params, postPerPage, routeFn) =>
       }))
     );
 
+const contentsFetch = async (url, token, offset = 0, limit = POSTS_PER_PAGE) => {
+  const { data } = await axios.get(url, {
+    params: {
+      limit,
+      offset
+    },
+    headers: { 'X-API-KEY': token }
+  });
+  return {
+    contents: data.contents.map(article => {
+      return { route: `/article/${article.id}`, payload: article };
+    }),
+    totalCount: data.totalCount
+  };
+};
+
 export default {
   routesFetch,
   routesFetchArr,
   routesFetchAll,
   routesFetchAllRange,
-  routesFetchRange
+  routesFetchRange,
+  contentsFetch
 };
