@@ -1,8 +1,9 @@
-import axios from 'axios';
+import routesUtils from './utils/routes/index.js';
 require('dotenv').config();
 const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 const POSTS_PER_PAGE = 5; // １ページあたりの記事数
+const CLASSIFICATION_PARAMS = { fields: 'id,name,img', limit: CONTENT_MAX };
 
 export default {
   telemetry: false,
@@ -30,151 +31,118 @@ export default {
   generate: {
     fallback: true,
     async routes() {
-      const range = (start, end) =>
-        [...Array(end - start + 1)].map((_, i) => start + i);
-
       // 一覧のページング
-      const page = await axios
-        .get(ARTICLE_URL, {
-          params: {
-            fields:
-              'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
-          },
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) =>
-          range(1, Math.ceil(data.totalCount / POSTS_PER_PAGE)).map(pageIndex => ({
-            route: `/page/${pageIndex}`
-          }))
-        );
-      // タグのルーティング
-      const tag = await axios
-        .get(TAG_URL, {
-          params: { fields: 'id,name,img', limit: CONTENT_MAX },
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents.map(tag => {
-            return tag;
-          });
-        });
-      // カテゴリーのルーティング
-      const category = await axios
-        .get(CATEGORY_URL, {
-          params: { fields: 'id,name,img', limit: CONTENT_MAX },
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents.map(category => {
-            return category;
-          });
-        });
-      // タグの個別ページのルーティング
-      const tagList = await axios
-        .get(TAG_URL, {
-          params: { fields: 'id,name,img', limit: CONTENT_MAX },
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents;
-        });
-
-      const tags = await Promise.all(
-        tagList.map(tag =>
-          axios
-            .get(ARTICLE_URL, {
-              params: {
-                fields:
-                  'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-                filters: `tags[contains]${tag.id}`
-              },
-              headers: { 'X-API-KEY': MICRO_CMS }
-            })
-            .then(({ data }) =>
-              range(1, Math.ceil(data.totalCount / POSTS_PER_PAGE)).map(id => ({
-                route: `/tag/${tag.id}/${id}`
-              }))
-            )
-        )
+      const page = await routesUtils.routesFetchRange(
+        ARTICLE_URL,
+        MICRO_CMS,
+        {
+          fields:
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
+        },
+        POSTS_PER_PAGE,
+        pageIndex => `/page/${pageIndex}`
       );
 
-      const defaultTags = await Promise.all(
-        tagList.map(tag =>
-          axios
-            .get(ARTICLE_URL, {
-              params: {
-                fields:
-                  'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-                limit: POSTS_PER_PAGE,
-                filters: `tags[contains]${tag.id}`
-              },
-              headers: { 'X-API-KEY': MICRO_CMS }
-            })
-            .then(() => {
-              return {
-                route: `/tag/${tag.id}`
-              };
-            })
-        )
+      // タグのルーティング
+      const tag = await routesUtils.routesFetchArr(
+        TAG_URL,
+        CLASSIFICATION_PARAMS,
+        MICRO_CMS
+      );
+
+      // カテゴリーのルーティング
+      const category = await routesUtils.routesFetchArr(
+        CATEGORY_URL,
+        CLASSIFICATION_PARAMS,
+        MICRO_CMS
+      );
+
+      // タグの個別ページのルーティング
+      const tagList = await routesUtils.routesFetch(
+        TAG_URL,
+        CLASSIFICATION_PARAMS,
+        MICRO_CMS
       );
 
       // カテゴリーの個別ページのルーティング
-      const categoryList = await axios
-        .get(CATEGORY_URL, {
-          params: { fields: 'id,name,img', limit: CONTENT_MAX },
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents;
-        });
-
-      const categories = await Promise.all(
-        categoryList.map(category =>
-          axios
-            .get(ARTICLE_URL, {
-              params: {
-                fields:
-                  'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-                filters: `category[equals]${category.id}`
-              },
-              headers: { 'X-API-KEY': MICRO_CMS }
-            })
-            .then(({ data }) =>
-              range(1, Math.ceil(data.totalCount / POSTS_PER_PAGE)).map(id => ({
-                route: `/category/${category.id}/${id}`
-              }))
-            )
-        )
+      const categoryList = await routesUtils.routesFetch(
+        CATEGORY_URL,
+        CLASSIFICATION_PARAMS,
+        MICRO_CMS
       );
 
-      const defaultCategories = await Promise.all(
-        categoryList.map(category =>
-          axios
-            .get(ARTICLE_URL, {
-              params: {
-                fields:
-                  'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-                limit: POSTS_PER_PAGE,
-                filters: `category[equals]${category.id}`
-              },
-              headers: { 'X-API-KEY': MICRO_CMS }
-            })
-            .then(() => {
-              return { route: `/category/${category.id}` };
-            })
-        )
+      // タグの個別ページ(ページネーションなし)
+      const defaultTags = await routesUtils.routesFetchAll(
+        tagList,
+        ARTICLE_URL,
+        {
+          fields:
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
+          limit: POSTS_PER_PAGE
+        },
+        'tags[contains]',
+        MICRO_CMS,
+        tagId => `/tag/${tagId}`
+      );
+
+      // カテゴリーの個別ページ(ページネーションなし)
+      const defaultCategories = await routesUtils.routesFetchAll(
+        categoryList,
+        ARTICLE_URL,
+        {
+          fields:
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
+          limit: POSTS_PER_PAGE
+        },
+        'category[equals]',
+        MICRO_CMS,
+        categoryId => `/category/${categoryId}`
+      );
+
+      // タグの個別の記事一覧ページ(ページネーションあり)
+      const tags = await routesUtils.routesFetchAllRange(
+        tagList,
+        ARTICLE_URL,
+        {
+          fields:
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
+        },
+        'tags[contains]',
+        MICRO_CMS,
+        POSTS_PER_PAGE,
+        (tagId, pageIndex) => `/tag/${tagId}/${pageIndex}`
+      );
+
+      // カテゴリーの個別の記事一覧ページ(ページネーションあり)
+      const categories = await routesUtils.routesFetchAllRange(
+        categoryList,
+        ARTICLE_URL,
+        {
+          fields:
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
+        },
+        'category[equals]',
+        MICRO_CMS,
+        POSTS_PER_PAGE,
+        (categoryId, id) => `/category/${categoryId}/${id}`
       );
 
       // 記事のルーティング
-      const articles = await axios
-        .get(ARTICLE_URL, {
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents.map(article => {
-            return { route: `/article/${article.id}`, payload: article };
-          });
-        });
+      let { contents, totalCount } = await routesUtils.contentsFetch(
+        ARTICLE_URL,
+        MICRO_CMS
+      );
+      while (contents.length < totalCount) {
+        // 2回目以降の取得
+        const data = await routesUtils.contentsFetch(
+          ARTICLE_URL,
+          MICRO_CMS,
+          contents.length
+        );
+        contents = contents.concat(data.contents);
+      }
+
+      const articles = contents;
 
       // 全てをまとめる
       const flattenTagsPages = [].concat.apply([], tags);
