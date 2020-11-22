@@ -1,6 +1,5 @@
 import routesUtils from './utils/routes/index.js';
 require('dotenv').config();
-import axios from 'axios';
 const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 const CONTENT_MAX = 20; // タグとカテゴリーの最大数
 const POSTS_PER_PAGE = 5; // １ページあたりの記事数
@@ -45,28 +44,28 @@ export default {
       );
 
       // タグのルーティング
-      const tag = await routesUtils.routesFetch(
+      const tag = await routesUtils.routesFetchArr(
         TAG_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // カテゴリーのルーティング
-      const category = await routesUtils.routesFetch(
+      const category = await routesUtils.routesFetchArr(
         CATEGORY_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // タグの個別ページのルーティング
-      const tagList = await routesUtils.routesFetchArr(
+      const tagList = await routesUtils.routesFetch(
         TAG_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // カテゴリーの個別ページのルーティング
-      const categoryList = await routesUtils.routesFetchArr(
+      const categoryList = await routesUtils.routesFetch(
         CATEGORY_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
@@ -79,9 +78,9 @@ export default {
         {
           fields:
             'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          limit: POSTS_PER_PAGE,
-          filters: `tags[contains]${tag.id}`
+          limit: POSTS_PER_PAGE
         },
+        'tags[contains]',
         MICRO_CMS,
         tagId => `/tag/${tagId}`
       );
@@ -93,9 +92,9 @@ export default {
         {
           fields:
             'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          limit: POSTS_PER_PAGE,
-          filters: `category[equals]${category.id}`
+          limit: POSTS_PER_PAGE
         },
+        'category[equals]',
         MICRO_CMS,
         categoryId => `/category/${categoryId}`
       );
@@ -106,9 +105,9 @@ export default {
         ARTICLE_URL,
         {
           fields:
-            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          filters: `tags[contains]${tag.id}`
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
         },
+        'tags[contains]',
         MICRO_CMS,
         POSTS_PER_PAGE,
         (tagId, pageIndex) => `/tag/${tagId}/${pageIndex}`
@@ -120,24 +119,30 @@ export default {
         ARTICLE_URL,
         {
           fields:
-            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          filters: `category[equals]${category.id}`
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
         },
+        'category[equals]',
         MICRO_CMS,
         POSTS_PER_PAGE,
         (categoryId, id) => `/category/${categoryId}/${id}`
       );
 
       // 記事のルーティング
-      const articles = await axios
-        .get(ARTICLE_URL, {
-          headers: { 'X-API-KEY': MICRO_CMS }
-        })
-        .then(({ data }) => {
-          return data.contents.map(article => {
-            return { route: `/article/${article.id}`, payload: article };
-          });
-        });
+      let { contents, totalCount } = await routesUtils.contentsFetch(
+        ARTICLE_URL,
+        MICRO_CMS
+      );
+      while (contents.length < totalCount) {
+        // 2回目以降の取得
+        const data = await routesUtils.contentsFetch(
+          ARTICLE_URL,
+          MICRO_CMS,
+          contents.length
+        );
+        contents = contents.concat(data.contents);
+      }
+
+      const articles = contents;
 
       // 全てをまとめる
       const flattenTagsPages = [].concat.apply([], tags);
