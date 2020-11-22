@@ -44,28 +44,28 @@ export default {
       );
 
       // タグのルーティング
-      const tag = await routesUtils.routesFetch(
+      const tag = await routesUtils.routesFetchArr(
         TAG_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // カテゴリーのルーティング
-      const category = await routesUtils.routesFetch(
+      const category = await routesUtils.routesFetchArr(
         CATEGORY_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // タグの個別ページのルーティング
-      const tagList = await routesUtils.routesFetchArr(
+      const tagList = await routesUtils.routesFetch(
         TAG_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
       );
 
       // カテゴリーの個別ページのルーティング
-      const categoryList = await routesUtils.routesFetchArr(
+      const categoryList = await routesUtils.routesFetch(
         CATEGORY_URL,
         CLASSIFICATION_PARAMS,
         MICRO_CMS
@@ -78,9 +78,9 @@ export default {
         {
           fields:
             'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          limit: POSTS_PER_PAGE,
-          filters: `tags[contains]${tag.id}`
+          limit: POSTS_PER_PAGE
         },
+        'tags[contains]',
         MICRO_CMS,
         tagId => `/tag/${tagId}`
       );
@@ -92,9 +92,9 @@ export default {
         {
           fields:
             'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          limit: POSTS_PER_PAGE,
-          filters: `category[equals]${category.id}`
+          limit: POSTS_PER_PAGE
         },
+        'category[equals]',
         MICRO_CMS,
         categoryId => `/category/${categoryId}`
       );
@@ -105,9 +105,9 @@ export default {
         ARTICLE_URL,
         {
           fields:
-            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          filters: `tags[contains]${tag.id}`
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
         },
+        'tags[contains]',
         MICRO_CMS,
         POSTS_PER_PAGE,
         (tagId, pageIndex) => `/tag/${tagId}/${pageIndex}`
@@ -119,9 +119,9 @@ export default {
         ARTICLE_URL,
         {
           fields:
-            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt',
-          filters: `category[equals]${category.id}`
+            'id,title,summary,tags.id,tags.name,tags.img,category.id,category.name,category.img,createdAt,updatedAt'
         },
+        'category[equals]',
         MICRO_CMS,
         POSTS_PER_PAGE,
         (categoryId, id) => `/category/${categoryId}/${id}`
