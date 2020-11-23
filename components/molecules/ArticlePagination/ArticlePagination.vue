@@ -21,7 +21,7 @@ import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
 import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
-  name: 'ArticlePagenation',
+  name: 'ArticlePagination',
   components: {
     'base-btn': BaseBtn,
     'base-text': BaseText
