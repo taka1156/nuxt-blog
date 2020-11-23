@@ -2,7 +2,7 @@
   <div>
     <div class="index-nav" @click="changeState">
       <base-nav-icon :is-open="isOpen">
-        {{ isOpen === true ? 'CLOSE' : 'INDEX' }}
+        {{ isOpen ? 'CLOSE' : 'INDEX' }}
       </base-nav-icon>
     </div>
   </div>
