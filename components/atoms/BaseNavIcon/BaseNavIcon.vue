@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'NavIcon',
+  name: 'BaseNavIcon',
   props: {
     /**
      * ナビゲーションの開閉状態

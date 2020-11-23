@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'BaseImg',
+  name: 'BaseText',
   props: {
     /**
      * テキストの用途別のスタイル指定

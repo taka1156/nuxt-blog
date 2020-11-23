@@ -1,5 +1,5 @@
 <template>
-  <div class="Article">
+  <div>
     <div class="container">
       <div class="article-content">
         <!--記事のheader-->
@@ -19,7 +19,7 @@ import meta from 'assets/js/mixin/meta.mixin.js';
 import { markedWrap, toc } from '@/utils/marked/index.js';
 
 export default {
-  name: 'Artcle',
+  name: 'ArtcleId',
   components: {
     'article-header': ArticleHeader,
     'index-navigation': IndexNavigation
