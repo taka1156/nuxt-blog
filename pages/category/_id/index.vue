@@ -1,5 +1,5 @@
 <template>
-  <div class="Category">
+  <div>
     <div class="container">
       <classification-title :img-url="category.img.url">
         Category: {{ category.name }}
@@ -21,7 +21,7 @@ import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
 export default {
-  name: 'Category',
+  name: 'CategoryId',
   components: {
     'classification-title': ClassificationTitle,
     'article-list': AricleList

@@ -1,5 +1,5 @@
 <template>
-  <div class="Top">
+  <div>
     <div class="container">
       <h1>Top</h1>
       <div class="line" />
@@ -17,6 +17,7 @@ import AricleList from '@/components/organisms//ArticleList/ArticleList';
 const POSTS_PER_PAGE = 5;
 
 export default {
+  name: 'Top',
   components: {
     'article-list': AricleList
   },

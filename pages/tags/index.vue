@@ -1,5 +1,5 @@
 <template>
-  <div class="TagList">
+  <div>
     <div class="container">
       <h1>Tag</h1>
       <div class="line" />
@@ -12,7 +12,7 @@
 import ClassificationList from '@/components/organisms/ClassificationList/ClassificationList';
 
 export default {
-  name: 'TagList',
+  name: 'Tags',
   components: {
     'classification-list': ClassificationList
   },
