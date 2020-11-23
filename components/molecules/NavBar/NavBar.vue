@@ -4,7 +4,7 @@
       <div class="nav-bar__box">
         <base-logo>{{ logoText }}</base-logo>
         <base-nav-icon :is-open="isOpen" @btn-click="changeState">
-          {{ isOpen === true ? 'CLOSE' : 'NAVI' }}
+          {{ isOpen ? 'CLOSE' : 'NAVI' }}
         </base-nav-icon>
       </div>
     </div>
