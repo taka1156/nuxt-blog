@@ -78,6 +78,20 @@ li {
   text-align: left;
 }
 
+.index-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.index-list::-webkit-scrollbar-track {
+  display: none;
+}
+
+.index-list::-webkit-scrollbar-thumb {
+  width: 100%;
+  background-color: gray;
+  border-radius: 5px;
+}
+
 @media (min-width: 790px) {
   .index-list {
     width: 30%;
