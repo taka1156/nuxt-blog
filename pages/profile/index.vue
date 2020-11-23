@@ -13,8 +13,8 @@
             alt="プロフィール画像"
           />
           <p class="contents__sentence">
-            プログラミングは、大学1年から触り始めC、Java、Python2,3などを学びました。<br />
-            現在は、大学4年生で、個人的にTypeScriptやPHP(+Laravel)について学習しています。<br />
+            プログラミングは、大学1年から触り始めC、Java、Python3などを学びました。
+            現在は、TypeScriptやPHP(+Laravel)について学習しています。
           </p>
         </div>
       </section>
@@ -116,17 +116,18 @@ li {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding: 0;
   height: 150px;
-  width: 90%;
+  width: 85%;
   border: 0.5px solid gray;
   border-radius: 5px;
 }
 
 .profile__img {
   display: block;
-  margin: auto 0 auto 0;
-  padding: 5px;
-  height: 130px;
+  margin: 10px;
+  padding: 0;
+  height: 88%;
   width: 25%;
 }
 
@@ -141,18 +142,14 @@ li {
 }
 
 @media screen and (min-width: 768px) {
-  .profile__img {
-    width: 15%;
-  }
-
   .contents__sentence {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 /* gh-chart */
 .gh-chart {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   overflow-x: scroll;
   border: 0.5px solid gray;
