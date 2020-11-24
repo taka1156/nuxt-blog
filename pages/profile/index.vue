@@ -24,7 +24,7 @@
         <div class="gh-chart">
           <img
             class="gh-chart__img"
-            src="http://ghchart.rshah.org/taka1156"
+            src="https://ghchart.rshah.org/taka1156"
             alt="taka1156's Github chart"
           />
         </div>
