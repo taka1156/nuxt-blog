@@ -24,7 +24,7 @@
   "dependencies": {
     "firebase": "^7.24.0",
     "github-markdown-css": "^4.0.0",
-    "highlight.js": "^10.1.1",
+    "highlight.js": "^10.1.2",
     "marked": "^1.1.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.13.3",
