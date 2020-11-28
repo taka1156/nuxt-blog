@@ -50,21 +50,21 @@ export default {
 /* css reset */
 ul,
 li {
-  list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 /* css reset */
 
 .index-list {
   position: fixed;
-  bottom: 110px;
   right: 10px;
-  height: 250px;
-  width: 55%;
-  overflow-y: scroll;
+  bottom: 110px;
   z-index: 2;
+  width: 55%;
+  height: 250px;
+  overflow-y: scroll;
   background-color: white;
   border: 2px solid rgba(40, 167, 69, 0.9);
 }

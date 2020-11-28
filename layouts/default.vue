@@ -50,8 +50,8 @@ export default {
 }
 
 .slide-in-up-enter {
-  transform: translate(0, 100px);
   opacity: 0;
+  transform: translate(0, 100px);
 }
 
 .slide-in-up-enter-to {
@@ -63,13 +63,13 @@ export default {
 }
 
 .slide-in-up-leave {
-  transform: translate(0, 0);
   opacity: 1;
+  transform: translate(0, 0);
 }
 
 .slide-in-up-leave-to {
-  transform: translate(0, -100px);
   opacity: 0;
+  transform: translate(0, -100px);
 }
 
 .slide-in-up-leave-active {

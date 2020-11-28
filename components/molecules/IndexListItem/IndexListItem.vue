@@ -21,8 +21,8 @@ export default {
 
 <style scoped>
 .index-list-item {
-  color: rgba(40, 167, 69, 0.9);
   font-size: 15px;
+  color: rgba(40, 167, 69, 0.9);
 }
 
 @media (min-width: 790px) {

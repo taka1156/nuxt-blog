@@ -43,8 +43,8 @@ export default {
 }
 
 .classification-title__icon {
-  padding: 5px;
-  height: 50px;
   width: 50px;
+  height: 50px;
+  padding: 5px;
 }
 </style>

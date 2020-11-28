@@ -63,11 +63,11 @@ export default {
 <style scoped>
 .classification-list-item {
   display: block;
-  margin: 10px;
   padding: 10px;
+  margin: 10px;
+  cursor: pointer;
   border: 1px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .classification-list-item__box {
