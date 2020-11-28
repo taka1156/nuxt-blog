@@ -89,7 +89,7 @@ export default {
 }
 
 .article-content__text {
-  text-align: left;
   margin: 10px auto;
+  text-align: left;
 }
 </style>

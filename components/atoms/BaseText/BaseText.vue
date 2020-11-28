@@ -43,8 +43,8 @@ export default {
 <style scoped>
 /* css reset */
 p {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 /* css reset */

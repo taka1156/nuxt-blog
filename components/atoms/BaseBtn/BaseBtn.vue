@@ -36,11 +36,11 @@ export default {
 <style scoped>
 /* css reset */
 button {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  background: transparent;
   border: none;
   outline: none;
-  background: transparent;
 }
 
 /* css reset */

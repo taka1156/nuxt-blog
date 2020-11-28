@@ -118,9 +118,9 @@ export default {
 /* css reset */
 ul,
 li {
-  list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 /* css reset */

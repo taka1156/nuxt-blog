@@ -128,6 +128,7 @@ export default {
       );
 
       // 記事のルーティング
+      // eslint-disable-next-line prefer-const
       let { contents, totalCount } = await routesUtils.contentsFetch(
         ARTICLE_URL,
         MICRO_CMS
