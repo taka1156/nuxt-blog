@@ -35,8 +35,9 @@ export default {
     const URL = `${this.baseURL}/tags/`;
     const IMAGE = `${this.baseURL}/img/ogp/tag.png`;
     // メタタグ
-    this.meta.title = 'taka1156のブログのタグー一覧';
-    this.meta.description = 'VueやTS、electron、Laravelなど技術関連の記事を更新中';
+    this.meta.title = 'タグー 一覧';
+    this.meta.description =
+      'taka1156のブログ。\nVueやTS、electron、Laravelなど技術関連の記事を更新中';
     this.meta.type = 'article';
     this.meta.url = URL;
     this.meta.image = IMAGE;

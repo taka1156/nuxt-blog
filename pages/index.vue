@@ -14,6 +14,7 @@
 
 <script>
 import AricleList from '@/components/organisms//ArticleList/ArticleList';
+import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
 export default {
@@ -21,6 +22,7 @@ export default {
   components: {
     'article-list': AricleList
   },
+  mixins: [meta],
   async asyncData({ $axios, params, payload }) {
     if (payload != null) {
       return { articles: payload.articles, maxPage: payload.maxPage };
@@ -46,6 +48,14 @@ export default {
       articles: [],
       maxPage: 0,
       routePath: 'page-pageid'
+    };
+  },
+  head() {
+    // メタタグ
+    this.meta.title = 'トップ';
+
+    return {
+      title: this.meta.title
     };
   }
 };

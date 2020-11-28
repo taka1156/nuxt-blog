@@ -188,7 +188,8 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'VueやTS、electron、Laravelなど技術関連の記事を更新中'
+        content:
+          'taka1156のブログ。\nVueやTS、electron、Laravelなど技術関連の記事を更新中'
       },
       {
         hid: 'og:image',
