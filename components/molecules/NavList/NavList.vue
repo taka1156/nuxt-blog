@@ -64,15 +64,15 @@ li {
 
 /* css reset */
 .nav-list {
-  display: flex;
-  justify-content: center;
   position: fixed;
   top: 60px;
   right: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
   z-index: 3;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(40, 167, 69, 0.9);
 }
 

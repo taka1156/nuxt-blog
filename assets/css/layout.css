@@ -9,16 +9,16 @@
 }
 
 .line {
-  border: 1px solid lightgray;
   margin: 5px;
+  border: 1px solid lightgray;
 }
 
 /* markdown */
 
 .markdown-body h1,
 .markdown-body h2 {
-  border-left: 3px solid #28a745;
   padding-left: 10px;
+  border-left: 3px solid #28a745;
 }
 
 .markdown-body a {

@@ -58,8 +58,8 @@ export default {
 <style scoped>
 /* css reset */
 p {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 /* css reset */
@@ -68,8 +68,8 @@ p {
   display: flex;
   justify-content: center;
   padding: 2px;
-  border-radius: 20px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .article-badge__fill {
