@@ -33,10 +33,11 @@ export default {
   },
   head() {
     const URL = `${this.baseURL}/categories/`;
-    const IMAGE = `${this.baseURL}/static/img/ogp/category.png`;
+    const IMAGE = `${this.baseURL}/img/ogp/category.png`;
     // メタタグ
-    this.meta.title = 'taka1156のブログのカテゴリー一覧';
-    this.meta.description = 'VueやTS、electron、Laravelなど技術関連の記事を更新中';
+    this.meta.title = 'カテゴリー 一覧';
+    this.meta.description =
+      'taka1156のブログ。\nVueやTS、electron、Laravelなど技術関連の記事を更新中';
     this.meta.type = 'article';
     this.meta.url = URL;
     this.meta.image = IMAGE;
