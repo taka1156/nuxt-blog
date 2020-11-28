@@ -91,7 +91,7 @@ export default {
   mixins: [meta],
   head() {
     const URL = `${this.baseURL}/profile/`;
-    const IMAGE = `${this.baseURL}/static/img/ogp/prof.png`;
+    const IMAGE = `${this.baseURL}/img/ogp/prof.png`;
     // メタタグ
     this.meta.title = 'taka1156のプロフィール';
     this.meta.description = 'VueやTS、electron、Laravelなど技術関連の記事を更新中';
