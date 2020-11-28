@@ -81,11 +81,38 @@
 
 <script>
 import BaseImg from '@/components/atoms/BaseImg/BaseImg';
+import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Profile',
   components: {
     'base-img': BaseImg
+  },
+  mixins: [meta],
+  head() {
+    const URL = `${this.baseURL}/profile/`;
+    const IMAGE = `${this.baseURL}/static/img/ogp/prof.png`;
+    // メタタグ
+    this.meta.title = 'taka1156のプロフィール';
+    this.meta.description = 'VueやTS、electron、Laravelなど技術関連の記事を更新中';
+    this.meta.type = 'article';
+    this.meta.url = URL;
+    this.meta.image = IMAGE;
+
+    return {
+      title: this.meta.title,
+      meta: [
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.meta.description
+        },
+        { hid: 'og:title', property: 'og:title', content: this.meta.title },
+        { hid: 'og:type', property: 'og:type', content: this.meta.type },
+        { hid: 'og:url', property: 'og:url', content: this.meta.url },
+        { hid: 'og:image', property: 'og:image', content: this.meta.image }
+      ]
+    };
   }
 };
 </script>
