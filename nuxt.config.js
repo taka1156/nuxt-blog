@@ -188,7 +188,7 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'VueやLaravel、electron、dockerなどについて更新中'
+        content: 'VueやTS、electron、Laravelなど技術関連の記事を更新中'
       },
       {
         hid: 'og:image',
