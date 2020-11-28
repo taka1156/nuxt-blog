@@ -49,9 +49,9 @@ export default {
 
 .article-header__title {
   font-size: 1.75rem;
+  color: rgba(40, 167, 69, 0.9);
   text-align: left;
   word-break: break-word;
   overflow-wrap: break-word;
-  color: rgba(40, 167, 69, 0.9);
 }
 </style>

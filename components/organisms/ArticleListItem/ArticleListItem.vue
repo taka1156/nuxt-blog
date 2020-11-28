@@ -54,17 +54,17 @@ export default {
 <style scoped>
 .article-list-item {
   display: block;
-  margin: 10px;
   padding: 10px;
+  margin: 10px;
   border: 1px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
 }
 
 .article-list-item__title {
+  color: rgba(40, 167, 69, 0.9);
   text-align: left;
   word-break: break-word;
   overflow-wrap: break-word;
-  color: rgba(40, 167, 69, 0.9);
   cursor: pointer;
 }
 

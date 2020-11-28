@@ -122,8 +122,8 @@ export default {
 /* css reset */
 ul,
 li {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 li {
@@ -143,29 +143,29 @@ li {
 .profile__box {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-  height: 150px;
   width: 85%;
+  height: 150px;
+  padding: 0;
+  margin: 0 auto;
   border: 0.5px solid gray;
   border-radius: 5px;
 }
 
 .profile__img {
   display: block;
-  margin: 10px;
-  padding: 0;
-  height: 88%;
   width: 25%;
+  height: 88%;
+  padding: 0;
+  margin: 10px;
 }
 
 .contents__sentence {
-  margin: auto 0 auto 0;
-  height: 90%;
   width: 75%;
+  height: 90%;
+  margin: auto 0 auto 0;
   font-size: 14px;
-  text-align: left;
   line-height: normal;
+  text-align: left;
   border-left: 0.5px dotted gray;
 }
 
@@ -191,9 +191,9 @@ li {
 
 .sns {
   display: flex;
-  margin: 20px auto;
-  width: 80%;
   justify-content: space-between;
+  width: 80%;
+  margin: 20px auto;
 }
 
 .sns__box {

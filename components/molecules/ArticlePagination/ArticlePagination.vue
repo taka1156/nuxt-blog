@@ -69,9 +69,9 @@ export default {
 .pagination {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0;
   width: 100%;
+  padding: 0;
+  margin: 0 auto;
   color: rgba(40, 167, 69, 0.9);
 }
 
