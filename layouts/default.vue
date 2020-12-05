@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      logoText: "Taka'sTechBlog",
+      logoText: 'TakaTechBlog',
       routes: [
         {
           name: 'Top',
