@@ -1,14 +1,8 @@
 <template>
   <div>
-    <div class="container">
-      <h1>Top</h1>
-      <div class="line" />
-      <article-list
-        :articles="articles"
-        :max-page="maxPage"
-        :route-path="routePath"
-      />
-    </div>
+    <h1>Top</h1>
+    <div class="line" />
+    <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>
 </template>
 

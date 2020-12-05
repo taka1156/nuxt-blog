@@ -19,18 +19,22 @@
         @next="next"
       />
     </div>
-    <p v-else>記事がありません。</p>
+    <div v-else>
+      <base-text :use-type="`none`">記事がありません。</base-text>
+    </div>
   </div>
 </template>
 
 <script>
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticlePagination from '../../molecules/ArticlePagination/ArticlePagination';
+import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
   components: {
     'article-list-item': ArticleListItem,
-    'article-pagination': ArticlePagination
+    'article-pagination': ArticlePagination,
+    'base-text': BaseText
   },
   props: {
     /**

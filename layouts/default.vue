@@ -1,22 +1,33 @@
 <template>
   <div class="App">
-    <the-navigation :logo-text="logoText" :routes="routes" />
-    <transition name="slide-in-up" mode="out-in">
-      <nuxt />
-    </transition>
+    <header>
+      <the-navigation :logo-text="logoText" :routes="routes" />
+    </header>
+    <div class="container">
+      <main>
+        <transition name="slide-in-up" mode="out-in">
+          <nuxt />
+        </transition>
+      </main>
+      <footer>
+        <the-copyright />
+      </footer>
+    </div>
   </div>
 </template>
 
 <script>
 import TheNavigation from '@/components/organisms/TheNavigation/TheNavigation';
+import TheCopyright from '@/components/organisms/TheCopyright/TheCopyright';
 
 export default {
   components: {
-    'the-navigation': TheNavigation
+    'the-navigation': TheNavigation,
+    'the-copyright': TheCopyright
   },
   data() {
     return {
-      logoText: "Taka'sTechBlog",
+      logoText: 'TakaTechBlog',
       routes: [
         {
           name: 'Top',
@@ -45,8 +56,33 @@ export default {
 </script>
 
 <style scoped>
+/* css reset */
+header,
+footer {
+  padding: 0;
+  margin: 0;
+}
+
+/* css reset */
+
 .App {
   text-align: center;
+}
+
+.container {
+  margin: 70px auto 0;
+}
+
+main {
+  min-height: 90vh;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    width: 80vw;
+  }
 }
 
 .slide-in-up-enter {

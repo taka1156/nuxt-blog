@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="base-btn" :class="`base-btn--${useType}`" @click="btnClick">
+    <button class="base-btn--extend" @click="btnClick">
       <!-- @slot ボタンラベル -->
       <slot />
     </button>
@@ -10,16 +10,6 @@
 <script>
 export default {
   name: 'BaseBtn',
-  props: {
-    useType: {
-      type: String,
-      default: 'none',
-      required: true,
-      validator: function(value) {
-        return ['none', 'pagenation'].indexOf(value) !== -1;
-      }
-    }
-  },
   methods: {
     btnClick() {
       /**
@@ -38,16 +28,8 @@ export default {
 button {
   padding: 0;
   margin: 0;
-  background: transparent;
-  border: none;
-  outline: none;
+  cursor: pointer;
 }
 
 /* css reset */
-
-.base-btn--pagenation {
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
 </style>

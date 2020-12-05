@@ -56,12 +56,12 @@ export default {
   display: block;
   padding: 10px;
   margin: 10px;
-  border: 1px solid rgba(40, 167, 69, 0.9);
+  border: 1px solid rgb(40, 167, 69);
   border-radius: 5px;
 }
 
 .article-list-item__title {
-  color: rgba(40, 167, 69, 0.9);
+  color: rgb(40, 167, 69);
   text-align: left;
   word-break: break-word;
   overflow-wrap: break-word;

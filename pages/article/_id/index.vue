@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div class="container">
-      <div class="article-content">
-        <!--記事のheader-->
-        <article-header :article="article" />
-        <!--markdown埋め込み-->
-        <div class="article-content__text markdown-body" v-html="parseMarked" />
-        <index-navigation :toc="toc" />
-      </div>
+    <div class="article-content">
+      <!--記事のheader-->
+      <article-header :article="article" />
+      <!--markdown埋め込み-->
+      <div class="article-content__text markdown-body" v-html="parseMarked" />
+      <index-navigation :toc="toc" />
     </div>
   </div>
 </template>
