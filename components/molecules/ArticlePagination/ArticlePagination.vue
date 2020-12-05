@@ -1,18 +1,18 @@
 <template>
-  <div class="pagination">
-    <base-btn :use-type="`pagenation`" @btn-click="prevPage">
-      <span class="pagination__btn">
-        &lt;
-      </span>
-    </base-btn>
-    <base-text :use-type="`pagenation`" :color="`green`">
-      {{ currentPage }}/{{ maxPage }}
-    </base-text>
-    <base-btn :use-type="`pagenation`" @btn-click="nextPage">
-      <span class="pagination__btn">
-        &gt;
-      </span>
-    </base-btn>
+  <div>
+    <div class="pagination">
+      <base-btn @btn-click="prevPage">
+        <span>
+          &lt;
+        </span>
+      </base-btn>
+      <base-text> {{ currentPage }}/{{ maxPage }} </base-text>
+      <base-btn @btn-click="nextPage">
+        <span>
+          &gt;
+        </span>
+      </base-btn>
+    </div>
   </div>
 </template>
 
@@ -66,16 +66,25 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .base-btn--extend {
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(40, 167, 69);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+::v-deep .base-text--extend {
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(40, 167, 69);
+}
+
 .pagination {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  color: rgba(40, 167, 69, 0.9);
-}
-
-.pagination__btn {
-  color: rgba(40, 167, 69, 0.9);
+  margin: 15px auto;
 }
 </style>

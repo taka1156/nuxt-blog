@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="container">
-      <h1>Category</h1>
-      <div class="line" />
-      <classification-list :route-path="'category'" :items="categories" />
-    </div>
+    <h1>Category</h1>
+    <div class="line" />
+    <classification-list :route-path="'category'" :items="categories" />
   </div>
 </template>
 
