@@ -1,81 +1,79 @@
 <template>
   <div>
-    <div class="container">
-      <h1>Profile</h1>
-      <div class="line" />
+    <h1>Profile</h1>
+    <div class="line" />
 
-      <section class="contents">
-        <h2 class="contents__title">自己紹介</h2>
-        <div class="profile__box">
-          <img
-            class="profile__img"
-            src="@/assets/img/prof.png"
-            alt="プロフィール画像"
-          />
-          <p class="contents__sentence">
-            プログラミングは、大学1年から触り始めC、Java、Python3などを学びました。
-            現在は、TypeScriptやPHP(+Laravel)について学習しています。
-          </p>
-        </div>
-      </section>
+    <section class="contents">
+      <h2 class="contents__title">自己紹介</h2>
+      <div class="profile__box">
+        <img
+          class="profile__img"
+          src="@/assets/img/prof.png"
+          alt="プロフィール画像"
+        />
+        <p class="contents__sentence">
+          プログラミングは、大学1年から触り始めC、Java、Python3などを学びました。
+          現在は、TypeScriptやPHP(+Laravel)について学習しています。
+        </p>
+      </div>
+    </section>
 
-      <section class="contents">
-        <h2 class="contents__title">githubの活動</h2>
-        <div class="gh-chart">
-          <img
-            class="gh-chart__img"
-            src="https://ghchart.rshah.org/taka1156"
-            alt="taka1156's Github chart"
-          />
-        </div>
-      </section>
+    <section class="contents">
+      <h2 class="contents__title">githubの活動</h2>
+      <div class="gh-chart">
+        <img
+          class="gh-chart__img"
+          src="https://ghchart.rshah.org/taka1156"
+          alt="taka1156's Github chart"
+        />
+      </div>
+    </section>
 
-      <section class="contents">
-        <h2 class="contents__title">SNSやGitHub等</h2>
-        <ul class="sns">
-          <li class="sns__box">
-            <a href="https://github.com/taka1156" class="sns__link">
-              <base-img
-                :size="`lg`"
-                :img-url="require('@/assets/img/github-logo.png')"
-                :img-alt="`githubアイコン`"
-              />
-              GitHub
-            </a>
-          </li>
-          <li class="sns__box">
-            <a href="https://qiita.com/taka_1156" class="sns__link">
-              <base-img
-                :size="`lg`"
-                :img-url="require('@/assets/img/qiita-logo.png')"
-                :img-alt="`qiitaアイコン`"
-              />
-              Qiita
-            </a>
-          </li>
-          <li class="sns__box">
-            <a href="https://twitter.com/taka_1156" class="sns__link">
-              <base-img
-                :size="`lg`"
-                :img-url="require('@/assets/img/twitter-logo.png')"
-                :img-alt="`twiiterアイコン`"
-              />
-              Twitter
-            </a>
-          </li>
-          <li class="sns__box">
-            <a href="https://www.taka1156.site" class="sns__link">
-              <base-img
-                :size="`lg`"
-                :img-url="require('@/assets/img/prof.png')"
-                :img-alt="`portfolioアイコン`"
-              />
-              Portfolio
-            </a>
-          </li>
-        </ul>
-      </section>
-    </div>
+    <section class="contents">
+      <h2 class="contents__title">SNSやGitHub等</h2>
+      <ul class="sns">
+        <li class="sns__box">
+          <a href="https://github.com/taka1156" class="sns__link">
+            <base-img
+              :size="`lg`"
+              :img-url="require('@/assets/img/github-logo.png')"
+              :img-alt="`githubアイコン`"
+            />
+            GitHub
+          </a>
+        </li>
+        <li class="sns__box">
+          <a href="https://qiita.com/taka_1156" class="sns__link">
+            <base-img
+              :size="`lg`"
+              :img-url="require('@/assets/img/qiita-logo.png')"
+              :img-alt="`qiitaアイコン`"
+            />
+            Qiita
+          </a>
+        </li>
+        <li class="sns__box">
+          <a href="https://twitter.com/taka_1156" class="sns__link">
+            <base-img
+              :size="`lg`"
+              :img-url="require('@/assets/img/twitter-logo.png')"
+              :img-alt="`twiiterアイコン`"
+            />
+            Twitter
+          </a>
+        </li>
+        <li class="sns__box">
+          <a href="https://www.taka1156.site" class="sns__link">
+            <base-img
+              :size="`lg`"
+              :img-url="require('@/assets/img/prof.png')"
+              :img-alt="`portfolioアイコン`"
+            />
+            Portfolio
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
 

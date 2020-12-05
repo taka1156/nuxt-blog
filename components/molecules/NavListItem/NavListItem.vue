@@ -7,7 +7,7 @@
           :img-url="navItem.img"
           :img-alt="`${navItem.name}の画像`"
         />
-        <base-text :color="`white`">{{ navItem.name }}</base-text>
+        <base-text>{{ navItem.name }}</base-text>
       </nuxt-link>
     </div>
   </div>
@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .base-text--extend {
+  color: white;
+}
+
 .nav-item {
   display: block;
   font-size: 50px;

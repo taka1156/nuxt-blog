@@ -20,7 +20,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { BaseNavIcon },
-  template: '<base-nav-icon v-bind="$props" />'
+  template: '<base-nav-icon v-bind="$props">text</base-nav-icon>'
 });
 
 export const Default = Template.bind({});

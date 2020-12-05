@@ -3,7 +3,7 @@
     <div class="article-category">
       カテゴリー:
       <div @click="categoryJump(category)">
-        <article-badge :badge-type="'category'" :badge="category" />
+        <article-badge :badge="category" />
       </div>
     </div>
   </div>
@@ -43,6 +43,12 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .article-badge--extend {
+  width: 130px;
+  color: white;
+  background-color: rgb(40, 167, 69);
+}
+
 .article-category {
   display: flex;
   justify-content: space-between;

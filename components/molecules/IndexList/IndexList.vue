@@ -2,7 +2,7 @@
   <div>
     <div v-show="isOpen" class="index-list">
       <div class="index-list__box">
-        <strong>Index</strong>
+        <h3 class="index-list__title">Index</h3>
         <ul>
           <li
             v-for="(t, index) in toc"
@@ -27,11 +27,17 @@ export default {
     'index-list-item': IndexListItem
   },
   props: {
+    /**
+     * 目次の開閉状態
+     */
     isOpen: {
       type: Boolean,
       default: false,
       required: true
     },
+    /**
+     * 目次一覧
+     */
     toc: {
       type: Array,
       default: () => [],
@@ -66,11 +72,16 @@ li {
   height: 250px;
   overflow-y: scroll;
   background-color: white;
-  border: 2px solid rgba(40, 167, 69, 0.9);
+  border: 1px solid rgba(40, 167, 69, 0.9);
 }
 
 .index-list__box {
   margin: 0 auto;
+}
+
+.index-list__title {
+  color: rgba(40, 167, 69, 0.9);
+  text-align: center;
 }
 
 .index-list__item-box {
