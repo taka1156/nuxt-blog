@@ -6,7 +6,7 @@
         :img-url="require('@/assets/img/icon/date.svg')"
         :img-alt="'日付'"
       />
-      <base-text :color="`green`">
+      <base-text>
         作成日:{{ dateFormat(createdAt) }} ~ 更新日:{{ dateFormat(updatedAt) }}
       </base-text>
     </div>
@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .base-text--extend {
+  color: rgb(40, 167, 69);
+}
+
 .article-date {
   display: flex;
   margin: 0;

@@ -1,15 +1,7 @@
 <template>
   <div>
-    <div
-      class="article-badge"
-      :class="[
-        badgeType === 'category' ? 'article-badge__fill' : 'article-badge__outline'
-      ]"
-    >
-      <base-text
-        :use-type="`badge`"
-        :color="`${badgeType === 'category' ? 'white' : 'green'}`"
-      >
+    <div class="article-badge article-badge--extend">
+      <base-text>
         {{ badge.name }}
       </base-text>
       <base-img
@@ -33,17 +25,6 @@ export default {
   },
   props: {
     /**
-     * バッジの種類
-     * @values category, tag
-     */
-    badgeType: {
-      type: String,
-      required: true,
-      validator: function(value) {
-        return ['category', 'tag'].indexOf(value) !== -1;
-      }
-    },
-    /**
      * バッジの情報
      * (id、バッジ名、画像URL)
      */
@@ -64,22 +45,16 @@ p {
 
 /* css reset */
 
+::v-deep .base-text--extend {
+  font-size: 12px;
+  line-height: 30px;
+}
+
 .article-badge {
   display: flex;
   justify-content: center;
   padding: 2px;
   cursor: pointer;
   border-radius: 20px;
-}
-
-.article-badge__fill {
-  width: 130px;
-  background-color: rgba(40, 167, 69, 0.9);
-}
-
-.article-badge__outline {
-  width: 100px;
-  margin: 2px;
-  border: 1px solid rgba(40, 167, 69, 0.9);
 }
 </style>

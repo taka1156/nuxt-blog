@@ -10,12 +10,16 @@
 
 <script>
 import NavIcon from '../../atoms/BaseNavIcon/BaseNavIcon';
+
 export default {
   name: 'IndexNav',
   components: {
     'base-nav-icon': NavIcon
   },
   props: {
+    /**
+     * 目次の開閉状態
+     */
     isOpen: {
       type: Boolean,
       default: false,
@@ -39,12 +43,5 @@ export default {
   width: 50px;
   height: 55px;
   background-color: rgba(40, 167, 69, 0.9);
-}
-
-.index-nav__text {
-  padding: 0;
-  margin-top: -10px;
-  font-size: 10px;
-  color: white;
 }
 </style>

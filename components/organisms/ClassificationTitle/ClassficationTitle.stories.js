@@ -20,7 +20,7 @@ const Template2 = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ClassificationTitle },
   template:
-    '<classification-title v-bind="$props">ダミー : ダミ-カテゴリー</classification-title>'
+    '<classification-title v-bind="$props">ダミー : ダミーカテゴリー</classification-title>'
 });
 
 export const Tag = Template1.bind({});

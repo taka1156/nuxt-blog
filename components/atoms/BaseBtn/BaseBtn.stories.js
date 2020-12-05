@@ -4,13 +4,7 @@ export default {
   title: 'Atoms/BaseBtn',
   component: BaseBtn,
   argTypes: {
-    btnClick: { action: 'clicked' },
-    useType: {
-      control: {
-        type: 'inline-radio',
-        options: ['none', 'pagenation']
-      }
-    }
+    btnClick: { action: 'clicked' }
   }
 };
 
