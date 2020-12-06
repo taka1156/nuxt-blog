@@ -51,7 +51,12 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.meta.title },
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
         { hid: 'og:url', property: 'og:url', content: this.meta.url },
-        { hid: 'og:image', property: 'og:image', content: this.meta.image }
+        { hid: 'og:image', property: 'og:image', content: this.meta.image },
+        {
+          hid: 'description',
+          property: 'description',
+          content: this.meta.description
+        }
       ]
     };
   }

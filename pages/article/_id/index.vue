@@ -57,7 +57,7 @@ export default {
     this.meta.url = `${this.baseURL}/${this.article.id}`;
     const encodeTitleUtf8 = encodeURI(this.article.title);
     const OGP_IMAGE =
-      'https://images.microcms-assets.io/protected/ap-northeast-1:7cf4e012-34b8-42e4-9878-9730fb0adfdc/service/taka_blog/media/ogp.png';
+      'https://images.microcms-assets.io/protected/ap-northeast-1:7cf4e012-34b8-42e4-9878-9730fb0adfdc/service/taka_blog/media/pablo-ogp.png';
     const PARAMS = `?txt=${encodeTitleUtf8}&txt-size=35&txt-color=white&txt-align=middle,center`;
     this.meta.image = OGP_IMAGE + PARAMS;
 
@@ -73,6 +73,11 @@ export default {
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
         { hid: 'og:url', property: 'og:url', content: this.meta.url },
         { hid: 'og:image', property: 'og:image', content: this.meta.image },
+        {
+          hid: 'description',
+          property: 'description',
+          content: this.meta.description
+        },
         // 記事用の大きなOGPカード
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
       ]

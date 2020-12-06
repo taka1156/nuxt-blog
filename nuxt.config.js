@@ -197,6 +197,13 @@ export default {
         property: 'og:image',
         content: `${BASE_URL}/img/ogp/logo.png`
       },
+      // web閲覧時の説明文
+      {
+        hid: 'description',
+        property: 'description',
+        content:
+          'taka1156のブログ。\nVueやTS、electron、Laravelなど技術関連の記事を更新中'
+      },
       // Twitter Card
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@taka_Program' }
