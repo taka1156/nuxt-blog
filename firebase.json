@@ -2,6 +2,7 @@
   "hosting": {
     "target": "production",
     "public": "dist",
+    "trailingSlash": true,
     "ignore": [
       "firebase.json",
       "**/.*",
