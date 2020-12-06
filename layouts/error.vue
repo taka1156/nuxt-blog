@@ -21,6 +21,7 @@
 
       <p v-else class="description">
         エラーが発生しました。
+        <NuxtLink class="error-link" to="/">ホームに戻る</NuxtLink>
       </p>
     </div>
   </div>

@@ -36,17 +36,17 @@ export default {
         },
         {
           name: 'Category',
-          to: '/categories',
+          to: '/categories/',
           img: require('assets/img/ui/category.svg')
         },
         {
           name: 'Tag',
-          to: '/tags',
+          to: '/tags/',
           img: require('assets/img/ui/tag.svg')
         },
         {
           name: 'Profile',
-          to: '/profile',
+          to: '/profile/',
           img: require('assets/img/ui/profile.svg')
         }
       ]
