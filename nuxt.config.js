@@ -7,6 +7,7 @@ export default {
   mode: 'universal',
   target: 'static',
   sitemap: {
+    trailingSlash: true,
     path: '/sitemap.xml',
     hostname: 'https://blog.taka1156.site',
     async routes() {
