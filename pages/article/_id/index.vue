@@ -73,6 +73,11 @@ export default {
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
         { hid: 'og:url', property: 'og:url', content: this.meta.url },
         { hid: 'og:image', property: 'og:image', content: this.meta.image },
+        {
+          hid: 'description',
+          property: 'description',
+          content: this.meta.description
+        },
         // 記事用の大きなOGPカード
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
       ]
