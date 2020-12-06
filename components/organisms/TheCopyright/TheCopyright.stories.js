@@ -1,19 +1,13 @@
 import TheCopyright from './TheCopyright.vue';
-import { dummyLogo, dummyRoutes } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Organisms/TheCopyright',
   component: TheCopyright
 };
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const Template = () => ({
   components: { TheCopyright },
-  template: '<the-copyright v-bind="$props" />'
+  template: '<the-copyright />'
 });
 
 export const Default = Template.bind({});
-Default.args = {
-  logoText: dummyLogo,
-  routes: dummyRoutes
-};
