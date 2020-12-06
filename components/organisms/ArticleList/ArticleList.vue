@@ -20,7 +20,7 @@
       />
     </div>
     <div v-else>
-      <base-text :use-type="`none`">記事がありません。</base-text>
+      <base-text>記事がありません。</base-text>
     </div>
   </div>
 </template>

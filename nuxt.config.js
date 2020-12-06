@@ -81,7 +81,7 @@ export default {
       // web閲覧時の説明文
       {
         hid: 'description',
-        property: 'description',
+        name: 'description',
         content:
           'taka1156のブログ。\nVueやTS、electron、Laravelなど技術関連の記事を更新中'
       },
