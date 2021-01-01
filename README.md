@@ -46,10 +46,11 @@ Storybookはこちら(https://blog-storybook.netlify.app)
 - ArticleHeader
 - ArticleListItem <a href="#2">※2</a>
 - ArticleList
-- ClassficationListItem <a href="#2">※2</a>
-- ClassficationList
-- BlogNavigation
-- ClassficationTitle
+- ClassificationListItem <a href="#2">※2</a>
+- ClassificationList
+- ClassificationTitle
+- TheNavigation
+- TheCopyright
 
 
 <div id="1">※1</div>
@@ -61,4 +62,4 @@ Storybookはこちら(https://blog-storybook.netlify.app)
 <div id="2">※2</div> 
 
 `~ListItem `は汎用性が低い(=List系と強く結びついてる)ため<br>
-`Atoms`要素しかない`ClassficationList`も`Organisms`に設定しています。
+`Atoms`要素しかない`ClassificationList`も`Organisms`に設定しています。

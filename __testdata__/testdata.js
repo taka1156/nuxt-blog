@@ -22,7 +22,7 @@ const dummyBadgeTemplate = (i, name) => ({
   img: { url: dummyImgUrl }
 });
 
-const dummyClassficationTemplate = (i, name) => ({
+const dummyClassificationTemplate = (i, name) => ({
   id: i,
   name: name,
   img: {
@@ -79,11 +79,11 @@ const dummyTagBadges = dummyFactory(MAX_BADGE_DATA, i =>
 );
 
 const dummyClassificationCategory = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassficationTemplate(i, 'ダミーカテゴリー')
+  dummyClassificationTemplate(i, 'ダミーカテゴリー')
 );
 
 const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassficationTemplate(i, 'ダミータグ')
+  dummyClassificationTemplate(i, 'ダミータグ')
 );
 
 const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
