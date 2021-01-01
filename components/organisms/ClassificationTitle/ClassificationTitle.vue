@@ -14,7 +14,7 @@
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 
 export default {
-  name: 'ClassficationTitle',
+  name: 'ClassificationTitle',
   components: {
     'base-img': BaseImg
   },
