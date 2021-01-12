@@ -108,9 +108,9 @@ button {
 .base-nav-icon__text {
   display: block;
   width: 50px;
-  height: 5px;
+  height: 10px;
   margin: 30px auto 0 auto;
-  font-size: 5px;
+  font-size: 10px;
   color: white;
 }
 
