@@ -4,7 +4,7 @@
       <span class="article-badge__text">
         {{ badge.name }}
       </span>
-      <base-img
+      <base-img-webp
         :size="`sm`"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
@@ -15,13 +15,13 @@
 
 <script>
 import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
-import BaseImg from '../../atoms/BaseImg/BaseImg';
+import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
 
 export default {
   name: 'ArticleBadge',
   components: {
     'base-btn': BaseBtn,
-    'base-img': BaseImg
+    'base-img-webp': BaseImgWebp
   },
   props: {
     /**
