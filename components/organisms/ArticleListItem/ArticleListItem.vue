@@ -7,10 +7,10 @@
         :updated-at="article.updatedAt"
       />
       <div class="line" />
-      <h2 class="article-list-item__title" @click="articleJump(article)">
-        {{ article.title }}
-      </h2>
-      <p class="article-list-item__summary">{{ article.summary }}</p>
+      <base-link :route-to="{ name: 'article-id', params: { id: article.id } }">
+        <h2>{{ article.title }}</h2>
+      </base-link>
+      <base-text>{{ article.summary }}</base-text>
       <div class="line" />
       <article-tag :tags="article.tags" />
     </article>
@@ -19,15 +19,19 @@
 
 <script>
 import ArticleCategory from '../ArticleCategory/ArticleCategory';
+import BaseLink from '../../atoms/BaseLink/BaseLink';
 import ArticleTag from '../ArticleTag/ArticleTag';
 import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
+import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
   name: 'ArticleListItem',
   components: {
     'article-category': ArticleCategory,
+    'base-link': BaseLink,
     'article-tag': ArticleTag,
-    'article-date': ArticleDate
+    'article-date': ArticleDate,
+    'base-text': BaseText
   },
   props: {
     /**
@@ -38,29 +42,12 @@ export default {
       default: () => {},
       required: true
     }
-  },
-  methods: {
-    articleJump({ id }) {
-      /**
-       * 記事閲覧ページにジャンプする
-       * (vue-router)
-       */
-      this.$router.push({ name: 'article-id', params: { id: `${id}` } });
-    }
   }
 };
 </script>
 
 <style scoped>
-.article-list-item {
-  display: block;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid rgb(40, 167, 69);
-  border-radius: 5px;
-}
-
-.article-list-item__title {
+::v-deep .base-link--extend {
   color: rgb(40, 167, 69);
   text-align: left;
   word-break: break-word;
@@ -68,7 +55,19 @@ export default {
   cursor: pointer;
 }
 
-.article-list-item__summary {
+::v-deep .base-link--extend:hover {
+  color: rgba(70, 129, 84, 0.9);
+}
+
+::v-deep .base-text--extend {
   text-align: left;
+}
+
+.article-list-item {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(40, 167, 69);
+  border-radius: 5px;
 }
 </style>

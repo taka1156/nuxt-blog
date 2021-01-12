@@ -2,7 +2,12 @@ import BaseText from './BaseText.vue';
 
 export default {
   title: 'Atoms/BaseText',
-  component: BaseText
+  component: BaseText,
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  }
 };
 
 const Template = () => ({
@@ -11,8 +16,3 @@ const Template = () => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = {
-  backgrounds: {
-    default: 'dark'
-  }
-};

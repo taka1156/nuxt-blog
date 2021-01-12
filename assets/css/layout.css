@@ -3,6 +3,23 @@
   border: 1px solid lightgray;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* outline */
+button:hover,
+button:active,
+a:hover,
+a:active {
+  outline: none;
+}
+
+a:focus,
+button:focus {
+  outline-color: #65aadd;
+}
+
 /* markdown */
 
 .markdown-body h1,

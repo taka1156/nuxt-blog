@@ -14,11 +14,11 @@ export default {
   }
 };
 
-const Template1 = (args, { argTypes }) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { BaseImg },
   template: '<base-img v-bind="$props" />'
 });
 
-export const Default = Template1.bind({});
+export const Default = Template.bind({});
 Default.args = { ...dummyImg };

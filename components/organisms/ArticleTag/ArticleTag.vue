@@ -3,9 +3,7 @@
     <div class="article-tag">
       タグ:&nbsp;
       <div v-for="(tag, index) in tags" :key="`tag_${index}`">
-        <div @click="tagJump(tag)">
-          <article-badge :badge="tag" />
-        </div>
+        <article-badge :badge="tag" @badge-click="tagJump(tag)" />
       </div>
     </div>
   </div>
@@ -45,10 +43,11 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .article-badge--extend {
+::v-deep .base-btn--extend {
   width: 100px;
   margin: 2px;
   color: rgb(40, 167, 69);
+  background-color: transparent;
   border: 1px solid rgb(40, 167, 69);
 }
 

@@ -9,7 +9,7 @@
       />
       <ul>
         <li v-for="(article, index) in articles" :key="`article_${index}`">
-          <article-list-item :article="article" />
+          <article-list-item :route-path="routePath" :article="article" />
         </li>
       </ul>
       <article-pagination

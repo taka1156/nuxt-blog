@@ -2,7 +2,7 @@
   <div>
     <div class="nav-bar">
       <div class="nav-bar__box">
-        <base-logo>{{ logoText }}</base-logo>
+        <base-link :route-to="`/`">{{ logoText }}</base-link>
         <base-nav-icon :is-open="isOpen" @btn-click="changeState">
           {{ isOpen ? 'CLOSE' : 'NAVI' }}
         </base-nav-icon>
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import BaseLogo from '../../atoms/BaseLogo/BaseLogo';
+import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseNavIcon from '../../atoms/BaseNavIcon/BaseNavIcon';
 
 export default {
   name: 'NavBar',
   components: {
     'base-nav-icon': BaseNavIcon,
-    'base-logo': BaseLogo
+    'base-link': BaseLink
   },
   props: {
     /**
@@ -53,6 +53,15 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .base-link--extend {
+  display: block;
+  height: 30px;
+  margin-top: 10px;
+  font-size: 1.3em;
+  color: white;
+  text-decoration: none;
+}
+
 .nav-bar {
   position: fixed;
   top: 0;

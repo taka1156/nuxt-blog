@@ -1,4 +1,5 @@
 const dummyImgUrl = 'http://placehold.jp/150x150.png';
+const dummyCopyrightUrl = 'http://placehold.jp';
 const MAX_NAV_DATA = 4;
 const MAX_ARTICLE_DATA = 10;
 const MAX_BADGE_DATA = 5;
@@ -61,7 +62,7 @@ const dummyArticleTemplate = i => ({
   category: dummyBadgeTemplate(1, 'ダミーカテゴリー')
 });
 
-// dummyData
+// dummyDate
 const dummyImg = {
   imgUrl: dummyImgUrl,
   imgAlt: 'ダミーの画像'
@@ -89,12 +90,10 @@ const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
 const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
 
 const dummyCategoryBadge = {
-  badgeType: 'category',
   badge: dummyBadgeTemplate(1, 'ダミーカテゴリー')
 };
 
 const dummyTagBadge = {
-  badgeType: 'tag',
   badge: dummyBadgeTemplate(1, 'ダミータグ')
 };
 
@@ -119,5 +118,6 @@ export {
   dummyClassificationTag,
   dummyLogo,
   dummyTocs,
-  dummyRoutes
+  dummyRoutes,
+  dummyCopyrightUrl
 };
