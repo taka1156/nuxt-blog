@@ -72,7 +72,6 @@ export default {
   color: rgb(40, 167, 69);
   background: transparent;
   border: none;
-  outline: none;
 }
 
 ::v-deep .base-text--extend {

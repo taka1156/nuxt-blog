@@ -3,7 +3,7 @@
     <div class="the-copyright">
       <base-text>
         &copy; 2019 taka1156 <br />使用素材、プライバシーポリシー等は
-        <a :href="articleUrl" target="_blank">コチラ</a>
+        <a :href="copyrightUrl" target="_blank">コチラ</a>
       </base-text>
     </div>
   </div>
@@ -17,10 +17,14 @@ export default {
   components: {
     'base-text': BaseText
   },
-  data() {
-    return {
-      articleUrl: 'https://policy.taka1156.site/'
-    };
+  props: {
+    /**
+     * ポリシーサイトのURL
+     */
+    copyrightUrl: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>

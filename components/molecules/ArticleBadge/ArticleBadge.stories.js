@@ -6,20 +6,14 @@ export default {
   component: ArticleBadge
 };
 
-const Template1 = (args, { argTypes }) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ArticleBadge },
   template: '<article-badge v-bind="$props" />'
 });
 
-const Template2 = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { ArticleBadge },
-  template: '<article-badge v-bind="$props" />'
-});
-
-export const CategoryBadge = Template1.bind({});
+export const CategoryBadge = Template.bind({});
 CategoryBadge.args = dummyCategoryBadge;
 
-export const TagBadge = Template2.bind({});
+export const TagBadge = Template.bind({});
 TagBadge.args = dummyTagBadge;

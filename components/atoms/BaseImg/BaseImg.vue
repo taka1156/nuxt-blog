@@ -1,6 +1,11 @@
 <template>
   <div>
-    <img :src="imgUrl" :alt="imgAlt" class="base-img" :class="`base-img--${size}`" />
+    <img
+      :src="imgUrl"
+      :alt="imgAlt"
+      class="base-img--extend"
+      :class="`base-img--${size}`"
+    />
   </div>
 </template>
 
@@ -40,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-.base-img {
+img {
   display: block;
   padding: 3px;
 }
