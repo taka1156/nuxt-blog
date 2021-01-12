@@ -30,6 +30,4 @@ button {
   margin: 0;
   cursor: pointer;
 }
-
-/* css reset */
 </style>

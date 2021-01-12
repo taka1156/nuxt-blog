@@ -9,25 +9,19 @@ export default {
   component: ClassificationListItem
 };
 
-const Template1 = (args, { argTypes }) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ClassificationListItem },
   template: '<classification-list-item v-bind="$props" />'
 });
 
-const Template2 = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { ClassificationListItem },
-  template: '<classification-list-item v-bind="$props" />'
-});
-
-export const Category = Template1.bind({});
+export const Category = Template.bind({});
 Category.args = {
   classificationItem: dummyClassificationCategory[0],
-  path: 'Category'
+  path: 'category'
 };
 
-export const Tag = Template2.bind({});
+export const Tag = Template.bind({});
 Tag.args = {
   classificationItem: dummyClassificationTag[0],
   path: 'tag'

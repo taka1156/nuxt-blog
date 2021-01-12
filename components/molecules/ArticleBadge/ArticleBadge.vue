@@ -1,27 +1,27 @@
 <template>
-  <div>
-    <div class="article-badge article-badge--extend">
-      <base-text>
+  <div class="article-badge">
+    <base-btn @btn-click="badgeClick()">
+      <span class="article-badge__text">
         {{ badge.name }}
-      </base-text>
+      </span>
       <base-img
         :size="`sm`"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
       />
-    </div>
+    </base-btn>
   </div>
 </template>
 
 <script>
+import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
 import BaseImg from '../../atoms/BaseImg/BaseImg';
-import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
   name: 'ArticleBadge',
   components: {
-    'base-img': BaseImg,
-    'base-text': BaseText
+    'base-btn': BaseBtn,
+    'base-img': BaseImg
   },
   props: {
     /**
@@ -31,6 +31,11 @@ export default {
     badge: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    badgeClick() {
+      this.$emit('badge-click');
     }
   }
 };
@@ -44,17 +49,16 @@ p {
 }
 
 /* css reset */
-
-::v-deep .base-text--extend {
-  font-size: 12px;
-  line-height: 30px;
-}
-
-.article-badge {
+::v-deep .base-btn--extend {
   display: flex;
   justify-content: center;
   padding: 2px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.article-badge__text {
+  font-size: 12px;
+  line-height: 30px;
 }
 </style>

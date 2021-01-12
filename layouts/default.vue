@@ -10,7 +10,7 @@
         </transition>
       </main>
       <footer>
-        <the-copyright />
+        <the-copyright :copyright-url="copyrightUrl" />
       </footer>
     </div>
   </div>
@@ -19,6 +19,7 @@
 <script>
 import TheNavigation from '@/components/organisms/TheNavigation/TheNavigation';
 import TheCopyright from '@/components/organisms/TheCopyright/TheCopyright';
+import { LOGO_TEXT, ROUTES, COPYRIGHT_URL } from '../constants/index.js';
 
 export default {
   components: {
@@ -27,29 +28,9 @@ export default {
   },
   data() {
     return {
-      logoText: 'TakaTechBlog',
-      routes: [
-        {
-          name: 'Top',
-          to: '/',
-          img: require('assets/img/ui/home.svg')
-        },
-        {
-          name: 'Category',
-          to: '/categories/',
-          img: require('assets/img/ui/category.svg')
-        },
-        {
-          name: 'Tag',
-          to: '/tags/',
-          img: require('assets/img/ui/tag.svg')
-        },
-        {
-          name: 'Profile',
-          to: '/profile/',
-          img: require('assets/img/ui/profile.svg')
-        }
-      ]
+      logoText: LOGO_TEXT,
+      routes: ROUTES,
+      copyrightUrl: COPYRIGHT_URL
     };
   }
 };

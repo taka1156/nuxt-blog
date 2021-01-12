@@ -3,16 +3,16 @@ import BaseNavIcon from './BaseNavIcon.vue';
 export default {
   title: 'Atoms/BaseNavIcon',
   component: BaseNavIcon,
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  },
   argTypes: {
     isOpen: {
       control: {
         type: 'boolean'
       }
-    }
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark'
     }
   }
 };
