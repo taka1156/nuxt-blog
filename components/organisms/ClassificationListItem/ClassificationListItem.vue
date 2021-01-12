@@ -9,7 +9,7 @@
       >
         <div class="classification-list-item__box">
           <h2>{{ classificationItem.name }}</h2>
-          <base-img
+          <base-img-webp
             :size="`lg`"
             :img-url="classificationItem.img.url"
             :img-alt="`${classificationItem.name}のロゴ`"
@@ -22,13 +22,13 @@
 
 <script>
 import BaseLink from '../../atoms/BaseLink/BaseLink';
-import BaseImg from '../../atoms/BaseImg/BaseImg';
+import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
 
 export default {
   name: 'ClassificationListItem',
   components: {
     'base-link': BaseLink,
-    'base-img': BaseImg
+    'base-img-webp': BaseImgWebp
   },
   props: {
     /**

@@ -5,18 +5,18 @@
         <!-- @slot タグもしくはカテゴリー名 -->
         <slot />
       </h1>
-      <base-img :size="`lg`" :img-url="imgUrl" :img-alt="'ロゴ'" />
+      <base-img-webp :size="`lg`" :img-url="imgUrl" :img-alt="'ロゴ'" />
     </div>
   </div>
 </template>
 
 <script>
-import BaseImg from '../../atoms/BaseImg/BaseImg';
+import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
 
 export default {
   name: 'ClassificationTitle',
   components: {
-    'base-img': BaseImg
+    'base-img-webp': BaseImgWebp
   },
   props: {
     /**
