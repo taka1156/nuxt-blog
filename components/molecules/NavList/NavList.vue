@@ -8,7 +8,7 @@
             :key="`nav_${index}`"
             @click="changeState"
           >
-            <nav-item :nav-item="item" @change-state="changeState" />
+            <nav-list-item :nav-item="item" @change-state="changeState" />
           </li>
         </ul>
       </div>
@@ -22,7 +22,7 @@ import NavListItem from '../NavListItem/NavListItem';
 export default {
   name: 'NavList',
   components: {
-    'nav-item': NavListItem
+    'nav-list-item': NavListItem
   },
   props: {
     /**

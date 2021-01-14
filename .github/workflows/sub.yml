@@ -7,7 +7,7 @@ on:
       - develop
 
 env:
-  cache-version: v4
+  cache-version: v5
 
 jobs:
   build-test:

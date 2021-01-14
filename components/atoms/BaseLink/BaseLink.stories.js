@@ -7,7 +7,7 @@ export default {
 
 const Template = () => ({
   components: { BaseLink },
-  template: '<base-logo :to="`/`">Text</base-logo>'
+  template: '<base-link :routeTo="`/`">Text</base-link>'
 });
 
 export const Default = Template.bind({});
