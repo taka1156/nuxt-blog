@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="container">
-      <h1>Tag</h1>
-      <div class="line" />
-      <classification-list :route-path="'tag'" :items="tags" />
-    </div>
+    <h1>Tag</h1>
+    <div class="line" />
+    <classification-list :route-path="'tag'" :items="tags" />
   </div>
 </template>
 
