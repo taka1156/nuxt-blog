@@ -109,7 +109,8 @@ export default {
    */
   plugins: [
     { src: '~plugins/GoogleAnalytics.js', mode: 'client' },
-    { src: '~plugins/ScrollTo.js', mode: 'client' }
+    { src: '~plugins/ScrollTo.js', mode: 'client' },
+    { src: '~plugins/LazyLoad.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules

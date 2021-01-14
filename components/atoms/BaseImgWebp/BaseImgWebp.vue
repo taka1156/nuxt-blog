@@ -1,6 +1,6 @@
 <template>
   <img
-    :src="`${imgUrl}?fm=webp`"
+    v-lazy="imgUrl"
     :alt="imgAlt"
     class="base-img--extend"
     :class="`base-img--${size}`"
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'BaseImg',
+  name: 'BaseImgWebp',
   props: {
     /**
      * 画像のURL
