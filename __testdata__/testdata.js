@@ -1,6 +1,8 @@
 const dummyImgUrl = 'http://placehold.jp/150x150.png';
+const dummyUrl = 'http://placehold.jp';
 const dummyCopyrightUrl = 'http://placehold.jp';
 const MAX_NAV_DATA = 4;
+const MAX_ICONS_DATA = 4;
 const MAX_ARTICLE_DATA = 10;
 const MAX_BADGE_DATA = 5;
 const MAX_TOC_DATA = 5;
@@ -62,6 +64,12 @@ const dummyArticleTemplate = i => ({
   category: dummyBadgeTemplate(1, 'ダミーカテゴリー')
 });
 
+const dummySnsIconTemplate = () => ({
+  name: 'ダミーアイコン',
+  img: dummyImgUrl,
+  link: dummyUrl
+});
+
 // dummyDate
 const dummyImg = {
   imgUrl: dummyImgUrl,
@@ -106,6 +114,14 @@ const dummyTocs = dummyFactory(MAX_TOC_DATA, i => dummyTocTemplate(i));
 
 const dummyLogo = 'ダミーロゴ';
 
+const dummySnsIcons = dummyFactory(MAX_ICONS_DATA, () => dummySnsIconTemplate());
+
+const dummyProfile = {
+  img: dummyImgUrl,
+  introduce:
+    'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。'
+};
+
 export {
   dummyImg,
   dummyCategoryBadge,
@@ -119,5 +135,7 @@ export {
   dummyLogo,
   dummyTocs,
   dummyRoutes,
-  dummyCopyrightUrl
+  dummyCopyrightUrl,
+  dummySnsIcons,
+  dummyProfile
 };

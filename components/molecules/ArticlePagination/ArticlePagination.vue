@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pagination">
+    <div class="article-pagination">
       <base-btn @btn-click="prevPage">
         <span>
           &lt;
@@ -80,7 +80,7 @@ export default {
   color: rgb(40, 167, 69);
 }
 
-.pagination {
+.article-pagination {
   display: flex;
   justify-content: center;
   width: 100%;
