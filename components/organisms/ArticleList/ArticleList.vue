@@ -42,7 +42,6 @@ export default {
      */
     articles: {
       type: Array,
-      default: () => [],
       required: true
     },
     /**
@@ -50,7 +49,6 @@ export default {
      */
     maxPage: {
       type: Number,
-      default: 0,
       required: true
     },
     /**
@@ -60,7 +58,6 @@ export default {
      */
     routePath: {
       type: String,
-      default: '',
       required: true,
       validator: function(value) {
         return (

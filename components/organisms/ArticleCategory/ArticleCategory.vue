@@ -2,7 +2,14 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <article-badge :badge="category" @badge-click="categoryJump(category)" />
+      <article-badge
+        :route-to="{
+          name: 'category-id',
+          params: { id: category.id }
+        }"
+        :badge="category"
+        @badge-click="categoryJump(category)"
+      />
     </div>
   </div>
 </template>
@@ -21,27 +28,14 @@ export default {
      */
     category: {
       type: Object,
-      default: () => {},
       required: true
-    }
-  },
-  methods: {
-    categoryJump({ id }) {
-      /**
-       * カテゴリー、一覧にジャンプする
-       * (vue-router使用)
-       */
-      this.$router.push({
-        name: 'category-id',
-        params: { id: id }
-      });
     }
   }
 };
 </script>
 
 <style scoped>
-::v-deep .base-btn--extend {
+::v-deep .article-badge--extend {
   width: 130px;
   color: white;
   background-color: rgb(40, 167, 69);

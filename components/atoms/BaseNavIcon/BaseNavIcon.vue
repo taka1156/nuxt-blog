@@ -31,7 +31,6 @@ export default {
      */
     isOpen: {
       type: Boolean,
-      default: false,
       requred: true
     }
   },

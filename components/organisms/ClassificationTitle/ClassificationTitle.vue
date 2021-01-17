@@ -24,8 +24,7 @@ export default {
      */
     imgUrl: {
       type: String,
-      default: '',
-      require: true
+      required: true
     }
   }
 };

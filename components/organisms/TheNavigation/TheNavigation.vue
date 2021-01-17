@@ -23,7 +23,6 @@ export default {
      */
     logoText: {
       type: String,
-      default: 'Please Setting Title',
       required: true
     },
     /**
@@ -31,7 +30,6 @@ export default {
      */
     routes: {
       type: Array,
-      default: () => [],
       required: true
     }
   },

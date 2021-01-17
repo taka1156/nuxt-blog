@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div class="index-nav" @click="changeState">
-      <div class="index-nav__box">
-        <base-nav-icon :is-open="isOpen">
-          {{ isOpen ? 'CLOSE' : 'INDEX' }}
-        </base-nav-icon>
-      </div>
+    <div class="index-nav">
+      <base-nav-icon :is-open="isOpen" @btn-click="changeState">
+        {{ isOpen ? 'CLOSE' : 'INDEX' }}
+      </base-nav-icon>
     </div>
   </div>
 </template>
@@ -24,7 +22,6 @@ export default {
      */
     isOpen: {
       type: Boolean,
-      default: false,
       required: true
     }
   },
@@ -47,9 +44,6 @@ export default {
   right: 10px;
   bottom: 50px;
   z-index: 2;
-}
-
-.index-nav__box {
   width: 50px;
   height: 55px;
   padding: 0;

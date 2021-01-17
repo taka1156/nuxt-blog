@@ -29,7 +29,6 @@ export default {
      */
     navItem: {
       type: Object,
-      default: () => {},
       required: true
     }
   }
