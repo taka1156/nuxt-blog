@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleTag ArticleTag初期値: tags 1`] = `
+"<div>
+  <div class=\\"article-tag\\">
+    タグ:&nbsp;
+    <div>
+      <article-badge-stub routepath=\\"tag-id\\" badge=\\"[object Object]\\"></article-badge-stub>
+    </div>
+    <div>
+      <article-badge-stub routepath=\\"tag-id\\" badge=\\"[object Object]\\"></article-badge-stub>
+    </div>
+    <div>
+      <article-badge-stub routepath=\\"tag-id\\" badge=\\"[object Object]\\"></article-badge-stub>
+    </div>
+    <div>
+      <article-badge-stub routepath=\\"tag-id\\" badge=\\"[object Object]\\"></article-badge-stub>
+    </div>
+    <div>
+      <article-badge-stub routepath=\\"tag-id\\" badge=\\"[object Object]\\"></article-badge-stub>
+    </div>
+  </div>
+</div>"
+`;

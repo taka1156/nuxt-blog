@@ -38,7 +38,7 @@ describe('BaseLink', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('BaseLinkの初期値(NuxtLink): Object', () => {
+  it('BaseLink初期値(NuxtLink): Object', () => {
     const wrapper = baseStubLink(dummyRouteObj);
     expect(wrapper.vm.routeTo).toBe(dummyRouteObj.routeTo);
     expect(wrapper.html()).toMatchSnapshot();

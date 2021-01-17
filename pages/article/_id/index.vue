@@ -47,7 +47,7 @@ export default {
     parseMarked() {
       return markedWrap(this.article.body);
     },
-    toc: () => tocs
+    tocs: () => tocs
   },
   head() {
     // メタタグ
