@@ -18,8 +18,7 @@ export default {
   props: {
     toc: {
       type: Array,
-      default: () => [],
-      requried: true
+      required: true
     }
   },
   data() {

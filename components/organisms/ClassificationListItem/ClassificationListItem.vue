@@ -37,7 +37,6 @@ export default {
      */
     routePath: {
       type: String,
-      default: '',
       required: true
     },
     /**
@@ -45,7 +44,6 @@ export default {
      */
     classificationItem: {
       type: Object,
-      default: () => {},
       required: true
     }
   }

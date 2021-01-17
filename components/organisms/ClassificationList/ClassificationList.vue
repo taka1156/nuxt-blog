@@ -28,7 +28,6 @@ export default {
      */
     items: {
       type: Array,
-      default: () => [],
       required: true
     },
     /**
@@ -38,7 +37,6 @@ export default {
      */
     routePath: {
       type: String,
-      default: '',
       required: true,
       validator: function(value) {
         return ['tag', 'category'].indexOf(value) !== -1;

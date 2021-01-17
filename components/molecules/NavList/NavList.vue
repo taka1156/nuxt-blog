@@ -30,7 +30,6 @@ export default {
      */
     isOpen: {
       type: Boolean,
-      default: false,
       required: true
     },
     /**
@@ -38,7 +37,6 @@ export default {
      */
     routes: {
       type: Array,
-      default: () => [],
       required: true
     }
   },

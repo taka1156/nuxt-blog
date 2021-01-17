@@ -12,7 +12,6 @@ export default {
   props: {
     t: {
       type: Object,
-      default: () => {},
       required: true
     }
   }

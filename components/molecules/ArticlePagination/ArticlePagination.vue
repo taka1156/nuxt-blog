@@ -32,16 +32,14 @@ export default {
      */
     currentPage: {
       type: Number,
-      default: 0,
-      requierd: true
+      required: true
     },
     /**
      * 最大ページ数
      */
     maxPage: {
       type: Number,
-      default: 0,
-      requierd: true
+      required: true
     }
   },
   methods: {

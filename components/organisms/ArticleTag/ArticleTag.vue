@@ -3,7 +3,13 @@
     <div class="article-tag">
       タグ:&nbsp;
       <div v-for="(tag, index) in tags" :key="`tag_${index}`">
-        <article-badge :badge="tag" @badge-click="tagJump(tag)" />
+        <article-badge
+          :route-to="{
+            name: 'tag-id',
+            params: { id: tag.id }
+          }"
+          :badge="tag"
+        />
       </div>
     </div>
   </div>
@@ -23,27 +29,14 @@ export default {
      */
     tags: {
       type: Array,
-      default: () => [],
       required: true
-    }
-  },
-  methods: {
-    tagJump({ id }) {
-      /**
-       * タグ、一覧にジャンプする
-       * (vue-router使用)
-       */
-      this.$router.push({
-        name: 'tag-id',
-        params: { id: id }
-      });
     }
   }
 };
 </script>
 
 <style scoped>
-::v-deep .base-btn--extend {
+::v-deep .article-badge--extend {
   width: 100px;
   margin: 2px;
   color: rgb(40, 167, 69);

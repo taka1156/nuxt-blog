@@ -13,7 +13,19 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const CategoryBadge = Template.bind({});
-CategoryBadge.args = dummyCategoryBadge;
+CategoryBadge.args = {
+  routeTo: {
+    name: 'category-id',
+    params: { id: dummyCategoryBadge.badge.id }
+  },
+  badge: dummyCategoryBadge.badge
+};
 
 export const TagBadge = Template.bind({});
-TagBadge.args = dummyTagBadge;
+TagBadge.args = {
+  routeTo: {
+    name: 'tag-id',
+    params: { id: dummyTagBadge.badge.id }
+  },
+  badge: dummyTagBadge.badge
+};
