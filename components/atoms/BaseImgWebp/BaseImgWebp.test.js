@@ -9,6 +9,7 @@ localVue.use(VueLazyLoad);
 describe('BaseImgWebp', () => {
   const baseImgWebp = propsData =>
     mount(BaseImgWebp, {
+      localVue,
       propsData: {
         ...propsData,
         imgUrl: dummyImg.imgUrl,

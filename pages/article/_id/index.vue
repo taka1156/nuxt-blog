@@ -5,7 +5,7 @@
       <article-header :article="article" />
       <!--markdown埋め込み-->
       <div class="article-content__text markdown-body" v-html="parseMarked" />
-      <index-navigation :toc="toc" />
+      <index-navigation :tocs="tocs" />
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@
 import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import IndexNavigation from '@/components/organisms/IndexNavigation/IndexNavigation';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import { markedWrap, toc } from '@/utils/marked/index.js';
+import { markedWrap, tocs } from '@/utils/marked/index.js';
 
 export default {
   name: 'ArtcleId',
@@ -47,7 +47,7 @@ export default {
     parseMarked() {
       return markedWrap(this.article.body);
     },
-    toc: () => toc
+    toc: () => tocs
   },
   head() {
     // メタタグ

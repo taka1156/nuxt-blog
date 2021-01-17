@@ -1,9 +1,9 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import BaseBtn from './BaseBtn.vue';
 
 describe('BaseBtn', () => {
   const dummyButtonText = 'ダミーボタンテキスト';
-  const baseBtn = shallowMount(BaseBtn, {
+  const baseBtn = mount(BaseBtn, {
     slots: {
       default: dummyButtonText
     }

@@ -1,10 +1,10 @@
-import { shallowMount } from '@vue/test-utils';
-import NavIcon from './BaseNavIcon.vue';
+import { mount } from '@vue/test-utils';
+import BaseNavIcon from './BaseNavIcon.vue';
 
 // NavIcon
 describe('BaseNavIcon', () => {
   const baseNavIcon = propsData => {
-    return shallowMount(NavIcon, {
+    return mount(BaseNavIcon, {
       slots: {
         default: 'NAVI'
       },

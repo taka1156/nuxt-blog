@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticlePagination ArticlePagination初期値: createdAt, updatedAt 1`] = `
+"<div>
+  <div class=\\"article-pagination\\">
+    <base-btn-stub><span>
+        &lt;
+      </span></base-btn-stub>
+    <base-text-stub> 1/2 </base-text-stub>
+    <base-btn-stub><span>
+        &gt;
+      </span></base-btn-stub>
+  </div>
+</div>"
+`;

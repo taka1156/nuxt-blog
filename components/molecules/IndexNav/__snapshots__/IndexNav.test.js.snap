@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexNav 目次を閉じる 1`] = `
+"<div>
+  <div class=\\"index-nav\\">
+    <div class=\\"base-nav-icon base-nav-icon--extend\\"><button><span class=\\"base-nav-icon__border base-nav-icon__top base-nav-icon__top--close\\"></span> <span class=\\"base-nav-icon__border base-nav-icon__middle\\"></span> <span class=\\"base-nav-icon__border base-nav-icon__bottom base-nav-icon__bottom--close\\"></span> <span class=\\"base-nav-icon__text\\">
+      INDEX
+    </span></button></div>
+  </div>
+</div>"
+`;
+
+exports[`IndexNav 目次を開く 1`] = `
+"<div>
+  <div class=\\"index-nav\\">
+    <div class=\\"base-nav-icon base-nav-icon--extend\\"><button><span class=\\"base-nav-icon__border base-nav-icon__top base-nav-icon__top--open\\"></span> <span class=\\"base-nav-icon__border base-nav-icon__middle base-nav-icon__middle--fade\\"></span> <span class=\\"base-nav-icon__border base-nav-icon__bottom base-nav-icon__bottom--open\\"></span> <span class=\\"base-nav-icon__text\\">
+      CLOSE
+    </span></button></div>
+  </div>
+</div>"
+`;

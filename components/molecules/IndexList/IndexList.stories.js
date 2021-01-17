@@ -20,4 +20,4 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = { isOpen: false, toc: dummyTocs };
+Default.args = { isOpen: false, tocs: dummyTocs };

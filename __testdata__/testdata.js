@@ -97,13 +97,17 @@ const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
 
 const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
 
-const dummyCategoryBadge = {
-  badge: dummyBadgeTemplate(1, 'ダミーカテゴリー')
+const dummyFactoryBadge = (id, name) => {
+  const tmpTag = dummyBadgeTemplate(id, name);
+  return {
+    routePath: 'tag-id',
+    badge: tmpTag
+  };
 };
 
-const dummyTagBadge = {
-  badge: dummyBadgeTemplate(1, 'ダミータグ')
-};
+const dummyCategoryBadge = dummyFactoryBadge(1, 'ダミーカテゴリー');
+
+const dummyTagBadge = dummyFactoryBadge(1, 'ダミータグ');
 
 const dummyPagination = {
   currentPage: 1,
