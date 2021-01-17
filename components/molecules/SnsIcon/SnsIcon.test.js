@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import SnsIcon from './SnsIcon.vue';
 import { dummySnsIcons } from '@/__testdata__/testdata.js';
 
-describe('SnsIcons', () => {
+describe('SnsIcon', () => {
   const navListItem = mount(SnsIcon, {
     propsData: {
       sns: dummySnsIcons[0]

@@ -10,7 +10,7 @@ describe('ArticlePagination', () => {
       }
     });
 
-  it('ArticlePagination初期値: createdAt, updatedAt', () => {
+  it('ArticlePaginationの初期値: createdAt, updatedAt', () => {
     const wrapper = articleDate(dummyPagination);
     // createdAt
     expect(wrapper.vm.$options.props.currentPage.required).toBe(true);

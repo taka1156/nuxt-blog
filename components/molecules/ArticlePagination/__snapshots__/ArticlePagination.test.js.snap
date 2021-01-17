@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArticlePagination ArticlePagination初期値: createdAt, updatedAt 1`] = `
+exports[`ArticlePagination ArticlePaginationの初期値: createdAt, updatedAt 1`] = `
 "<div>
   <div class=\\"article-pagination\\">
     <base-btn-stub><span>

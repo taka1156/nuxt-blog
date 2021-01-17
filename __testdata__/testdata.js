@@ -7,6 +7,15 @@ const MAX_ARTICLE_DATA = 10;
 const MAX_BADGE_DATA = 5;
 const MAX_TOC_DATA = 5;
 
+const dummyOutsideLink = { routeTo: dummyUrl };
+const dummyRouteStr = { routeTo: '/' };
+const dummyRouteObj = {
+  routeTo: {
+    name: 'sample-id',
+    params: { id: 1 }
+  }
+};
+
 // factory
 const dummyFactory = (num, fn) => {
   return [...new Array(num)].map((_, i) => fn(i + 1));
@@ -127,6 +136,9 @@ const dummyProfile = {
 };
 
 export {
+  dummyOutsideLink,
+  dummyRouteStr,
+  dummyRouteObj,
   dummyImg,
   dummyCategoryBadge,
   dummyTagBadge,
