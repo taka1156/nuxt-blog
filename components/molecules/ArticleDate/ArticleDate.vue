@@ -7,7 +7,7 @@
         :img-alt="'日付'"
       />
       <base-text>
-        作成日:{{ dateFormat(createdAt) }} ~ 更新日:{{ dateFormat(updatedAt) }}
+        作成日:{{ formatDate(createdAt) }} ~ 更新日:{{ formatDate(updatedAt) }}
       </base-text>
     </div>
   </div>
@@ -29,7 +29,6 @@ export default {
      */
     createdAt: {
       type: String,
-      defalut: '',
       required: true
     },
     /**
@@ -37,17 +36,18 @@ export default {
      */
     updatedAt: {
       type: String,
-      defalut: '',
       required: true
     }
   },
-  methods: {
-    dateFormat(date) {
+  computed: {
+    formatDate() {
       /**
        * 日付の形式を変える
        */
-      if (date == null) return '--/--/--';
-      return new Date(date).toLocaleDateString();
+      return function(date) {
+        if (date == null) return '--/--/--';
+        return new Date(date).toLocaleDateString();
+      };
     }
   }
 };

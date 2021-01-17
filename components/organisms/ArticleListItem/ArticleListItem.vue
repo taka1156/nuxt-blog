@@ -39,7 +39,6 @@ export default {
      */
     article: {
       type: Object,
-      default: () => {},
       required: true
     }
   }

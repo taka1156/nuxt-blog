@@ -1,6 +1,6 @@
 <template>
-  <div class="article-badge">
-    <base-btn @btn-click="badgeClick()">
+  <base-link :route-to="routeTo">
+    <div class="article-badge article-badge--extend">
       <span class="article-badge__text">
         {{ badge.name }}
       </span>
@@ -9,21 +9,29 @@
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
       />
-    </base-btn>
-  </div>
+    </div>
+  </base-link>
 </template>
 
 <script>
-import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
+import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
 
 export default {
   name: 'ArticleBadge',
   components: {
-    'base-btn': BaseBtn,
+    'base-link': BaseLink,
     'base-img-webp': BaseImgWebp
   },
   props: {
+    /**
+     * 遷移先の情報
+     * (name:route params:{id})
+     */
+    routeTo: {
+      type: Object,
+      required: true
+    },
     /**
      * バッジの情報
      * (id、バッジ名、画像URL)
@@ -49,7 +57,7 @@ p {
 }
 
 /* css reset */
-::v-deep .base-btn--extend {
+.article-badge {
   display: flex;
   justify-content: center;
   padding: 2px;

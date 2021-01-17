@@ -27,7 +27,6 @@ export default {
      */
     logoText: {
       type: String,
-      default: 'Please Setting Logo',
       required: true
     },
     /**
@@ -35,7 +34,6 @@ export default {
      */
     isOpen: {
       type: Boolean,
-      default: false,
       required: true
     }
   },

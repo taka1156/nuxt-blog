@@ -1,6 +1,6 @@
 <template>
   <div class="sns-icon">
-    <base-link :route-to="`${sns.link}`">
+    <base-link :route-to="sns.link">
       <base-img :size="`lg`" :img-url="sns.img" :img-alt="`${sns.name}アイコン`" />
       {{ sns.name }}
     </base-link>

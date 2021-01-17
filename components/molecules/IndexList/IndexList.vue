@@ -32,7 +32,6 @@ export default {
      */
     isOpen: {
       type: Boolean,
-      default: false,
       required: true
     },
     /**
@@ -40,8 +39,7 @@ export default {
      */
     toc: {
       type: Array,
-      default: () => [],
-      requried: true
+      required: true
     }
   },
   methods: {
