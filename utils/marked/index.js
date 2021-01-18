@@ -1,5 +1,5 @@
 import marked from 'marked';
-import hljs from 'highlight.js';
+import { highlight as hljs } from './highlight.js';
 
 // highlight.js
 marked.setOptions({
