@@ -4,15 +4,15 @@
       <base-link
         :route-to="{
           name: `${routePath}-id`,
-          params: { id: classificationItem.id }
+          params: { id: item.id }
         }"
       >
         <div class="classification-list-item__box">
-          <h2>{{ classificationItem.name }}</h2>
+          <h2>{{ item.name }}</h2>
           <base-img-webp
             :size="`lg`"
-            :img-url="classificationItem.img.url"
-            :img-alt="`${classificationItem.name}のロゴ`"
+            :img-url="item.img.url"
+            :img-alt="`${item.name}のロゴ`"
           />
         </div>
       </base-link>
@@ -42,7 +42,7 @@ export default {
     /**
      * タグもしくは、カテゴリーのリストの1つ分の情報
      */
-    classificationItem: {
+    item: {
       type: Object,
       required: true
     }

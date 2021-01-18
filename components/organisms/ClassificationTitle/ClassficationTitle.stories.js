@@ -25,10 +25,10 @@ const Template2 = (args, { argTypes }) => ({
 
 export const Tag = Template1.bind({});
 Tag.args = {
-  imgUrl: dummyClassificationTag[0].img.url
+  imgUrl: dummyClassificationTag.items[0].img.url
 };
 
 export const Category = Template2.bind({});
 Category.args = {
-  imgUrl: dummyClassificationCategory[0].img.url
+  imgUrl: dummyClassificationCategory.items[0].img.url
 };

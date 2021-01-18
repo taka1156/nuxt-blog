@@ -16,10 +16,7 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Categories = Template.bind({});
-Categories.args = {
-  routePath: 'category',
-  items: dummyClassificationCategory
-};
+Categories.args = dummyClassificationCategory;
 
 export const Tags = Template.bind({});
-Tags.args = { routePath: 'tag', items: dummyClassificationTag };
+Tags.args = dummyClassificationTag;

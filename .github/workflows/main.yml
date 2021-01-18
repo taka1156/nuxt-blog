@@ -33,12 +33,12 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
 
-    # - name: test
-    #  run: yarn test:cov
+    - name: test
+      run: yarn test:cov
 
-    # - uses: coverallsapp/github-action@master
-    #  with:
-    #    github-token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: create .env file
       run: echo "${{ secrets.ENV_FIREBASE }}" > .env

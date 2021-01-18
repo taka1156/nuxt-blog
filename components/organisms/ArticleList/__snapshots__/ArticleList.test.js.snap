@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList ArticleListIem初期値: articles, maxPage, routePath 1`] = `
+"<div>
+  <div>
+    <article-pagination-stub currentpage=\\"1\\" maxpage=\\"2\\" routepath=\\"page-pageid\\" nextindex=\\"2\\" previndex=\\"2\\"></article-pagination-stub>
+    <ul>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+      <li>
+        <article-list-item-stub article=\\"[object Object]\\"></article-list-item-stub>
+      </li>
+    </ul>
+    <article-pagination-stub currentpage=\\"1\\" maxpage=\\"2\\" routepath=\\"page-pageid\\" nextindex=\\"2\\" previndex=\\"2\\"></article-pagination-stub>
+  </div>
+</div>"
+`;

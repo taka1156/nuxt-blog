@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import IndexListItem from './IndexListItem.vue';
 import { dummyTocs } from '@/__testdata__/testdata.js';
 import VueScrollTo from 'vue-scrollto';
@@ -9,9 +9,9 @@ localVue.use(VueScrollTo, {
   offset: -70
 });
 
-describe('IndexList', () => {
+describe('IndexListItem', () => {
   const indexListItem = propsData =>
-    mount(IndexListItem, {
+    shallowMount(IndexListItem, {
       localVue,
       propsData: {
         ...propsData

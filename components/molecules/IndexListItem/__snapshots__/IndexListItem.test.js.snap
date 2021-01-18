@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IndexList 値がDOMに反映されているか 1`] = `
+exports[`IndexListItem 値がDOMに反映されているか 1`] = `
 "<div><a href=\\"#anchor_1\\" class=\\"index-list-item\\">
     1.この文章はダミーです。
   </a></div>"

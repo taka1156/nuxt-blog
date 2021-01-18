@@ -3,8 +3,8 @@ import NavList from './NavList.vue';
 import { dummyRoutes } from '@/__testdata__/testdata.js';
 
 describe('NavList', () => {
-  const navList = propsData => {
-    return mount(NavList, {
+  const navList = propsData =>
+    mount(NavList, {
       stubs: {
         NuxtLink: RouterLinkStub
       },
@@ -13,7 +13,6 @@ describe('NavList', () => {
         ...propsData
       }
     });
-  };
 
   it('NavList初期値: isOpen, routes', () => {
     const wrapper = navList({ isOpen: false });

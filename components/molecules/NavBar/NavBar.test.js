@@ -3,8 +3,8 @@ import NavBar from './NavBar.vue';
 import { dummyLogo } from '@/__testdata__/testdata.js';
 
 describe('NavBar', () => {
-  const navBar = propsData => {
-    return mount(NavBar, {
+  const navBar = propsData =>
+    mount(NavBar, {
       stubs: {
         NuxtLink: RouterLinkStub
       },
@@ -13,7 +13,6 @@ describe('NavBar', () => {
         logoText: dummyLogo
       }
     });
-  };
 
   it('NavBar初期値: isOpen, logoText', () => {
     const wrapper = navBar({ isOpen: false });

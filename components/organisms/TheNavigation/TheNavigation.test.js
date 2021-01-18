@@ -1,21 +1,25 @@
-import { mount, RouterLinkStub } from '@vue/test-utils';
+import { shallowMount, RouterLinkStub } from '@vue/test-utils';
 import TheNavigation from './TheNavigation.vue';
-import { dummyLogo } from '@/__testdata__/testdata.js';
+import { dummyLogo, dummyRoutes } from '@/__testdata__/testdata.js';
 
 describe('TheNavigation', () => {
-  const theNavigation = mount(TheNavigation, {
+  const theNavigation = shallowMount(TheNavigation, {
     stubs: {
       NuxtLink: RouterLinkStub
     },
     propsData: {
-      logoText: dummyLogo
+      logoText: dummyLogo,
+      routes: dummyRoutes
     }
   });
 
-  it('NavBar初期値: logoText', () => {
+  it('NavBar初期値: logoText, routes', () => {
     // logoText
     expect(theNavigation.vm.$options.props.logoText.required).toBe(true);
     expect(theNavigation.vm.logoText).toBe(dummyLogo);
+    // routes
+    expect(theNavigation.vm.$options.props.routes.required).toBe(true);
+    expect(theNavigation.vm.routes).toBe(dummyRoutes);
   });
 
   it('閉じた時のスナップショット', () => {

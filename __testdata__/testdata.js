@@ -96,31 +96,45 @@ const dummyTagBadges = dummyFactory(MAX_BADGE_DATA, i =>
   dummyBadgeTemplate(i, 'ダミータグ')
 );
 
-const dummyClassificationCategory = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassificationTemplate(i, 'ダミーカテゴリー')
+const dummyClassificationFactory = (items, routePath) => {
+  const tmp = items;
+  return {
+    items: tmp,
+    routePath: routePath
+  };
+};
+
+const dummyClassificationCategory = dummyClassificationFactory(
+  dummyFactory(MAX_BADGE_DATA, i =>
+    dummyClassificationTemplate(i, 'ダミーカテゴリー')
+  ),
+  'category'
 );
 
-const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassificationTemplate(i, 'ダミータグ')
+const dummyClassificationTag = dummyClassificationFactory(
+  dummyFactory(MAX_BADGE_DATA, i => dummyClassificationTemplate(i, 'ダミータグ')),
+  'tag'
 );
 
 const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
 
-const dummyFactoryBadge = (id, name) => {
-  const tmpTag = dummyBadgeTemplate(id, name);
+const dummyFactoryBadge = (id, name, routePath) => {
+  const tmp = dummyBadgeTemplate(id, name);
   return {
-    routePath: 'tag-id',
-    badge: tmpTag
+    routePath: routePath,
+    badge: tmp
   };
 };
 
-const dummyCategoryBadge = dummyFactoryBadge(1, 'ダミーカテゴリー');
+const dummyCategoryBadge = dummyFactoryBadge(1, 'ダミーカテゴリー', 'category-id');
 
-const dummyTagBadge = dummyFactoryBadge(1, 'ダミータグ');
+const dummyTagBadge = dummyFactoryBadge(1, 'ダミータグ', 'tag-id');
 
 const dummyPagination = {
   currentPage: 1,
-  maxPage: Math.ceil(dummyArticles.length / 5)
+  maxPage: Math.ceil(dummyArticles.length / 5),
+  prevIndex: 2,
+  nextIndex: 2
 };
 
 const dummyTocs = dummyFactory(MAX_TOC_DATA, i => dummyTocTemplate(i));

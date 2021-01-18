@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArticlePagination ArticlePagination初期値: createdAt, updatedAt 1`] = `
+exports[`ArticlePagination ArticlePagination初期値: currentPage, maxPage 1`] = `
 "<div>
   <div class=\\"article-pagination\\">
-    <base-btn-stub><span>
+    <base-link-stub routeto=\\"[object Object]\\"><span>
         &lt;
-      </span></base-btn-stub>
+      </span></base-link-stub>
     <base-text-stub> 1/2 </base-text-stub>
-    <base-btn-stub><span>
+    <base-link-stub routeto=\\"[object Object]\\"><span>
         &gt;
-      </span></base-btn-stub>
+      </span></base-link-stub>
   </div>
 </div>"
 `;

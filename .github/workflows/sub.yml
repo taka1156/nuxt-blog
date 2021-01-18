@@ -35,8 +35,8 @@ jobs:
     - name: lint
       run: yarn lint:check
 
-    # - name: test
-    #  run: yarn test
+    - name: test
+      run: yarn test
 
     - name: create .env file
       run: echo "${{ secrets.ENV_FIREBASE }}" > .env

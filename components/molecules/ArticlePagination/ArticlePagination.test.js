@@ -10,27 +10,24 @@ describe('ArticlePagination', () => {
       }
     });
 
-  it('ArticlePagination初期値: createdAt, updatedAt', () => {
+  it('ArticlePagination初期値: currentPage, maxPage', () => {
     const wrapper = articleDate(dummyPagination);
-    // createdAt
+    // currentPage
     expect(wrapper.vm.$options.props.currentPage.required).toBe(true);
     expect(wrapper.vm.currentPage).toBe(dummyPagination.currentPage);
-    // updatedAt
+    // maxPage
     expect(wrapper.vm.$options.props.maxPage.required).toBe(true);
     expect(wrapper.vm.maxPage).toBe(dummyPagination.maxPage);
+    // routePath
+    expect(wrapper.vm.$options.props.routePath.required).toBe(true);
+    expect(wrapper.vm.routePath).toBe(dummyPagination.routePath);
+    // prevIndex
+    expect(wrapper.vm.$options.props.prevIndex.required).toBe(true);
+    expect(wrapper.vm.prevIndex).toBe(2);
+    // nextIndex
+    expect(wrapper.vm.$options.props.nextIndex.required).toBe(true);
+    expect(wrapper.vm.nextIndex).toBe(2);
     // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
-  });
-
-  it('prevPageを実行した時、`prev`のイベントが発生するか', () => {
-    const wrapper = articleDate(dummyPagination);
-    wrapper.vm.prevPage();
-    expect(wrapper.emitted('prev')).toBeTruthy();
-  });
-
-  it('nextPageを実行した時、`next`のイベントが発生するか', () => {
-    const wrapper = articleDate(dummyPagination);
-    wrapper.vm.nextPage();
-    expect(wrapper.emitted('next')).toBeTruthy();
   });
 });

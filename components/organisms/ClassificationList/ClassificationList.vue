@@ -3,10 +3,7 @@
     <div v-if="items.length !== 0">
       <ul>
         <li v-for="(item, index) in items" :key="`classification_${index}`">
-          <classification-list-item
-            :classification-item="item"
-            :route-path="routePath"
-          />
+          <classification-list-item :item="item" :route-path="routePath" />
         </li>
       </ul>
     </div>
