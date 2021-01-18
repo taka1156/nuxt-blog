@@ -8,7 +8,7 @@ on:
       - master
 
 env:
-  cache-version: v5
+  cache-version: v6
 
 jobs:
   build-deploy:
