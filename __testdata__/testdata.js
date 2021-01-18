@@ -133,6 +133,7 @@ const dummyTagBadge = dummyFactoryBadge(1, 'ダミータグ', 'tag-id');
 const dummyPagination = {
   currentPage: 1,
   maxPage: Math.ceil(dummyArticles.length / 5),
+  routePath: 'page-pageid',
   prevIndex: 2,
   nextIndex: 2
 };

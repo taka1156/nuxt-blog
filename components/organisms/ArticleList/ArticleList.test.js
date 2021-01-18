@@ -12,7 +12,7 @@ describe('ArticleList', () => {
     propsData: {
       articles: dummyArticles,
       maxPage: dummyPagination.maxPage,
-      routePath: 'page-pageid'
+      routePath: dummyPagination.routePath
     }
   });
 
@@ -25,7 +25,7 @@ describe('ArticleList', () => {
     expect(articleListItem.vm.maxPage).toBe(dummyPagination.maxPage);
     // routePath
     expect(articleListItem.vm.$options.props.routePath.required).toBe(true);
-    expect(articleListItem.vm.routePath).toBe('page-pageid');
+    expect(articleListItem.vm.routePath).toBe(dummyPagination.routePath);
 
     expect(articleListItem.html()).toMatchSnapshot();
   });
