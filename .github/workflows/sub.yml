@@ -36,7 +36,9 @@ jobs:
       run: yarn lint:check
 
     - name: test
-      run: TZ=Asia/Tokyo yarn test
+      env:
+        TZ: 'Asia/Tokyo'
+      run: yarn test
 
     - name: create .env file
       run: echo "${{ secrets.ENV_FIREBASE }}" > .env

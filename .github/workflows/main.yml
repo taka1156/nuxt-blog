@@ -34,7 +34,9 @@ jobs:
       run: yarn install
 
     - name: test
-      run: TZ=Asia/Tokyo yarn test:cov
+      env:
+        TZ: 'Asia/Tokyo'
+      run: yarn test:cov
 
     - uses: coverallsapp/github-action@master
       with:
