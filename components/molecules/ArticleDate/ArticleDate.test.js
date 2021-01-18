@@ -1,6 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
 import ArticleDate from './ArticleDate.vue';
 import { dummyDate } from '@/__testdata__/testdata.js';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
+dayjs.locale('ja');
 
 describe('ArticleDate', () => {
   const articleDate = propsData =>
@@ -24,7 +27,8 @@ describe('ArticleDate', () => {
 
   it('formatDateメソッド', () => {
     const wrapper = articleDate(dummyDate);
-    expect(wrapper.vm.formatDate(dummyDate.createdAt)).toBe('2020/7/4');
+    const ans = dayjs(dummyDate.createdAt).format('YYYY/M/D');
+    expect(wrapper.vm.formatDate(dummyDate.createdAt)).toBe(ans);
     expect(wrapper.vm.formatDate(undefined)).toBe('--/--/--');
   });
 });
