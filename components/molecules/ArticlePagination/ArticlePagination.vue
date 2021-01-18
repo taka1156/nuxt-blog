@@ -1,29 +1,39 @@
 <template>
   <div>
     <div class="article-pagination">
-      <base-btn @btn-click="prevPage">
+      <base-link
+        :route-to="{
+          name: routePath,
+          params: { pageid: prevIndex }
+        }"
+      >
         <span>
           &lt;
         </span>
-      </base-btn>
+      </base-link>
       <base-text> {{ currentPage }}/{{ maxPage }} </base-text>
-      <base-btn @btn-click="nextPage">
+      <base-link
+        :route-to="{
+          name: routePath,
+          params: { pageid: nextIndex }
+        }"
+      >
         <span>
           &gt;
         </span>
-      </base-btn>
+      </base-link>
     </div>
   </div>
 </template>
 
 <script>
-import BaseBtn from '../../atoms/BaseBtn/BaseBtn';
+import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
   name: 'ArticlePagination',
   components: {
-    'base-btn': BaseBtn,
+    'base-link': BaseLink,
     'base-text': BaseText
   },
   props: {
@@ -40,31 +50,36 @@ export default {
     maxPage: {
       type: Number,
       required: true
-    }
-  },
-  methods: {
-    prevPage() {
-      /**
-       * 前のページに進む
-       * (イベント伝搬)
-       * @event prevPage
-       */
-      this.$emit('prev');
     },
-    nextPage() {
-      /**
-       * 次のページに進む
-       * (イベント伝搬)
-       * @event nextPage
-       */
-      this.$emit('next');
+    /**
+     * 現在閲覧中のroute
+     * (閲覧しているパスによってpageJumpの行き先が変わる)
+     * @values page-pageid, tag-id-pageid, category-id-pageid
+     */
+    routePath: {
+      type: String,
+      required: true,
+      validator: function(value) {
+        return (
+          ['page-pageid', 'tag-id-pageid', 'category-id-pageid'].indexOf(value) !==
+          -1
+        );
+      }
+    },
+    nextIndex: {
+      type: Number,
+      required: true
+    },
+    prevIndex: {
+      type: Number,
+      required: true
     }
   }
 };
 </script>
 
 <style scoped>
-::v-deep .base-btn--extend {
+::v-deep .base-link--extend {
   padding: 10px;
   font-size: 20px;
   color: rgb(40, 167, 69);

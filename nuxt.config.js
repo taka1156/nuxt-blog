@@ -98,12 +98,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    'normalize.css',
-    'github-markdown-css',
-    'highlight.js/styles/github.css',
-    '@/assets/css/layout.css'
-  ],
+  css: ['normalize.css', 'github-markdown-css', '@/assets/css/layout.css'],
   /*
    ** Plugins to load before mounting the App
    */

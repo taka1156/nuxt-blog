@@ -16,6 +16,9 @@
 <script>
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
+dayjs.locale('ja');
 
 export default {
   name: 'ArticleDate',
@@ -39,15 +42,10 @@ export default {
       required: true
     }
   },
-  computed: {
-    formatDate() {
-      /**
-       * 日付の形式を変える
-       */
-      return function(date) {
-        if (date == null) return '--/--/--';
-        return new Date(date).toLocaleDateString();
-      };
+  methods: {
+    formatDate(date = null) {
+      if (date == null) return '--/--/--';
+      return dayjs(date).format('YYYY/M/D');
     }
   }
 };

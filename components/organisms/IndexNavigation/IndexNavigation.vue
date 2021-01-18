@@ -1,7 +1,7 @@
 <template>
   <div>
     <index-nav :is-open="isOpen" @change-state="changeState" />
-    <index-list :is-open="isOpen" :toc="toc" @change-state="changeState" />
+    <index-list :is-open="isOpen" :tocs="tocs" @change-state="changeState" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     'index-list': IndexList
   },
   props: {
-    toc: {
+    tocs: {
       type: Array,
       required: true
     }

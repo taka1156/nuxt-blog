@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleDate ArticleDate初期値: createdAt, updatedAt 1`] = `
+"<div>
+  <div class=\\"article-date\\">
+    <base-img-stub imgurl=\\"\\" imgalt=\\"日付\\" size=\\"sm\\"></base-img-stub>
+    <base-text-stub>
+      作成日:2020/7/4 ~ 更新日:2020/7/9
+    </base-text-stub>
+  </div>
+</div>"
+`;

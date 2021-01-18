@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassificationList ClassificationList初期値(Cateogry): items, routePath 1`] = `
+"<div>
+  <div>
+    <ul>
+      <li>
+        <classification-list-item-stub routepath=\\"category\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"category\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"category\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"category\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"category\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+    </ul>
+  </div>
+</div>"
+`;
+
+exports[`ClassificationList ClassificationList初期値(Tag): items, routePath 1`] = `
+"<div>
+  <div>
+    <ul>
+      <li>
+        <classification-list-item-stub routepath=\\"tag\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"tag\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"tag\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"tag\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+      <li>
+        <classification-list-item-stub routepath=\\"tag\\" item=\\"[object Object]\\"></classification-list-item-stub>
+      </li>
+    </ul>
+  </div>
+</div>"
+`;

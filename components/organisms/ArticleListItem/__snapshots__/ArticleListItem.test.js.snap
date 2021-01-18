@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleListItem ArticleListIem初期値: article 1`] = `
+"<div>
+  <article class=\\"article-list-item\\">
+    <article-category-stub category=\\"[object Object]\\"></article-category-stub>
+    <article-date-stub createdat=\\"2020-07-04T10:53:40.252Z\\" updatedat=\\"2020-07-08T15:15:07.668Z\\"></article-date-stub>
+    <div class=\\"line\\"></div>
+    <base-link-stub routeto=\\"[object Object]\\">
+      <h2>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています</h2>
+    </base-link-stub>
+    <base-text-stub>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量</base-text-stub>
+    <div class=\\"line\\"></div>
+    <article-tag-stub tags=\\"[object Object]\\"></article-tag-stub>
+  </article>
+</div>"
+`;

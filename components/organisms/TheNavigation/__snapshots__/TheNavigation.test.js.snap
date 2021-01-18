@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheNavigation 閉じた時のスナップショット 1`] = `
+"<div>
+  <nav>
+    <nav-bar-stub logotext=\\"ダミーロゴ\\"></nav-bar-stub>
+    <nav-list-stub routes=\\"[object Object],[object Object],[object Object],[object Object]\\"></nav-list-stub>
+  </nav>
+</div>"
+`;
+
+exports[`TheNavigation 開いた時のスナップショット 1`] = `
+"<div>
+  <nav>
+    <nav-bar-stub logotext=\\"ダミーロゴ\\" isopen=\\"true\\"></nav-bar-stub>
+    <nav-list-stub routes=\\"[object Object],[object Object],[object Object],[object Object]\\" isopen=\\"true\\"></nav-list-stub>
+  </nav>
+</div>"
+`;

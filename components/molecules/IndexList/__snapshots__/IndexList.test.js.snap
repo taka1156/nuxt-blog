@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexList isOpenがfalseの時に\`index-list\`が非表示 1`] = `
+"<div>
+  <div class=\\"index-list\\" style=\\"display: none;\\">
+    <div class=\\"index-list__box\\">
+      <h3 class=\\"index-list__title\\">Index</h3>
+      <ul>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`IndexList isOpenがtrueの時に\`index-list\`が表示 1`] = `
+"<div>
+  <div class=\\"index-list\\">
+    <div class=\\"index-list__box\\">
+      <h3 class=\\"index-list__title\\">Index</h3>
+      <ul>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+        <li class=\\"index-list__item-box\\">
+          <index-list-item-stub t=\\"[object Object]\\"></index-list-item-stub>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>"
+`;

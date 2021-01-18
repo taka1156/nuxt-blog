@@ -1,8 +1,8 @@
 <template>
   <component
-    :is="isInternalLink(routeTo) ? 'nuxt-link' : 'a'"
-    :to="isInternalLink(routeTo) ? routeTo : ''"
-    :href="isInternalLink(routeTo) ? '' : routeTo"
+    :is="isInternalLink ? 'nuxt-link' : 'a'"
+    :to="isInternalLink ? routeTo : ''"
+    :href="isInternalLink ? '' : routeTo"
     class="base-link--extend"
     v-bind="isTarget ? { target: '_blank', rel: 'noopener noreferrer' } : false"
   >
@@ -32,12 +32,10 @@ export default {
       /**
        * ルーティングか、外部リンクどちらか判定する。
        */
-      return function(path) {
-        if (typeof path === 'object') {
-          return true;
-        }
-        return !/^https?:\/\//.test(path);
-      };
+      if (typeof this.routeTo === 'object') {
+        return true;
+      }
+      return `${this.routeTo}`.indexOf('http') === -1;
     }
   }
 };

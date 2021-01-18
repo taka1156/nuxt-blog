@@ -5,7 +5,7 @@
         <h3 class="index-list__title">Index</h3>
         <ul>
           <li
-            v-for="(t, index) in toc"
+            v-for="(t, index) in tocs"
             :key="`index_${index}`"
             class="index-list__item-box"
             @click="changeState"
@@ -37,7 +37,7 @@ export default {
     /**
      * 目次一覧
      */
-    toc: {
+    tocs: {
       type: Array,
       required: true
     }
