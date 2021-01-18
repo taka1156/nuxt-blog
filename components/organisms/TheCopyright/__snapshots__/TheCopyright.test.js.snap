@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheNavigation 値がDOMに反映されているか 1`] = `
+"<div>
+  <div class=\\"the-copyright\\">
+    <p class=\\"base-text--extend\\">
+      © 2019 taka1156 <br>使用素材、プライバシーポリシー等は
+      <a to=\\"\\" href=\\"http://placehold.jp\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\" class=\\"base-link--extend\\">コチラ</a></p>
+  </div>
+</div>"
+`;

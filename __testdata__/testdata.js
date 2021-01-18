@@ -7,6 +7,15 @@ const MAX_ARTICLE_DATA = 10;
 const MAX_BADGE_DATA = 5;
 const MAX_TOC_DATA = 5;
 
+const dummyOutsideLink = { routeTo: dummyUrl };
+const dummyRouteStr = { routeTo: '/' };
+const dummyRouteObj = {
+  routeTo: {
+    name: 'sample-id',
+    params: { id: 1 }
+  }
+};
+
 // factory
 const dummyFactory = (num, fn) => {
   return [...new Array(num)].map((_, i) => fn(i + 1));
@@ -87,27 +96,46 @@ const dummyTagBadges = dummyFactory(MAX_BADGE_DATA, i =>
   dummyBadgeTemplate(i, 'ダミータグ')
 );
 
-const dummyClassificationCategory = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassificationTemplate(i, 'ダミーカテゴリー')
+const dummyClassificationFactory = (items, routePath) => {
+  const tmp = items;
+  return {
+    items: tmp,
+    routePath: routePath
+  };
+};
+
+const dummyClassificationCategory = dummyClassificationFactory(
+  dummyFactory(MAX_BADGE_DATA, i =>
+    dummyClassificationTemplate(i, 'ダミーカテゴリー')
+  ),
+  'category'
 );
 
-const dummyClassificationTag = dummyFactory(MAX_BADGE_DATA, i =>
-  dummyClassificationTemplate(i, 'ダミータグ')
+const dummyClassificationTag = dummyClassificationFactory(
+  dummyFactory(MAX_BADGE_DATA, i => dummyClassificationTemplate(i, 'ダミータグ')),
+  'tag'
 );
 
 const dummyArticles = dummyFactory(MAX_ARTICLE_DATA, i => dummyArticleTemplate(i));
 
-const dummyCategoryBadge = {
-  badge: dummyBadgeTemplate(1, 'ダミーカテゴリー')
+const dummyFactoryBadge = (id, name, routePath) => {
+  const tmp = dummyBadgeTemplate(id, name);
+  return {
+    routePath: routePath,
+    badge: tmp
+  };
 };
 
-const dummyTagBadge = {
-  badge: dummyBadgeTemplate(1, 'ダミータグ')
-};
+const dummyCategoryBadge = dummyFactoryBadge(1, 'ダミーカテゴリー', 'category-id');
+
+const dummyTagBadge = dummyFactoryBadge(1, 'ダミータグ', 'tag-id');
 
 const dummyPagination = {
   currentPage: 1,
-  maxPage: Math.ceil(dummyArticles.length / 5)
+  maxPage: Math.ceil(dummyArticles.length / 5),
+  routePath: 'page-pageid',
+  prevIndex: 2,
+  nextIndex: 2
 };
 
 const dummyTocs = dummyFactory(MAX_TOC_DATA, i => dummyTocTemplate(i));
@@ -123,6 +151,9 @@ const dummyProfile = {
 };
 
 export {
+  dummyOutsideLink,
+  dummyRouteStr,
+  dummyRouteObj,
   dummyImg,
   dummyCategoryBadge,
   dummyTagBadge,

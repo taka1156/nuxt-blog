@@ -1,5 +1,10 @@
 <template>
-  <base-link :route-to="routeTo">
+  <base-link
+    :route-to="{
+      name: routePath,
+      params: { id: badge.id }
+    }"
+  >
     <div class="article-badge article-badge--extend">
       <span class="article-badge__text">
         {{ badge.name }}
@@ -25,11 +30,10 @@ export default {
   },
   props: {
     /**
-     * 遷移先の情報
-     * (name:route params:{id})
+     * 遷移先のルート情報
      */
-    routeTo: {
-      type: Object,
+    routePath: {
+      type: String,
       required: true
     },
     /**
@@ -39,11 +43,6 @@ export default {
     badge: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    badgeClick() {
-      this.$emit('badge-click');
     }
   }
 };

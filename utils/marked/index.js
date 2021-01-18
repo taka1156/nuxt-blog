@@ -12,7 +12,7 @@ marked.setOptions({
 
 // 目次生成
 let index = 0;
-let toc = [];
+let tocs = [];
 
 const renderer = {
   heading(text, level) {
@@ -20,7 +20,7 @@ const renderer = {
     if (level === 2) {
       index++;
       const anchor = 'anchor_' + index;
-      toc.push({ index, anchor, escapedText });
+      tocs.push({ index, anchor, escapedText });
       return '<h' + level + ' id="' + anchor + '">' + text + '</h' + level + '>';
     } else {
       return '<h' + level + '>' + text + '</h' + level + '>';
@@ -31,10 +31,10 @@ const renderer = {
 const markedWrap = md => {
   // 初期化
   index = 0;
-  toc = [];
+  tocs = [];
   return marked(md);
 };
 
 marked.use({ renderer });
 
-export { toc, markedWrap };
+export { tocs, markedWrap };

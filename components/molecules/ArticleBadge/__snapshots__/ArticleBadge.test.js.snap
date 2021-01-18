@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleBadge ArticleBadge初期値(Category): badge 1`] = `
+"<base-link-stub routeto=\\"[object Object]\\">
+  <div class=\\"article-badge article-badge--extend\\"><span class=\\"article-badge__text\\">
+      ダミーカテゴリー
+    </span>
+    <base-img-webp-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミーカテゴリーの画像\\" size=\\"sm\\"></base-img-webp-stub>
+  </div>
+</base-link-stub>"
+`;
+
+exports[`ArticleBadge ArticleBadge初期値(Tag): badge 1`] = `
+"<base-link-stub routeto=\\"[object Object]\\">
+  <div class=\\"article-badge article-badge--extend\\"><span class=\\"article-badge__text\\">
+      ダミータグ
+    </span>
+    <base-img-webp-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミータグの画像\\" size=\\"sm\\"></base-img-webp-stub>
+  </div>
+</base-link-stub>"
+`;

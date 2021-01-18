@@ -3,13 +3,7 @@
     <div class="article-tag">
       タグ:&nbsp;
       <div v-for="(tag, index) in tags" :key="`tag_${index}`">
-        <article-badge
-          :route-to="{
-            name: 'tag-id',
-            params: { id: tag.id }
-          }"
-          :badge="tag"
-        />
+        <article-badge :route-path="`tag-id`" :badge="tag" />
       </div>
     </div>
   </div>

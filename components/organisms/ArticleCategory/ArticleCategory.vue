@@ -2,14 +2,7 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <article-badge
-        :route-to="{
-          name: 'category-id',
-          params: { id: category.id }
-        }"
-        :badge="category"
-        @badge-click="categoryJump(category)"
-      />
+      <article-badge :route-path="`category-id`" :badge="category" />
     </div>
   </div>
 </template>

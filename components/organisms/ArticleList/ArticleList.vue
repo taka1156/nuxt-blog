@@ -4,8 +4,9 @@
       <article-pagination
         :current-page="currentPage"
         :max-page="maxPage"
-        @prev="prev"
-        @next="next"
+        :route-path="routePath"
+        :prev-index="prev"
+        :next-index="next"
       />
       <ul>
         <li v-for="(article, index) in articles" :key="`article_${index}`">
@@ -15,8 +16,9 @@
       <article-pagination
         :current-page="currentPage"
         :max-page="maxPage"
-        @prev="prev"
-        @next="next"
+        :route-path="routePath"
+        :prev-index="prev"
+        :next-index="next"
       />
     </div>
     <div v-else>
@@ -78,38 +80,24 @@ export default {
       } else {
         return 1;
       }
-    }
-  },
-  methods: {
+    },
     prev() {
       /**
        * ひとつ前のページに戻る
        */
-      let pageid = Math.max(this.currentPage - 1, 0);
-      if (pageid < 1) {
-        pageid = this.maxPage;
+      if (this.currentPage === 1) {
+        return this.maxPage;
       }
-      this.pageJump(pageid);
+      return Math.max(this.currentPage - 1, 1);
     },
     next() {
       /**
        * ひとつ後のページに進む
        */
-      let pageid = Math.min(this.currentPage + 1, this.maxPage + 1);
-      if (pageid > this.maxPage) {
-        pageid = 1;
+      if (this.currentPage === this.maxPage) {
+        return 1;
       }
-      this.pageJump(pageid);
-    },
-    pageJump(pageid) {
-      /**
-       * 実際にページを進める
-       * (vue-router)
-       */
-      this.$router.push({
-        name: this.routePath,
-        params: { pageid: pageid }
-      });
+      return Math.min(this.currentPage + 1, this.maxPage);
     }
   }
 };

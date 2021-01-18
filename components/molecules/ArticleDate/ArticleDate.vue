@@ -39,15 +39,10 @@ export default {
       required: true
     }
   },
-  computed: {
-    formatDate() {
-      /**
-       * 日付の形式を変える
-       */
-      return function(date) {
-        if (date == null) return '--/--/--';
-        return new Date(date).toLocaleDateString();
-      };
+  methods: {
+    formatDate(date = null) {
+      if (date == null) return '--/--/--';
+      return new Date(date).toLocaleDateString('ja-JP');
     }
   }
 };
