@@ -46,7 +46,7 @@ export default {
        */
       return function(date) {
         if (date == null) return '--/--/--';
-        return new Date(date).toLocaleDateString();
+        return new Date(date).toLocaleDateString('ja-JP');
       };
     }
   }
