@@ -1,8 +1,9 @@
 <template>
   <component
     :is="isInternalLink ? 'nuxt-link' : 'a'"
-    :to="isInternalLink ? routeTo : ''"
-    :href="isInternalLink ? '' : routeTo"
+    :to="isInternalLink ? routeTo : false"
+    :href="isInternalLink ? false : routeTo"
+    tag="a"
     class="base-link--extend"
     v-bind="isTarget ? { target: '_blank', rel: 'noopener noreferrer' } : false"
   >
@@ -40,3 +41,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+a,
+.nuxt-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>

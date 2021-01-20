@@ -1,18 +1,23 @@
 <template>
   <div>
-    <h1>Tag</h1>
+    <base-heading1>
+      Tag
+    </base-heading1>
     <div class="line" />
     <classification-list :route-path="'tag'" :items="tags" />
   </div>
 </template>
 
 <script>
-import ClassificationList from '@/components/organisms/ClassificationList/ClassificationList';
+const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
+const ClassificationList = () =>
+  import('@/components/organisms/ClassificationList/ClassificationList');
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Tags',
   components: {
+    'base-heading1': BaseHeading1,
     'classification-list': ClassificationList
   },
   mixins: [meta],
@@ -62,3 +67,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+::v-deep .base-heading1--extend {
+  padding: 0 0 10px;
+  border-bottom: 2.5px solid lightgray;
+}
+</style>

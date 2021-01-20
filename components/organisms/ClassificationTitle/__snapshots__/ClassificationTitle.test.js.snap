@@ -3,17 +3,19 @@
 exports[`ClassificationTitle ClassificationTitle初期値(category): imgUrl 1`] = `
 "<div>
   <div class=\\"classification-title\\">
-    <h1 class=\\"classification-title__title\\"></h1>
-    <base-img-webp-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-webp-stub>
+    <base-heading1-stub></base-heading1-stub>
+    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
   </div>
+  <div class=\\"classification-title__border\\"></div>
 </div>"
 `;
 
 exports[`ClassificationTitle ClassificationTitle初期値(tag): imgUrl 1`] = `
 "<div>
   <div class=\\"classification-title\\">
-    <h1 class=\\"classification-title__title\\"></h1>
-    <base-img-webp-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-webp-stub>
+    <base-heading1-stub></base-heading1-stub>
+    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
   </div>
+  <div class=\\"classification-title__border\\"></div>
 </div>"
 `;

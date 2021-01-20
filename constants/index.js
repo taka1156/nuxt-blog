@@ -52,4 +52,16 @@ const PROFILE = {
     'プログラミングは、大学1年から触り始めC、Java、Python3などを学びました。現在は、TypeScriptやPHP(+Laravel)について学習しています。'
 };
 
-export { LOGO_TEXT, ROUTES, COPYRIGHT_URL, SNS_ICONS, PROFILE };
+const GITHUB_CONTRIBUTION_IMG = {
+  imgUrl: 'https://ghchart.rshah.org/taka1156',
+  imgAlt: "taka1156's Github chart"
+};
+
+export {
+  LOGO_TEXT,
+  ROUTES,
+  COPYRIGHT_URL,
+  SNS_ICONS,
+  PROFILE,
+  GITHUB_CONTRIBUTION_IMG
+};

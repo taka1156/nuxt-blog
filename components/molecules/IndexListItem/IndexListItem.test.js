@@ -30,6 +30,7 @@ describe('IndexListItem', () => {
     const aTag = wrapper.find('a');
     expect(aTag.text()).toBe(dummyText);
     expect(aTag.attributes().href).toBe(`#${dummyTocs[0].anchor}`);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

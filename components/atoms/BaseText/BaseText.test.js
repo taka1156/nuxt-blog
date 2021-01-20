@@ -13,6 +13,7 @@ describe('BaseText', () => {
   it('値がDOMに反映されているか', () => {
     const wrapper = baseText();
     expect(wrapper.text()).toBe(dummyText);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

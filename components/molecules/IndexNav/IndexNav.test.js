@@ -21,6 +21,7 @@ describe('IndexNav', () => {
     const navIconText = wrapper.find('.base-nav-icon__text');
     expect(wrapper.vm.isOpen).toBe(true);
     expect(navIconText.text()).toBe('CLOSE');
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -29,6 +30,7 @@ describe('IndexNav', () => {
     const navIconText = wrapper.find('.base-nav-icon__text');
     expect(wrapper.vm.isOpen).toBe(false);
     expect(navIconText.text()).toBe('INDEX');
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 

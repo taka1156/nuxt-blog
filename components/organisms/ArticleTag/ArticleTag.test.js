@@ -14,6 +14,7 @@ describe('ArticleTag', () => {
     const wrapper = articleTag({ tags: dummyTagBadges });
     expect(wrapper.vm.$options.props.tags.required).toBe(true);
     expect(wrapper.vm.tags).toBe(dummyTagBadges);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

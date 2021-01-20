@@ -20,6 +20,7 @@ describe('TheNavigation', () => {
     const wrapper = theCopyright({ copyrightUrl: dummyCopyrightUrl });
     const aTag = wrapper.find('a');
     expect(aTag.attributes().href).toBe(dummyCopyrightUrl);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

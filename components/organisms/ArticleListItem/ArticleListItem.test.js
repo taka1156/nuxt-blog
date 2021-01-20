@@ -13,7 +13,7 @@ describe('ArticleListItem', () => {
     // article
     expect(articleListItem.vm.$options.props.article.required).toBe(true);
     expect(articleListItem.vm.article).toBe(dummyArticles[0]);
-
+    // スナップショット
     expect(articleListItem.html()).toMatchSnapshot();
   });
 });

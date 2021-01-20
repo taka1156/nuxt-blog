@@ -14,6 +14,7 @@ describe('ArticleCategory', () => {
     const wrapper = articleCategory({ category: dummyCategoryBadge });
     expect(wrapper.vm.$options.props.category.required).toBe(true);
     expect(wrapper.vm.category).toBe(dummyCategoryBadge);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
