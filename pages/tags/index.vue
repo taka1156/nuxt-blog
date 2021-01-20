@@ -9,9 +9,8 @@
 </template>
 
 <script>
-const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
-const ClassificationList = () =>
-  import('@/components/organisms/ClassificationList/ClassificationList');
+import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import ClassificationList from '@/components/organisms/ClassificationList/ClassificationList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
