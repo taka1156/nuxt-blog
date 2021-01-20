@@ -35,7 +35,7 @@ export default {
       default: 'sm',
       required: true,
       validator: function(value) {
-        return ['sm', 'lg'].indexOf(value) !== -1;
+        return ['sm', 'lg', 'free'].indexOf(value) !== -1;
       }
     }
   }
@@ -48,13 +48,17 @@ img {
   padding: 3px;
 }
 
+.base-img--sm {
+  width: 20px;
+  height: 20px;
+}
+
 .base-img--lg {
   width: 50px;
   height: 50px;
 }
 
-.base-img--sm {
-  width: 20px;
-  height: 20px;
+.base-img--free {
+  height: auto;
 }
 </style>

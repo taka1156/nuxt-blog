@@ -7,9 +7,7 @@
           params: { pageid: prevIndex }
         }"
       >
-        <span>
-          &lt;
-        </span>
+        &lt;
       </base-link>
       <base-text> {{ currentPage }}/{{ maxPage }} </base-text>
       <base-link
@@ -18,9 +16,7 @@
           params: { pageid: nextIndex }
         }"
       >
-        <span>
-          &gt;
-        </span>
+        &gt;
       </base-link>
     </div>
   </div>

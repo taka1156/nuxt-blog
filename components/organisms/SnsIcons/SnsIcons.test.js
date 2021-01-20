@@ -15,7 +15,7 @@ describe('SnsIcons', () => {
     // snsIcons
     expect(wrapper.vm.$options.props.snsIcons.required).toBe(true);
     expect(wrapper.vm.snsIcons).toBe(dummySnsIcons);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

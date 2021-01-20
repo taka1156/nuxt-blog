@@ -14,6 +14,7 @@ describe('ArticleBadge', () => {
     const wrapper = articleBadge(dummyCategoryBadge);
     expect(wrapper.vm.routePath).toBe(dummyCategoryBadge.routePath);
     expect(wrapper.vm.badge).toBe(dummyCategoryBadge.badge);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -21,6 +22,7 @@ describe('ArticleBadge', () => {
     const wrapper = articleBadge(dummyTagBadge);
     expect(wrapper.vm.routePath).toBe(dummyTagBadge.routePath);
     expect(wrapper.vm.badge).toBe(dummyTagBadge.badge);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

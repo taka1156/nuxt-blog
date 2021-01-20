@@ -1,14 +1,14 @@
-import BaseImgWebp from './BaseImgWebp.vue';
+import BaseImgLazy from './BaseImgLazy.vue';
 import { dummyImg } from '@/__testdata__/testdata.js';
 
 export default {
-  title: 'Atoms/BaseImgWebp',
-  component: BaseImgWebp,
+  title: 'Atoms/BaseImgLazy',
+  component: BaseImgLazy,
   argTypes: {
     size: {
       control: {
         type: 'inline-radio',
-        options: ['sm', 'lg']
+        options: ['sm', 'lg', 'free']
       }
     }
   }
@@ -16,8 +16,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { BaseImgWebp },
-  template: '<base-img-webp v-bind="$props" />'
+  components: { BaseImgLazy },
+  template: '<base-img-lazy v-bind="$props" />'
 });
 
 export const Default = Template.bind({});

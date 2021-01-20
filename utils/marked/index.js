@@ -28,13 +28,13 @@ const renderer = {
   }
 };
 
+marked.use({ renderer });
+
 const markedWrap = md => {
   // 初期化
   index = 0;
   tocs = [];
   return marked(md);
 };
-
-marked.use({ renderer });
 
 export { tocs, markedWrap };

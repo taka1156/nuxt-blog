@@ -23,12 +23,14 @@ describe('IndexList', () => {
   it('isOpenがtrueの時に`index-list`が表示', () => {
     const wrapper = indexList({ isOpen: true, tocs: dummyTocs });
     expect(wrapper.find('.index-list').element.style.display).not.toBe('none');
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('isOpenがfalseの時に`index-list`が非表示', () => {
     const wrapper = indexList({ isOpen: false, tocs: dummyTocs });
     expect(wrapper.find('.index-list').element.style.display).toBe('none');
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 

@@ -5,10 +5,9 @@ exports[`ArticleHeader ArticleHeader初期値: article 1`] = `
   <div class=\\"article-header\\">
     <article-category-stub category=\\"[object Object]\\"></article-category-stub>
     <article-date-stub createdat=\\"2020-07-04T10:53:40.252Z\\" updatedat=\\"2020-07-08T15:15:07.668Z\\"></article-date-stub>
-    <div class=\\"line\\"></div>
-    <h1 class=\\"article-header__title\\">
+    <base-heading1-stub>
       この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています
-    </h1>
+    </base-heading1-stub>
     <article-tag-stub tags=\\"[object Object]\\"></article-tag-stub>
   </div>
 </div>"

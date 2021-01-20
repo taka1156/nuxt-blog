@@ -29,18 +29,21 @@ describe('BaseLink', () => {
   it('BaseLink初期値(OutSidelink): String', () => {
     const wrapper = baseLink(dummyOutsideLink);
     expect(wrapper.vm.routeTo).toBe(dummyOutsideLink.routeTo);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('BaseLink初期値(NuxtLink): String', () => {
     const wrapper = baseStubLink(dummyRouteStr);
     expect(wrapper.vm.routeTo).toBe(dummyRouteStr.routeTo);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('BaseLink初期値(NuxtLink): Object', () => {
     const wrapper = baseStubLink(dummyRouteObj);
     expect(wrapper.vm.routeTo).toBe(dummyRouteObj.routeTo);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 

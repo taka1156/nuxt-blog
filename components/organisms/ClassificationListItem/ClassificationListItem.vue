@@ -9,7 +9,7 @@
       >
         <div class="classification-list-item__box">
           <h2>{{ item.name }}</h2>
-          <base-img-webp
+          <base-img-lazy
             :size="`lg`"
             :img-url="item.img.url"
             :img-alt="`${item.name}のロゴ`"
@@ -22,13 +22,13 @@
 
 <script>
 import BaseLink from '../../atoms/BaseLink/BaseLink';
-import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
+import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 
 export default {
   name: 'ClassificationListItem',
   components: {
     'base-link': BaseLink,
-    'base-img-webp': BaseImgWebp
+    'base-img-lazy': BaseImgLazy
   },
   props: {
     /**
@@ -54,10 +54,8 @@ export default {
 ::v-deep .base-link--extend {
   color: black;
   text-align: left;
-  text-decoration: none;
   word-break: break-word;
   overflow-wrap: break-word;
-  cursor: pointer;
 }
 
 .classification-list-item {

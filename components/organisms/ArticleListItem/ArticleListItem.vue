@@ -6,32 +6,34 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <div class="line" />
+      <div class="article-list-item__border" />
       <base-link :route-to="{ name: 'article-id', params: { id: article.id } }">
-        <h2>{{ article.title }}</h2>
+        <h2 class="article-list-item__heading2">
+          {{ article.title }}
+        </h2>
       </base-link>
       <base-text>{{ article.summary }}</base-text>
-      <div class="line" />
+      <div class="article-list-item__border" />
       <article-tag :tags="article.tags" />
     </article>
   </div>
 </template>
 
 <script>
-import ArticleCategory from '../ArticleCategory/ArticleCategory';
 import BaseLink from '../../atoms/BaseLink/BaseLink';
+import BaseText from '../../atoms/BaseText/BaseText';
+import ArticleCategory from '../ArticleCategory/ArticleCategory';
 import ArticleTag from '../ArticleTag/ArticleTag';
 import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
-import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
   name: 'ArticleListItem',
   components: {
     'article-category': ArticleCategory,
     'base-link': BaseLink,
+    'base-text': BaseText,
     'article-tag': ArticleTag,
-    'article-date': ArticleDate,
-    'base-text': BaseText
+    'article-date': ArticleDate
   },
   props: {
     /**
@@ -48,17 +50,13 @@ export default {
 <style scoped>
 ::v-deep .base-link--extend {
   color: rgb(40, 167, 69);
-  text-align: left;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  cursor: pointer;
 }
 
 ::v-deep .base-link--extend:hover {
   color: rgba(70, 129, 84, 0.9);
 }
-
 ::v-deep .base-text--extend {
+  margin-left: 5px;
   text-align: left;
 }
 
@@ -68,5 +66,17 @@ export default {
   margin: 10px;
   border: 1px solid rgb(40, 167, 69);
   border-radius: 5px;
+}
+
+.article-list-item__border {
+  margin: 5px;
+  border: 1px solid lightgray;
+}
+
+.article-list-item__heading2 {
+  margin-left: 5px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 </style>

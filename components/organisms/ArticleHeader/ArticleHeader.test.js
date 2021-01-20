@@ -14,6 +14,7 @@ describe('ArticleHeader', () => {
     const wrapper = articleHeader({ article: dummyArticles[0] });
     expect(wrapper.vm.$options.props.article.required).toBe(true);
     expect(wrapper.vm.article).toBe(dummyArticles[0]);
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

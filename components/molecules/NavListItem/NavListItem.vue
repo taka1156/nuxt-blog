@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="nav-item">
-      <nuxt-link :to="navItem.to" class="nav-item__link">
+      <base-link :route-to="navItem.to">
         <base-img
           :size="`lg`"
           :img-url="navItem.img"
           :img-alt="`${navItem.name}の画像`"
         />
         <base-text>{{ navItem.name }}</base-text>
-      </nuxt-link>
+      </base-link>
     </div>
   </div>
 </template>
@@ -16,12 +16,14 @@
 <script>
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
+import BaseLink from '../../atoms/BaseLink/BaseLink.vue';
 
 export default {
   name: 'NavListItem',
   components: {
     'base-img': BaseImg,
-    'base-text': BaseText
+    'base-text': BaseText,
+    'base-link': BaseLink
   },
   props: {
     /**
@@ -40,15 +42,14 @@ export default {
   color: white;
 }
 
+::v-deep .base-link--extend {
+  display: flex;
+  width: 100%;
+}
+
 .nav-item {
   display: block;
   font-size: 50px;
   text-align: left;
-}
-
-.nav-item__link {
-  display: flex;
-  width: 100%;
-  text-decoration: none;
 }
 </style>
