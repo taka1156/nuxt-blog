@@ -25,10 +25,9 @@
 </template>
 
 <script>
-const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
-const ProfileBox = () => import('@/components/organisms/ProfileBox/ProfileBox');
-const ContributionBox = () =>
-  import('@/components/organisms/ContributionBox/ContributionBox');
+import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import ProfileBox from '@/components/organisms/ProfileBox/ProfileBox';
+import ContributionBox from '@/components/organisms/ContributionBox/ContributionBox';
 import SnsIcons from '@/components/organisms/SnsIcons/SnsIcons';
 import meta from 'assets/js/mixin/meta.mixin.js';
 import { SNS_ICONS, PROFILE, GITHUB_CONTRIBUTION_IMG } from '@/constants/index.js';

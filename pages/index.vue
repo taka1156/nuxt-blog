@@ -9,8 +9,8 @@
 </template>
 
 <script>
-const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
-const AricleList = () => import('@/components/organisms//ArticleList/ArticleList');
+import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import AricleList from '@/components/organisms//ArticleList/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
