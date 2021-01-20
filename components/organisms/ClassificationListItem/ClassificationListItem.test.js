@@ -24,7 +24,7 @@ describe('ClassificationListItem', () => {
     // routePath
     expect(wrapper.vm.$options.props.routePath.required).toBe(true);
     expect(wrapper.vm.routePath).toBe(dummyClassificationCategory.routePath);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -39,7 +39,7 @@ describe('ClassificationListItem', () => {
     // routePath
     expect(wrapper.vm.$options.props.routePath.required).toBe(true);
     expect(wrapper.vm.routePath).toBe(dummyClassificationTag.routePath);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

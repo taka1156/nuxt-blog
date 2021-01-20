@@ -1,49 +1,51 @@
 <template>
   <div>
-    <h1>Profile</h1>
-    <div class="line" />
+    <base-heading1>
+      Profile
+    </base-heading1>
 
     <section class="contents">
-      <h2 class="contents__title">自己紹介</h2>
+      <h2 class="contents__heading">自己紹介</h2>
       <profile-box :profile="profile" />
     </section>
 
     <section class="contents">
-      <h2 class="contents__title">githubの活動</h2>
-      <div class="gh-chart">
-        <img
-          class="gh-chart__img"
-          src="https://ghchart.rshah.org/taka1156"
-          alt="taka1156's Github chart"
-        />
-      </div>
+      <h2 class="contents__heading">githubの活動</h2>
+      <contribution-box
+        :img-url="contributionImg.imgUrl"
+        :img-alt="contributionImg.imgAlt"
+      />
     </section>
 
     <section class="contents">
-      <h2 class="contents__title">SNSやGitHub等</h2>
+      <h2 class="contents__heading">SNSやGitHub等</h2>
       <sns-icons :sns-icons="snsIcons" />
     </section>
   </div>
 </template>
 
 <script>
-import ProfileBox from '@/components/organisms/ProfileBox/ProfileBox';
+const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
+const ProfileBox = () => import('@/components/organisms/ProfileBox/ProfileBox');
+const ContributionBox = () =>
+  import('@/components/organisms/ContributionBox/ContributionBox');
 import SnsIcons from '@/components/organisms/SnsIcons/SnsIcons';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import { SNS_ICONS, PROFILE } from '@/constants/index.js';
+import { SNS_ICONS, PROFILE, GITHUB_CONTRIBUTION_IMG } from '@/constants/index.js';
 
 export default {
   name: 'Profile',
   components: {
+    'base-heading1': BaseHeading1,
     'profile-box': ProfileBox,
+    'contribution-box': ContributionBox,
     'sns-icons': SnsIcons
   },
   mixins: [meta],
-  data() {
-    return {
-      profile: PROFILE,
-      snsIcons: SNS_ICONS
-    };
+  computed: {
+    profile: () => PROFILE,
+    snsIcons: () => SNS_ICONS,
+    contributionImg: () => GITHUB_CONTRIBUTION_IMG
   },
   head() {
     const URL = `${this.baseURL}/profile/`;
@@ -80,25 +82,16 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .base-heading1--extend {
+  padding: 0 0 10px;
+  border-bottom: 2.5px solid lightgray;
+}
+
 .contents {
   margin: 1.25em auto 2em;
 }
 
-.contents__title {
+.contents__heading {
   font-size: 1.25em;
-}
-
-/* gh-chart */
-.gh-chart {
-  width: 85%;
-  margin: 0 auto;
-  overflow-x: scroll;
-  border: 0.5px solid gray;
-  border-radius: 5px;
-}
-
-.gh-chart__img {
-  object-fit: cover;
-  width: 900px;
 }
 </style>

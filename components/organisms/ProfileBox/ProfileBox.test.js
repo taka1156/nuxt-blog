@@ -15,7 +15,7 @@ describe('ProfileBox', () => {
     // profile
     expect(wrapper.vm.$options.props.profile.required).toBe(true);
     expect(wrapper.vm.profile).toBe(dummyProfile);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

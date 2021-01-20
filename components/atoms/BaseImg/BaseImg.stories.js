@@ -8,7 +8,7 @@ export default {
     size: {
       control: {
         type: 'inline-radio',
-        options: ['sm', 'lg']
+        options: ['sm', 'lg', 'free']
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="profile-box">
-    <base-img :size="`lg`" :img-url="profile.img" :img-alt="`プロフィール画像`" />
+    <base-img :size="`free`" :img-url="profile.img" :img-alt="`プロフィール画像`" />
     <base-text>
       {{ profile.introduce }}
     </base-text>

@@ -3,24 +3,22 @@
     <div class="article-content">
       <!--記事のheader-->
       <article-header :article="article" />
-      <!--markdown埋め込み-->
-      <div class="article-content__text markdown-body" v-html="parseMarked" />
-      <index-navigation :tocs="tocs" />
+      <article-body :article="article" />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
-import IndexNavigation from '@/components/organisms/IndexNavigation/IndexNavigation';
+const ArticleHeader = () =>
+  import('@/components/organisms/ArticleHeader/ArticleHeader');
+const ArticleBody = () => import('@/components/organisms/ArticleBody/ArticleBody');
 import meta from 'assets/js/mixin/meta.mixin.js';
-import { markedWrap, tocs } from '@/utils/marked/index.js';
 
 export default {
   name: 'ArtcleId',
   components: {
     'article-header': ArticleHeader,
-    'index-navigation': IndexNavigation
+    'article-body': ArticleBody
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
@@ -42,12 +40,6 @@ export default {
     return {
       article: {}
     };
-  },
-  computed: {
-    parseMarked() {
-      return markedWrap(this.article.body);
-    },
-    tocs: () => tocs
   },
   head() {
     // メタタグ
@@ -89,10 +81,5 @@ export default {
 <style scoped>
 .article-content {
   margin: 10px;
-}
-
-.article-content__text {
-  margin: 10px auto;
-  text-align: left;
 }
 </style>

@@ -6,16 +6,16 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <div class="line" />
-      <h1 class="article-header__title">
+      <base-heading1>
         {{ article.title }}
-      </h1>
+      </base-heading1>
       <article-tag :tags="article.tags" />
     </div>
   </div>
 </template>
 
 <script>
+import BaseHeading1 from '../../atoms/BaseHeading1/BaseHeading1';
 import ArticleCategory from '../ArticleCategory/ArticleCategory';
 import ArticleTag from '../ArticleTag/ArticleTag';
 import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
@@ -23,6 +23,7 @@ import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
 export default {
   name: 'ArticleHeader',
   components: {
+    'base-heading1': BaseHeading1,
     'article-category': ArticleCategory,
     'article-tag': ArticleTag,
     'article-date': ArticleDate
@@ -40,17 +41,20 @@ export default {
 </script>
 
 <style scoped>
-.article-header {
-  padding: 10px;
-  background-color: whitesmoke;
-  border: 1px solid lightgray;
-}
-
-.article-header__title {
+::v-deep .base-heading1--extend {
+  padding: 10px 0 0 0;
+  margin-left: 5px;
   font-size: 1.75rem;
   color: rgb(40, 167, 69);
   text-align: left;
   word-break: break-word;
   overflow-wrap: break-word;
+  border-top: 2.5px solid lightgray;
+}
+
+.article-header {
+  padding: 10px;
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
 }
 </style>

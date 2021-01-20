@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleBody ArticleBody初期値: article 1`] = `
+"<div>
+  <div class=\\"article-body markdown-body\\">
+    <h2 id=\\"anchor_1\\">この文章はダミーです。</h2>
+    <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong> </p>
+    <h2 id=\\"anchor_2\\">この文章はダミーです。</h2>
+    <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong> </p>
+    <h2 id=\\"anchor_3\\">この文章はダミーです。</h2>
+    <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
+    <h2 id=\\"anchor_4\\">この文章はダミーです。</h2>
+    <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
+    <h2 id=\\"anchor_5\\">この文章はダミーです。</h2>
+    <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
+  </div>
+  <index-navigation-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object]\\"></index-navigation-stub>
+</div>"
+`;

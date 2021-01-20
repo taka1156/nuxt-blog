@@ -12,6 +12,7 @@ describe('BaseBtn', () => {
   it('slotがDOMに反映されているか', () => {
     const btnTag = baseBtn.find('button');
     expect(btnTag.text()).toBe(dummyButtonText);
+    // スナップショット
     expect(btnTag.html()).toMatchSnapshot();
   });
 

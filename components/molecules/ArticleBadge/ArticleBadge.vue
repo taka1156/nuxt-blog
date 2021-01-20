@@ -9,7 +9,7 @@
       <span class="article-badge__text">
         {{ badge.name }}
       </span>
-      <base-img-webp
+      <base-img-lazy
         :size="`sm`"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
@@ -20,13 +20,13 @@
 
 <script>
 import BaseLink from '../../atoms/BaseLink/BaseLink';
-import BaseImgWebp from '../../atoms/BaseImgWebp/BaseImgWebp';
+import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 
 export default {
   name: 'ArticleBadge',
   components: {
     'base-link': BaseLink,
-    'base-img-webp': BaseImgWebp
+    'base-img-lazy': BaseImgLazy
   },
   props: {
     /**

@@ -1,19 +1,23 @@
 <template>
   <div>
-    <h1>Top</h1>
+    <base-heading1>
+      Top
+    </base-heading1>
     <div class="line" />
     <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>
 </template>
 
 <script>
-import AricleList from '@/components/organisms//ArticleList/ArticleList';
+const BaseHeading1 = () => import('@/components/atoms/BaseHeading1/BaseHeading1');
+const AricleList = () => import('@/components/organisms//ArticleList/ArticleList');
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
 export default {
   name: 'Top',
   components: {
+    'base-heading1': BaseHeading1,
     'article-list': AricleList
   },
   mixins: [meta],
@@ -54,3 +58,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+::v-deep .base-heading1--extend {
+  padding: 0 0 10px;
+  border-bottom: 2.5px solid lightgray;
+}
+</style>

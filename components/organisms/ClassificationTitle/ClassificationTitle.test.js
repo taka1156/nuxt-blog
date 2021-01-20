@@ -20,7 +20,7 @@ describe('ClassificationTitle', () => {
     // imgUrl
     expect(wrapper.vm.$options.props.imgUrl.required).toBe(true);
     expect(wrapper.vm.imgUrl).toBe(dummyClassificationCategory.items[0].img.url);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -31,7 +31,7 @@ describe('ClassificationTitle', () => {
     // imgUrl
     expect(wrapper.vm.$options.props.imgUrl.required).toBe(true);
     expect(wrapper.vm.imgUrl).toBe(dummyClassificationTag.items[0].img.url);
-
+    // スナップショット
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

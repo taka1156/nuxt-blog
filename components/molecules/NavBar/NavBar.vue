@@ -57,7 +57,6 @@ export default {
   margin-top: 10px;
   font-size: 1.3em;
   color: white;
-  text-decoration: none;
 }
 
 .nav-bar {

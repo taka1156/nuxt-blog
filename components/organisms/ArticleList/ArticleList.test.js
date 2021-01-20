@@ -26,7 +26,7 @@ describe('ArticleList', () => {
     // routePath
     expect(articleListItem.vm.$options.props.routePath.required).toBe(true);
     expect(articleListItem.vm.routePath).toBe(dummyPagination.routePath);
-
+    // スナップショット
     expect(articleListItem.html()).toMatchSnapshot();
   });
 });
