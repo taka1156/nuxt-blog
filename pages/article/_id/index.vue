@@ -9,9 +9,8 @@
 </template>
 
 <script>
-const ArticleHeader = () =>
-  import('@/components/organisms/ArticleHeader/ArticleHeader');
-const ArticleBody = () => import('@/components/organisms/ArticleBody/ArticleBody');
+import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader'
+import ArticleBody from '@/components/organisms/ArticleBody/ArticleBody';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
