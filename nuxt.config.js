@@ -1,9 +1,10 @@
-import { generateRouter } from './utils/routes/index.js';
+import { generateRouter } from './buildTools/routes/index.js';
 require('dotenv').config();
 const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 
 export default {
   telemetry: false,
+  srcDir: 'src/',
   mode: 'universal',
   target: 'static',
   sitemap: {
@@ -21,17 +22,17 @@ export default {
       routes.push({
         name: 'page-pageid',
         path: '/page/:pageid',
-        component: resolve(__dirname, 'pages/index.vue')
+        component: resolve(__dirname, 'src/pages/index.vue')
       });
       routes.push({
         name: 'category-id-pageid',
         path: '/category/:id/:pageid',
-        component: resolve(__dirname, 'pages/category/_id/index.vue')
+        component: resolve(__dirname, 'src/pages/category/_id/index.vue')
       });
       routes.push({
         name: 'tag-id-pageid',
         path: '/tag/:id/:pageid',
-        component: resolve(__dirname, 'pages/tag/_id/index.vue')
+        component: resolve(__dirname, 'src/pages/tag/_id/index.vue')
       });
     }
   },
@@ -110,7 +111,10 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/dotenv'],
+  dotenv: {
+    path: process.cwd()
+  },
   /*
    ** Nuxt.js modules
    */

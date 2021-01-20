@@ -1,5 +1,6 @@
 const path = require('path')
-const rootPath = path.resolve(__dirname, '../')
+const rootPath = path.resolve(__dirname, '../src/')
+const rootPathDummy = path.resolve(__dirname, '../__testdata__/') //ダミーデータ用のパス
 
 module.exports = ({ config }) => {
   config.module.rules = config.module.rules.map(rule => {
@@ -28,6 +29,7 @@ module.exports = ({ config }) => {
   config.resolve.extensions = ['.js', '.vue', '.json']
   config.resolve.alias['~'] = rootPath
   config.resolve.alias['@'] = rootPath
+  config.resolve.alias['__testdata__'] = rootPathDummy　//ダミーデータ
 
   return config;
 };
