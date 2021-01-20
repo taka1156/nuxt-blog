@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader'
+import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import ArticleBody from '@/components/organisms/ArticleBody/ArticleBody';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
