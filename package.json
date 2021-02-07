@@ -36,7 +36,7 @@
     "vue-scrollto": "2.20.0"
   },
   "devDependencies": {
-    "@babel/core": "7.11.1",
+    "@babel/core": "7.11.6",
     "@nuxtjs/axios": "5.11.0",
     "@nuxtjs/dotenv": "1.4.1",
     "@storybook/addon-actions": "6.0.28",
