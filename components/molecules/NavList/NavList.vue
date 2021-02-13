@@ -8,7 +8,7 @@
             :key="`nav_${index}`"
             @click="changeState"
           >
-            <nav-list-item :nav-item="item" @change-state="changeState" />
+            <nav-list-item :nav-item="item" />
           </li>
         </ul>
       </div>

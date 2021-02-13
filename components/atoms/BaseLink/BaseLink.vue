@@ -43,8 +43,7 @@ export default {
 </script>
 
 <style scoped>
-a,
-.nuxt-link {
+a {
   text-decoration: none;
   cursor: pointer;
 }

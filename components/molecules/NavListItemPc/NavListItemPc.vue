@@ -2,12 +2,14 @@
   <div>
     <div class="nav-item">
       <base-link :route-to="navItem.to">
-        <base-img
-          :size="`lg`"
-          :img-url="navItem.img"
-          :img-alt="`${navItem.name}の画像`"
-        />
-        <base-text>{{ navItem.name }}</base-text>
+        <div class="nav-item__contents">
+          <base-img
+            :size="`sm`"
+            :img-url="navItem.img"
+            :img-alt="`${navItem.name}の画像`"
+          />
+          <base-text>{{ navItem.name }}</base-text>
+        </div>
       </base-link>
     </div>
   </div>
@@ -19,7 +21,7 @@ import BaseText from '../../atoms/BaseText/BaseText';
 import BaseLink from '../../atoms/BaseLink/BaseLink';
 
 export default {
-  name: 'NavListItem',
+  name: 'NavListItemPc',
   components: {
     'base-img': BaseImg,
     'base-text': BaseText,
@@ -42,14 +44,19 @@ export default {
   color: white;
 }
 
-::v-deep .base-link--extend {
-  display: flex;
-  width: 100%;
-}
-
 .nav-item {
   display: block;
-  font-size: 50px;
+  font-size: 18px;
   text-align: left;
+}
+
+.nav-item__contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 </style>

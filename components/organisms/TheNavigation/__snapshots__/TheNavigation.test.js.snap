@@ -3,8 +3,9 @@
 exports[`TheNavigation 閉じた時のスナップショット 1`] = `
 "<div>
   <nav>
-    <nav-bar-stub logotext=\\"ダミーロゴ\\"></nav-bar-stub>
-    <nav-list-stub routes=\\"[object Object],[object Object],[object Object],[object Object]\\"></nav-list-stub>
+    <div>
+      <nav-bar-pc-stub logotext=\\"ダミーロゴ\\" routes=\\"[object Object],[object Object],[object Object],[object Object]\\"></nav-bar-pc-stub>
+    </div>
   </nav>
 </div>"
 `;
@@ -12,8 +13,9 @@ exports[`TheNavigation 閉じた時のスナップショット 1`] = `
 exports[`TheNavigation 開いた時のスナップショット 1`] = `
 "<div>
   <nav>
-    <nav-bar-stub logotext=\\"ダミーロゴ\\" isopen=\\"true\\"></nav-bar-stub>
-    <nav-list-stub routes=\\"[object Object],[object Object],[object Object],[object Object]\\" isopen=\\"true\\"></nav-list-stub>
+    <div>
+      <nav-bar-pc-stub logotext=\\"ダミーロゴ\\" routes=\\"[object Object],[object Object],[object Object],[object Object]\\"></nav-bar-pc-stub>
+    </div>
   </nav>
 </div>"
 `;
