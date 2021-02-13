@@ -1,6 +1,7 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils';
 import TheNavigation from './TheNavigation.vue';
 import { dummyLogo, dummyRoutes } from '@/__testdata__/testdata.js';
+import '@/__mocks__/matchMediaMock.js';
 
 describe('TheNavigation', () => {
   const theNavigation = shallowMount(TheNavigation, {
