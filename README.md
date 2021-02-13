@@ -30,16 +30,24 @@ Storybookはこちら(https://blog-storybook.netlify.app)
 - BaseBtn
 - BaseImg
 - BaseText
-- NavIcon
-- NavLogo
+- BaseLink
+- BaseNavIcon
+- BaseHeading
 
 **Molecules**
 - ArticleBadge
 - ArticleDate
 - ArticlePagination
+- IndexNav
+- IndexList
+- IndexListItem
 - NavBar
+- NavBarPc
 - NavListItem
+- NavListItemPc
 - NavList
+- NavListPc
+- SnsIcon
 
 **Organisms**
 - ArticleCategory <a href="#1">※1</a>
@@ -50,6 +58,9 @@ Storybookはこちら(https://blog-storybook.netlify.app)
 - ClassificationListItem <a href="#2">※2</a>
 - ClassificationList
 - ClassificationTitle
+- ContributionBox
+- IndexNavigation
+- SnsIcons
 - TheNavigation
 - TheCopyright
 

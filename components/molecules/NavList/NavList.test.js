@@ -9,8 +9,8 @@ describe('NavList', () => {
         NuxtLink: RouterLinkStub
       },
       propsData: {
-        routes: dummyRoutes,
-        ...propsData
+        ...propsData,
+        routes: dummyRoutes
       }
     });
 

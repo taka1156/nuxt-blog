@@ -1,22 +1,35 @@
 <template>
   <div>
     <nav>
-      <nav-bar :logo-text="logoText" :is-open="isOpen" @change-state="changeState" />
-      <nav-list :is-open="isOpen" :routes="routes" @change-state="changeState" />
+      <div v-if="isMobile">
+        <nav-bar
+          :logo-text="logoText"
+          :is-open="isOpen"
+          @change-state="changeState"
+        />
+        <nav-list :is-open="isOpen" :routes="routes" @change-state="changeState" />
+      </div>
+      <div v-else>
+        <nav-bar-pc :logo-text="logoText" :routes="routes" />
+      </div>
     </nav>
   </div>
 </template>
 
 <script>
+import responsive from '@/assets/js/mixin/responsive.mixin.js';
 import NavBar from '../../molecules/NavBar/NavBar';
 import NavList from '../../molecules/NavList/NavList';
+import NavBarPc from '../../molecules/NavBarPc/NavBarPc';
 
 export default {
   name: 'TheNavigation',
   components: {
     'nav-bar': NavBar,
-    'nav-list': NavList
+    'nav-list': NavList,
+    'nav-bar-pc': NavBarPc
   },
+  mixins: [responsive],
   props: {
     /**
      * ロゴテキスト
