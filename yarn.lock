@@ -12612,10 +12612,10 @@ marked-terminal@^3.3.0:
     node-emoji "^1.4.1"
     supports-hyperlinks "^1.0.1"
 
-marked@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.2.tgz#98ceaf78a33e88fb9cf719bc383d7a0c7ceb1de9"
-  integrity sha512-Eq9jyHbsyG+XGhtyV6Gch2KsTnVSGvVgxP7gUU5iBhzh6gZmtunfCKGrJQcvxT0MxMNJ4JcvUEcha+LJ5zMHow==
+marked@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-2.0.0.tgz#9662bbcb77ebbded0662a7be66ff929a8611cee5"
+  integrity sha512-NqRSh2+LlN2NInpqTQnS614Y/3NkVMFFU6sJlRFEpxJ/LHuK/qJECH7/fXZjk4VZstPW/Pevjil/VtSONsLc7Q==
 
 marked@^0.7.0:
   version "0.7.0"
