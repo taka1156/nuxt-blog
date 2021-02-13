@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="base-btn--extend" @click="btnClick">
+    <button type="button" class="base-btn--extend" @click="btnClick">
       <!-- @slot ボタンラベル -->
       <slot />
     </button>

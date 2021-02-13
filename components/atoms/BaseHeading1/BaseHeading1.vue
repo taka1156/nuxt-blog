@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: 'HeadingLevel1'
+  name: 'BaseHeading1'
 };
 </script>
