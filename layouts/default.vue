@@ -1,7 +1,9 @@
 <template>
   <div class="App">
     <header>
-      <the-navigation :logo-text="logoText" :routes="routes" />
+      <client-only>
+        <the-navigation :logo-text="logoText" :routes="routes" />
+      </client-only>
     </header>
     <div class="container">
       <main>

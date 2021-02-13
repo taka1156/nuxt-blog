@@ -1,9 +1,9 @@
-import NavListItem from './NavListItem.vue';
+import NavListPc from './NavListPc.vue';
 import { dummyRoutes } from '@/__testdata__/testdata.js';
 
 export default {
-  title: 'Molecules/NavListItem',
-  component: NavListItem,
+  title: 'Molecules/NavListPc',
+  component: NavListPc,
   parameters: {
     backgrounds: {
       default: 'dark'
@@ -13,9 +13,9 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { NavListItem },
-  template: '<nav-list-item v-bind="$props" />'
+  components: { NavListPc },
+  template: '<nav-list-pc v-bind="$props" />'
 });
 
 export const Default = Template.bind({});
-Default.args = { navItem: dummyRoutes[0] };
+Default.args = { routes: dummyRoutes };

@@ -16,7 +16,7 @@
 <script>
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
-import BaseLink from '../../atoms/BaseLink/BaseLink.vue';
+import BaseLink from '../../atoms/BaseLink/BaseLink';
 
 export default {
   name: 'NavListItem',

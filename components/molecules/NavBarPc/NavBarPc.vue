@@ -3,7 +3,7 @@
     <div class="nav-bar">
       <div class="nav-bar__box">
         <base-link :route-to="`/`">{{ logoText }}</base-link>
-        <nav-list-default :routes="routes" />
+        <nav-list-pc :routes="routes" />
       </div>
     </div>
   </div>
@@ -11,13 +11,13 @@
 
 <script>
 import BaseLink from '../../atoms/BaseLink/BaseLink';
-import NavListDefault from '../NavListDefault/NavListDefault';
+import NavListPc from '../NavListPc/NavListPc';
 
 export default {
-  name: 'NavBarDefault',
+  name: 'NavBarPc',
   components: {
     'base-link': BaseLink,
-    'nav-list-default': NavListDefault
+    'nav-list-pc': NavListPc
   },
   props: {
     /**
@@ -33,16 +33,6 @@ export default {
     routes: {
       type: Array,
       required: true
-    }
-  },
-  methods: {
-    changeState() {
-      /**
-       * ナビゲーション開閉の状態を変化させる
-       * (開く)
-       * @event changeState
-       */
-      this.$emit('change-state', !this.isOpen);
     }
   }
 };
