@@ -4,7 +4,6 @@ const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
 
 export default {
   telemetry: false,
-  mode: 'universal',
   target: 'static',
   sitemap: {
     trailingSlash: true,

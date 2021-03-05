@@ -50,4 +50,4 @@ jobs:
         ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
         TAG_URL: ${{ secrets.TAG_URL }}
         CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
-      run: yarn generate:static
+      run: yarn generate

@@ -52,7 +52,7 @@ jobs:
         ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
         TAG_URL: ${{ secrets.TAG_URL }}
         CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
-      run: yarn generate:static
+      run: yarn generate
 
     - name: deploy to Firebase Hosting
       run: yarn firebase deploy --only hosting:production --token $FIREBASE_TOKEN
