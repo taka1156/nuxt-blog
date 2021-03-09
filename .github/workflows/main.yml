@@ -41,6 +41,7 @@ jobs:
     - uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: coverage/lcov.info
 
     - name: create .env file
       run: echo "${{ secrets.ENV_FIREBASE }}" > .env
@@ -52,6 +53,13 @@ jobs:
         ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
         TAG_URL: ${{ secrets.TAG_URL }}
         CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
+        NODE_ENV: production
+        SENTRY_ENV: production
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        SENTRY_ORG: taka1156
+        SENTRY_PROJECT: nuxt-blog
+        GIT_SHA: ${{ github.sha }}
       run: yarn generate
 
     - name: deploy to Firebase Hosting

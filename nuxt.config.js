@@ -1,6 +1,14 @@
 import { generateRouter } from './utils/routes/index.js';
 require('dotenv').config();
-const { BASE_URL, MICRO_CMS, ARTICLE_URL, TAG_URL, CATEGORY_URL } = process.env;
+const {
+  BASE_URL,
+  MICRO_CMS,
+  ARTICLE_URL,
+  TAG_URL,
+  CATEGORY_URL,
+  SENTRY_DSN,
+  GIT_SHA
+} = process.env;
 
 export default {
   telemetry: false,
@@ -113,7 +121,18 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/sitemap', '@nuxtjs/sentry'],
+
+  sentry: {
+    dsn: SENTRY_DSN || '',
+    disabled: process.env.NODE_ENV !== 'production',
+    publishRelease: true,
+    sourceMapStyle: 'hidden-source-map',
+    config: {
+      release: GIT_SHA,
+      environment: SENTRY_ENV || 'production',
+    }
+  },
 
   axios: {},
 
@@ -137,7 +156,7 @@ export default {
       pages: true,
       commons: true
     },
-    extend: function(config) {
+    extend: function (config) {
       config.node = {
         fs: 'empty'
       };

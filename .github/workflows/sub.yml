@@ -50,4 +50,6 @@ jobs:
         ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
         TAG_URL: ${{ secrets.TAG_URL }}
         CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
+        NODE_ENV: develop
+        SENTRY_ENV: develop
       run: yarn generate
