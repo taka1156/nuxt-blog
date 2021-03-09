@@ -34,7 +34,7 @@ export default {
       type: String,
       default: 'sm',
       required: true,
-      validator: function(value) {
+      validator: function (value) {
         return ['sm', 'lg', 'free'].indexOf(value) !== -1;
       }
     }

@@ -137,7 +137,7 @@ export default {
       pages: true,
       commons: true
     },
-    extend: function(config) {
+    extend: function (config) {
       config.node = {
         fs: 'empty'
       };

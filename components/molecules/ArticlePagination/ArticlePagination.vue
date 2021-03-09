@@ -55,7 +55,7 @@ export default {
     routePath: {
       type: String,
       required: true,
-      validator: function(value) {
+      validator: function (value) {
         return (
           ['page-pageid', 'tag-id-pageid', 'category-id-pageid'].indexOf(value) !==
           -1

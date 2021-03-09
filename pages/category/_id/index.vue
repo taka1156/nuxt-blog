@@ -57,14 +57,6 @@ export default {
       routePath: 'category-id-pageid'
     };
   },
-  methods: {
-    format(imgUrl) {
-      if (imgUrl == null) {
-        return '';
-      }
-      return `${imgUrl}?fit=fillmax&fill-color=white&w=200&h=200`;
-    }
-  },
   head() {
     const URL = `${this.baseURL}/category/${this.category.id}/1`;
     const IMAGE = this.format(this.category.img.url);
@@ -94,6 +86,14 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    format(imgUrl) {
+      if (imgUrl == null) {
+        return '';
+      }
+      return `${imgUrl}?fit=fillmax&fill-color=white&w=200&h=200`;
+    }
   }
 };
 </script>
