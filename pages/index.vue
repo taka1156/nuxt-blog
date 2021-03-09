@@ -1,8 +1,6 @@
 <template>
   <div>
-    <base-heading1>
-      Top
-    </base-heading1>
+    <base-heading1> Top </base-heading1>
     <div class="line" />
     <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>

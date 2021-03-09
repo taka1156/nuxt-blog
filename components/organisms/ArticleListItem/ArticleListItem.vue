@@ -55,6 +55,7 @@ export default {
 ::v-deep .base-link--extend:hover {
   color: rgba(70, 129, 84, 0.9);
 }
+
 ::v-deep .base-text--extend {
   margin-left: 5px;
   text-align: left;

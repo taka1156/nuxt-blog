@@ -1,8 +1,6 @@
 <template>
   <div>
-    <base-heading1>
-      Profile
-    </base-heading1>
+    <base-heading1> Profile </base-heading1>
 
     <section class="contents">
       <h2 class="contents__heading">自己紹介</h2>
@@ -41,11 +39,6 @@ export default {
     'sns-icons': SnsIcons
   },
   mixins: [meta],
-  computed: {
-    profile: () => PROFILE,
-    snsIcons: () => SNS_ICONS,
-    contributionImg: () => GITHUB_CONTRIBUTION_IMG
-  },
   head() {
     const URL = `${this.baseURL}/profile/`;
     const IMAGE = `${this.baseURL}/img/ogp/profile.png`;
@@ -76,6 +69,11 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    profile: () => PROFILE,
+    snsIcons: () => SNS_ICONS,
+    contributionImg: () => GITHUB_CONTRIBUTION_IMG
   }
 };
 </script>

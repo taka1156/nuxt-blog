@@ -35,7 +35,7 @@ export default {
     routePath: {
       type: String,
       required: true,
-      validator: function(value) {
+      validator: function (value) {
         return ['tag', 'category'].indexOf(value) !== -1;
       }
     }

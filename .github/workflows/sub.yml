@@ -13,41 +13,41 @@ jobs:
   build-test:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: setup node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12.x'
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/yarn
-        key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ env.cache-version }}-${{ runner.os }}-node-
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/yarn
+          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ env.cache-version }}-${{ runner.os }}-node-
 
-    - name: install
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: yarn install
+      - name: install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn install
 
-    - name: lint
-      run: yarn lint:check
+      - name: lint
+        run: yarn lint:check
 
-    - name: test
-      env:
-        TZ: 'Asia/Tokyo'
-      run: yarn test
+      - name: test
+        env:
+          TZ: 'Asia/Tokyo'
+        run: yarn test
 
-    - name: create .env file
-      run: echo "${{ secrets.ENV_FIREBASE }}" > .env
+      - name: create .env file
+        run: echo "${{ secrets.ENV_FIREBASE }}" > .env
 
-    - name: build
-      env:
-        BASE_URL: ${{ secrets.BASE_URL }}
-        MICRO_CMS: ${{ secrets.MICRO_CMS }}
-        ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
-        TAG_URL: ${{ secrets.TAG_URL }}
-        CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
-      run: yarn generate
+      - name: build
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          MICRO_CMS: ${{ secrets.MICRO_CMS }}
+          ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
+          TAG_URL: ${{ secrets.TAG_URL }}
+          CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
+        run: yarn generate
