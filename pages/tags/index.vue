@@ -1,8 +1,6 @@
 <template>
   <div>
-    <base-heading1>
-      Tag
-    </base-heading1>
+    <base-heading1> Tag </base-heading1>
     <div class="line" />
     <classification-list :route-path="'tag'" :items="tags" />
   </div>
