@@ -7,5 +7,4 @@ coverage
 .nuxt
 .storybook
 node_modules
-__mokcs__/**
-jest.config.js
+__mocks__
