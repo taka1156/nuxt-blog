@@ -7,7 +7,7 @@
 
 taka1156のブログサイトです(https://blog.taka1156.site)
 
-Storybookはこちら(https://taka1156.github.io/nuxt-blog/index.html)
+Storybookはこちら(https://taka1156.github.io/nuxt-blog/)
 
 ## 使用しているもの
 - Nuxt.js
