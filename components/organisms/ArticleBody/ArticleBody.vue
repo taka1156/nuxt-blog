@@ -13,7 +13,7 @@ import { markedWrap, tocs } from '@/utils/marked/index.js';
 export default {
   name: 'ArticleBody',
   components: {
-    'index-navigation': IndexNavigation
+    IndexNavigation
   },
   props: {
     article: {

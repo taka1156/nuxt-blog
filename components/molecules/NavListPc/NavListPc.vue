@@ -1,7 +1,7 @@
 <template>
   <ul class="nav-list">
-    <li v-for="(item, index) in routes" :key="`nav_${index}`" class="nav-list__item">
-      <nav-list-item-pc :nav-item="item" />
+    <li v-for="route in routes" :key="route.name" class="nav-list__item">
+      <nav-list-item-pc :nav-item="route" />
     </li>
   </ul>
 </template>
@@ -12,7 +12,7 @@ import NavListItemPc from '../NavListItemPc/NavListItemPc';
 export default {
   name: 'NavListPc',
   components: {
-    'nav-list-item-pc': NavListItemPc
+    NavListItemPc
   },
   props: {
     /**

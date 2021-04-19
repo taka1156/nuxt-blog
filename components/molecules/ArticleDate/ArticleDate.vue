@@ -23,8 +23,8 @@ dayjs.locale('ja');
 export default {
   name: 'ArticleDate',
   components: {
-    'base-img': BaseImg,
-    'base-text': BaseText
+    BaseImg,
+    BaseText
   },
   props: {
     /**

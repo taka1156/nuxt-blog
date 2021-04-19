@@ -2,7 +2,7 @@
   <div>
     <div v-if="items.length !== 0">
       <ul>
-        <li v-for="(item, index) in items" :key="`classification_${index}`">
+        <li v-for="item in items" :key="item.id">
           <classification-list-item :item="item" :route-path="routePath" />
         </li>
       </ul>
@@ -15,9 +15,9 @@
 import ClassificationListItem from '../ClassificationListItem/ClassificationListItem';
 
 export default {
-  name: 'ClassificatetionList',
+  name: 'ClassificationList',
   components: {
-    'classification-list-item': ClassificationListItem
+    ClassificationListItem
   },
   props: {
     /**

@@ -22,8 +22,8 @@ const dummyFactory = (num, fn) => {
 };
 
 // template
-const dummyNavTemplate = () => ({
-  name: 'ダミーナビゲーション',
+const dummyNavTemplate = i => ({
+  name: `ダミー${i}`,
   to: '/test1',
   img: dummyImgUrl
 });
@@ -73,8 +73,8 @@ const dummyArticleTemplate = i => ({
   category: dummyBadgeTemplate(1, 'ダミーカテゴリー')
 });
 
-const dummySnsIconTemplate = () => ({
-  name: 'ダミーアイコン',
+const dummySnsIconTemplate = i => ({
+  name: `ダミー${i}`,
   img: dummyImgUrl,
   link: dummyUrl
 });
@@ -90,7 +90,7 @@ const dummyDate = {
   updatedAt: '2020-07-08T15:15:07.668Z'
 };
 
-const dummyRoutes = dummyFactory(MAX_NAV_DATA, () => dummyNavTemplate());
+const dummyRoutes = dummyFactory(MAX_NAV_DATA, i => dummyNavTemplate(i));
 
 const dummyTagBadges = dummyFactory(MAX_BADGE_DATA, i =>
   dummyBadgeTemplate(i, 'ダミータグ')
@@ -142,7 +142,7 @@ const dummyTocs = dummyFactory(MAX_TOC_DATA, i => dummyTocTemplate(i));
 
 const dummyLogo = 'ダミーロゴ';
 
-const dummySnsIcons = dummyFactory(MAX_ICONS_DATA, () => dummySnsIconTemplate());
+const dummySnsIcons = dummyFactory(MAX_ICONS_DATA, i => dummySnsIconTemplate(i));
 
 const dummyProfile = {
   img: dummyImgUrl,

@@ -9,7 +9,7 @@
         :next-index="next"
       />
       <ul>
-        <li v-for="(article, index) in articles" :key="`article_${index}`">
+        <li v-for="article in articles" :key="article.id">
           <article-list-item :article="article" />
         </li>
       </ul>
@@ -28,15 +28,16 @@
 </template>
 
 <script>
+import BaseText from '../../atoms/BaseText/BaseText';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticlePagination from '../../molecules/ArticlePagination/ArticlePagination';
-import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
+  name: 'ArticleList',
   components: {
-    'article-list-item': ArticleListItem,
-    'article-pagination': ArticlePagination,
-    'base-text': BaseText
+    ArticleListItem,
+    ArticlePagination,
+    BaseText
   },
   props: {
     /**

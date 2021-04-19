@@ -13,7 +13,7 @@ import ArticleBadge from '../../molecules/ArticleBadge/ArticleBadge';
 export default {
   name: 'ArticleCategory',
   components: {
-    'article-badge': ArticleBadge
+    ArticleBadge
   },
   props: {
     /**

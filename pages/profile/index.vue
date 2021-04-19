@@ -33,10 +33,10 @@ import { SNS_ICONS, PROFILE, GITHUB_CONTRIBUTION_IMG } from '@/constants/index.j
 export default {
   name: 'Profile',
   components: {
-    'base-heading1': BaseHeading1,
-    'profile-box': ProfileBox,
-    'contribution-box': ContributionBox,
-    'sns-icons': SnsIcons
+    BaseHeading1,
+    ProfileBox,
+    ContributionBox,
+    SnsIcons
   },
   mixins: [meta],
   head() {
