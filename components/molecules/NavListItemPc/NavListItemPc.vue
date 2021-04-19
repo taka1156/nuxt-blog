@@ -23,9 +23,9 @@ import BaseLink from '../../atoms/BaseLink/BaseLink';
 export default {
   name: 'NavListItemPc',
   components: {
-    'base-img': BaseImg,
-    'base-text': BaseText,
-    'base-link': BaseLink
+    BaseImg,
+    BaseText,
+    BaseLink
   },
   props: {
     /**

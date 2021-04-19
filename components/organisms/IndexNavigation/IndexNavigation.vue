@@ -10,10 +10,10 @@ import IndexNav from '../../molecules/IndexNav/IndexNav';
 import IndexList from '../../molecules/IndexList/IndexList';
 
 export default {
-  name: 'IndexList',
+  name: 'IndexNavigation',
   components: {
-    'index-nav': IndexNav,
-    'index-list': IndexList
+    IndexNav,
+    IndexList
   },
   props: {
     tocs: {

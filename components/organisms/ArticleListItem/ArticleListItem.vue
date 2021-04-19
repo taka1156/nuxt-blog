@@ -29,11 +29,11 @@ import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
 export default {
   name: 'ArticleListItem',
   components: {
-    'article-category': ArticleCategory,
-    'base-link': BaseLink,
-    'base-text': BaseText,
-    'article-tag': ArticleTag,
-    'article-date': ArticleDate
+    ArticleCategory,
+    BaseLink,
+    BaseText,
+    ArticleTag,
+    ArticleDate
   },
   props: {
     /**

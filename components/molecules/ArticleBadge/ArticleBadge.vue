@@ -25,8 +25,8 @@ import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 export default {
   name: 'ArticleBadge',
   components: {
-    'base-link': BaseLink,
-    'base-img-lazy': BaseImgLazy
+    BaseLink,
+    BaseImgLazy
   },
   props: {
     /**

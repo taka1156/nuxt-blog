@@ -23,10 +23,10 @@ import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
 export default {
   name: 'ArticleHeader',
   components: {
-    'base-heading1': BaseHeading1,
-    'article-category': ArticleCategory,
-    'article-tag': ArticleTag,
-    'article-date': ArticleDate
+    BaseHeading1,
+    ArticleCategory,
+    ArticleTag,
+    ArticleDate
   },
   props: {
     /**

@@ -10,15 +10,15 @@
 
 <script>
 import ClassificationTitle from '@/components/organisms/ClassificationTitle/ClassificationTitle';
-import AricleList from '@/components/organisms/ArticleList/ArticleList';
+import ArticleList from '@/components/organisms/ArticleList/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
 export default {
   name: 'CategoryId',
   components: {
-    'classification-title': ClassificationTitle,
-    'article-list': AricleList
+    ClassificationTitle,
+    ArticleList
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {

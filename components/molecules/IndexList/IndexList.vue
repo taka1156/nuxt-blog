@@ -5,8 +5,8 @@
         <h3 class="index-list__title">Index</h3>
         <ul>
           <li
-            v-for="(t, index) in tocs"
-            :key="`index_${index}`"
+            v-for="t in tocs"
+            :key="t.index"
             class="index-list__item-box"
             @click="changeState"
           >

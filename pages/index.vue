@@ -8,15 +8,15 @@
 
 <script>
 import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
-import AricleList from '@/components/organisms//ArticleList/ArticleList';
+import ArticleList from '@/components/organisms//ArticleList/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
 
 export default {
   name: 'Top',
   components: {
-    'base-heading1': BaseHeading1,
-    'article-list': AricleList
+    BaseHeading1,
+    ArticleList
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
