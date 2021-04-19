@@ -2,7 +2,7 @@
   <div>
     <div class="article-tag">
       タグ:&nbsp;
-      <div v-for="(tag, index) in tags" :key="`tag_${index}`">
+      <div v-for="tag in tags" :key="tag.id">
         <article-badge :route-path="`tag-id`" :badge="tag" />
       </div>
     </div>
@@ -15,7 +15,7 @@ import ArticleBadge from '../../molecules/ArticleBadge/ArticleBadge';
 export default {
   name: 'ArticleTag',
   components: {
-    'article-badge': ArticleBadge
+    ArticleBadge
   },
   props: {
     /**

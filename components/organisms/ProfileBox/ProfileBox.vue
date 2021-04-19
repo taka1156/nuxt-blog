@@ -12,9 +12,10 @@ import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
 
 export default {
+  name: 'ProfileBox',
   components: {
-    'base-img': BaseImg,
-    'base-text': BaseText
+    BaseImg,
+    BaseText
   },
   props: {
     profile: {

@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import NavIcon from '../../atoms/BaseNavIcon/BaseNavIcon';
+import BaseNavIcon from '../../atoms/BaseNavIcon/BaseNavIcon';
 
 export default {
   name: 'IndexNav',
   components: {
-    'base-nav-icon': NavIcon
+    BaseNavIcon
   },
   props: {
     /**

@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 import BaseHeading1 from '../../atoms/BaseHeading1/BaseHeading1';
+import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 
 export default {
   name: 'ClassificationTitle',
   components: {
-    'base-img-lazy': BaseImgLazy,
-    'base-heading1': BaseHeading1
+    BaseHeading1,
+    BaseImgLazy
   },
   props: {
     /**

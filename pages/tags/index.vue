@@ -14,8 +14,8 @@ import meta from 'assets/js/mixin/meta.mixin.js';
 export default {
   name: 'Tags',
   components: {
-    'base-heading1': BaseHeading1,
-    'classification-list': ClassificationList
+    BaseHeading1,
+    ClassificationList
   },
   mixins: [meta],
   async asyncData({ $axios, payload }) {

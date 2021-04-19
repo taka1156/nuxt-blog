@@ -25,9 +25,9 @@ import NavBarPc from '../../molecules/NavBarPc/NavBarPc';
 export default {
   name: 'TheNavigation',
   components: {
-    'nav-bar': NavBar,
-    'nav-list': NavList,
-    'nav-bar-pc': NavBarPc
+    NavBar,
+    NavList,
+    NavBarPc
   },
   mixins: [responsive],
   props: {

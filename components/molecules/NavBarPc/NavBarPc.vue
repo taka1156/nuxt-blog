@@ -16,8 +16,8 @@ import NavListPc from '../NavListPc/NavListPc';
 export default {
   name: 'NavBarPc',
   components: {
-    'base-link': BaseLink,
-    'nav-list-pc': NavListPc
+    BaseLink,
+    NavListPc
   },
   props: {
     /**

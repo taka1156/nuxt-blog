@@ -10,6 +10,6 @@ exports[`IndexNavigation 閉じた時のスナップショット 1`] = `
 exports[`IndexNavigation 開いた時のスナップショット 1`] = `
 "<div>
   <index-nav-stub isopen=\\"true\\"></index-nav-stub>
-  <index-list-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object]\\" is-open=\\"true\\"></index-list-stub>
+  <index-list-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object]\\" isopen=\\"true\\"></index-list-stub>
 </div>"
 `;

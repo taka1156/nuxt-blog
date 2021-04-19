@@ -16,8 +16,8 @@ import meta from 'assets/js/mixin/meta.mixin.js';
 export default {
   name: 'ArtcleId',
   components: {
-    'article-header': ArticleHeader,
-    'article-body': ArticleBody
+    ArticleHeader,
+    ArticleBody
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {

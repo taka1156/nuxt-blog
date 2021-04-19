@@ -25,8 +25,8 @@ import { LOGO_TEXT, ROUTES, COPYRIGHT_URL } from '../constants/index.js';
 
 export default {
   components: {
-    'the-navigation': TheNavigation,
-    'the-copyright': TheCopyright
+    TheNavigation,
+    TheCopyright
   },
   data() {
     return {
