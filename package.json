@@ -36,7 +36,7 @@
   "devDependencies": {
     "@babel/core": "7.14.3",
     "@babel/preset-env": "7.14.2",
-    "@nuxtjs/axios": "5.13.4",
+    "@nuxtjs/axios": "5.13.5",
     "@nuxtjs/dotenv": "1.4.1",
     "@storybook/addon-actions": "6.2.9",
     "@storybook/addon-backgrounds": "6.2.9",
