@@ -6392,10 +6392,10 @@ core-js-pure@^3.8.2:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.12.0.tgz#c59d45954a6569232f0704d085916a5e8c3b272f"
   integrity sha512-j2y084taJU4VMUpwuC93l19tsPbTAtOpg6/do3UOwX4eUJbsFdhEaGRQfTYthn5rDubsB88YITtei0Kw46vEQQ==
 
-core-js@3.12.1:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.12.1.tgz#6b5af4ff55616c08a44d386f1f510917ff204112"
-  integrity sha512-Ne9DKPHTObRuB09Dru5AjwKjY4cJHVGu+y5f7coGn1E9Grkc3p2iBwE9AI/nJzsE29mQF7oq+mhYYRqOMFN1Bw==
+core-js@3.13.1:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.13.1.tgz#30303fabd53638892062d8b4e802cac7599e9fb7"
+  integrity sha512-JqveUc4igkqwStL2RTRn/EPFGBOfEZHxJl/8ej1mXJR75V3go2mFF4bmUYkEIT1rveHKnkUlcJX/c+f1TyIovQ==
 
 core-js@3.6.5:
   version "3.6.5"
@@ -7715,10 +7715,10 @@ eslint-config-prettier@8.3.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
   integrity sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==
 
-eslint-plugin-vue@7.9.0:
-  version "7.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.9.0.tgz#f8e83a2a908f4c43fc8304f5401d4ff671f3d560"
-  integrity sha512-2Q0qQp5+5h+pZvJKCbG1/jCRUYrdgAz5BYKGyTlp2NU8mx09u3Hp7PsH6d5qef6ojuPoCXMnrbbDxeoplihrSw==
+eslint-plugin-vue@7.10.0:
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.10.0.tgz#251749aa99e089e085275f011042c6e74189f89a"
+  integrity sha512-xdr6e4t/L2moRAeEQ9HKgge/hFq+w9v5Dj+BA54nTAzSFdUyKLiSOdZaRQjCHMY0Pk2WaQBFH9QiWG60xiC+6A==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -8428,10 +8428,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@9.11.0:
-  version "9.11.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-9.11.0.tgz#a388e8bc66274903b0596551dd9a5956b73ccbb6"
-  integrity sha512-0yd7VVEeg7Iq1tyosLSEB2uhrCyOqQvYfMOQI2gz4hqct0P9grN2iN9UvuR4he60CU6siaTbO26ZGyEGvRfo8A==
+firebase-tools@9.12.1:
+  version "9.12.1"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-9.12.1.tgz#c4676f77f95bbaba0a7399c18c15d7edc633cf7b"
+  integrity sha512-izgpgUiG36UwIV12oBu3X8ndACGsxh2cuREnGgTAoTs6P5OC2nEV3riwAak9eQpkuqHfZ6vEuw5ogSbMNqRIgA==
   dependencies:
     "@google-cloud/pubsub" "^2.7.0"
     "@types/archiver" "^5.1.0"
