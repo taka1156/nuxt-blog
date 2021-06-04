@@ -2177,10 +2177,10 @@
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
 
-"@nuxtjs/axios@5.13.5":
-  version "5.13.5"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.13.5.tgz#eddea8a6b8cc1e758bdd5adaeaa377104ebe6965"
-  integrity sha512-GyeuiseDCwfRGDQH/gK+lngCseZS3SQm3q6xqiVx5xQnzCqokojN3uJkNB0DdHCowBP1aim+mDhu3spzcCnyBg==
+"@nuxtjs/axios@5.13.6":
+  version "5.13.6"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.13.6.tgz#6f4bbd98a3a7799a5d2c0726c6ad2a98aa111881"
+  integrity sha512-XS+pOE0xsDODs1zAIbo95A0LKlilvJi8YW0NoXYuq3/jjxGgWDxizZ6Yx0AIIjZOoGsXJOPc0/BcnSEUQ2mFBA==
   dependencies:
     "@nuxtjs/proxy" "^2.1.0"
     axios "^0.21.1"
@@ -6022,7 +6022,7 @@ core-js-pure@^3.8.2:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.13.1.tgz#5d139d346780f015f67225f45ee2362a6bed6ba1"
   integrity sha512-wVlh0IAi2t1iOEh16y4u1TRk6ubd4KvLE8dlMi+3QUI6SfKphQUh7tAwihGGSQ8affxEXpVIPpOdf9kjR4v4Pw==
 
-core-js@3.13.1:
+core-js@3.13.1, core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2:
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.13.1.tgz#30303fabd53638892062d8b4e802cac7599e9fb7"
   integrity sha512-JqveUc4igkqwStL2RTRn/EPFGBOfEZHxJl/8ej1mXJR75V3go2mFF4bmUYkEIT1rveHKnkUlcJX/c+f1TyIovQ==
@@ -6036,11 +6036,6 @@ core-js@^2.4.0, core-js@^2.6.5:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
-
-core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2:
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.13.1.tgz#30303fabd53638892062d8b4e802cac7599e9fb7"
-  integrity sha512-JqveUc4igkqwStL2RTRn/EPFGBOfEZHxJl/8ej1mXJR75V3go2mFF4bmUYkEIT1rveHKnkUlcJX/c+f1TyIovQ==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
