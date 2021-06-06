@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import IndexNavigation from '@/components/organisms/IndexNavigation/IndexNavigation';
+import IndexNavigation from '../IndexNavigation/IndexNavigation';
 import { markedWrap, tocs } from '@/utils/marked/index.js';
 
 export default {

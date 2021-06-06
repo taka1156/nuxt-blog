@@ -2,7 +2,7 @@
   <div>
     <base-heading1> Category </base-heading1>
     <div class="line" />
-    <classification-list :route-path="'category'" :items="categories" />
+    <classification-list route-path="category" :items="categories" />
   </div>
 </template>
 

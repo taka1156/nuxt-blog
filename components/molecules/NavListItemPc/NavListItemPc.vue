@@ -4,7 +4,7 @@
       <base-link :route-to="navItem.to">
         <div class="nav-item__contents">
           <base-img
-            :size="`sm`"
+            size="sm"
             :img-url="navItem.img"
             :img-alt="`${navItem.name}の画像`"
           />

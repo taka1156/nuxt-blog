@@ -1,6 +1,6 @@
 <template>
   <div class="contribution-box">
-    <base-img :size="`free`" :img-url="imgUrl" :img-alt="imgAlt" />
+    <base-img size="free" :img-url="imgUrl" :img-alt="imgAlt" />
   </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
   width: 85%;
   margin: 0 auto;
   overflow-x: scroll;
-  border: 0.5px solid gray;
+  border: 0.5px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
 }
 </style>

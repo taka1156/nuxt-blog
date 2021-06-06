@@ -5,7 +5,7 @@
         <!-- @slot タグもしくはカテゴリー名 -->
         <slot />
       </base-heading1>
-      <base-img-lazy :size="`lg`" :img-url="imgUrl" :img-alt="`ロゴ`" />
+      <base-img-lazy size="lg" :img-url="imgUrl" img-alt="ロゴ" />
     </div>
     <div class="classification-title__border" />
   </div>
