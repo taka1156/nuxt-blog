@@ -32,7 +32,14 @@ export default {
 
 <style scoped>
 ::v-deep .base-img--extend {
+  width: 100%;
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  ::v-deep .base-img--extend {
+    width: 40%;
+  }
 }
 
 .github-status {
