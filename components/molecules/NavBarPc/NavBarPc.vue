@@ -2,7 +2,7 @@
   <div>
     <div class="nav-bar">
       <div class="nav-bar__box">
-        <base-link :route-to="`/`">{{ logoText }}</base-link>
+        <base-link route-to="/">{{ logoText }}</base-link>
         <nav-list-pc :routes="routes" />
       </div>
     </div>

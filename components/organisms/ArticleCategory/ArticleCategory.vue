@@ -2,7 +2,7 @@
   <div>
     <div class="article-category">
       カテゴリー:
-      <article-badge :route-path="`category-id`" :badge="category" />
+      <article-badge route-path="category-id" :badge="category" />
     </div>
   </div>
 </template>

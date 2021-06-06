@@ -10,7 +10,7 @@
         {{ badge.name }}
       </span>
       <base-img-lazy
-        :size="`sm`"
+        size="sm"
         :img-url="badge.img.url"
         :img-alt="`${badge.name}の画像`"
       />

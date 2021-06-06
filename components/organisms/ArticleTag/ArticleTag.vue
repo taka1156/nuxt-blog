@@ -3,7 +3,7 @@
     <div class="article-tag">
       タグ:&nbsp;
       <div v-for="tag in tags" :key="tag.id">
-        <article-badge :route-path="`tag-id`" :badge="tag" />
+        <article-badge route-path="tag-id" :badge="tag" />
       </div>
     </div>
   </div>

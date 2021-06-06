@@ -57,11 +57,20 @@ const GITHUB_CONTRIBUTION_IMG = {
   imgAlt: "taka1156's Github chart"
 };
 
+const GITHUB_STATUS = {
+  statusUrl:
+    'https://github-readme-stats.vercel.app/api?username=taka1156&count_private=true&theme=vue&show_icons=true&hide_border=true',
+  usedLangUrl:
+    'https://github-readme-stats.vercel.app/api/top-langs/?username=taka1156&layout=compact&theme=vue&hide_border=true',
+  imgAlt: 'github status'
+};
+
 export {
   LOGO_TEXT,
   ROUTES,
   COPYRIGHT_URL,
   SNS_ICONS,
   PROFILE,
-  GITHUB_CONTRIBUTION_IMG
+  GITHUB_CONTRIBUTION_IMG,
+  GITHUB_STATUS
 };
