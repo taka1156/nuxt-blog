@@ -1,6 +1,6 @@
 <template>
   <div class="profile-box">
-    <base-img :size="`free`" :img-url="profile.img" :img-alt="`プロフィール画像`" />
+    <base-img size="free" :img-url="profile.img" img-alt="プロフィール画像" />
     <base-text>
       {{ profile.introduce }}
     </base-text>
@@ -42,7 +42,7 @@ export default {
   font-size: 14px;
   line-height: normal;
   text-align: left;
-  border-left: 0.5px dotted gray;
+  border-left: 0.5px dotted rgba(40, 167, 69, 0.9);
 }
 
 @media screen and (min-width: 768px) {
@@ -58,7 +58,7 @@ export default {
   height: 150px;
   padding: 0;
   margin: 0 auto;
-  border: 0.5px solid gray;
+  border: 0.5px solid rgba(40, 167, 69, 0.9);
   border-radius: 5px;
 }
 </style>

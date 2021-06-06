@@ -8,10 +8,19 @@
     </section>
 
     <section class="contents">
-      <h2 class="contents__heading">githubの活動</h2>
+      <h2 class="contents__heading">Githubの活動</h2>
       <contribution-box
         :img-url="contributionImg.imgUrl"
         :img-alt="contributionImg.imgAlt"
+      />
+    </section>
+
+    <section class="contents">
+      <h2 class="contents__heading">Github Status</h2>
+      <github-status
+        :status-url="githubStatus.statusUrl"
+        :used-lang-url="githubStatus.usedLangUrl"
+        :img-alt="githubStatus.imgAlt"
       />
     </section>
 
@@ -26,9 +35,15 @@
 import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
 import ProfileBox from '@/components/organisms/ProfileBox/ProfileBox';
 import ContributionBox from '@/components/organisms/ContributionBox/ContributionBox';
+import GithubStatus from '@/components/organisms/GithubStatus/GithubStatus';
 import SnsIcons from '@/components/organisms/SnsIcons/SnsIcons';
 import meta from 'assets/js/mixin/meta.mixin.js';
-import { SNS_ICONS, PROFILE, GITHUB_CONTRIBUTION_IMG } from '@/constants/index.js';
+import {
+  SNS_ICONS,
+  PROFILE,
+  GITHUB_CONTRIBUTION_IMG,
+  GITHUB_STATUS
+} from '@/constants/index.js';
 
 export default {
   name: 'Profile',
@@ -36,6 +51,7 @@ export default {
     BaseHeading1,
     ProfileBox,
     ContributionBox,
+    GithubStatus,
     SnsIcons
   },
   mixins: [meta],
@@ -73,7 +89,8 @@ export default {
   computed: {
     profile: () => PROFILE,
     snsIcons: () => SNS_ICONS,
-    contributionImg: () => GITHUB_CONTRIBUTION_IMG
+    contributionImg: () => GITHUB_CONTRIBUTION_IMG,
+    githubStatus: () => GITHUB_STATUS
   }
 };
 </script>

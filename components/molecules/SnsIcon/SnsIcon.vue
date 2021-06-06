@@ -1,7 +1,7 @@
 <template>
   <div class="sns-icon">
     <base-link :route-to="sns.link" :is-target="true">
-      <base-img :size="`lg`" :img-url="sns.img" :img-alt="`${sns.name}アイコン`" />
+      <base-img size="lg" :img-url="sns.img" :img-alt="`${sns.name}アイコン`" />
       {{ sns.name }}
     </base-link>
   </div>

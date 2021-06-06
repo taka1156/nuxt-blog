@@ -2,7 +2,7 @@
   <div>
     <div class="nav-bar">
       <div class="nav-bar__box">
-        <base-link :route-to="`/`">{{ logoText }}</base-link>
+        <base-link route-to="/">{{ logoText }}</base-link>
         <base-nav-icon :is-open="isOpen" @btn-click="changeState">
           {{ isOpen ? 'CLOSE' : 'NAVI' }}
         </base-nav-icon>

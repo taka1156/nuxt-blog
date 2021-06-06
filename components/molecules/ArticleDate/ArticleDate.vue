@@ -2,9 +2,9 @@
   <div>
     <div class="article-date">
       <base-img
-        :size="`sm`"
+        size="sm"
         :img-url="require('@/assets/img/icon/date.svg')"
-        :img-alt="'日付'"
+        img-alt="日付"
       />
       <base-text>
         作成日:{{ formatDate(createdAt) }} ~ 更新日:{{ formatDate(updatedAt) }}

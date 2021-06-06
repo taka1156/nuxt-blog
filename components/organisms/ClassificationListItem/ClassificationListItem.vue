@@ -10,7 +10,7 @@
         <div class="classification-list-item__box">
           <h2>{{ item.name }}</h2>
           <base-img-lazy
-            :size="`lg`"
+            size="lg"
             :img-url="item.img.url"
             :img-alt="`${item.name}のロゴ`"
           />
