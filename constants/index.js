@@ -57,7 +57,7 @@ const GITHUB_CONTRIBUTION_IMG = {
   imgAlt: "taka1156's Github chart"
 };
 
-const GITHUB_STATUS = {
+const GITHUB_STATUS_INFO = {
   statusUrl:
     'https://github-readme-stats.vercel.app/api?username=taka1156&count_private=true&theme=vue&show_icons=true&hide_border=true',
   usedLangUrl:
@@ -72,5 +72,5 @@ export {
   SNS_ICONS,
   PROFILE,
   GITHUB_CONTRIBUTION_IMG,
-  GITHUB_STATUS
+  GITHUB_STATUS_INFO
 };
