@@ -18,9 +18,9 @@
     <section class="contents">
       <h2 class="contents__heading">Github Status</h2>
       <github-status
-        :status-url="githubStatusInfo.statusUrl"
-        :used-lang-url="githubStatusInfo.usedLangUrl"
-        :img-alt="githubStatusInfo.imgAlt"
+        :status-url="githubStatus.statusUrl"
+        :used-lang-url="githubStatus.usedLangUrl"
+        :img-alt="githubStatus.imgAlt"
       />
     </section>
 
@@ -42,7 +42,7 @@ import {
   SNS_ICONS,
   PROFILE,
   GITHUB_CONTRIBUTION_IMG,
-  GITHUB_STATUS_INFO
+  GITHUB_STATUS
 } from '@/constants/index.js';
 
 export default {
@@ -90,7 +90,7 @@ export default {
     profile: () => PROFILE,
     snsIcons: () => SNS_ICONS,
     contributionImg: () => GITHUB_CONTRIBUTION_IMG,
-    githubStatusInfo: () => GITHUB_STATUS_INFO
+    githubStatus: () => GITHUB_STATUS
   }
 };
 </script>
