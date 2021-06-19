@@ -3,6 +3,7 @@
     <!--markdown埋め込み-->
     <div class="article-body markdown-body" v-html="parseMarked" />
     <index-navigation :tocs="tocs" />
+    <hr />
   </div>
 </template>
 

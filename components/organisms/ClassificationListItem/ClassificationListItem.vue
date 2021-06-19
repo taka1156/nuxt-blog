@@ -8,7 +8,7 @@
         }"
       >
         <div class="classification-list-item__box">
-          <h2>{{ item.name }}</h2>
+          <base-heading h-lv="2">{{ item.name }}</base-heading>
           <base-img-lazy
             size="lg"
             :img-url="item.img.url"
@@ -21,12 +21,14 @@
 </template>
 
 <script>
+import BaseHeading from '../../atoms/BaseHeading/BaseHeading';
 import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 
 export default {
   name: 'ClassificationListItem',
   components: {
+    BaseHeading,
     BaseLink,
     BaseImgLazy
   },

@@ -16,6 +16,7 @@
         ]"
       ></span>
       <span class="base-nav-icon__text">
+        <!-- @slot 開閉状態などのテキストを表示 -->
         <slot />
       </span>
     </button>

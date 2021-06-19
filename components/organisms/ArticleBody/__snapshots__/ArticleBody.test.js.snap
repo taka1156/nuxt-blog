@@ -14,6 +14,7 @@ exports[`ArticleBody ArticleBody初期値: article 1`] = `
     <h2 id=\\"anchor_5\\">この文章はダミーです。</h2>
     <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
   </div>
-  <index-navigation-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object]\\"></index-navigation-stub>
+  <index-navigation-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\\"></index-navigation-stub>
+  <hr>
 </div>"
 `;
