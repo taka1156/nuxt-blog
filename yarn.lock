@@ -8132,10 +8132,10 @@ eslint-config-prettier@8.3.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
   integrity sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==
 
-eslint-plugin-vue@7.11.1:
-  version "7.11.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.11.1.tgz#77eb4b44032d5cca79f9af21d06991d8694a314a"
-  integrity sha512-lbw3vkEAGqYjqd1HpPFWHXtYaS8mILTJ5KOpJfRxO3Fo7o0wCf1zD7vSOasbm6nTA9xIgvZQ4VcyGIzQXxznHw==
+eslint-plugin-vue@7.12.1:
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.12.1.tgz#ef6499ce4fe0566659c8e12c71713f5308630a76"
+  integrity sha512-xHf/wCt88qmzqQerjaSteUFGASj7fPreglKD4ijnvoKRkoSJ3/H3kuJE8QFFtc+2wjw6hRDs834HH7vpuTJQzg==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -8823,10 +8823,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@9.13.1:
-  version "9.13.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-9.13.1.tgz#12ec822cb915d46b9e35879c52fee27a8462cc67"
-  integrity sha512-o8sdTxKtZOG1BJ8SmIHLbwJPkp+C25uUWq7Gcu5+Ksc1obHKKa8dYSH2kEC56gXyoGL5vmGdM8UUDTe7oUy4KA==
+firebase-tools@9.14.0:
+  version "9.14.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-9.14.0.tgz#30d837c7ce8454746e69c5bf7e4f3689ae686dcb"
+  integrity sha512-CHR1Xw5LJ+hDQ/SaRqvuNXJEmpbPsOEtNRj6oD44VFGRp9ZTjY3irilSj6uv7S2P1A1XLEGyO7jEpCH5mkc9RQ==
   dependencies:
     "@google-cloud/pubsub" "^2.7.0"
     "@types/archiver" "^5.1.0"
