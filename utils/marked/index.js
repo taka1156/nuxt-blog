@@ -34,7 +34,10 @@ const markedWrap = md => {
   // 初期化
   index = 0;
   tocs = [];
-  return marked(md);
+  const result = marked(md);
+  index++;
+  tocs.push({ index, anchor: 'anchor_relative', escapedText: '関連記事' });
+  return result;
 };
 
 export { tocs, markedWrap };

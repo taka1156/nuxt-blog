@@ -3,7 +3,6 @@
     <classification-title :img-url="category.img.url">
       Category: {{ category.name }}
     </classification-title>
-    <div class="line" />
     <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>
 </template>

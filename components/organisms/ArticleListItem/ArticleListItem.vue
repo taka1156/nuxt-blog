@@ -8,9 +8,9 @@
       />
       <div class="article-list-item__border" />
       <base-link :route-to="{ name: 'article-id', params: { id: article.id } }">
-        <h2 class="article-list-item__heading2">
+        <base-heading h-lv="2">
           {{ article.title }}
-        </h2>
+        </base-heading>
       </base-link>
       <base-text>{{ article.summary }}</base-text>
       <div class="article-list-item__border" />
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import BaseHeading from '../../atoms/BaseHeading/BaseHeading';
 import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseText from '../../atoms/BaseText/BaseText';
 import ArticleCategory from '../ArticleCategory/ArticleCategory';
@@ -29,9 +30,10 @@ import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
 export default {
   name: 'ArticleListItem',
   components: {
-    ArticleCategory,
+    BaseHeading,
     BaseLink,
     BaseText,
+    ArticleCategory,
     ArticleTag,
     ArticleDate
   },
@@ -61,6 +63,11 @@ export default {
   text-align: left;
 }
 
+::v-deep .base-heading2--extend {
+  margin-left: 5px;
+  text-align: left;
+}
+
 .article-list-item {
   display: block;
   padding: 10px;
@@ -72,12 +79,5 @@ export default {
 .article-list-item__border {
   margin: 5px;
   border: 1px solid lightgray;
-}
-
-.article-list-item__heading2 {
-  margin-left: 5px;
-  text-align: left;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 </style>

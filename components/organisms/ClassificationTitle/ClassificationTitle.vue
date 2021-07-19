@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="classification-title">
-      <base-heading1>
+      <base-heading h-lv="1">
         <!-- @slot タグもしくはカテゴリー名 -->
         <slot />
-      </base-heading1>
+      </base-heading>
       <base-img-lazy size="lg" :img-url="imgUrl" img-alt="ロゴ" />
     </div>
     <div class="classification-title__border" />
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import BaseHeading1 from '../../atoms/BaseHeading1/BaseHeading1';
+import BaseHeading from '../../atoms/BaseHeading/BaseHeading';
 import BaseImgLazy from '../../atoms/BaseImgLazy/BaseImgLazy';
 
 export default {
   name: 'ClassificationTitle',
   components: {
-    BaseHeading1,
+    BaseHeading,
     BaseImgLazy
   },
   props: {
