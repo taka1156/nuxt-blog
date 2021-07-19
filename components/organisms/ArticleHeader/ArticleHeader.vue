@@ -6,16 +6,16 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <base-heading1>
+      <base-heading h-lv="1">
         {{ article.title }}
-      </base-heading1>
+      </base-heading>
       <article-tag :tags="article.tags" />
     </div>
   </div>
 </template>
 
 <script>
-import BaseHeading1 from '../../atoms/BaseHeading1/BaseHeading1';
+import BaseHeading from '../../atoms/BaseHeading/BaseHeading';
 import ArticleCategory from '../ArticleCategory/ArticleCategory';
 import ArticleTag from '../ArticleTag/ArticleTag';
 import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
@@ -23,7 +23,7 @@ import ArticleDate from '../../molecules/ArticleDate/ArticleDate';
 export default {
   name: 'ArticleHeader',
   components: {
-    BaseHeading1,
+    BaseHeading,
     ArticleCategory,
     ArticleTag,
     ArticleDate
@@ -47,8 +47,6 @@ export default {
   font-size: 1.75rem;
   color: rgb(40, 167, 69);
   text-align: left;
-  word-break: break-word;
-  overflow-wrap: break-word;
   border-top: 2.5px solid lightgray;
 }
 

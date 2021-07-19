@@ -1,14 +1,14 @@
 <template>
   <div>
-    <base-heading1> Profile </base-heading1>
+    <base-heading h-lv="1"> Profile </base-heading>
 
     <section class="contents">
-      <h2 class="contents__heading">自己紹介</h2>
+      <base-heading h-lv="2">自己紹介</base-heading>
       <profile-box :profile="profile" />
     </section>
 
     <section class="contents">
-      <h2 class="contents__heading">Githubの活動</h2>
+      <base-heading h-lv="2">Githubの活動</base-heading>
       <contribution-box
         :img-url="contributionImg.imgUrl"
         :img-alt="contributionImg.imgAlt"
@@ -16,7 +16,7 @@
     </section>
 
     <section class="contents">
-      <h2 class="contents__heading">Github Status</h2>
+      <base-heading h-lv="2">Github Status</base-heading>
       <github-status
         :status-url="githubStatus.statusUrl"
         :used-lang-url="githubStatus.usedLangUrl"
@@ -25,14 +25,14 @@
     </section>
 
     <section class="contents">
-      <h2 class="contents__heading">SNSやGitHub等</h2>
+      <base-heading h-lv="2">SNSやGitHub等</base-heading>
       <sns-icons :sns-icons="snsIcons" />
     </section>
   </div>
 </template>
 
 <script>
-import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import BaseHeading from '@/components/atoms/BaseHeading/BaseHeading';
 import ProfileBox from '@/components/organisms/ProfileBox/ProfileBox';
 import ContributionBox from '@/components/organisms/ContributionBox/ContributionBox';
 import GithubStatus from '@/components/organisms/GithubStatus/GithubStatus';
@@ -48,7 +48,7 @@ import {
 export default {
   name: 'Profile',
   components: {
-    BaseHeading1,
+    BaseHeading,
     ProfileBox,
     ContributionBox,
     GithubStatus,
@@ -101,11 +101,11 @@ export default {
   border-bottom: 2.5px solid lightgray;
 }
 
-.contents {
-  margin: 1.25em auto 2em;
+::v-deep .base-heading2-extend {
+  font-size: 1.25em;
 }
 
-.contents__heading {
-  font-size: 1.25em;
+.contents {
+  margin: 1.25em auto 2em;
 }
 </style>

@@ -1,20 +1,19 @@
 <template>
   <div>
-    <base-heading1> Category </base-heading1>
-    <div class="line" />
+    <base-heading h-lv="1"> Category </base-heading>
     <classification-list route-path="category" :items="categories" />
   </div>
 </template>
 
 <script>
-import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import BaseHeading from '@/components/atoms/BaseHeading/BaseHeading';
 import ClassificationList from '@/components/organisms/ClassificationList/ClassificationList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'Categories',
   components: {
-    BaseHeading1,
+    BaseHeading,
     ClassificationList
   },
   mixins: [meta],

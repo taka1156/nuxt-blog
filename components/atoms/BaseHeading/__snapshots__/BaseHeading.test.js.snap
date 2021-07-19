@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseImg 値がDOMに反映されているか(h1) 1`] = `
+"<div>
+  <h1 class=\\"base-heading base-heading1--extend\\">ダミーの見出し</h1>
+</div>"
+`;
+
+exports[`BaseImg 値がDOMに反映されているか(h3) 1`] = `
+"<div>
+  <h3 class=\\"base-heading base-heading3--extend\\">ダミーの見出し</h3>
+</div>"
+`;

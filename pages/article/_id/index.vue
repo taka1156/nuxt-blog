@@ -4,6 +4,10 @@
       <!--記事のheader-->
       <article-header :article="article" />
       <article-body :article="article" />
+      <latest-article-list
+        :category="article.category"
+        :related-blogs="article.related_blogs"
+      />
     </div>
   </div>
 </template>
@@ -11,13 +15,15 @@
 <script>
 import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import ArticleBody from '@/components/organisms/ArticleBody/ArticleBody';
+import LatestArticleList from '@/components/organisms/LatestArticleList/LatestArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
   name: 'ArtcleId',
   components: {
     ArticleHeader,
-    ArticleBody
+    ArticleBody,
+    LatestArticleList
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {
@@ -26,13 +32,16 @@ export default {
     }
     // 記事のURL
     const ARTICLE_URL = `${process.env.ARTICLE_URL}/${params.id}`;
+
     const OPTIONS = {
-      fields: 'id,title,summary,body,tags,category,createdAt,updatedAt'
+      fields: 'id,title,summary,body,tags,category,createdAt,updatedAt,related_blogs'
     };
+
     const article = await $axios.$get(ARTICLE_URL, {
       params: { ...OPTIONS },
       headers: { 'X-API-KEY': process.env.MICRO_CMS }
     });
+
     return { article: article };
   },
   data() {

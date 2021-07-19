@@ -7,9 +7,9 @@ exports[`ArticleListItem ArticleListIem初期値: article 1`] = `
     <article-date-stub createdat=\\"2020-07-04T10:53:40.252Z\\" updatedat=\\"2020-07-08T15:15:07.668Z\\"></article-date-stub>
     <div class=\\"article-list-item__border\\"></div>
     <base-link-stub routeto=\\"[object Object]\\">
-      <h2 class=\\"article-list-item__heading2\\">
+      <base-heading-stub hlv=\\"2\\">
         この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています
-      </h2>
+      </base-heading-stub>
     </base-link-stub>
     <base-text-stub>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量</base-text-stub>
     <div class=\\"article-list-item__border\\"></div>

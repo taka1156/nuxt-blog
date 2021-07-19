@@ -1,13 +1,12 @@
 <template>
   <div>
-    <base-heading1> Top </base-heading1>
-    <div class="line" />
+    <base-heading h-lv="1"> Top </base-heading>
     <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>
 </template>
 
 <script>
-import BaseHeading1 from '@/components/atoms/BaseHeading1/BaseHeading1';
+import BaseHeading from '@/components/atoms/BaseHeading/BaseHeading';
 import ArticleList from '@/components/organisms//ArticleList/ArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 const POSTS_PER_PAGE = 5;
@@ -15,7 +14,7 @@ const POSTS_PER_PAGE = 5;
 export default {
   name: 'Top',
   components: {
-    BaseHeading1,
+    BaseHeading,
     ArticleList
   },
   mixins: [meta],

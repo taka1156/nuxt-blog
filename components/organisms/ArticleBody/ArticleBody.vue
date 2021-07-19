@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .article-body {
-  margin: 10px auto;
+  margin: 5px auto;
   text-align: left;
 }
 </style>
