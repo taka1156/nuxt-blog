@@ -3,7 +3,6 @@
     <!--markdown埋め込み-->
     <div class="article-body markdown-body" v-html="parseMarked" />
     <index-navigation :tocs="tocs" />
-    <hr />
   </div>
 </template>
 
@@ -33,7 +32,7 @@ export default {
 
 <style scoped>
 .article-body {
-  margin: 10px auto;
+  margin: 5px auto;
   text-align: left;
 }
 </style>

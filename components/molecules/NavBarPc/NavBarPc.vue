@@ -60,7 +60,7 @@ export default {
 .nav-bar__box {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   height: 85%;
   margin: 0.5em auto;
 }

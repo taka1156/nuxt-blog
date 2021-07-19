@@ -53,8 +53,10 @@ export default {
 
 <style scoped>
 ::v-deep .base-heading2--extend {
+  padding: 0.4em 0.5em;
+  color: #494949;
   text-align: left;
-  border-bottom: 1px solid #eaecef;
+  background: #f4f4f4;
   border-left: 3px solid #28a745;
 }
 

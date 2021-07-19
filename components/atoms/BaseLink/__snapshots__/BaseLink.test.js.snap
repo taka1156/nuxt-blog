@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseLink BaseLink初期値(NuxtLink): Object 1`] = `"<a class=\\"base-link--extend\\">リンクテキスト</a>"`;
+exports[`BaseLink BaseLink初期値(NuxtLink): Object 1`] = `"<a href=\\"\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;
 
-exports[`BaseLink BaseLink初期値(NuxtLink): String 1`] = `"<a class=\\"base-link--extend\\">リンクテキスト</a>"`;
+exports[`BaseLink BaseLink初期値(NuxtLink): String 1`] = `"<a href=\\"\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;
 
-exports[`BaseLink BaseLink初期値(OutSidelink): String 1`] = `"<a href=\\"http://placehold.jp\\" tag=\\"a\\" class=\\"base-link--extend\\">リンクテキスト</a>"`;
+exports[`BaseLink BaseLink初期値(OutSidelink): String 1`] = `"<a to=\\"\\" href=\\"http://placehold.jp\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;

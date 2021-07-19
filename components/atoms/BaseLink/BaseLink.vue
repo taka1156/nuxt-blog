@@ -1,10 +1,9 @@
 <template>
   <component
     :is="isInternalLink ? 'nuxt-link' : 'a'"
-    :to="isInternalLink ? routeTo : false"
-    :href="isInternalLink ? false : routeTo"
-    tag="a"
-    class="base-link--extend"
+    :to="isInternalLink ? routeTo : ''"
+    :href="isInternalLink ? '' : routeTo"
+    class="base-link--extend base-link"
     v-bind="isTarget ? { target: '_blank', rel: 'noopener noreferrer' } : false"
   >
     <!-- @slot リンクのクリックに指定したいもの -->
