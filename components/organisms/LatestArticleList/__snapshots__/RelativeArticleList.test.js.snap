@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`githubStatus RelativeArticleList初期値: imgUrl, imgAlt 1`] = `
+"<div class=\\"relative-article-list\\">
+  <div>
+    <base-heading-stub hlv=\\"2\\" id=\\"anchor_relative\\">
+      関連記事:
+    </base-heading-stub>
+  </div>
+  <div class=\\"relative-article-list__box\\">
+    <div>
+      <base-link-stub routeto=\\"[object Object]\\">
+        <base-heading-stub hlv=\\"3\\">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています</base-heading-stub>
+      </base-link-stub>
+    </div>
+    <div>
+      <base-link-stub routeto=\\"[object Object]\\">
+        <base-heading-stub hlv=\\"3\\">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています</base-heading-stub>
+      </base-link-stub>
+    </div>
+  </div>
+</div>"
+`;

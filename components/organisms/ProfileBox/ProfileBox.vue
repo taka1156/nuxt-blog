@@ -38,7 +38,8 @@ export default {
 ::v-deep .base-text--extend {
   width: 75%;
   height: 90%;
-  margin: auto 0 auto 0;
+  padding: 10px;
+  margin: auto 0;
   font-size: 14px;
   line-height: normal;
   text-align: left;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`githubStatus GithubStatus初期値: imgUrl, imgAlt 1`] = `
+"<div class=\\"github-status\\">
+  <base-img-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミーの画像\\" size=\\"free\\"></base-img-stub>
+  <base-img-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミーの画像\\" size=\\"free\\"></base-img-stub>
+</div>"
+`;

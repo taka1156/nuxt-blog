@@ -4,7 +4,7 @@
       <!--記事のheader-->
       <article-header :article="article" />
       <article-body :article="article" />
-      <latest-article-list
+      <relative-article-list
         :category="article.category"
         :related-blogs="article.related_blogs"
       />
@@ -15,7 +15,7 @@
 <script>
 import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import ArticleBody from '@/components/organisms/ArticleBody/ArticleBody';
-import LatestArticleList from '@/components/organisms/LatestArticleList/LatestArticleList';
+import RelativeArticleList from '@/components/organisms/LatestArticleList/RelativeArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   components: {
     ArticleHeader,
     ArticleBody,
-    LatestArticleList
+    RelativeArticleList
   },
   mixins: [meta],
   async asyncData({ $axios, params, payload }) {

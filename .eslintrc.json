@@ -24,6 +24,7 @@
     "eqeqeq": [2, "always", {"null": "ignore"}],
     "prefer-const": 2,
     "vue/component-name-in-template-casing": "off",
-    "vue/no-v-html": "off"
+    "vue/no-v-html": "off",
+    "vue/script-setup-uses-vars": "off"
   }
 }

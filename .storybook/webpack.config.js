@@ -25,7 +25,7 @@ module.exports = ({ config }) => {
     loader: 'url-loader',
   });
 
-  config.resolve.extensions = ['.js', '.vue', '.json']
+  config.resolve.extensions = ['.mixin.js', '.js', '.vue', '.json']
   config.resolve.alias['~'] = rootPath
   config.resolve.alias['@'] = rootPath
 
