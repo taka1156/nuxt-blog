@@ -64,7 +64,13 @@ main {
 
 @media screen and (min-width: 768px) {
   main {
-    width: 80vw;
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main {
+    width: 50vw;
   }
 }
 

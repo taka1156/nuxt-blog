@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="article-date">
-      <base-img
-        size="sm"
-        :img-url="require('@/assets/img/icon/date.svg')"
-        img-alt="日付"
-      />
+      <base-img size="sm" :img-url="dateIcon" img-alt="日付" />
       <base-text>
         作成日:{{ formatDate(createdAt) }} ~ 更新日:{{ formatDate(updatedAt) }}
       </base-text>
@@ -16,6 +12,7 @@
 <script>
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
+import dateSvg from '@/assets/img/icon/date.svg';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
 dayjs.locale('ja');
@@ -41,6 +38,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  computed: {
+    dateIcon: () => dateSvg
   },
   methods: {
     formatDate(date = null) {

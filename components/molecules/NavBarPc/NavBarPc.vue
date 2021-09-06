@@ -60,8 +60,14 @@ export default {
 .nav-bar__box {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 70%;
   height: 85%;
   margin: 0.5em auto;
+}
+
+@media screen and (min-width: 1600px) {
+  .nav-bar__box {
+    width: 50%;
+  }
 }
 </style>

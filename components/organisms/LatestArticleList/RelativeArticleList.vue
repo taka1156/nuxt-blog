@@ -1,11 +1,11 @@
 <template>
-  <div class="latest-articles">
+  <div class="relative-article-list">
     <div>
       <base-heading id="anchor_relative" h-lv="2">
         関連記事: {{ category.name }}
       </base-heading>
     </div>
-    <div v-if="relatedBlogs.length !== 0" class="latest-articles__box">
+    <div v-if="relatedBlogs.length !== 0" class="relative-article-list__box">
       <div v-for="relatedBlog in relatedBlogs" :key="relatedBlog.id">
         <base-link
           :route-to="{ name: 'article-id', params: { id: relatedBlog.id } }"
@@ -26,7 +26,7 @@ import BaseHeading from '../../atoms/BaseHeading/BaseHeading';
 import BaseLink from '../../atoms/BaseLink/BaseLink';
 
 export default {
-  name: 'LatestArticleList',
+  name: 'RelativeArticleList',
   components: {
     BaseText,
     BaseHeading,
@@ -71,11 +71,11 @@ export default {
   text-align: left;
 }
 
-.latest-articles {
+.relative-article-list {
   margin-bottom: 30px;
 }
 
-.latest-articles__box {
+.relative-article-list__box {
   display: flex;
   flex-direction: column;
 }
