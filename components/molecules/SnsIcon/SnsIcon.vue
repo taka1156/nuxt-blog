@@ -30,6 +30,7 @@ export default {
 ::v-deep .base-link--extend {
   display: block;
   margin: 0 auto;
+  color: #28a745;
 }
 
 .sns-icon {

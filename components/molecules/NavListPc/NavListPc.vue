@@ -37,7 +37,7 @@ li {
 .nav-list {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-around;
   width: 70%;
   padding: 0;
   margin: 0;
