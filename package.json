@@ -38,7 +38,7 @@
     "@babel/plugin-proposal-class-properties": "7.16.7",
     "@babel/plugin-proposal-private-methods": "7.16.7",
     "@babel/plugin-proposal-private-property-in-object": "7.16.7",
-    "@babel/preset-env": "7.16.7",
+    "@babel/preset-env": "7.16.8",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/dotenv": "1.4.1",
     "@storybook/addon-actions": "6.4.9",
