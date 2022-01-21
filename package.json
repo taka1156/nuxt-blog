@@ -34,11 +34,11 @@
     "vue-scrollto": "2.20.0"
   },
   "devDependencies": {
-    "@babel/core": "7.16.7",
+    "@babel/core": "7.16.10",
     "@babel/plugin-proposal-class-properties": "7.16.7",
-    "@babel/plugin-proposal-private-methods": "7.16.7",
+    "@babel/plugin-proposal-private-methods": "7.16.11",
     "@babel/plugin-proposal-private-property-in-object": "7.16.7",
-    "@babel/preset-env": "7.16.8",
+    "@babel/preset-env": "7.16.11",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/dotenv": "1.4.1",
     "@storybook/addon-actions": "6.4.13",
