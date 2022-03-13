@@ -48,7 +48,7 @@ export default {
   justify-content: center;
   width: 85%;
   margin: 0 auto;
-  border: 0.5px solid rgba(40, 167, 69, 0.9);
+  border: 0.5px solid rgb(40 167 69 / 90%);
   border-radius: 5px;
 }
 </style>

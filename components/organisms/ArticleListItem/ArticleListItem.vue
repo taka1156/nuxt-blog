@@ -51,11 +51,11 @@ export default {
 
 <style scoped>
 ::v-deep .base-link--extend {
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
 }
 
 ::v-deep .base-link--extend:hover {
-  color: rgba(70, 129, 84, 0.9);
+  color: rgb(70 129 84 / 90%);
 }
 
 ::v-deep .base-text--extend {
@@ -72,7 +72,7 @@ export default {
   display: block;
   padding: 10px;
   margin: 10px;
-  border: 1px solid rgb(40, 167, 69);
+  border: 1px solid rgb(40 167 69);
   border-radius: 5px;
 }
 

@@ -33,9 +33,9 @@ export default {
 ::v-deep .article-badge--extend {
   width: 100px;
   margin: 2px;
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
   background-color: transparent;
-  border: 1px solid rgb(40, 167, 69);
+  border: 1px solid rgb(40 167 69);
 }
 
 .article-tag {

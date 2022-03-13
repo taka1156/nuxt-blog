@@ -70,7 +70,7 @@ li {
   height: 250px;
   overflow-y: scroll;
   background-color: white;
-  border: 1px solid rgba(40, 167, 69, 0.9);
+  border: 1px solid rgb(40 167 69 / 90%);
 }
 
 .index-list__box {
@@ -78,7 +78,7 @@ li {
 }
 
 .index-list__title {
-  color: rgba(40, 167, 69, 0.9);
+  color: rgb(40 167 69 / 90%);
   text-align: center;
 }
 

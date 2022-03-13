@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 ::v-deep .base-text--extend {
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
 }
 
 .article-date {

@@ -46,6 +46,6 @@ li {
 .nav-list__item {
   width: 20%;
   padding: 0;
-  margin: 0 1px 0 1px;
+  margin: 0 1px;
 }
 </style>

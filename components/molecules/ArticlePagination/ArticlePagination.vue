@@ -78,7 +78,7 @@ export default {
 ::v-deep .base-link--extend {
   padding: 10px;
   font-size: 20px;
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
   background: transparent;
   border: none;
 }
@@ -86,7 +86,7 @@ export default {
 ::v-deep .base-text--extend {
   padding: 10px;
   font-size: 20px;
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
 }
 
 .article-pagination {

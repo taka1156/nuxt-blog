@@ -1,4 +1,4 @@
-import marked from 'marked';
+import { marked } from 'marked';
 import { highlight as hljs } from './highlight.js';
 
 // highlight.js

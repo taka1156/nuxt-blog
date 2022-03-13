@@ -48,6 +48,6 @@ export default {
   height: 55px;
   padding: 0;
   margin: auto;
-  background-color: rgba(40, 167, 69, 0.9);
+  background-color: rgb(40 167 69 / 90%);
 }
 </style>
