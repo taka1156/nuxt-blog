@@ -61,7 +61,7 @@ export default {
 }
 
 ::v-deep .base-heading3--extend {
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
   text-align: left;
   border-bottom: 1px solid #eaecef;
 }

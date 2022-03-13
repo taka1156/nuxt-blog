@@ -56,8 +56,7 @@ export default {
   color: #47494e;
   text-align: center;
   background: #f7f8fb;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
 </style>
