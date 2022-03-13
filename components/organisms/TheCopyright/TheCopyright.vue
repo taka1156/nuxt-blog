@@ -2,7 +2,8 @@
   <div>
     <div class="the-copyright">
       <base-text>
-        &copy; 2019 taka1156 <br />使用素材、プライバシーポリシー等は
+        &copy; 2019 - {{ latestYear }} taka1156
+        <br />使用素材、プライバシーポリシー等は
         <base-link :route-to="copyrightUrl" :is-target="true">コチラ</base-link>
       </base-text>
     </div>
@@ -27,6 +28,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      latestYear: new Date().getFullYear()
+    };
   }
 };
 </script>
