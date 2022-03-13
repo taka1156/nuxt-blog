@@ -15,7 +15,7 @@
 <script>
 import ArticleHeader from '@/components/organisms/ArticleHeader/ArticleHeader';
 import ArticleBody from '@/components/organisms/ArticleBody/ArticleBody';
-import RelativeArticleList from '@/components/organisms/LatestArticleList/RelativeArticleList';
+import RelativeArticleList from '@/components/organisms/RelativeArticleList/RelativeArticleList';
 import meta from 'assets/js/mixin/meta.mixin.js';
 
 export default {
