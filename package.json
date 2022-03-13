@@ -18,6 +18,7 @@
     "generate": "nuxt generate",
     "test": "jest",
     "test:cov": "jest --coverage",
+    "cy": "cypress run",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook --no-dll"
   },
@@ -58,8 +59,10 @@
     "babel-preset-vue": "2.0.2",
     "core-js": "3.21.1",
     "css-loader": "5.2.7",
+    "cypress": "^9.5.1",
     "eslint": "8.10.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "8.5.0",
     "firebase-tools": "10.2.2",
     "jest": "26.6.3",

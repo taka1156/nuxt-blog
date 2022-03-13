@@ -18,7 +18,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: "12.x"
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -37,8 +37,15 @@ jobs:
 
       - name: test
         env:
-          TZ: 'Asia/Tokyo'
+          TZ: "Asia/Tokyo"
         run: yarn test
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@latest
+        if: failure()
+        with:
+          name: cypress-snapshots
+          path: cypress/snapshots
 
       # Storybookをビルド
       - name: build Storybook
