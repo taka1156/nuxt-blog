@@ -1,16 +1,10 @@
 {
   "parserOptions": {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "sourceType": "module"
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:vue/recommended",
-    "prettier"
-  ],
-  "plugins": [
-    "vue"
-  ],
+  "extends": ["eslint:recommended", "plugin:vue/recommended", "prettier"],
+  "plugins": ["vue"],
   "env": {
     "jest": true,
     "browser": true,
@@ -19,12 +13,20 @@
   },
   "globals": {},
   "rules": {
-    "camelcase": [2,{"properties": "always"}],
-    "quotes": [2,"single", { "avoidEscape": true } ],
-    "eqeqeq": [2, "always", {"null": "ignore"}],
+    "camelcase": [2, { "properties": "always" }],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "eqeqeq": [2, "always", { "null": "ignore" }],
     "prefer-const": 2,
     "vue/component-name-in-template-casing": "off",
     "vue/no-v-html": "off",
     "vue/script-setup-uses-vars": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["pages/**/*.vue", "layouts/**/*.vue"],
+      "rules": {
+        "vue/multi-word-component-names": "off"
+      }
+    }
+  ]
 }
