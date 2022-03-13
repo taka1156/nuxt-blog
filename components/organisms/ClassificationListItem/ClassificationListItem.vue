@@ -65,7 +65,7 @@ export default {
   padding: 10px;
   margin: 10px;
   cursor: pointer;
-  border: 1px solid rgb(40, 167, 69);
+  border: 1px solid rgb(40 167 69);
   border-radius: 5px;
 }
 

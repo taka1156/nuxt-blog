@@ -31,7 +31,7 @@ export default {
 ::v-deep .article-badge--extend {
   width: 130px;
   color: white;
-  background-color: rgb(40, 167, 69);
+  background-color: rgb(40 167 69);
   border: 0;
 }
 

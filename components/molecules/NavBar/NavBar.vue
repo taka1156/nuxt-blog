@@ -66,7 +66,7 @@ export default {
   z-index: 2;
   width: 100%;
   height: 60px;
-  background-color: rgba(40, 167, 69, 0.9);
+  background-color: rgb(40 167 69 / 90%);
 }
 
 .nav-bar__box {

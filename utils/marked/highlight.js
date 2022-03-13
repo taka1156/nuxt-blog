@@ -1,8 +1,7 @@
 import highlight from 'highlight.js/lib/core';
-import 'highlight.js/styles/github-gist.css';
+import 'highlight.js/styles/github.css';
 
 import markdown from 'highlight.js/lib/languages/markdown';
-import htmlbars from 'highlight.js/lib/languages/htmlbars';
 import css from 'highlight.js/lib/languages/css';
 import scss from 'highlight.js/lib/languages/scss';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -31,7 +30,6 @@ import xml from 'highlight.js/lib/languages/xml';
 
 // マークアップ、 スタイルシート
 highlight.registerLanguage('markdown', markdown);
-highlight.registerLanguage('htmlbars', htmlbars);
 highlight.registerLanguage('css', css);
 highlight.registerLanguage('scss', scss);
 // プログラミング言語

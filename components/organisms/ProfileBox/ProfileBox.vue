@@ -43,7 +43,7 @@ export default {
   font-size: 14px;
   line-height: normal;
   text-align: left;
-  border-left: 0.5px dotted rgba(40, 167, 69, 0.9);
+  border-left: 0.5px dotted rgb(40 167 69 / 90%);
 }
 
 @media screen and (min-width: 768px) {
@@ -59,7 +59,7 @@ export default {
   height: 150px;
   padding: 0;
   margin: 0 auto;
-  border: 0.5px solid rgba(40, 167, 69, 0.9);
+  border: 0.5px solid rgb(40 167 69 / 90%);
   border-radius: 5px;
 }
 </style>
