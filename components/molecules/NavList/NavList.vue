@@ -67,7 +67,7 @@ li {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(40, 167, 69, 0.9);
+  background-color: rgb(40 167 69 / 90%);
 }
 
 /* nav-contentsのアニメーション */

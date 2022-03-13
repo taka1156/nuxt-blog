@@ -109,7 +109,7 @@ button {
   display: block;
   width: 50px;
   height: 10px;
-  margin: 30px auto 0 auto;
+  margin: 30px auto 0;
   font-size: 10px;
   color: white;
 }

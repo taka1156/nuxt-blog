@@ -42,10 +42,10 @@ export default {
 
 <style scoped>
 ::v-deep .base-heading1--extend {
-  padding: 10px 0 0 0;
+  padding: 10px 0 0;
   margin-left: 5px;
   font-size: 1.75rem;
-  color: rgb(40, 167, 69);
+  color: rgb(40 167 69);
   text-align: left;
   border-top: 2.5px solid lightgray;
 }
