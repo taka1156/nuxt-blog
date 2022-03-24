@@ -18,7 +18,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: "12.x"
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -37,7 +37,7 @@ jobs:
 
       - name: test
         env:
-          TZ: 'Asia/Tokyo'
+          TZ: "Asia/Tokyo"
         run: yarn test
 
       # Storybookをビルド
@@ -56,3 +56,13 @@ jobs:
           TAG_URL: ${{ secrets.TAG_URL }}
           CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
         run: yarn generate
+
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "develop"
+          description: "develop branch test"
+          nofail: false
+          nodetail: false
