@@ -19,7 +19,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: "12.x"
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -35,13 +35,13 @@ jobs:
 
       - name: test
         env:
-          TZ: 'Asia/Tokyo'
+          TZ: "Asia/Tokyo"
         run: yarn test:cov
 
       - uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: 'coverage/lcov.info'
+          path-to-lcov: "coverage/lcov.info"
 
       # Storybookをgithub pagesにホスティング
       - name: build Storybook
@@ -70,3 +70,16 @@ jobs:
         run: yarn firebase deploy --only hosting:production --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "production"
+          description: |
+            Please Check:
+            - [Storybook](https://taka1156.github.io/nuxt-blog/)
+            - [Production](https://blog.taka1156.site)
+          nofail: false
+          nodetail: false

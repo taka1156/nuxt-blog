@@ -63,3 +63,13 @@ jobs:
           TAG_URL: ${{ secrets.TAG_URL }}
           CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
         run: yarn generate
+
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "develop"
+          description: "develop branch test"
+          nofail: false
+          nodetail: false
