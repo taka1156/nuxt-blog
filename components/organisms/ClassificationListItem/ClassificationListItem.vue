@@ -8,7 +8,7 @@
         }"
       >
         <div class="classification-list-item__box">
-          <base-heading h-lv="2">{{ item.name }}</base-heading>
+          <base-heading :h-lv="2">{{ item.name }}</base-heading>
           <base-img-lazy
             size="lg"
             :img-url="item.img.url"

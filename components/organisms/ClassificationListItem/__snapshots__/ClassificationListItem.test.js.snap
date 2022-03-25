@@ -6,7 +6,7 @@ exports[`ClassificationListItem ClassificationListItem初期値(Cateogry): item,
     <base-link-stub routeto=\\"[object Object]\\">
       <div class=\\"classification-list-item__box\\">
         <base-heading-stub hlv=\\"2\\">ダミーカテゴリー</base-heading-stub>
-        <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミーカテゴリーのロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
+        <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ダミーカテゴリーのロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
       </div>
     </base-link-stub>
   </article>
@@ -19,7 +19,7 @@ exports[`ClassificationListItem ClassificationListItem初期値(Tag): item, rout
     <base-link-stub routeto=\\"[object Object]\\">
       <div class=\\"classification-list-item__box\\">
         <base-heading-stub hlv=\\"2\\">ダミータグ</base-heading-stub>
-        <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミータグのロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
+        <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ダミータグのロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
       </div>
     </base-link-stub>
   </article>

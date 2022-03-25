@@ -1,7 +1,7 @@
 <template>
   <div class="relative-article-list">
     <div>
-      <base-heading id="anchor_relative" h-lv="2">
+      <base-heading id="anchor_relative" :h-lv="2">
         関連記事: {{ category.name }}
       </base-heading>
     </div>
@@ -10,7 +10,7 @@
         <base-link
           :route-to="{ name: 'article-id', params: { id: relatedBlog.id } }"
         >
-          <base-heading h-lv="3">{{ relatedBlog.title }}</base-heading>
+          <base-heading :h-lv="3">{{ relatedBlog.title }}</base-heading>
         </base-link>
       </div>
     </div>

@@ -3,7 +3,15 @@ import { dummyDate } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/ArticleDate',
-  component: ArticleDate
+  component: ArticleDate,
+  argTypes: {
+    createdAt: {
+      control: 'date'
+    },
+    updatedAt: {
+      control: 'date'
+    }
+  }
 };
 
 const Template = (args, { argTypes }) => ({
@@ -13,4 +21,4 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = dummyDate;
+Default.args = { ...dummyDate };

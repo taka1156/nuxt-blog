@@ -8,7 +8,7 @@
       />
       <div class="article-list-item__border" />
       <base-link :route-to="{ name: 'article-id', params: { id: article.id } }">
-        <base-heading h-lv="2">
+        <base-heading :h-lv="2">
           {{ article.title }}
         </base-heading>
       </base-link>

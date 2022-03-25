@@ -13,15 +13,9 @@ module.exports = ({ config }) => {
       return rule;
     }
   });
-  
-  config.module.rules.push({
-    test: /\.vue$/,
-    loader: 'storybook-addon-vue-info/loader',
-    enforce: 'post',
-  });
 
   config.module.rules.push({
-    test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+    test: /\.(jpg|png|otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
     loader: 'url-loader',
   });
 
