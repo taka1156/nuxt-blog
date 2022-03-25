@@ -7,28 +7,28 @@ exports[`NavList isOpenがfalseの時に\`.nav-list\`が非表示 1`] = `
       <ul>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー1</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー2</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー3</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー4</p>
               </a></div>
           </div>
@@ -46,28 +46,28 @@ exports[`NavList isOpenがtrueの時に\`.nav-list\`が表示 1`] = `
       <ul>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー1</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー2</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー3</p>
               </a></div>
           </div>
         </li>
         <li>
           <div>
-            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--lg\\">
+            <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--lg\\">
                 <p class=\\"base-text--extend\\">ダミー4</p>
               </a></div>
           </div>

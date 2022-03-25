@@ -5,7 +5,7 @@ exports[`ArticleBadge ArticleBadge初期値(Category): badge 1`] = `
   <div class=\\"article-badge article-badge--extend\\"><span class=\\"article-badge__text\\">
       ダミーカテゴリー
     </span>
-    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミーカテゴリーの画像\\" size=\\"sm\\"></base-img-lazy-stub>
+    <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ダミーカテゴリーの画像\\" size=\\"sm\\"></base-img-lazy-stub>
   </div>
 </base-link-stub>"
 `;
@@ -15,7 +15,7 @@ exports[`ArticleBadge ArticleBadge初期値(Tag): badge 1`] = `
   <div class=\\"article-badge article-badge--extend\\"><span class=\\"article-badge__text\\">
       ダミータグ
     </span>
-    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ダミータグの画像\\" size=\\"sm\\"></base-img-lazy-stub>
+    <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ダミータグの画像\\" size=\\"sm\\"></base-img-lazy-stub>
   </div>
 </base-link-stub>"
 `;

@@ -19,10 +19,10 @@ export default {
      * headingレベル(1~6)
      */
     hLv: {
-      type: String,
+      type: Number,
       required: true,
-      validator: function (value) {
-        return [1, 2, 3, 4, 5, 6].indexOf(Number(value)) !== -1;
+      validator: function (v) {
+        return [1, 2, 3, 4, 5, 6].indexOf(v) !== -1;
       }
     }
   }

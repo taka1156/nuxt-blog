@@ -5,7 +5,7 @@ exports[`NavList 値がDOMに反映されているか 1`] = `
   <li class=\\"nav-list__item\\">
     <div>
       <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\">
-          <div class=\\"nav-item__contents\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--sm\\">
+          <div class=\\"nav-item__contents\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー1の画像\\" class=\\"base-img--extend base-img--sm\\">
             <p class=\\"base-text--extend\\">ダミー1</p>
           </div>
         </a></div>
@@ -14,7 +14,7 @@ exports[`NavList 値がDOMに反映されているか 1`] = `
   <li class=\\"nav-list__item\\">
     <div>
       <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\">
-          <div class=\\"nav-item__contents\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--sm\\">
+          <div class=\\"nav-item__contents\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー2の画像\\" class=\\"base-img--extend base-img--sm\\">
             <p class=\\"base-text--extend\\">ダミー2</p>
           </div>
         </a></div>
@@ -23,7 +23,7 @@ exports[`NavList 値がDOMに反映されているか 1`] = `
   <li class=\\"nav-list__item\\">
     <div>
       <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\">
-          <div class=\\"nav-item__contents\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--sm\\">
+          <div class=\\"nav-item__contents\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー3の画像\\" class=\\"base-img--extend base-img--sm\\">
             <p class=\\"base-text--extend\\">ダミー3</p>
           </div>
         </a></div>
@@ -32,7 +32,7 @@ exports[`NavList 値がDOMに反映されているか 1`] = `
   <li class=\\"nav-list__item\\">
     <div>
       <div class=\\"nav-item\\"><a href=\\"\\" class=\\"base-link--extend base-link\\">
-          <div class=\\"nav-item__contents\\"><img src=\\"http://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--sm\\">
+          <div class=\\"nav-item__contents\\"><img src=\\"https://placehold.jp/150x150.png\\" alt=\\"ダミー4の画像\\" class=\\"base-img--extend base-img--sm\\">
             <p class=\\"base-text--extend\\">ダミー4</p>
           </div>
         </a></div>

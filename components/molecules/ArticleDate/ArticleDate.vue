@@ -43,8 +43,8 @@ export default {
     dateIcon: () => dateSvg
   },
   methods: {
-    formatDate(date = null) {
-      if (date == null) return '--/--/--';
+    formatDate(date = '') {
+      if (date === '') return '--/--/--';
       return dayjs(date).format('YYYY/M/D');
     }
   }
