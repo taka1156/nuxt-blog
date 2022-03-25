@@ -11,7 +11,7 @@ describe('BaseImg', () => {
     });
 
   it('値がDOMに反映されているか(h1)', () => {
-    const wrapper = baseHeading({ hLv: '1' });
+    const wrapper = baseHeading({ hLv: 1 });
     const hTag = wrapper.find('h1');
     expect(hTag.text()).toBe('ダミーの見出し');
     // スナップショット
@@ -19,7 +19,7 @@ describe('BaseImg', () => {
   });
 
   it('値がDOMに反映されているか(h3)', () => {
-    const wrapper = baseHeading({ hLv: '3' });
+    const wrapper = baseHeading({ hLv: 3 });
     const hTag = wrapper.find('h3');
     expect(hTag.text()).toBe('ダミーの見出し');
     // スナップショット

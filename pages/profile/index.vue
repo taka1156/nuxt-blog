@@ -1,14 +1,14 @@
 <template>
   <div>
-    <base-heading h-lv="1"> Profile </base-heading>
+    <base-heading :h-lv="1"> Profile </base-heading>
 
     <section class="contents">
-      <base-heading h-lv="2">自己紹介</base-heading>
+      <base-heading :h-lv="2">自己紹介</base-heading>
       <profile-box :profile="profile" />
     </section>
 
     <section class="contents">
-      <base-heading h-lv="2">Githubの活動</base-heading>
+      <base-heading :h-lv="2">Githubの活動</base-heading>
       <contribution-box
         :img-url="contributionImg.imgUrl"
         :img-alt="contributionImg.imgAlt"
@@ -16,7 +16,7 @@
     </section>
 
     <section class="contents">
-      <base-heading h-lv="2">Github Status</base-heading>
+      <base-heading :h-lv="2">Github Status</base-heading>
       <github-status
         :status-url="githubStatus.statusUrl"
         :used-lang-url="githubStatus.usedLangUrl"
@@ -25,7 +25,7 @@
     </section>
 
     <section class="contents">
-      <base-heading h-lv="2">SNSやGitHub等</base-heading>
+      <base-heading :h-lv="2">SNSやGitHub等</base-heading>
       <sns-icons :sns-icons="snsIcons" />
     </section>
   </div>

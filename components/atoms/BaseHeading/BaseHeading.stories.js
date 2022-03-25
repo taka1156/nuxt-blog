@@ -2,15 +2,7 @@ import BaseHeading from './BaseHeading.vue';
 
 export default {
   title: 'atoms/BaseHeading',
-  component: BaseHeading,
-  argTypes: {
-    hLv: {
-      control: {
-        type: 'inline-radio',
-        options: ['1', '2', '3', '4', '5', '6']
-      }
-    }
-  }
+  component: BaseHeading
 };
 
 const Template = (args, { argTypes }) => ({

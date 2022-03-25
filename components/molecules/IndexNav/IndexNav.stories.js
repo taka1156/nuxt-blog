@@ -2,14 +2,7 @@ import IndexNav from './IndexNav.vue';
 
 export default {
   title: 'Molecules/IndexNav',
-  component: IndexNav,
-  argTypes: {
-    isOpen: {
-      control: {
-        type: 'boolean'
-      }
-    }
-  }
+  component: IndexNav
 };
 
 const Template = (args, { argTypes }) => ({

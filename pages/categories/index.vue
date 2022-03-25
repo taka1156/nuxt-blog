@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-heading h-lv="1"> Category </base-heading>
+    <base-heading :h-lv="1"> Category </base-heading>
     <classification-list route-path="category" :items="categories" />
   </div>
 </template>
