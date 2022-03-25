@@ -4,7 +4,7 @@ exports[`ClassificationTitle ClassificationTitle初期値(category): imgUrl 1`] 
 "<div>
   <div class=\\"classification-title\\">
     <base-heading-stub hlv=\\"1\\"></base-heading-stub>
-    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
+    <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
   </div>
   <div class=\\"classification-title__border\\"></div>
 </div>"
@@ -14,7 +14,7 @@ exports[`ClassificationTitle ClassificationTitle初期値(tag): imgUrl 1`] = `
 "<div>
   <div class=\\"classification-title\\">
     <base-heading-stub hlv=\\"1\\"></base-heading-stub>
-    <base-img-lazy-stub imgurl=\\"http://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
+    <base-img-lazy-stub imgurl=\\"https://placehold.jp/150x150.png\\" imgalt=\\"ロゴ\\" size=\\"lg\\"></base-img-lazy-stub>
   </div>
   <div class=\\"classification-title__border\\"></div>
 </div>"

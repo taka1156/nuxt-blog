@@ -3,14 +3,7 @@ import { dummyLogo } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/NavBar',
-  component: NavBar,
-  argTypes: {
-    isOpen: {
-      control: {
-        type: 'boolean'
-      }
-    }
-  }
+  component: NavBar
 };
 
 const Template = (args, { argTypes }) => ({

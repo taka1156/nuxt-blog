@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-heading h-lv="1"> Top </base-heading>
+    <base-heading :h-lv="1"> Top </base-heading>
     <article-list :articles="articles" :max-page="maxPage" :route-path="routePath" />
   </div>
 </template>

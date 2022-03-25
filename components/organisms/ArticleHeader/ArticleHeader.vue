@@ -6,7 +6,7 @@
         :created-at="article.createdAt"
         :updated-at="article.updatedAt"
       />
-      <base-heading h-lv="1">
+      <base-heading :h-lv="1">
         {{ article.title }}
       </base-heading>
       <article-tag :tags="article.tags" />
