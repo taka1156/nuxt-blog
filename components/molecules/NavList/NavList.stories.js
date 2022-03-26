@@ -3,14 +3,7 @@ import { dummyRoutes } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/NavList',
-  component: NavList,
-  argTypes: {
-    isOpen: {
-      control: {
-        type: 'boolean'
-      }
-    }
-  }
+  component: NavList
 };
 
 const Template = (args, { argTypes }) => ({

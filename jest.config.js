@@ -13,5 +13,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'json', 'vue'],
   testMatch: [
     '**/tests/**/*.(test|spec).js|**/__tests__/**/*.(test|spec).js|**/**/*.(test|spec).js'
-  ]
+  ],
+  testEnvironment: 'jsdom'
 };

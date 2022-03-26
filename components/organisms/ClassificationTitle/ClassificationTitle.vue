@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="classification-title">
-      <base-heading h-lv="1">
+      <base-heading :h-lv="1">
         <!-- @slot タグもしくはカテゴリー名 -->
         <slot />
       </base-heading>

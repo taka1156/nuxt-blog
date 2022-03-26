@@ -3,14 +3,7 @@ import { dummyTocs } from '@/__testdata__/testdata.js';
 
 export default {
   title: 'Molecules/IndexList',
-  component: IndexList,
-  argTypes: {
-    isOpen: {
-      control: {
-        type: 'boolean'
-      }
-    }
-  }
+  component: IndexList
 };
 
 const Template = (args, { argTypes }) => ({

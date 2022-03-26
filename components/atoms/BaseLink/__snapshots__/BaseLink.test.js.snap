@@ -4,4 +4,4 @@ exports[`BaseLink BaseLink初期値(NuxtLink): Object 1`] = `"<a href=\\"\\" cla
 
 exports[`BaseLink BaseLink初期値(NuxtLink): String 1`] = `"<a href=\\"\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;
 
-exports[`BaseLink BaseLink初期値(OutSidelink): String 1`] = `"<a to=\\"\\" href=\\"http://placehold.jp\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;
+exports[`BaseLink BaseLink初期値(OutSidelink): String 1`] = `"<a to=\\"\\" href=\\"https://placehold.jp\\" class=\\"base-link--extend base-link\\">リンクテキスト</a>"`;

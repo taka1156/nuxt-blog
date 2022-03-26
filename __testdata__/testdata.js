@@ -1,5 +1,5 @@
-const dummyImgUrl = 'http://placehold.jp/150x150.png';
-const dummyUrl = 'http://placehold.jp';
+const dummyImgUrl = 'https://placehold.jp/150x150.png';
+const dummyUrl = 'https://placehold.jp';
 const dummyCopyrightUrl = 'http://placehold.jp';
 const MAX_NAV_DATA = 4;
 const MAX_ICONS_DATA = 4;

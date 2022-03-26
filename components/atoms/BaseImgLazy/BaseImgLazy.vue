@@ -28,7 +28,6 @@ export default {
     },
     /**
      * 画像サイズ
-     * @values sm, lg
      */
     size: {
       type: String,
