@@ -7,9 +7,9 @@ describe('/', () => {
     cy.get('.nav-bar').invoke('css', 'position', 'absolute');
     cy.screenshot('pc/normal', SETTINGS.nomarl);
 
-    cy.get('.index-list').invoke('css', 'display', 'flex');
+    cy.get('.index-nav').children('.base-nav-icon').children('button').click();
     cy.screenshot('pc/index-list-open', SETTINGS.nav);
-    cy.get('.index-list').invoke('css', 'display', 'none');
+    cy.get('.index-nav').children('.base-nav-icon').children('button').click();
   });
 
   it('visit article page: sp', () => {
@@ -19,12 +19,12 @@ describe('/', () => {
     cy.get('.nav-bar').invoke('css', 'position', 'absolute');
     cy.screenshot('sp/normal', SETTINGS.nomarl);
 
-    cy.get('.index-list').invoke('css', 'display', 'flex');
+    cy.get('.nav-bar__box').children('.base-nav-icon').children('button').click();
     cy.screenshot('sp/index-list-open', SETTINGS.nav);
-    cy.get('.index-list').invoke('css', 'display', 'none');
+    cy.get('.nav-bar__box').children('.base-nav-icon').children('button').click();
 
-    cy.get('.nav-list').invoke('css', 'display', 'flex');
+    cy.get('.index-nav').children('.base-nav-icon').children('button').click();
     cy.screenshot('sp/nav-list-open', SETTINGS.nav);
-    cy.get('.nav-list').invoke('css', 'display', 'none');
+    cy.get('.index-nav').children('.base-nav-icon').children('button').click();
   });
 });

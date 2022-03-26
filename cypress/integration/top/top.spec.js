@@ -9,12 +9,13 @@ describe('/', () => {
   });
 
   it('visit top page: sp', () => {
+    cy.viewport('iphone-se2');
     cy.get('.nav-bar').contains('TakaTechBlog');
     cy.get('.nav-bar').invoke('css', 'position', 'absolute');
     cy.screenshot('sp/normal', SETTINGS.nomarl);
 
-    cy.get('.nav-list').invoke('css', 'display', 'flex');
-    cy.screenshot('sp/nav-list-open', SETTINGS.nav);
-    cy.get('.nav-list').invoke('css', 'display', 'none');
+    cy.get('.nav-bar__box').children('.base-nav-icon').children('button').click();
+    cy.screenshot('sp/index-list-open', SETTINGS.nav);
+    cy.get('.nav-bar__box').children('.base-nav-icon').children('button').click();
   });
 });
