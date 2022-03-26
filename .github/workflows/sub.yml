@@ -40,8 +40,13 @@ jobs:
           TZ: "Asia/Tokyo"
         run: yarn test
 
+      - name: e2e
+        env:
+          TZ: "Asia/Tokyo"
+        run: yarn e2e
+
       - name: Upload screenshots
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-snapshots
