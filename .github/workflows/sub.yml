@@ -40,6 +40,22 @@ jobs:
           TZ: "Asia/Tokyo"
         run: yarn test
 
+      - name: e2e
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          MICRO_CMS: ${{ secrets.MICRO_CMS }}
+          ARTICLE_URL: ${{ secrets.ARTICLE_URL }}
+          TAG_URL: ${{ secrets.TAG_URL }}
+          CATEGORY_URL: ${{ secrets.CATEGORY_URL }}
+        run: yarn e2e
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-snapshots
+          path: cypress/snapshots
+
       # Storybookをビルド
       - name: build Storybook
         run: yarn build-storybook

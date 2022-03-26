@@ -3,13 +3,19 @@
     "parser": "@babel/eslint-parser",
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:vue/recommended", "prettier"],
-  "plugins": ["vue"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "plugin:cypress/recommended",
+    "prettier"
+  ],
+  "plugins": ["vue", "cypress"],
   "env": {
-    "jest": true,
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true,
+    "cypress/globals": true
   },
   "globals": {},
   "rules": {
