@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@nuxtjs/sitemap": "2.4.0",
-    "dayjs": "1.11.1",
+    "dayjs": "1.11.2",
     "firebase": "9.6.11",
     "github-markdown-css": "5.1.0",
     "highlight.js": "^11.3.1",
