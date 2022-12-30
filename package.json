@@ -71,7 +71,7 @@
     "start-server-and-test": "^1.14.0",
     "storybook-vue-router": "1.0.7",
     "stylelint": "14.6.1",
-    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-prettier": "9.0.4",
     "stylelint-config-recess-order": "3.0.0",
     "stylelint-config-recommended-vue": "1.4.0",
     "stylelint-config-standard": "^25.0.0",
