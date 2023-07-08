@@ -1,6 +1,6 @@
 # nuxt-blog
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/taka1156/nuxt-blog/firebase%20deploy)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/taka1156/nuxt-blog/main.yml?branch=master)
 ![test](https://github.com/taka1156/nuxt-blog/workflows/test/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/taka1156/nuxt-blog/badge.svg?branch=master)](https://coveralls.io/github/taka1156/nuxt-blog?branch=master)
 ![GitHub last commit](https://img.shields.io/github/last-commit/taka1156/nuxt-blog)
