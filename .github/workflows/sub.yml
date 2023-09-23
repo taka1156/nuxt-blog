@@ -58,7 +58,7 @@ jobs:
 
       # Storybookをビルド
       - name: build Storybook
-        run: yarn build-storybook
+        run: yarn build:sb
 
       # Nuxtをビルド
       - name: create .env file

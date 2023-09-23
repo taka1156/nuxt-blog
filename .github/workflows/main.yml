@@ -61,7 +61,7 @@ jobs:
 
       # Storybookをgithub pagesにホスティング
       - name: build Storybook
-        run: yarn build-storybook
+        run: yarn build:sb
 
       - name: deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
