@@ -12,14 +12,14 @@ env:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
+          node-version: '18.x'
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -35,13 +35,13 @@ jobs:
 
       - name: test
         env:
-          TZ: "Asia/Tokyo"
+          TZ: 'Asia/Tokyo'
         run: yarn test:cov
 
       - uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: "coverage/lcov.info"
+          path-to-lcov: 'coverage/lcov.info'
 
       - name: e2e
         env:
@@ -61,7 +61,7 @@ jobs:
 
       # Storybookをgithub pagesにホスティング
       - name: build Storybook
-        run: yarn build-storybook
+        run: yarn build:sb
 
       - name: deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -92,7 +92,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           status: ${{ job.status }}
-          title: "production"
+          title: 'production'
           description: |
             Please Check:
             - [Storybook](https://taka1156.github.io/nuxt-blog/)
