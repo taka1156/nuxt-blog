@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`BaseBtn slotがDOMに反映されているか 1`] = `"<button type=\\"button\\" class=\\"base-btn--extend\\">ダミーボタンテキスト</button>"`;
