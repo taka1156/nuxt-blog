@@ -18,12 +18,12 @@
     "cy:open": "cypress open",
     "e2e": "start-server-and-test dev http://localhost:3000 cy",
     "e2e:open": "start-server-and-test dev http://localhost:3000 cy:open",
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider&& nuxt",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider&& nuxt build",
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider&& nuxt start",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt build",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt start",
     "generate": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt generate",
-    "dev:sb": "export NODE_OPTIONS=--openssl-legacy-provider&& start-storybook -p 6006",
-    "build:sb": "export NODE_OPTIONS=--openssl-legacy-provider&& build-storybook --no-dll"
+    "dev:sb": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+    "build:sb": "export NODE_OPTIONS=--openssl-legacy-provider && build-storybook --no-dll"
   },
   "dependencies": {
     "@nuxtjs/sitemap": "2.4.0",
