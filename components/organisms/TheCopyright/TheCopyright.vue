@@ -2,8 +2,7 @@
   <div>
     <div class="the-copyright">
       <base-text>
-        &copy; 2019 - {{ latestYear }} taka1156
-        <br />使用素材、プライバシーポリシー等は
+        &copy; 2019 - {{ year }} taka1156 <br />使用素材、プライバシーポリシー等は
         <base-link :route-to="copyrightUrl" :is-target="true">コチラ</base-link>
       </base-text>
     </div>
@@ -13,6 +12,7 @@
 <script>
 import BaseLink from '../../atoms/BaseLink/BaseLink';
 import BaseText from '../../atoms/BaseText/BaseText';
+import { dayjs } from '@/utils/dayjs';
 
 export default {
   name: 'TheCopyright',
@@ -29,10 +29,8 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      latestYear: new Date().getFullYear()
-    };
+  computed: {
+    year: () => dayjs().tz().year()
   }
 };
 </script>
