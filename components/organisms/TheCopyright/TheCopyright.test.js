@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
+import MockDate from 'mockdate';
 import TheCopyright from './TheCopyright.vue';
-import { dummyCopyrightUrl } from '@/__testdata__/testdata.js';
+import { dummyCopyrightUrl, dummyDay } from '@/__testdata__/testdata.js';
 
 describe('TheNavigation', () => {
   const theCopyright = propsData =>
@@ -9,6 +10,13 @@ describe('TheNavigation', () => {
         ...propsData
       }
     });
+
+  beforeEach(() => {
+    MockDate.set(dummyDay);
+  });
+  afterEach(() => {
+    MockDate.reset();
+  });
 
   it('TheNavigation初期値: copyrightUrl', () => {
     const wrapper = theCopyright({ copyrightUrl: dummyCopyrightUrl });
