@@ -13,7 +13,46 @@ exports[`ArticleBody ArticleBody初期値: article 1`] = `
     <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
     <h2 id=\\"anchor_5\\">この文章はダミーです。</h2>
     <p> <strong>文字の大きさ、量、字間、行間等を確認するために入れています。</strong></p>
+    <p><strong>aaa</strong></p>
+    <p><strong>bbb</strong></p>
+    <p></p>
+    <details>
+      <summary>どんどん共有しましょう</summary>
+      <p><em>プログラミングに関することをどんどん投稿して、</em><br><strong>知識を記録、共有しましょう。</strong><br><em>プログラミングに関することをどんどん投稿して、</em><br><del>知識を記録、共有しましょう。</del></p>
+    </details>
+    <p></p>
+    <h2 id=\\"anchor_6\\">marked.js拡張構文</h2>
+    <p></p>
+    <details>
+      <summary>spoiler word</summary>
+      <p><strong>aaa</strong></p>
+    </details>
+    <p></p>
+    <p></p>
+    <div class=\\"container point\\">
+      <p class=\\"point-summary\\">ポイント</p>
+      <p class=\\"point-details\\">ポイント</p>
+    </div>
+    <p></p>
+    <p></p>
+    <div class=\\"container info\\">
+      <p class=\\"info-summary\\">情報</p>
+      <p class=\\"info-details\\">インフォメーション</p>
+    </div>
+    <p></p>
+    <p></p>
+    <div class=\\"container warn\\">
+      <p class=\\"warn-summary\\">注意</p>
+      <p class=\\"warn-details\\">〇〇に注意</p>
+    </div>
+    <p></p>
+    <p></p>
+    <div class=\\"container alert\\">
+      <p class=\\"alert-summary\\">警告</p>
+      <p class=\\"alert-details\\">〇〇に警告</p>
+    </div>
+    <p></p>
   </div>
-  <index-navigation-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\\"></index-navigation-stub>
+  <index-navigation-stub tocs=\\"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\\"></index-navigation-stub>
 </div>"
 `;
