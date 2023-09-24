@@ -13,9 +13,7 @@
 import BaseImg from '../../atoms/BaseImg/BaseImg';
 import BaseText from '../../atoms/BaseText/BaseText';
 import dateSvg from '@/assets/img/icon/date.svg';
-import dayjs from 'dayjs';
-import 'dayjs/locale/ja';
-dayjs.locale('ja');
+import { dayjs } from '@/utils/dayjs';
 
 export default {
   name: 'ArticleDate',
@@ -45,7 +43,7 @@ export default {
   methods: {
     formatDate(date = '') {
       if (date === '') return '--/--/--';
-      return dayjs(date).format('YYYY/M/D');
+      return dayjs(date).tz().format('YYYY/M/D');
     }
   }
 };

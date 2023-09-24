@@ -1,6 +1,7 @@
 const dummyImgUrl = 'https://placehold.jp/150x150.png';
 const dummyUrl = 'https://placehold.jp';
 const dummyCopyrightUrl = 'http://placehold.jp';
+const dummyDay = '2023-12-31';
 const MAX_NAV_DATA = 4;
 const MAX_ICONS_DATA = 4;
 const MAX_ARTICLE_DATA = 10;
@@ -167,6 +168,7 @@ export {
   dummyTocs,
   dummyRoutes,
   dummyCopyrightUrl,
+  dummyDay,
   dummySnsIcons,
   dummyProfile
 };
